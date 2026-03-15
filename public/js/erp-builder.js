@@ -5936,6 +5936,207 @@
         if (target) { target.classList.add('on'); }
     }
 
+    function pageSlug() {
+        return (PAGE_NAME || 'page')
+            .toString()
+            .trim()
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '') || 'page';
+    }
+
+    function triggerBlobDownload(blob, fileName) {
+        var a = document.createElement('a');
+        var url = URL.createObjectURL(blob);
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 300);
+    }
+
+    function buildExportHtml(html, css, cssHref) {
+        var cssTag = cssHref
+            ? '<link rel="stylesheet" href="' + cssHref + '">' 
+            : '<style>' + (css || '') + '</style>';
+
+        return '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">' +
+            '<meta name="viewport" content="width=device-width,initial-scale=1.0">' +
+            '<title>Bench Apparel ERP</title>' +
+            '<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">' +
+            '<script src="' + CHARTJS + '"><\/script>' +
+            cssTag +
+            '</head><body>' + (html || '') +
+            '<script>' +
+            'window.addEventListener("load",function(){' +
+            'document.querySelectorAll("[data-cfg]").forEach(function(el){' +
+            'try{var c=JSON.parse(decodeURIComponent(escape(atob(el.getAttribute("data-cfg")))));' +
+            'var cv=el.querySelector("canvas");if(cv)new Chart(cv,c);}catch(e){}});' +
+            '});' +
+            '<\/script></body></html>';
+    }
+
+    function exportZipFromEditor() {
+        if (!editor) { return; }
+        if (typeof window.JSZip === 'undefined') {
+            alert('ZIP library failed to load. Please refresh and try again.');
+            status('ZIP export unavailable.');
+            return;
+        }
+
+        status('Building ZIP...');
+        var html = editor.getHtml();
+        var css = editor.getCss();
+        var zip = new window.JSZip();
+        zip.file('index.html', buildExportHtml(html, css, 'style.css'));
+        zip.file('style.css', css || '');
+
+        zip.generateAsync({ type: 'blob' })
+            .then(function (blob) {
+                triggerBlobDownload(blob, pageSlug() + '.zip');
+                status('ZIP exported!');
+            })
+            .catch(function () {
+                status('ZIP export failed.');
+            });
+    }
+
+    function formatHtmlSource(source) {
+        if (!source) { return ''; }
+
+        var html = source
+            .replace(/>\s*</g, '><')
+            .replace(/></g, '>\n<');
+
+        var lines = html.split('\n');
+        var depth = 0;
+        var formatted = [];
+
+        for (var i = 0; i < lines.length; i++) {
+            var line = lines[i].trim();
+            if (!line) { continue; }
+
+            if (/^<\//.test(line)) {
+                depth = Math.max(0, depth - 1);
+            }
+
+            formatted.push(new Array(depth + 1).join('  ') + line);
+
+            if (/^<[^!/][^>]*[^/]?>$/.test(line) && !/^<[^>]+>.*<\//.test(line)) {
+                depth += 1;
+            }
+        }
+
+        return formatted.join('\n');
+    }
+
+    function formatCssSource(source) {
+        if (!source) { return ''; }
+
+        var css = source
+            .replace(/\s*\{\s*/g, ' {\n')
+            .replace(/;\s*/g, ';\n')
+            .replace(/\s*\}\s*/g, '\n}\n')
+            .replace(/\n{2,}/g, '\n');
+
+        var lines = css.split('\n');
+        var depth = 0;
+        var formatted = [];
+
+        for (var i = 0; i < lines.length; i++) {
+            var line = lines[i].trim();
+            if (!line) { continue; }
+
+            if (line === '}') {
+                depth = Math.max(0, depth - 1);
+            }
+
+            formatted.push(new Array(depth + 1).join('  ') + line);
+
+            if (line.charAt(line.length - 1) === '{') {
+                depth += 1;
+            }
+        }
+
+        return formatted.join('\n');
+    }
+
+    function openCodeModal() {
+        if (!editor || !editor.Modal) { return; }
+
+        var wrap = document.createElement('div');
+        wrap.style.padding = '12px 0 0';
+        wrap.style.color = '#ddd';
+
+        var toolbar = document.createElement('div');
+        toolbar.style.display = 'flex';
+        toolbar.style.justifyContent = 'space-between';
+        toolbar.style.alignItems = 'center';
+        toolbar.style.marginBottom = '10px';
+        toolbar.innerHTML = '<div style="font-size:12px;color:#999;">Edit source then apply to canvas</div>';
+
+        var actions = document.createElement('div');
+        actions.style.display = 'flex';
+        actions.style.gap = '8px';
+
+        var applyBtn = document.createElement('button');
+        applyBtn.type = 'button';
+        applyBtn.textContent = 'Apply';
+        applyBtn.style.cssText = 'background:#B90E0A;color:#fff;border:none;border-radius:4px;padding:7px 10px;cursor:pointer;font-size:11px;font-weight:700;';
+
+        var zipBtn = document.createElement('button');
+        zipBtn.type = 'button';
+        zipBtn.textContent = 'Export ZIP';
+        zipBtn.style.cssText = 'background:transparent;color:#ccc;border:1px solid #333;border-radius:4px;padding:7px 10px;cursor:pointer;font-size:11px;font-weight:700;';
+
+        actions.appendChild(applyBtn);
+        actions.appendChild(zipBtn);
+        toolbar.appendChild(actions);
+
+        var grid = document.createElement('div');
+        grid.style.display = 'grid';
+        grid.style.gridTemplateColumns = '1fr 1fr';
+        grid.style.gap = '10px';
+
+        var htmlWrap = document.createElement('div');
+        htmlWrap.innerHTML = '<div style="font-size:11px;color:#d4a16a;margin-bottom:6px;font-weight:700;">HTML</div>';
+
+        var cssWrap = document.createElement('div');
+        cssWrap.innerHTML = '<div style="font-size:11px;color:#d4a16a;margin-bottom:6px;font-weight:700;">CSS</div>';
+
+        var htmlArea = document.createElement('textarea');
+        htmlArea.value = formatHtmlSource(editor.getHtml());
+        htmlArea.style.cssText = 'width:100%;min-height:380px;background:#1b1b1b;border:1px solid #2f2f2f;color:#f97316;padding:10px;font-family:Consolas,Monaco,monospace;font-size:12px;resize:vertical;';
+
+        var cssArea = document.createElement('textarea');
+        cssArea.value = formatCssSource(editor.getCss());
+        cssArea.style.cssText = 'width:100%;min-height:380px;background:#1b1b1b;border:1px solid #2f2f2f;color:#9be22d;padding:10px;font-family:Consolas,Monaco,monospace;font-size:12px;resize:vertical;';
+
+        htmlWrap.appendChild(htmlArea);
+        cssWrap.appendChild(cssArea);
+        grid.appendChild(htmlWrap);
+        grid.appendChild(cssWrap);
+
+        wrap.appendChild(toolbar);
+        wrap.appendChild(grid);
+
+        applyBtn.addEventListener('click', function () {
+            editor.setComponents(htmlArea.value || '');
+            editor.setStyle(cssArea.value || '');
+            setTimeout(function () { injectChartJs(renderCharts); }, 350);
+            status('Code applied.');
+        });
+
+        zipBtn.addEventListener('click', function () {
+            exportZipFromEditor();
+        });
+
+        editor.Modal.setTitle('Code');
+        editor.Modal.setContent(wrap);
+        editor.Modal.open();
+    }
+
     /* --------------------------------------------------
        CHART RENDERING — reads data-cfg, draws Chart.js
        Works on first load AND after save/reload because
@@ -6551,6 +6752,9 @@ cm.addType('erp-img', {
         document.getElementById('bRedo').addEventListener('click', function () { if (editor) { editor.runCommand('core:redo'); } });
         document.getElementById('bSave').addEventListener('click', function () { savePage(null); });
         document.getElementById('bPublish').addEventListener('click', function () { savePage('published'); });
+        document.getElementById('bCode').addEventListener('click', function () {
+            openCodeModal();
+        });
 
         document.getElementById('bPrev').addEventListener('click', function () {
             if (!editor) { return; }
@@ -6571,28 +6775,7 @@ cm.addType('erp-img', {
         });
 
         document.getElementById('bExp').addEventListener('click', function () {
-            if (!editor) { return; }
-            var out = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">' +
-                '<meta name="viewport" content="width=device-width,initial-scale=1.0">' +
-                '<title>Bench Apparel ERP</title>' +
-                '<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">' +
-                '<script src="' + CHARTJS + '"><\/script>' +
-                '<style>' + editor.getCss() + '</style></head><body>' + editor.getHtml() +
-                '<script>' +
-                'window.addEventListener("load",function(){' +
-                'document.querySelectorAll("[data-cfg]").forEach(function(el){' +
-                'try{var c=JSON.parse(decodeURIComponent(escape(atob(el.getAttribute("data-cfg")))));' +
-                'var cv=el.querySelector("canvas");if(cv)new Chart(cv,c);}catch(e){}});' +
-                '});' +
-                '<\/script></body></html>';
-            var blob = new Blob([out], { type: 'text/html' });
-            var a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = PAGE_NAME.replace(/\s+/g, '-').toLowerCase() + '.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            status('Exported!');
+            exportZipFromEditor();
         });
 
         initGrape();
