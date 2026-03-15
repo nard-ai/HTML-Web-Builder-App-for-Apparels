@@ -106,6 +106,7 @@ window.ERP_HAS_CONTENT = "{{ isset($page) && $page && $page->html ? 'yes' : 'no'
     <button class="btn-g" id="bUndo">Undo</button>
     <button class="btn-g" id="bRedo">Redo</button>
     <div class="sep"></div>
+    <button class="btn-g" id="bCode">Code</button>
     <button class="btn-g" id="bPrev">Preview</button>
     <button class="btn-g" id="bExp">Export</button>
     <button class="btn-pub" id="bPublish">Publish</button>
@@ -150,6 +151,7 @@ window.ERP_HAS_CONTENT = "{{ isset($page) && $page && $page->html ? 'yes' : 'no'
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.21.7/grapes.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="{{ asset('js/erp-builder.js') }}"></script>
 </body>
 </html>
