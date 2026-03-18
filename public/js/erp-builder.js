@@ -2606,6 +2606,228 @@
             })()
         },
 
+        // ── PROFILE MODAL TEMPLATES ───────────────────────────────────────
+// Paste these inside your BLOCKS array in erp-builder.js
+// Suggested location: after the HR Screens section
+// ─────────────────────────────────────────────────────────────────
+
+         {
+            id: 'profile-modal-1',
+            label: 'Profile Modal: Clean Card',
+            category: 'Profile Modal',
+            content: '<div class="min-h-screen bg-black/50 flex items-center justify-center p-5">' +
+                '<div class="bg-white rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl">' +
+                '<div class="bg-gradient-to-br from-[#B90E0A] to-[#7a0806] px-7 pt-6 pb-14">' +
+                '<div class="flex justify-between items-start">' +
+                '<div><p class="text-[10px] font-bold tracking-[2px] text-white/60 uppercase">Employee Profile</p>' +
+                '<p class="text-[11px] text-white/50 mt-1">HR-00142 · Active</p></div>' +
+                '<button class="bg-white/20 text-white w-7 h-7 rounded-full text-sm">✕</button>' +
+                '</div></div>' +
+                '<div class="px-7 pb-6 -mt-11">' +
+                '<div class="flex items-end gap-4 mb-5">' +
+                '<div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#B90E0A] to-[#7a0806] border-4 border-white flex items-center justify-center text-white font-black text-2xl shadow-lg shrink-0">MS</div>' +
+                '<div class="pb-1"><p class="text-lg font-extrabold text-gray-900">Maria Santos</p>' +
+                '<p class="text-xs font-semibold text-[#B90E0A]">Sr. Sales Associate</p>' +
+                '<p class="text-[11px] text-gray-400 mt-0.5">SM Mall of Asia Branch</p></div>' +
+                '</div>' +
+                '<div class="grid grid-cols-2 gap-3 mb-5">' +
+                '<div class="bg-gray-50 rounded-xl p-3"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-wider mb-1">Employee ID</p><p class="text-sm font-semibold text-gray-900">HR-00142</p></div>' +
+                '<div class="bg-gray-50 rounded-xl p-3"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-wider mb-1">Department</p><p class="text-sm font-semibold text-gray-900">Retail Operations</p></div>' +
+                '<div class="bg-gray-50 rounded-xl p-3"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-wider mb-1">Date Hired</p><p class="text-sm font-semibold text-gray-900">March 15, 2021</p></div>' +
+                '<div class="bg-gray-50 rounded-xl p-3"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-wider mb-1">Employment Type</p><p class="text-sm font-semibold text-gray-900">Full-Time</p></div>' +
+                '<div class="bg-gray-50 rounded-xl p-3"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-wider mb-1">Email</p><p class="text-xs font-semibold text-gray-900">m.santos@bench.com.ph</p></div>' +
+                '<div class="bg-gray-50 rounded-xl p-3"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-wider mb-1">Phone</p><p class="text-sm font-semibold text-gray-900">+63 917 123 4567</p></div>' +
+                '</div>' +
+                '<div class="flex items-center justify-between pt-4 border-t border-gray-100">' +
+                '<span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold">● ACTIVE</span>' +
+                '<div class="flex gap-2">' +
+                '<button class="px-4 py-2 bg-gray-100 rounded-lg text-xs font-semibold text-gray-600">Edit</button>' +
+                '<button class="px-4 py-2 bg-[#B90E0A] rounded-lg text-xs font-semibold text-white">View Full Profile</button>' +
+                '</div></div>' +
+                '</div></div></div>'
+        },
+ 
+        {
+            id: 'profile-modal-2',
+            label: 'Profile Modal: Dark Sidebar',
+            category: 'Profile Modal',
+            content: '<div class="min-h-screen bg-black/60 flex items-center justify-center p-5">' +
+                '<div class="bg-white rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl flex">' +
+                '<div class="w-48 bg-[#1a1a1a] p-6 flex flex-col items-center shrink-0">' +
+                '<div class="w-[72px] h-[72px] rounded-full bg-gradient-to-br from-[#B90E0A] to-[#7a0806] flex items-center justify-center text-white font-black text-xl mb-3 border-2 border-[#333]">MS</div>' +
+                '<p class="text-sm font-bold text-white text-center leading-tight">Maria Santos</p>' +
+                '<p class="text-[10px] text-[#B90E0A] font-semibold mt-1 text-center">Sr. Sales Associate</p>' +
+                '<div class="w-full h-px bg-[#2a2a2a] my-4"></div>' +
+                '<span class="bg-green-600 text-white px-3 py-1 rounded-full text-[9px] font-bold tracking-wider">ACTIVE</span>' +
+                '<div class="mt-5 w-full">' +
+                '<p class="text-[9px] text-[#555] uppercase tracking-widest font-bold mb-2">Quick Links</p>' +
+                '<a href="#" class="block text-[#aaa] text-[11px] py-2 border-b border-[#222]">📄 201 File</a>' +
+                '<a href="#" class="block text-[#aaa] text-[11px] py-2 border-b border-[#222]">💰 Payslips</a>' +
+                '<a href="#" class="block text-[#aaa] text-[11px] py-2 border-b border-[#222]">📅 Attendance</a>' +
+                '<a href="#" class="block text-[#aaa] text-[11px] py-2">⭐ Performance</a>' +
+                '</div></div>' +
+                '<div class="flex-1 p-6">' +
+                '<div class="flex justify-between items-center mb-5">' +
+                '<div><p class="text-base font-extrabold text-gray-900">Employee Details</p>' +
+                '<p class="text-[11px] text-gray-400 mt-0.5">HR-00142 · SM Mall of Asia</p></div>' +
+                '<button class="text-gray-400 text-lg">✕</button></div>' +
+                '<p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-3 pb-2 border-b border-gray-100">Personal Information</p>' +
+                '<div class="grid grid-cols-2 gap-3 mb-5">' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">Full Name</p><p class="text-xs font-semibold text-gray-900">Maria Santos</p></div>' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">Date of Birth</p><p class="text-xs font-semibold text-gray-900">June 12, 1995</p></div>' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">Email</p><p class="text-xs font-semibold text-gray-900">m.santos@bench.com.ph</p></div>' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">Phone</p><p class="text-xs font-semibold text-gray-900">+63 917 123 4567</p></div>' +
+                '</div>' +
+                '<p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-3 pb-2 border-b border-gray-100">Employment Details</p>' +
+                '<div class="grid grid-cols-2 gap-3 mb-5">' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">Position</p><p class="text-xs font-semibold text-gray-900">Sr. Sales Associate</p></div>' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">Branch</p><p class="text-xs font-semibold text-gray-900">SM Mall of Asia</p></div>' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">Date Hired</p><p class="text-xs font-semibold text-gray-900">March 15, 2021</p></div>' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">SSS No.</p><p class="text-xs font-semibold text-gray-900">34-5678901-2</p></div>' +
+                '</div>' +
+                '<div class="flex gap-2 pt-4 border-t border-gray-100">' +
+                '<button class="flex-1 py-2 bg-gray-100 rounded-lg text-xs font-semibold text-gray-600">Edit Profile</button>' +
+                '<button class="flex-1 py-2 bg-[#B90E0A] rounded-lg text-xs font-semibold text-white">Full Profile →</button>' +
+                '</div></div></div></div>'
+        },
+ 
+        {
+            id: 'profile-modal-3',
+            label: 'Profile Modal: Bottom Sheet',
+            category: 'Profile Modal',
+            content: '<div class="min-h-screen bg-black/40 flex items-end justify-center">' +
+                '<div class="bg-white w-full max-w-2xl rounded-t-3xl shadow-2xl overflow-hidden">' +
+                '<div class="flex justify-center pt-3 pb-1"><div class="w-10 h-1 bg-gray-200 rounded-full"></div></div>' +
+                '<div class="px-6 py-4 flex items-center gap-4 border-b border-gray-100">' +
+                '<div class="w-[52px] h-[52px] rounded-2xl bg-gradient-to-br from-[#B90E0A] to-[#7a0806] flex items-center justify-center text-white font-black text-lg shrink-0">MS</div>' +
+                '<div class="flex-1"><p class="text-base font-extrabold text-gray-900">Maria Santos</p>' +
+                '<p class="text-xs text-[#B90E0A] font-semibold">Sr. Sales Associate · SM Mall of Asia</p></div>' +
+                '<span class="bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full text-[10px] font-bold">ACTIVE</span>' +
+                '<button class="text-gray-400 text-lg ml-2">✕</button></div>' +
+                '<div class="flex border-b border-gray-100">' +
+                '<button class="flex-1 py-3 text-xs font-bold text-[#B90E0A] border-b-2 border-[#B90E0A] bg-transparent">Overview</button>' +
+                '<button class="flex-1 py-3 text-xs font-semibold text-gray-400 bg-transparent">Employment</button>' +
+                '<button class="flex-1 py-3 text-xs font-semibold text-gray-400 bg-transparent">Documents</button>' +
+                '<button class="flex-1 py-3 text-xs font-semibold text-gray-400 bg-transparent">History</button>' +
+                '</div>' +
+                '<div class="grid grid-cols-3 gap-4 p-6 border-b border-gray-50">' +
+                '<div class="text-center p-4 bg-red-50 rounded-2xl"><p class="text-xl font-black text-[#B90E0A]">3.5</p><p class="text-[10px] text-gray-500 mt-1">Yrs Tenure</p></div>' +
+                '<div class="text-center p-4 bg-green-50 rounded-2xl"><p class="text-xl font-black text-green-600">98%</p><p class="text-[10px] text-gray-500 mt-1">Attendance</p></div>' +
+                '<div class="text-center p-4 bg-blue-50 rounded-2xl"><p class="text-xl font-black text-blue-600">4.8</p><p class="text-[10px] text-gray-500 mt-1">Performance</p></div>' +
+                '</div>' +
+                '<div class="grid grid-cols-2 gap-3 p-6 pb-4">' +
+                '<div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl"><div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-sm shadow-sm">📧</div><div><p class="text-[9px] text-gray-400">Email</p><p class="text-xs font-semibold text-gray-900">m.santos@bench.com.ph</p></div></div>' +
+                '<div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl"><div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-sm shadow-sm">📱</div><div><p class="text-[9px] text-gray-400">Phone</p><p class="text-xs font-semibold text-gray-900">+63 917 123 4567</p></div></div>' +
+                '<div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl"><div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-sm shadow-sm">🏢</div><div><p class="text-[9px] text-gray-400">Department</p><p class="text-xs font-semibold text-gray-900">Retail Operations</p></div></div>' +
+                '<div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl"><div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-sm shadow-sm">📅</div><div><p class="text-[9px] text-gray-400">Date Hired</p><p class="text-xs font-semibold text-gray-900">March 15, 2021</p></div></div>' +
+                '</div>' +
+                '<div class="flex gap-3 px-6 pb-6">' +
+                '<button class="flex-1 py-3 bg-gray-100 rounded-xl text-xs font-bold text-gray-600">Message</button>' +
+                '<button class="flex-1 py-3 bg-gray-100 rounded-xl text-xs font-bold text-gray-600">Edit</button>' +
+                '<button class="flex-1 py-3 bg-[#B90E0A] rounded-xl text-xs font-bold text-white">View Full Profile</button>' +
+                '</div></div></div>'
+        },
+ 
+        {
+            id: 'profile-modal-4',
+            label: 'Profile Modal: Corporate Full',
+            category: 'Profile Modal',
+            content: '<div class="min-h-screen bg-black/50 flex items-center justify-center p-5">' +
+                '<div class="bg-white rounded-2xl w-full max-w-3xl shadow-2xl overflow-hidden">' +
+                '<div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">' +
+                '<div class="flex items-center gap-2">' +
+                '<div class="w-7 h-7 bg-[#B90E0A] rounded-lg flex items-center justify-center text-white font-black text-xs">B</div>' +
+                '<span class="text-sm font-bold text-gray-800">Bench Apparel ERP</span>' +
+                '<span class="text-gray-300 mx-2">|</span>' +
+                '<span class="text-xs text-gray-500">Employee Profile</span></div>' +
+                '<div class="flex items-center gap-2">' +
+                '<button class="px-3 py-1.5 bg-gray-100 rounded-lg text-xs font-semibold text-gray-600">Edit</button>' +
+                '<button class="px-3 py-1.5 bg-[#B90E0A] rounded-lg text-xs font-semibold text-white">Print 201</button>' +
+                '<button class="text-gray-400 text-lg ml-2">✕</button></div></div>' +
+                '<div class="bg-gradient-to-r from-gray-50 to-white px-6 py-5 flex items-center gap-5 border-b border-gray-100">' +
+                '<div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#B90E0A] to-[#7a0806] flex items-center justify-center text-white font-black text-2xl shadow-md shrink-0">MS</div>' +
+                '<div class="flex-1">' +
+                '<div class="flex items-center gap-3 mb-1">' +
+                '<p class="text-xl font-extrabold text-gray-900">Maria Santos</p>' +
+                '<span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-[10px] font-bold">ACTIVE</span>' +
+                '<span class="bg-gray-100 text-gray-600 px-2.5 py-0.5 rounded-full text-[10px] font-semibold">FULL-TIME</span></div>' +
+                '<p class="text-sm text-[#B90E0A] font-semibold">Sr. Sales Associate · Retail Operations</p>' +
+                '<p class="text-xs text-gray-400 mt-0.5">SM Mall of Asia · HR-00142</p></div>' +
+                '<div class="text-right shrink-0"><p class="text-[10px] text-gray-400">Date Hired</p><p class="text-sm font-bold text-gray-900">March 15, 2021</p><p class="text-[10px] text-gray-400 mt-1">3 yrs 10 mos</p></div></div>' +
+                '<div class="grid grid-cols-3 divide-x divide-gray-100">' +
+                '<div class="p-5"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-3">Personal</p>' +
+                '<div class="space-y-3">' +
+                '<div><p class="text-[10px] text-gray-400">Email</p><p class="text-xs font-semibold text-gray-800">m.santos@bench.com.ph</p></div>' +
+                '<div><p class="text-[10px] text-gray-400">Mobile</p><p class="text-xs font-semibold text-gray-800">+63 917 123 4567</p></div>' +
+                '<div><p class="text-[10px] text-gray-400">Birthday</p><p class="text-xs font-semibold text-gray-800">June 12, 1995</p></div>' +
+                '<div><p class="text-[10px] text-gray-400">Civil Status</p><p class="text-xs font-semibold text-gray-800">Single</p></div>' +
+                '</div></div>' +
+                '<div class="p-5"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-3">Government IDs</p>' +
+                '<div class="space-y-3">' +
+                '<div><p class="text-[10px] text-gray-400">SSS</p><p class="text-xs font-semibold text-gray-800">34-5678901-2</p></div>' +
+                '<div><p class="text-[10px] text-gray-400">PhilHealth</p><p class="text-xs font-semibold text-gray-800">12-345678901-3</p></div>' +
+                '<div><p class="text-[10px] text-gray-400">Pag-IBIG</p><p class="text-xs font-semibold text-gray-800">1234-5678-9012</p></div>' +
+                '<div><p class="text-[10px] text-gray-400">TIN</p><p class="text-xs font-semibold text-gray-800">123-456-789-000</p></div>' +
+                '</div></div>' +
+                '<div class="p-5"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-3">Performance</p>' +
+                '<div class="space-y-2.5">' +
+                '<div><div class="flex justify-between mb-1"><span class="text-[10px] text-gray-500">Attendance</span><span class="text-[10px] font-bold text-gray-800">98%</span></div><div class="w-full bg-gray-100 rounded-full h-1.5"><div class="bg-green-500 h-1.5 rounded-full w-[98%]"></div></div></div>' +
+                '<div><div class="flex justify-between mb-1"><span class="text-[10px] text-gray-500">Sales Target</span><span class="text-[10px] font-bold text-gray-800">112%</span></div><div class="w-full bg-gray-100 rounded-full h-1.5"><div class="bg-[#B90E0A] h-1.5 rounded-full w-full"></div></div></div>' +
+                '<div><div class="flex justify-between mb-1"><span class="text-[10px] text-gray-500">Performance</span><span class="text-[10px] font-bold text-gray-800">4.8/5</span></div><div class="w-full bg-gray-100 rounded-full h-1.5"><div class="bg-blue-500 h-1.5 rounded-full w-[96%]"></div></div></div>' +
+                '<div class="pt-3 border-t border-gray-100 mt-2"><p class="text-[10px] text-gray-400">Direct Manager</p><p class="text-xs font-semibold text-gray-800">Juan dela Cruz</p></div>' +
+                '</div></div></div>' +
+                '<div class="px-6 py-3 bg-gray-50 border-t border-gray-100 flex justify-between items-center">' +
+                '<p class="text-[10px] text-gray-400">Last updated: March 18, 2026</p>' +
+                '<a href="#" class="text-xs text-[#B90E0A] font-semibold">View Complete 201 File →</a>' +
+                '</div></div></div>'
+        },
+ 
+        {
+            id: 'profile-modal-5',
+            label: 'Profile Modal: Dark Overlay',
+            category: 'Profile Modal',
+            content: '<div class="min-h-screen bg-[#0d0d0d] flex items-center justify-center p-5">' +
+                '<div class="bg-[#111] rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl border border-white/5">' +
+                '<div class="flex items-center justify-between px-5 py-4 border-b border-white/5">' +
+                '<div class="flex items-center gap-2">' +
+                '<div class="w-6 h-6 bg-[#B90E0A] rounded flex items-center justify-center text-white font-black text-xs">B</div>' +
+                '<span class="text-[10px] font-bold text-white/30 uppercase tracking-widest">Employee Profile</span></div>' +
+                '<button class="text-white/30 text-lg">✕</button></div>' +
+                '<div class="p-5 flex items-center gap-4 border-b border-white/5">' +
+                '<div class="relative shrink-0">' +
+                '<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#B90E0A] to-[#5a0604] flex items-center justify-center text-white font-black text-xl">MS</div>' +
+                '<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-[#111]"></div></div>' +
+                '<div class="flex-1">' +
+                '<p class="text-base font-extrabold text-white">Maria Santos</p>' +
+                '<p class="text-xs text-[#B90E0A] font-semibold mt-0.5">Sr. Sales Associate</p>' +
+                '<p class="text-[11px] text-white/30 mt-0.5">SM Mall of Asia · HR-00142</p></div>' +
+                '<div class="text-right shrink-0">' +
+                '<span class="bg-green-500/10 text-green-400 border border-green-500/20 px-2.5 py-1 rounded-full text-[10px] font-bold">ACTIVE</span>' +
+                '<p class="text-[10px] text-white/20 mt-1.5">Full-Time</p></div></div>' +
+                '<div class="grid grid-cols-3 divide-x divide-white/5 border-b border-white/5">' +
+                '<div class="p-4 text-center"><p class="text-lg font-black text-white">3.5</p><p class="text-[9px] text-white/30 uppercase tracking-wider mt-0.5">Yrs Tenure</p></div>' +
+                '<div class="p-4 text-center"><p class="text-lg font-black text-green-400">98%</p><p class="text-[9px] text-white/30 uppercase tracking-wider mt-0.5">Attendance</p></div>' +
+                '<div class="p-4 text-center"><p class="text-lg font-black text-[#B90E0A]">4.8</p><p class="text-[9px] text-white/30 uppercase tracking-wider mt-0.5">Rating</p></div>' +
+                '</div>' +
+                '<div class="p-5 grid grid-cols-2 gap-4 border-b border-white/5">' +
+                '<div><p class="text-[9px] text-white/25 uppercase tracking-wider mb-1">Email</p><p class="text-xs font-medium text-white/60">m.santos@bench.com.ph</p></div>' +
+                '<div><p class="text-[9px] text-white/25 uppercase tracking-wider mb-1">Phone</p><p class="text-xs font-medium text-white/60">+63 917 123 4567</p></div>' +
+                '<div><p class="text-[9px] text-white/25 uppercase tracking-wider mb-1">Department</p><p class="text-xs font-medium text-white/60">Retail Operations</p></div>' +
+                '<div><p class="text-[9px] text-white/25 uppercase tracking-wider mb-1">Date Hired</p><p class="text-xs font-medium text-white/60">March 15, 2021</p></div>' +
+                '<div><p class="text-[9px] text-white/25 uppercase tracking-wider mb-1">SSS No.</p><p class="text-xs font-medium text-white/60">34-5678901-2</p></div>' +
+                '<div><p class="text-[9px] text-white/25 uppercase tracking-wider mb-1">Manager</p><p class="text-xs font-medium text-white/60">Juan dela Cruz</p></div>' +
+                '</div>' +
+                '<div class="flex gap-2 p-4">' +
+                '<button class="flex-1 py-2.5 bg-white/5 border border-white/10 rounded-xl text-xs font-semibold text-white/40">Message</button>' +
+                '<button class="flex-1 py-2.5 bg-white/5 border border-white/10 rounded-xl text-xs font-semibold text-white/40">Edit</button>' +
+                '<button class="flex-1 py-2.5 bg-[#B90E0A] rounded-xl text-xs font-semibold text-white">View Profile →</button>' +
+                '</div></div></div>'
+        },
+
+// ─────────────────────────────────────────────────────────────────
+// END OF PROFILE MODAL BLOCKS
+// ─────────────────────────────────────────────────────────────────
+
 
         // ── STOCK TRANSFER / DELIVERY TRACKER ────────────────────────────
 
@@ -6069,16 +6291,13 @@
         wrap.style.padding = '12px 0 0';
         wrap.style.color = '#ddd';
 
+        // ── TOOLBAR ───────────────────────────────────────────────
         var toolbar = document.createElement('div');
-        toolbar.style.display = 'flex';
-        toolbar.style.justifyContent = 'space-between';
-        toolbar.style.alignItems = 'center';
-        toolbar.style.marginBottom = '10px';
+        toolbar.style.cssText = 'display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;';
         toolbar.innerHTML = '<div style="font-size:12px;color:#999;">Edit source then apply to canvas</div>';
 
         var actions = document.createElement('div');
-        actions.style.display = 'flex';
-        actions.style.gap = '8px';
+        actions.style.cssText = 'display:flex;gap:8px;';
 
         var applyBtn = document.createElement('button');
         applyBtn.type = 'button';
@@ -6094,10 +6313,37 @@
         actions.appendChild(zipBtn);
         toolbar.appendChild(actions);
 
+        // ── TABS ──────────────────────────────────────────────────
+        var tabBar = document.createElement('div');
+        tabBar.style.cssText = 'display:flex;gap:0;margin-bottom:12px;border-bottom:1px solid #2a2a2a;';
+
+        function makeTab(label, color, active) {
+            var t = document.createElement('button');
+            t.type = 'button';
+            t.textContent = label;
+            t.dataset.tab = label;
+            t.style.cssText = 'background:transparent;border:none;padding:8px 18px;font-size:11px;font-weight:700;cursor:pointer;letter-spacing:1px;text-transform:uppercase;border-bottom:2px solid transparent;color:#555;transition:all .2s;';
+            if (active) {
+                t.style.color = color;
+                t.style.borderBottomColor = color;
+            }
+            t.addEventListener('mouseenter', function(){ if(t.style.borderBottomColor === 'transparent') t.style.color = '#888'; });
+            t.addEventListener('mouseleave', function(){ if(t.style.borderBottomColor === 'transparent') t.style.color = '#555'; });
+            return t;
+        }
+
+        var tabHtml = makeTab('HTML', '#f97316', true);
+        var tabCss  = makeTab('CSS',  '#9be22d', false);
+        var tabTw   = makeTab('Tailwind CSS', '#38bdf8', false);
+        tabBar.appendChild(tabHtml);
+        tabBar.appendChild(tabCss);
+        tabBar.appendChild(tabTw);
+
+        // ── HTML + CSS PANEL ──────────────────────────────────────
+        var codePanel = document.createElement('div');
+
         var grid = document.createElement('div');
-        grid.style.display = 'grid';
-        grid.style.gridTemplateColumns = '1fr 1fr';
-        grid.style.gap = '10px';
+        grid.style.cssText = 'display:grid;grid-template-columns:1fr 1fr;gap:10px;';
 
         var htmlWrap = document.createElement('div');
         htmlWrap.innerHTML = '<div style="font-size:11px;color:#d4a16a;margin-bottom:6px;font-weight:700;">HTML</div>';
@@ -6107,24 +6353,469 @@
 
         var htmlArea = document.createElement('textarea');
         htmlArea.value = formatHtmlSource(editor.getHtml());
-        htmlArea.style.cssText = 'width:100%;min-height:380px;background:#1b1b1b;border:1px solid #2f2f2f;color:#f97316;padding:10px;font-family:Consolas,Monaco,monospace;font-size:12px;resize:vertical;';
+        htmlArea.style.cssText = 'width:100%;min-height:380px;background:#1b1b1b;border:1px solid #2f2f2f;color:#f97316;padding:10px;font-family:Consolas,Monaco,monospace;font-size:12px;resize:vertical;box-sizing:border-box;';
 
         var cssArea = document.createElement('textarea');
         cssArea.value = formatCssSource(editor.getCss());
-        cssArea.style.cssText = 'width:100%;min-height:380px;background:#1b1b1b;border:1px solid #2f2f2f;color:#9be22d;padding:10px;font-family:Consolas,Monaco,monospace;font-size:12px;resize:vertical;';
+        cssArea.style.cssText = 'width:100%;min-height:380px;background:#1b1b1b;border:1px solid #2f2f2f;color:#9be22d;padding:10px;font-family:Consolas,Monaco,monospace;font-size:12px;resize:vertical;box-sizing:border-box;';
 
         htmlWrap.appendChild(htmlArea);
         cssWrap.appendChild(cssArea);
         grid.appendChild(htmlWrap);
         grid.appendChild(cssWrap);
+        codePanel.appendChild(grid);
 
-        wrap.appendChild(toolbar);
-        wrap.appendChild(grid);
+        // ── TAILWIND CHEATSHEET PANEL ─────────────────────────────
+        var twPanel = document.createElement('div');
+        twPanel.style.display = 'none';
 
+        var twSections = [
+            {
+                title: '📐 Layout & Display',
+                color: '#38bdf8',
+                items: [
+                    ['flex',              'display: flex'],
+                    ['inline-flex',       'display: inline-flex'],
+                    ['grid',              'display: grid'],
+                    ['hidden',            'display: none'],
+                    ['block',             'display: block'],
+                    ['inline-block',      'display: inline-block'],
+                    ['items-center',      'align-items: center'],
+                    ['items-start',       'align-items: flex-start'],
+                    ['items-end',         'align-items: flex-end'],
+                    ['justify-center',    'justify-content: center'],
+                    ['justify-between',   'justify-content: space-between'],
+                    ['justify-end',       'justify-content: flex-end'],
+                    ['flex-col',          'flex-direction: column'],
+                    ['flex-row',          'flex-direction: row'],
+                    ['flex-wrap',         'flex-wrap: wrap'],
+                    ['flex-1',            'flex: 1 1 0%'],
+                    ['flex-none',         'flex: none'],
+                    ['shrink-0',          'flex-shrink: 0'],
+                    ['grid-cols-2',       'grid-template-columns: repeat(2, 1fr)'],
+                    ['grid-cols-3',       'grid-template-columns: repeat(3, 1fr)'],
+                    ['grid-cols-4',       'grid-template-columns: repeat(4, 1fr)'],
+                    ['col-span-2',        'grid-column: span 2'],
+                    ['gap-2',             'gap: 0.5rem'],
+                    ['gap-4',             'gap: 1rem'],
+                    ['gap-6',             'gap: 1.5rem'],
+                    ['gap-8',             'gap: 2rem'],
+                    ['overflow-hidden',   'overflow: hidden'],
+                    ['overflow-auto',     'overflow: auto'],
+                    ['relative',          'position: relative'],
+                    ['absolute',          'position: absolute'],
+                    ['fixed',             'position: fixed'],
+                    ['inset-0',           'top/right/bottom/left: 0'],
+                    ['z-10',              'z-index: 10'],
+                    ['z-50',              'z-index: 50'],
+                ]
+            },
+            {
+                title: '📏 Spacing (Padding & Margin)',
+                color: '#a78bfa',
+                items: [
+                    ['p-2',    'padding: 0.5rem'],
+                    ['p-4',    'padding: 1rem'],
+                    ['p-6',    'padding: 1.5rem'],
+                    ['p-8',    'padding: 2rem'],
+                    ['px-4',   'padding-left/right: 1rem'],
+                    ['py-2',   'padding-top/bottom: 0.5rem'],
+                    ['pt-4',   'padding-top: 1rem'],
+                    ['pb-4',   'padding-bottom: 1rem'],
+                    ['pl-4',   'padding-left: 1rem'],
+                    ['pr-4',   'padding-right: 1rem'],
+                    ['m-2',    'margin: 0.5rem'],
+                    ['m-4',    'margin: 1rem'],
+                    ['mx-auto','margin-left/right: auto'],
+                    ['my-4',   'margin-top/bottom: 1rem'],
+                    ['mt-2',   'margin-top: 0.5rem'],
+                    ['mb-4',   'margin-bottom: 1rem'],
+                    ['ml-2',   'margin-left: 0.5rem'],
+                    ['mr-2',   'margin-right: 0.5rem'],
+                    ['-mt-8',  'margin-top: -2rem'],
+                    ['-mt-11', 'margin-top: -2.75rem'],
+                    ['space-x-2', '> * + * margin-left: 0.5rem'],
+                    ['space-y-3', '> * + * margin-top: 0.75rem'],
+                ]
+            },
+            {
+                title: '📦 Sizing',
+                color: '#34d399',
+                items: [
+                    ['w-full',    'width: 100%'],
+                    ['w-screen',  'width: 100vw'],
+                    ['w-auto',    'width: auto'],
+                    ['w-4',       'width: 1rem'],
+                    ['w-8',       'width: 2rem'],
+                    ['w-16',      'width: 4rem'],
+                    ['w-20',      'width: 5rem'],
+                    ['w-48',      'width: 12rem'],
+                    ['w-64',      'width: 16rem'],
+                    ['w-1/2',     'width: 50%'],
+                    ['w-1/3',     'width: 33.33%'],
+                    ['max-w-sm',  'max-width: 24rem'],
+                    ['max-w-md',  'max-width: 28rem'],
+                    ['max-w-lg',  'max-width: 32rem'],
+                    ['max-w-xl',  'max-width: 36rem'],
+                    ['max-w-2xl', 'max-width: 42rem'],
+                    ['max-w-3xl', 'max-width: 48rem'],
+                    ['h-full',    'height: 100%'],
+                    ['h-screen',  'height: 100vh'],
+                    ['h-4',       'height: 1rem'],
+                    ['h-8',       'height: 2rem'],
+                    ['h-16',      'height: 4rem'],
+                    ['h-20',      'height: 5rem'],
+                    ['min-h-screen', 'min-height: 100vh'],
+                ]
+            },
+            {
+                title: '🎨 Typography',
+                color: '#fbbf24',
+                items: [
+                    ['text-xs',        'font-size: 0.75rem'],
+                    ['text-sm',        'font-size: 0.875rem'],
+                    ['text-base',      'font-size: 1rem'],
+                    ['text-lg',        'font-size: 1.125rem'],
+                    ['text-xl',        'font-size: 1.25rem'],
+                    ['text-2xl',       'font-size: 1.5rem'],
+                    ['text-3xl',       'font-size: 1.875rem'],
+                    ['text-4xl',       'font-size: 2.25rem'],
+                    ['font-normal',    'font-weight: 400'],
+                    ['font-medium',    'font-weight: 500'],
+                    ['font-semibold',  'font-weight: 600'],
+                    ['font-bold',      'font-weight: 700'],
+                    ['font-extrabold', 'font-weight: 800'],
+                    ['font-black',     'font-weight: 900'],
+                    ['text-center',    'text-align: center'],
+                    ['text-left',      'text-align: left'],
+                    ['text-right',     'text-align: right'],
+                    ['uppercase',      'text-transform: uppercase'],
+                    ['lowercase',      'text-transform: lowercase'],
+                    ['capitalize',     'text-transform: capitalize'],
+                    ['tracking-wide',  'letter-spacing: 0.025em'],
+                    ['tracking-wider', 'letter-spacing: 0.05em'],
+                    ['tracking-widest','letter-spacing: 0.1em'],
+                    ['leading-tight',  'line-height: 1.25'],
+                    ['leading-normal', 'line-height: 1.5'],
+                    ['leading-relaxed','line-height: 1.625'],
+                    ['truncate',       'overflow: hidden; text-overflow: ellipsis'],
+                    ['underline',      'text-decoration: underline'],
+                    ['no-underline',   'text-decoration: none'],
+                    ['italic',         'font-style: italic'],
+                ]
+            },
+            {
+                title: '🌈 Colors (Text)',
+                color: '#f472b6',
+                items: [
+                    ['text-white',      'color: #ffffff'],
+                    ['text-black',      'color: #000000'],
+                    ['text-gray-400',   'color: #9ca3af'],
+                    ['text-gray-500',   'color: #6b7280'],
+                    ['text-gray-600',   'color: #4b5563'],
+                    ['text-gray-700',   'color: #374151'],
+                    ['text-gray-800',   'color: #1f2937'],
+                    ['text-gray-900',   'color: #111827'],
+                    ['text-red-500',    'color: #ef4444'],
+                    ['text-red-600',    'color: #dc2626'],
+                    ['text-green-500',  'color: #22c55e'],
+                    ['text-green-600',  'color: #16a34a'],
+                    ['text-green-700',  'color: #15803d'],
+                    ['text-blue-500',   'color: #3b82f6'],
+                    ['text-blue-600',   'color: #2563eb'],
+                    ['text-yellow-500', 'color: #eab308'],
+                    ['text-amber-600',  'color: #d97706'],
+                    ['text-white/50',   'color: rgba(255,255,255,0.5)'],
+                    ['text-white/30',   'color: rgba(255,255,255,0.3)'],
+                    ['text-[#B90E0A]',  'color: #B90E0A (Bench Red)'],
+                ]
+            },
+            {
+                title: '🖌 Colors (Background)',
+                color: '#fb923c',
+                items: [
+                    ['bg-white',         'background: #ffffff'],
+                    ['bg-black',         'background: #000000'],
+                    ['bg-transparent',   'background: transparent'],
+                    ['bg-gray-50',       'background: #f9fafb'],
+                    ['bg-gray-100',      'background: #f3f4f6'],
+                    ['bg-gray-200',      'background: #e5e7eb'],
+                    ['bg-gray-800',      'background: #1f2937'],
+                    ['bg-gray-900',      'background: #111827'],
+                    ['bg-red-50',        'background: #fef2f2'],
+                    ['bg-red-100',       'background: #fee2e2'],
+                    ['bg-green-50',      'background: #f0fdf4'],
+                    ['bg-green-100',     'background: #dcfce7'],
+                    ['bg-blue-50',       'background: #eff6ff'],
+                    ['bg-yellow-50',     'background: #fefce8'],
+                    ['bg-black/50',      'background: rgba(0,0,0,0.5)'],
+                    ['bg-black/60',      'background: rgba(0,0,0,0.6)'],
+                    ['bg-white/10',      'background: rgba(255,255,255,0.1)'],
+                    ['bg-white/20',      'background: rgba(255,255,255,0.2)'],
+                    ['bg-[#B90E0A]',     'background: #B90E0A (Bench Red)'],
+                    ['bg-[#1a1a1a]',     'background: #1a1a1a (Dark)'],
+                    ['bg-gradient-to-br','background gradient → bottom-right'],
+                    ['from-[#B90E0A]',   'gradient start color'],
+                    ['to-[#7a0806]',     'gradient end color'],
+                ]
+            },
+            {
+                title: '🔲 Borders & Radius',
+                color: '#67e8f9',
+                items: [
+                    ['border',           'border-width: 1px'],
+                    ['border-2',         'border-width: 2px'],
+                    ['border-4',         'border-width: 4px'],
+                    ['border-t',         'border-top-width: 1px'],
+                    ['border-b',         'border-bottom-width: 1px'],
+                    ['border-l',         'border-left-width: 1px'],
+                    ['border-r',         'border-right-width: 1px'],
+                    ['border-gray-100',  'border-color: #f3f4f6'],
+                    ['border-gray-200',  'border-color: #e5e7eb'],
+                    ['border-white/10',  'border-color: rgba(255,255,255,0.1)'],
+                    ['border-[#333]',    'border-color: #333'],
+                    ['divide-x',         'border between cols (x)'],
+                    ['divide-y',         'border between rows (y)'],
+                    ['rounded',          'border-radius: 0.25rem'],
+                    ['rounded-md',       'border-radius: 0.375rem'],
+                    ['rounded-lg',       'border-radius: 0.5rem'],
+                    ['rounded-xl',       'border-radius: 0.75rem'],
+                    ['rounded-2xl',      'border-radius: 1rem'],
+                    ['rounded-3xl',      'border-radius: 1.5rem'],
+                    ['rounded-full',     'border-radius: 9999px'],
+                ]
+            },
+            {
+                title: '✨ Effects & Shadows',
+                color: '#c084fc',
+                items: [
+                    ['shadow',       'box-shadow: sm'],
+                    ['shadow-md',    'box-shadow: medium'],
+                    ['shadow-lg',    'box-shadow: large'],
+                    ['shadow-xl',    'box-shadow: xl'],
+                    ['shadow-2xl',   'box-shadow: 2xl'],
+                    ['shadow-none',  'box-shadow: none'],
+                    ['opacity-0',    'opacity: 0'],
+                    ['opacity-50',   'opacity: 0.5'],
+                    ['opacity-75',   'opacity: 0.75'],
+                    ['opacity-100',  'opacity: 1'],
+                    ['blur',         'filter: blur(8px)'],
+                    ['blur-sm',      'filter: blur(4px)'],
+                    ['backdrop-blur-sm',  'backdrop-filter: blur(4px)'],
+                    ['backdrop-blur-md',  'backdrop-filter: blur(12px)'],
+                    ['transition',        'transition: all 150ms'],
+                    ['transition-all',    'transition: all'],
+                    ['duration-200',      'transition-duration: 200ms'],
+                    ['duration-300',      'transition-duration: 300ms'],
+                    ['ease-in-out',       'transition-timing: ease-in-out'],
+                    ['cursor-pointer',    'cursor: pointer'],
+                    ['select-none',       'user-select: none'],
+                    ['pointer-events-none','pointer-events: none'],
+                ]
+            },
+            {
+                title: '📱 Responsive Breakpoints',
+                color: '#86efac',
+                items: [
+                    ['sm:',    'min-width: 640px'],
+                    ['md:',    'min-width: 768px'],
+                    ['lg:',    'min-width: 1024px'],
+                    ['xl:',    'min-width: 1280px'],
+                    ['2xl:',   'min-width: 1536px'],
+                    ['sm:hidden',       'hide on sm+'],
+                    ['md:flex',         'flex on md+'],
+                    ['lg:grid-cols-3',  '3 cols on lg+'],
+                    ['sm:text-lg',      'larger text on sm+'],
+                    ['md:px-8',         'more padding on md+'],
+                    ['hover:bg-gray-100','on hover'],
+                    ['hover:text-white', 'text on hover'],
+                    ['focus:outline-none','on focus'],
+                    ['active:scale-95',  'on active/click'],
+                    ['group',            'parent for group-hover'],
+                    ['group-hover:block','show on parent hover'],
+                ]
+            },
+        ];
+
+        // Search bar
+        var searchWrap = document.createElement('div');
+        searchWrap.style.cssText = 'margin-bottom:12px;position:relative;';
+        var searchInput = document.createElement('input');
+        searchInput.type = 'text';
+        searchInput.placeholder = '🔍  Search classes... e.g. "flex", "text", "bg"';
+        searchInput.style.cssText = 'width:100%;background:#1b1b1b;border:1px solid #2f2f2f;color:#ddd;padding:9px 14px;font-size:12px;border-radius:6px;outline:none;box-sizing:border-box;font-family:Consolas,monospace;';
+        searchWrap.appendChild(searchInput);
+        twPanel.appendChild(searchWrap);
+
+        // Sections container
+        var sectionsWrap = document.createElement('div');
+        sectionsWrap.style.cssText = 'max-height:400px;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-right:4px;';
+        sectionsWrap.style.scrollbarWidth = 'thin';
+
+        twSections.forEach(function(sec) {
+            var secEl = document.createElement('div');
+            secEl.style.cssText = 'background:#1b1b1b;border:1px solid #2a2a2a;border-radius:8px;overflow:hidden;';
+            secEl.dataset.section = sec.title;
+
+            var secHeader = document.createElement('div');
+            secHeader.style.cssText = 'padding:8px 12px;font-size:11px;font-weight:700;background:#222;border-bottom:1px solid #2a2a2a;color:' + sec.color + ';letter-spacing:0.5px;';
+            secHeader.textContent = sec.title;
+
+            var secBody = document.createElement('div');
+            secBody.style.cssText = 'padding:6px 0;';
+
+            sec.items.forEach(function(item) {
+                var row = document.createElement('div');
+                row.style.cssText = 'display:flex;justify-content:space-between;align-items:center;padding:4px 12px;cursor:pointer;transition:background .15s;';
+                row.dataset.class = item[0];
+                row.dataset.desc  = item[1];
+
+                var cls = document.createElement('span');
+                cls.style.cssText = 'font-family:Consolas,monospace;font-size:11px;color:' + sec.color + ';font-weight:600;';
+                cls.textContent = item[0];
+
+                var desc = document.createElement('span');
+                desc.style.cssText = 'font-size:10px;color:#555;text-align:right;max-width:55%;line-height:1.3;';
+                desc.textContent = item[1];
+
+                var copyBadge = document.createElement('span');
+                copyBadge.textContent = 'copy';
+                copyBadge.style.cssText = 'display:none;font-size:9px;background:#B90E0A;color:#fff;padding:1px 5px;border-radius:3px;margin-left:6px;';
+
+                row.appendChild(cls);
+                row.appendChild(desc);
+                row.appendChild(copyBadge);
+
+                row.addEventListener('mouseenter', function(){
+                    row.style.background = '#252525';
+                    copyBadge.style.display = 'inline';
+                });
+                row.addEventListener('mouseleave', function(){
+                    row.style.background = 'transparent';
+                    copyBadge.style.display = 'none';
+                });
+                row.addEventListener('click', function(){
+                    navigator.clipboard.writeText(item[0]).then(function(){
+                        copyBadge.textContent = '✓ copied!';
+                        copyBadge.style.background = '#16a34a';
+                        copyBadge.style.display = 'inline';
+                        setTimeout(function(){
+                            copyBadge.textContent = 'copy';
+                            copyBadge.style.background = '#B90E0A';
+                        }, 1200);
+                    });
+                });
+
+                secBody.appendChild(row);
+            });
+
+            secEl.appendChild(secHeader);
+            secEl.appendChild(secBody);
+            sectionsWrap.appendChild(secEl);
+        });
+
+        twPanel.appendChild(sectionsWrap);
+
+        // Search filter logic
+        searchInput.addEventListener('input', function(){
+            var q = searchInput.value.toLowerCase().trim();
+            sectionsWrap.innerHTML = '';
+
+            if (!q) {
+                // Show all sections
+                twSections.forEach(function(sec) {
+                    // rebuild — reuse secEl by re-running (just re-append)
+                });
+                // Easier: just reload the panel
+                searchInput.dispatchEvent(new Event('_reload'));
+                return;
+            }
+
+            // Filter matching rows across all sections
+            var results = document.createElement('div');
+            results.style.cssText = 'background:#1b1b1b;border:1px solid #2a2a2a;border-radius:8px;overflow:hidden;grid-column:span 2;';
+            var rHeader = document.createElement('div');
+            rHeader.style.cssText = 'padding:8px 12px;font-size:11px;font-weight:700;background:#222;border-bottom:1px solid #2a2a2a;color:#38bdf8;';
+            rHeader.textContent = '🔍 Search Results';
+            results.appendChild(rHeader);
+
+            var found = 0;
+            twSections.forEach(function(sec) {
+                sec.items.forEach(function(item) {
+                    if (item[0].toLowerCase().includes(q) || item[1].toLowerCase().includes(q)) {
+                        found++;
+                        var row = document.createElement('div');
+                        row.style.cssText = 'display:flex;justify-content:space-between;align-items:center;padding:5px 12px;cursor:pointer;border-bottom:1px solid #222;';
+
+                        var cls = document.createElement('span');
+                        cls.style.cssText = 'font-family:Consolas,monospace;font-size:11px;color:#38bdf8;font-weight:600;';
+                        cls.textContent = item[0];
+
+                        var desc = document.createElement('span');
+                        desc.style.cssText = 'font-size:10px;color:#555;';
+                        desc.textContent = item[1];
+
+                        row.appendChild(cls);
+                        row.appendChild(desc);
+
+                        row.addEventListener('mouseenter', function(){ row.style.background = '#252525'; });
+                        row.addEventListener('mouseleave', function(){ row.style.background = 'transparent'; });
+                        row.addEventListener('click', function(){
+                            navigator.clipboard.writeText(item[0]);
+                            cls.textContent = '✓ ' + item[0];
+                            setTimeout(function(){ cls.textContent = item[0]; }, 1200);
+                        });
+
+                        results.appendChild(row);
+                    }
+                });
+            });
+
+            if (found === 0) {
+                var none = document.createElement('div');
+                none.style.cssText = 'padding:16px 12px;color:#555;font-size:12px;text-align:center;';
+                none.textContent = 'No classes found for "' + q + '"';
+                results.appendChild(none);
+            }
+
+            sectionsWrap.appendChild(results);
+        });
+
+        // ── TAB SWITCHING LOGIC ───────────────────────────────────
+        function activateTab(tab) {
+            [tabHtml, tabCss, tabTw].forEach(function(t) {
+                t.style.color = '#555';
+                t.style.borderBottomColor = 'transparent';
+            });
+
+            codePanel.style.display = 'none';
+            twPanel.style.display   = 'none';
+            toolbar.style.display   = 'none';
+
+            if (tab === 'HTML' || tab === 'CSS') {
+                tab === 'HTML' ? tabHtml.style.color = '#f97316' : tabCss.style.color = '#9be22d';
+                tab === 'HTML' ? tabHtml.style.borderBottomColor = '#f97316' : tabCss.style.borderBottomColor = '#9be22d';
+                codePanel.style.display = 'block';
+                toolbar.style.display   = 'flex';
+            } else {
+                tabTw.style.color = '#38bdf8';
+                tabTw.style.borderBottomColor = '#38bdf8';
+                twPanel.style.display = 'block';
+            }
+        }
+
+        tabHtml.addEventListener('click', function(){ activateTab('HTML'); });
+        tabCss.addEventListener('click',  function(){ activateTab('CSS'); });
+        tabTw.addEventListener('click',   function(){ activateTab('Tailwind CSS'); });
+
+        // ── BUTTON EVENTS ─────────────────────────────────────────
         applyBtn.addEventListener('click', function () {
             editor.setComponents(htmlArea.value || '');
             editor.setStyle(cssArea.value || '');
-            setTimeout(function () { injectChartJs(renderCharts); }, 350);
+            setTimeout(function () {
+                injectChartJs(renderCharts);
+                injectTailwind();
+            }, 350);
             status('Code applied.');
         });
 
@@ -6132,9 +6823,19 @@
             exportZipFromEditor();
         });
 
+        // ── ASSEMBLE & OPEN ───────────────────────────────────────
+        wrap.appendChild(toolbar);
+        wrap.appendChild(tabBar);
+        wrap.appendChild(codePanel);
+        wrap.appendChild(twPanel);
+
         editor.Modal.setTitle('Code');
         editor.Modal.setContent(wrap);
         editor.Modal.open();
+
+        // Set modal width wider to fit cheatsheet grid
+        var modalEl = document.querySelector('.gjs-mdl-dialog');
+        if (modalEl) modalEl.style.maxWidth = '900px';
     }
 
     /* --------------------------------------------------
@@ -6181,6 +6882,22 @@
         } catch (e) {}
     }
 
+        function injectTailwind() {
+        var iframe = document.querySelector('.gjs-frame');
+        if (!iframe) { setTimeout(injectTailwind, 400); return; }
+
+        var doc = iframe.contentDocument || iframe.contentWindow.document;
+        if (!doc || !doc.head) { setTimeout(injectTailwind, 400); return; }
+
+        // Already injected — skip
+        if (doc.getElementById('tw-cdn')) return;
+
+        var s = doc.createElement('script');
+        s.id  = 'tw-cdn';
+        s.src = 'https://cdn.tailwindcss.com';
+        doc.head.appendChild(s);
+    }
+
     /* --------------------------------------------------
        SAVE TO SERVER
     -------------------------------------------------- */
@@ -6224,6 +6941,7 @@
                 // After content loads, inject Chart.js and render charts
                 setTimeout(function () {
                     injectChartJs(renderCharts);
+                    injectTailwind();  
                 }, 500);
                 status('Page loaded.');
             }
@@ -6294,413 +7012,372 @@
             }
         });
 
-        // On editor load: inject Chart.js then render all charts on canvas
-        editor.on('load', function () {
-
-            // ── CUSTOM COMPONENT TYPES WITH TRAITS ─────────────────────────
-
-var cm = editor.Components;
-
-// ── KPI Card ────────────────────────────────────────────────────
-cm.addType('erp-kpi', {
-    isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'kpi'; },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'kpi' },
-            traits: [
-                { type: 'text', name: 'kpi-label',  label: 'Metric Label',  placeholder: 'e.g. Total Sales' },
-                { type: 'text', name: 'kpi-value',  label: 'Value',          placeholder: 'e.g. PHP 128,400' },
-                { type: 'text', name: 'kpi-sub',    label: 'Sub Text',       placeholder: 'e.g. +12% vs last period' },
-                { type: 'select', name: 'kpi-sub-color', label: 'Sub Color',
-                  options: [{ id:'#22c55e', name:'Green (Positive)' },{ id:'#ef4444', name:'Red (Negative)' },{ id:'#888', name:'Gray (Neutral)' }] },
-                { type: 'select', name: 'kpi-accent', label: 'Accent Color',
-                  options: [{ id:'#B90E0A', name:'Red' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' },{ id:'#f59e0b', name:'Amber' },{ id:'#8b5cf6', name:'Purple' }] }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var cells = el.querySelectorAll('div');
-            var label = this.getAttributes()['kpi-label']; if (label && cells[0]) cells[0].textContent = label;
-            var val   = this.getAttributes()['kpi-value']; if (val   && cells[1]) cells[1].textContent = val;
-            var sub   = this.getAttributes()['kpi-sub'];   if (sub   && cells[2]) cells[2].textContent = sub;
-            var sc    = this.getAttributes()['kpi-sub-color']; if (sc && cells[2]) cells[2].style.color = sc;
-            var ac    = this.getAttributes()['kpi-accent']; if (ac) el.style.borderTopColor = ac;
-        }
-    }
-});
-
-// ── Section Header ───────────────────────────────────────────────
-cm.addType('erp-sec-hdr', {
-    isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'sec-hdr'; },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'sec-hdr' },
-            traits: [
-                { type: 'text', name: 'hdr-title',    label: 'Title',    placeholder: 'Section Title' },
-                { type: 'text', name: 'hdr-subtitle', label: 'Subtitle', placeholder: 'Subtitle here' }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var h2 = el.querySelector('h2'); var p = el.querySelector('p');
-            var t  = this.getAttributes()['hdr-title'];    if (t && h2) h2.textContent = t;
-            var s  = this.getAttributes()['hdr-subtitle']; if (s && p)  p.textContent  = s;
-        }
-    }
-});
-
-// ── Form Input ────────────────────────────────────────────────────
-cm.addType('erp-form-in', {
-    isComponent: function(el) { 
-        return el.getAttribute && el.getAttribute('data-erp') === 'form-in'; 
-    },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'form-in' },
-            traits: [
-                { type: 'text',   name: 'fi-label',       label: 'Field Label',   placeholder: 'Field Label' },
-                { type: 'text',   name: 'fi-placeholder', label: 'Placeholder',   placeholder: 'Enter value...' },
-                { type: 'select', name: 'fi-type',        label: 'Input Type',
-                  options: [
-                    { id:'text', name:'Text' },{ id:'email', name:'Email' },
-                    { id:'password', name:'Password' },{ id:'number', name:'Number' },
-                    { id:'date', name:'Date' },{ id:'tel', name:'Phone' }
-                  ]
-                },
-                { type: 'checkbox', name: 'fi-required', label: 'Required?' }
-            ]
-        },
-        init: function() { 
-            this.on('change:attributes:fi-label',       this._syncLabel,       this);
-            this.on('change:attributes:fi-placeholder', this._syncPlaceholder, this);
-            this.on('change:attributes:fi-type',        this._syncType,        this);
-            this.on('change:attributes:fi-required',    this._syncRequired,    this);
-        },
-        _syncLabel: function() {
-            var el  = this.getEl(); if (!el) return;
-            var lbl = el.querySelector('label');
-            var val = this.getAttributes()['fi-label'];
-            if (lbl && val) lbl.textContent = val;
-        },
-        _syncPlaceholder: function() {
-            var el  = this.getEl(); if (!el) return;
-            var inp = el.querySelector('input');
-            var val = this.getAttributes()['fi-placeholder'];
-            if (inp && val) inp.setAttribute('placeholder', val);
-        },
-        _syncType: function() {
-            var el  = this.getEl(); if (!el) return;
-            var inp = el.querySelector('input');
-            var val = this.getAttributes()['fi-type'];
-            if (inp && val) inp.setAttribute('type', val);
-        },
-        _syncRequired: function() {
-            var el  = this.getEl(); if (!el) return;
-            var inp = el.querySelector('input');
-            var val = this.getAttributes()['fi-required'];
-            if (inp) {
-                if (val) inp.setAttribute('required', 'required');
-                else     inp.removeAttribute('required');
-            }
-        }
-    }
-});
-// ── Form Select ───────────────────────────────────────────────────
-cm.addType('erp-form-sel', {
-    isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'form-sel'; },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'form-sel' },
-            traits: [
-                { type: 'text', name: 'fs-label',   label: 'Field Label', placeholder: 'Select Label' },
-                { type: 'text', name: 'fs-options', label: 'Options (comma-separated)', placeholder: 'Option 1,Option 2,Option 3' }
-            ]
-        },
-        init: function() { this.on('change:attributes:kpi-label',  this._syncLabel, this);
-this.on('change:attributes:kpi-value',  this._syncValue, this);
-this.on('change:attributes:kpi-sub',    this._syncSub,   this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var lbl = el.querySelector('label'); var sel = el.querySelector('select');
-            var l   = this.getAttributes()['fs-label'];   if (l && lbl) lbl.textContent = l;
-            var ops = this.getAttributes()['fs-options'];
-            if (ops && sel) {
-                sel.innerHTML = ops.split(',').map(function(o) {
-                    return '<option>' + o.trim() + '</option>';
-                }).join('');
-            }
-        }
-    }
-});
-
-// ── Red Button ────────────────────────────────────────────────────
-cm.addType('erp-btn-red', {
-    isComponent: function(el) { return el.tagName === 'BUTTON' && el.getAttribute('data-erp') === 'btn-red'; },
-    model: {
-        defaults: {
-            tagName: 'button',
-            attributes: { 'data-erp': 'btn-red' },
-            traits: [
-                { type: 'text',   name: 'btn-label', label: 'Button Text', placeholder: 'Save Changes' },
-                { type: 'select', name: 'btn-color', label: 'Color',
-                  options: [{ id:'#B90E0A', name:'Red' },{ id:'#1a1a1a', name:'Black' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' }] }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var lbl = this.getAttributes()['btn-label']; if (lbl) el.textContent = lbl;
-            var col = this.getAttributes()['btn-color']; if (col) el.style.background = col;
-        }
-    }
-});
-
-// ── Outline Button ────────────────────────────────────────────────
-cm.addType('erp-btn-out', {
-    isComponent: function(el) { return el.tagName === 'BUTTON' && el.getAttribute('data-erp') === 'btn-out'; },
-    model: {
-        defaults: {
-            tagName: 'button',
-            attributes: { 'data-erp': 'btn-out' },
-            traits: [
-                { type: 'text', name: 'btn-label', label: 'Button Text', placeholder: 'Cancel' },
-                { type: 'select', name: 'btn-color', label: 'Color',
-                  options: [{ id:'#B90E0A', name:'Red' },{ id:'#1a1a1a', name:'Black' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' }] }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var lbl = this.getAttributes()['btn-label']; if (lbl) el.textContent = lbl;
-            var col = this.getAttributes()['btn-color'];
-            if (col) { el.style.color = col; el.style.borderColor = col; }
-        }
-    }
-});
-
-// ── Warning Alert ─────────────────────────────────────────────────
-cm.addType('erp-alert-w', {
-    isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'alert-w'; },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'alert-w' },
-            traits: [
-                { type: 'text', name: 'aw-title',   label: 'Alert Title',   placeholder: 'Warning' },
-                { type: 'text', name: 'aw-message', label: 'Alert Message', placeholder: 'Alert message goes here.' }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var divs = el.querySelectorAll('div');
-            var t = this.getAttributes()['aw-title'];   if (t && divs[0]) divs[0].textContent = t;
-            var m = this.getAttributes()['aw-message']; if (m && divs[1]) divs[1].textContent = m;
-        }
-    }
-});
-
-// ── Error Alert ───────────────────────────────────────────────────
-cm.addType('erp-alert-e', {
-    isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'alert-e'; },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'alert-e' },
-            traits: [
-                { type: 'text', name: 'ae-title',   label: 'Alert Title',   placeholder: 'Error' },
-                { type: 'text', name: 'ae-message', label: 'Alert Message', placeholder: 'Error message goes here.' }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var divs = el.querySelectorAll('div');
-            var t = this.getAttributes()['ae-title'];   if (t && divs[0]) divs[0].textContent = t;
-            var m = this.getAttributes()['ae-message']; if (m && divs[1]) divs[1].textContent = m;
-        }
-    }
-});
-
-// ── Progress Bar ─────────────────────────────────────────────────
-cm.addType('erp-prog', {
-    isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'prog'; },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'prog' },
-            traits: [
-                { type: 'text',   name: 'pb-label', label: 'Label',         placeholder: 'Label' },
-                { type: 'number', name: 'pb-value', label: 'Value (0-100)', placeholder: '75' },
-                { type: 'select', name: 'pb-color', label: 'Bar Color',
-                  options: [{ id:'#B90E0A', name:'Red' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' },{ id:'#f59e0b', name:'Amber' },{ id:'#8b5cf6', name:'Purple' }] }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var spans = el.querySelectorAll('span');
-            var bar   = el.querySelector('div > div');
-            var lbl   = this.getAttributes()['pb-label']; if (lbl && spans[0]) spans[0].textContent = lbl;
-            var val   = this.getAttributes()['pb-value'];
-            if (val !== undefined && val !== '') {
-                var pct = Math.min(100, Math.max(0, parseInt(val)));
-                if (spans[1]) spans[1].textContent = pct + '%';
-                if (bar) bar.style.width = pct + '%';
-            }
-            var col = this.getAttributes()['pb-color']; if (col && bar) bar.style.background = col;
-        }
-    }
-});
-
-// ── Card ─────────────────────────────────────────────────────────
-cm.addType('erp-card', {
-    isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'card'; },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'card' },
-            traits: [
-                { type: 'text', name: 'card-title', label: 'Title',       placeholder: 'Card Title' },
-                { type: 'text', name: 'card-body',  label: 'Description', placeholder: 'Card description here.' }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var h3 = el.querySelector('h3'); var p = el.querySelector('p');
-            var t  = this.getAttributes()['card-title']; if (t && h3) h3.textContent = t;
-            var b  = this.getAttributes()['card-body'];  if (b && p)  p.textContent  = b;
-        }
-    }
-});
-
-// ── Heading ───────────────────────────────────────────────────────
-cm.addType('erp-heading', {
-    isComponent: function(el) { return el.tagName === 'H2' && el.getAttribute('data-erp') === 'h2'; },
-    model: {
-        defaults: {
-            tagName: 'h2',
-            attributes: { 'data-erp': 'h2' },
-            traits: [
-                { type: 'text',   name: 'h2-text',  label: 'Text',      placeholder: 'Your Heading' },
-                { type: 'select', name: 'h2-size',  label: 'Size',
-                  options: [{ id:'16px', name:'Small' },{ id:'20px', name:'Medium' },{ id:'24px', name:'Large' },{ id:'32px', name:'XL' },{ id:'40px', name:'XXL' }] },
-                { type: 'select', name: 'h2-align', label: 'Alignment',
-                  options: [{ id:'left', name:'Left' },{ id:'center', name:'Center' },{ id:'right', name:'Right' }] },
-                { name: 'h2-color', type: 'color', label: 'Color' }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var t  = this.getAttributes()['h2-text'];  if (t) el.textContent     = t;
-            var s  = this.getAttributes()['h2-size'];  if (s) el.style.fontSize  = s;
-            var a  = this.getAttributes()['h2-align']; if (a) el.style.textAlign = a;
-            var c  = this.getAttributes()['h2-color']; if (c) el.style.color     = c;
-        }
-    }
-});
-
-// ── Text Paragraph ────────────────────────────────────────────────
-cm.addType('erp-text', {
-    isComponent: function(el) { return el.tagName === 'P' && el.getAttribute('data-erp') === 'txt'; },
-    model: {
-        defaults: {
-            tagName: 'p',
-            attributes: { 'data-erp': 'txt' },
-            traits: [
-                { type: 'text',   name: 'p-text',  label: 'Text',      placeholder: 'Click to edit this text.' },
-                { type: 'select', name: 'p-size',  label: 'Font Size',
-                  options: [{ id:'11px', name:'XS' },{ id:'13px', name:'Small' },{ id:'14px', name:'Medium' },{ id:'16px', name:'Large' },{ id:'18px', name:'XL' }] },
-                { type: 'select', name: 'p-align', label: 'Alignment',
-                  options: [{ id:'left', name:'Left' },{ id:'center', name:'Center' },{ id:'right', name:'Right' }] }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var t  = this.getAttributes()['p-text'];  if (t) el.textContent    = t;
-            var s  = this.getAttributes()['p-size'];  if (s) el.style.fontSize = s;
-            var a  = this.getAttributes()['p-align']; if (a) el.style.textAlign = a;
-        }
-    }
-});
-
-// ── Image Block ───────────────────────────────────────────────────
-cm.addType('erp-img', {
-    isComponent: function(el) { return el.tagName === 'IMG' && el.getAttribute('data-erp') === 'img'; },
-    model: {
-        defaults: {
-            tagName: 'img',
-            attributes: { 'data-erp': 'img' },
-            traits: [
-                { type: 'text',   name: 'img-src',    label: 'Image URL',  placeholder: 'https://...' },
-                { type: 'text',   name: 'img-alt',    label: 'Alt Text',   placeholder: 'Image description' },
-                { type: 'select', name: 'img-radius', label: 'Corners',
-                  options: [{ id:'0', name:'Sharp' },{ id:'4px', name:'Slight' },{ id:'8px', name:'Rounded' },{ id:'16px', name:'Very Rounded' },{ id:'50%', name:'Circle' }] }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var src = this.getAttributes()['img-src'];    if (src) el.setAttribute('src', src);
-            var alt = this.getAttributes()['img-alt'];    if (alt) el.setAttribute('alt', alt);
-            var r   = this.getAttributes()['img-radius']; if (r)   el.style.borderRadius = r;
-        }
-    }
-});
-
 // ─────────────────────────────────────────────────────────────────
-            // Sync background-color picker with selected element's actual bg
-        editor.on('component:selected', function (component) {
-            if (!component) return;
+// REPLACE everything from:
+//     // On editor load: inject Chart.js...
+// all the way down to:
+//     status('Ready');
+//
+// with this entire block below
+// ─────────────────────────────────────────────────────────────────
 
-            var el = component.getEl();
-            if (!el) return;
+        // ── CUSTOM COMPONENT TYPES WITH TRAITS ────────────────────────────
+        // Must be registered RIGHT HERE — after grapesjs.init(), NOT inside editor.on('load')
 
-            var computedBg = window.getComputedStyle(el).backgroundColor;
-            var inlineBg   = el.style.backgroundColor;
-            var bg = inlineBg || computedBg;
+        var cm = editor.Components;
 
-            // Normalize to empty if transparent/none
-            if (!bg || bg === 'transparent' || bg === 'rgba(0, 0, 0, 0)') bg = '';
+        cm.addType('erp-kpi', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'kpi'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'kpi' },
+                    traits: [
+                        { type: 'text',   name: 'kpi-label',     label: 'Metric Label', placeholder: 'e.g. Total Sales' },
+                        { type: 'text',   name: 'kpi-value',     label: 'Value',        placeholder: 'e.g. PHP 128,400' },
+                        { type: 'text',   name: 'kpi-sub',       label: 'Sub Text',     placeholder: 'e.g. +12% vs last period' },
+                        { type: 'select', name: 'kpi-sub-color', label: 'Sub Color',
+                          options: [{ id:'#22c55e', name:'Green' },{ id:'#ef4444', name:'Red' },{ id:'#888', name:'Gray' }] },
+                        { type: 'select', name: 'kpi-accent',    label: 'Accent Color',
+                          options: [{ id:'#B90E0A', name:'Red' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' },{ id:'#f59e0b', name:'Amber' }] }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:kpi-label',     this._syncLabel,    this);
+                    this.on('change:attributes:kpi-value',     this._syncValue,    this);
+                    this.on('change:attributes:kpi-sub',       this._syncSub,      this);
+                    this.on('change:attributes:kpi-sub-color', this._syncSubColor, this);
+                    this.on('change:attributes:kpi-accent',    this._syncAccent,   this);
+                },
+                _syncLabel:    function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['kpi-label'];     if(v&&d[0]) d[0].textContent=v; },
+                _syncValue:    function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['kpi-value'];     if(v&&d[1]) d[1].textContent=v; },
+                _syncSub:      function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['kpi-sub'];       if(v&&d[2]) d[2].textContent=v; },
+                _syncSubColor: function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['kpi-sub-color']; if(v&&d[2]) d[2].style.color=v; },
+                _syncAccent:   function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['kpi-accent']; if(v) el.style.borderTopColor=v; }
+            }
+        });
 
-            // Push the value into GrapeJS style manager
-            if (bg) {
-                var sm = editor.StyleManager;
-                var prop = sm.getProperty('Background', 'background-color');
-                if (prop) {
-                    prop.setValue(bg);
+        cm.addType('erp-sec-hdr', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'sec-hdr'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'sec-hdr' },
+                    traits: [
+                        { type: 'text', name: 'hdr-title',    label: 'Title',    placeholder: 'Section Title' },
+                        { type: 'text', name: 'hdr-subtitle', label: 'Subtitle', placeholder: 'Subtitle here' }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:hdr-title',    this._syncTitle,    this);
+                    this.on('change:attributes:hdr-subtitle', this._syncSubtitle, this);
+                },
+                _syncTitle:    function() { var el=this.getEl(); if(!el) return; var h=el.querySelector('h2'); var v=this.getAttributes()['hdr-title'];    if(v&&h) h.textContent=v; },
+                _syncSubtitle: function() { var el=this.getEl(); if(!el) return; var p=el.querySelector('p');  var v=this.getAttributes()['hdr-subtitle']; if(v&&p) p.textContent=v; }
+            }
+        });
+
+        cm.addType('erp-form-in', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'form-in'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'form-in' },
+                    traits: [
+                        { type: 'text',     name: 'fi-label',       label: 'Field Label',  placeholder: 'Field Label' },
+                        { type: 'text',     name: 'fi-placeholder', label: 'Placeholder',  placeholder: 'Enter value...' },
+                        { type: 'select',   name: 'fi-type',        label: 'Input Type',
+                          options: [{ id:'text', name:'Text' },{ id:'email', name:'Email' },{ id:'password', name:'Password' },{ id:'number', name:'Number' },{ id:'date', name:'Date' },{ id:'tel', name:'Phone' }] },
+                        { type: 'checkbox', name: 'fi-required',    label: 'Required?' }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:fi-label',       this._syncLabel,       this);
+                    this.on('change:attributes:fi-placeholder', this._syncPlaceholder, this);
+                    this.on('change:attributes:fi-type',        this._syncType,        this);
+                    this.on('change:attributes:fi-required',    this._syncRequired,    this);
+                },
+                _syncLabel:       function() { var el=this.getEl(); if(!el) return; var l=el.querySelector('label'); var v=this.getAttributes()['fi-label'];       if(v&&l) l.textContent=v; },
+                _syncPlaceholder: function() { var el=this.getEl(); if(!el) return; var i=el.querySelector('input'); var v=this.getAttributes()['fi-placeholder']; if(v&&i) i.setAttribute('placeholder',v); },
+                _syncType:        function() { var el=this.getEl(); if(!el) return; var i=el.querySelector('input'); var v=this.getAttributes()['fi-type'];        if(v&&i) i.setAttribute('type',v); },
+                _syncRequired:    function() { var el=this.getEl(); if(!el) return; var i=el.querySelector('input'); var v=this.getAttributes()['fi-required'];    if(i){ if(v) i.setAttribute('required','required'); else i.removeAttribute('required'); } }
+            }
+        });
+
+        cm.addType('erp-form-sel', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'form-sel'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'form-sel' },
+                    traits: [
+                        { type: 'text', name: 'fs-label',   label: 'Field Label',              placeholder: 'Select Label' },
+                        { type: 'text', name: 'fs-options', label: 'Options (comma-separated)', placeholder: 'Option 1,Option 2,Option 3' }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:fs-label',   this._syncLabel,   this);
+                    this.on('change:attributes:fs-options', this._syncOptions, this);
+                },
+                _syncLabel:   function() { var el=this.getEl(); if(!el) return; var l=el.querySelector('label'); var v=this.getAttributes()['fs-label']; if(v&&l) l.textContent=v; },
+                _syncOptions: function() {
+                    var el=this.getEl(); if(!el) return;
+                    var sel=el.querySelector('select'); var v=this.getAttributes()['fs-options'];
+                    if(v&&sel){ sel.innerHTML=v.split(',').map(function(o){ return '<option>'+o.trim()+'</option>'; }).join(''); }
                 }
             }
         });
-            if (HAS_CONTENT === 'yes') {
-                loadPageContent();
-            } else {
-                // Default dashboard — no charts, just inject Chart.js ready
-                injectChartJs(renderCharts);
+
+        cm.addType('erp-btn-red', {
+            isComponent: function(el) { return el.tagName === 'BUTTON' && el.getAttribute('data-erp') === 'btn-red'; },
+            model: {
+                defaults: {
+                    tagName: 'button',
+                    attributes: { 'data-erp': 'btn-red' },
+                    traits: [
+                        { type: 'text',   name: 'btn-label', label: 'Button Text', placeholder: 'Save Changes' },
+                        { type: 'select', name: 'btn-color', label: 'Color',
+                          options: [{ id:'#B90E0A', name:'Red' },{ id:'#1a1a1a', name:'Black' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' }] }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:btn-label', this._syncLabel, this);
+                    this.on('change:attributes:btn-color', this._syncColor, this);
+                },
+                _syncLabel: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['btn-label']; if(v) el.textContent=v; },
+                _syncColor: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['btn-color']; if(v) el.style.background=v; }
             }
         });
 
-        // When a block is dropped, render any new charts
+        cm.addType('erp-btn-out', {
+            isComponent: function(el) { return el.tagName === 'BUTTON' && el.getAttribute('data-erp') === 'btn-out'; },
+            model: {
+                defaults: {
+                    tagName: 'button',
+                    attributes: { 'data-erp': 'btn-out' },
+                    traits: [
+                        { type: 'text',   name: 'btn-label', label: 'Button Text', placeholder: 'Cancel' },
+                        { type: 'select', name: 'btn-color', label: 'Color',
+                          options: [{ id:'#B90E0A', name:'Red' },{ id:'#1a1a1a', name:'Black' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' }] }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:btn-label', this._syncLabel, this);
+                    this.on('change:attributes:btn-color', this._syncColor, this);
+                },
+                _syncLabel: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['btn-label']; if(v) el.textContent=v; },
+                _syncColor: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['btn-color']; if(v){ el.style.color=v; el.style.borderColor=v; } }
+            }
+        });
+
+        cm.addType('erp-alert-w', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'alert-w'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'alert-w' },
+                    traits: [
+                        { type: 'text', name: 'aw-title',   label: 'Alert Title',   placeholder: 'Warning' },
+                        { type: 'text', name: 'aw-message', label: 'Alert Message', placeholder: 'Alert message goes here.' }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:aw-title',   this._syncTitle,   this);
+                    this.on('change:attributes:aw-message', this._syncMessage, this);
+                },
+                _syncTitle:   function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['aw-title'];   if(v&&d[0]) d[0].textContent=v; },
+                _syncMessage: function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['aw-message']; if(v&&d[1]) d[1].textContent=v; }
+            }
+        });
+
+        cm.addType('erp-alert-e', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'alert-e'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'alert-e' },
+                    traits: [
+                        { type: 'text', name: 'ae-title',   label: 'Alert Title',   placeholder: 'Error' },
+                        { type: 'text', name: 'ae-message', label: 'Alert Message', placeholder: 'Error message goes here.' }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:ae-title',   this._syncTitle,   this);
+                    this.on('change:attributes:ae-message', this._syncMessage, this);
+                },
+                _syncTitle:   function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['ae-title'];   if(v&&d[0]) d[0].textContent=v; },
+                _syncMessage: function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['ae-message']; if(v&&d[1]) d[1].textContent=v; }
+            }
+        });
+
+        cm.addType('erp-prog', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'prog'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'prog' },
+                    traits: [
+                        { type: 'text',   name: 'pb-label', label: 'Label',         placeholder: 'Label' },
+                        { type: 'number', name: 'pb-value', label: 'Value (0-100)', placeholder: '75' },
+                        { type: 'select', name: 'pb-color', label: 'Bar Color',
+                          options: [{ id:'#B90E0A', name:'Red' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' },{ id:'#f59e0b', name:'Amber' }] }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:pb-label', this._syncLabel, this);
+                    this.on('change:attributes:pb-value', this._syncValue, this);
+                    this.on('change:attributes:pb-color', this._syncColor, this);
+                },
+                _syncLabel: function() { var el=this.getEl(); if(!el) return; var s=el.querySelectorAll('span'); var v=this.getAttributes()['pb-label']; if(v&&s[0]) s[0].textContent=v; },
+                _syncValue: function() {
+                    var el=this.getEl(); if(!el) return;
+                    var s=el.querySelectorAll('span'); var bar=el.querySelector('div > div');
+                    var v=this.getAttributes()['pb-value'];
+                    if(v!==undefined&&v!==''){
+                        var pct=Math.min(100,Math.max(0,parseInt(v)));
+                        if(s[1]) s[1].textContent=pct+'%';
+                        if(bar)  bar.style.width=pct+'%';
+                    }
+                },
+                _syncColor: function() { var el=this.getEl(); if(!el) return; var bar=el.querySelector('div > div'); var v=this.getAttributes()['pb-color']; if(v&&bar) bar.style.background=v; }
+            }
+        });
+
+        cm.addType('erp-card', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'card'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'card' },
+                    traits: [
+                        { type: 'text', name: 'card-title', label: 'Title',       placeholder: 'Card Title' },
+                        { type: 'text', name: 'card-body',  label: 'Description', placeholder: 'Card description here.' }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:card-title', this._syncTitle, this);
+                    this.on('change:attributes:card-body',  this._syncBody,  this);
+                },
+                _syncTitle: function() { var el=this.getEl(); if(!el) return; var h=el.querySelector('h3'); var v=this.getAttributes()['card-title']; if(v&&h) h.textContent=v; },
+                _syncBody:  function() { var el=this.getEl(); if(!el) return; var p=el.querySelector('p');  var v=this.getAttributes()['card-body'];  if(v&&p) p.textContent=v; }
+            }
+        });
+
+        cm.addType('erp-heading', {
+            isComponent: function(el) { return el.tagName === 'H2' && el.getAttribute('data-erp') === 'h2'; },
+            model: {
+                defaults: {
+                    tagName: 'h2',
+                    attributes: { 'data-erp': 'h2' },
+                    traits: [
+                        { type: 'text',   name: 'h2-text',  label: 'Text',      placeholder: 'Your Heading' },
+                        { type: 'select', name: 'h2-size',  label: 'Size',
+                          options: [{ id:'16px', name:'Small' },{ id:'20px', name:'Medium' },{ id:'24px', name:'Large' },{ id:'32px', name:'XL' },{ id:'40px', name:'XXL' }] },
+                        { type: 'select', name: 'h2-align', label: 'Alignment',
+                          options: [{ id:'left', name:'Left' },{ id:'center', name:'Center' },{ id:'right', name:'Right' }] },
+                        { type: 'color',  name: 'h2-color', label: 'Color' }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:h2-text',  this._syncText,  this);
+                    this.on('change:attributes:h2-size',  this._syncSize,  this);
+                    this.on('change:attributes:h2-align', this._syncAlign, this);
+                    this.on('change:attributes:h2-color', this._syncColor, this);
+                },
+                _syncText:  function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['h2-text'];  if(v) el.textContent=v; },
+                _syncSize:  function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['h2-size'];  if(v) el.style.fontSize=v; },
+                _syncAlign: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['h2-align']; if(v) el.style.textAlign=v; },
+                _syncColor: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['h2-color']; if(v) el.style.color=v; }
+            }
+        });
+
+        cm.addType('erp-text', {
+            isComponent: function(el) { return el.tagName === 'P' && el.getAttribute('data-erp') === 'txt'; },
+            model: {
+                defaults: {
+                    tagName: 'p',
+                    attributes: { 'data-erp': 'txt' },
+                    traits: [
+                        { type: 'text',   name: 'p-text',  label: 'Text',      placeholder: 'Click to edit this text.' },
+                        { type: 'select', name: 'p-size',  label: 'Font Size',
+                          options: [{ id:'11px', name:'XS' },{ id:'13px', name:'Small' },{ id:'14px', name:'Medium' },{ id:'16px', name:'Large' },{ id:'18px', name:'XL' }] },
+                        { type: 'select', name: 'p-align', label: 'Alignment',
+                          options: [{ id:'left', name:'Left' },{ id:'center', name:'Center' },{ id:'right', name:'Right' }] }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:p-text',  this._syncText,  this);
+                    this.on('change:attributes:p-size',  this._syncSize,  this);
+                    this.on('change:attributes:p-align', this._syncAlign, this);
+                },
+                _syncText:  function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['p-text'];  if(v) el.textContent=v; },
+                _syncSize:  function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['p-size'];  if(v) el.style.fontSize=v; },
+                _syncAlign: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['p-align']; if(v) el.style.textAlign=v; }
+            }
+        });
+
+        cm.addType('erp-img', {
+            isComponent: function(el) { return el.tagName === 'IMG' && el.getAttribute('data-erp') === 'img'; },
+            model: {
+                defaults: {
+                    tagName: 'img',
+                    attributes: { 'data-erp': 'img' },
+                    traits: [
+                        { type: 'text',   name: 'img-src',    label: 'Image URL',  placeholder: 'https://...' },
+                        { type: 'text',   name: 'img-alt',    label: 'Alt Text',   placeholder: 'Image description' },
+                        { type: 'select', name: 'img-radius', label: 'Corners',
+                          options: [{ id:'0', name:'Sharp' },{ id:'4px', name:'Slight' },{ id:'8px', name:'Rounded' },{ id:'16px', name:'Very Rounded' },{ id:'50%', name:'Circle' }] }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:img-src',    this._syncSrc,    this);
+                    this.on('change:attributes:img-alt',    this._syncAlt,    this);
+                    this.on('change:attributes:img-radius', this._syncRadius, this);
+                },
+                _syncSrc:    function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['img-src'];    if(v) el.setAttribute('src',v); },
+                _syncAlt:    function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['img-alt'];    if(v) el.setAttribute('alt',v); },
+                _syncRadius: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['img-radius']; if(v) el.style.borderRadius=v; }
+            }
+        });
+
+        // ── EDITOR EVENTS ─────────────────────────────────────────────────
+
+        editor.on('load', function () {
+            if (HAS_CONTENT === 'yes') {
+                loadPageContent();
+            } else {
+                injectChartJs(renderCharts);
+                injectTailwind();
+            }
+        });
+
         editor.on('block:drag:stop', function () {
             setTimeout(function () {
                 injectChartJs(renderCharts);
+                injectTailwind();
             }, 400);
         });
 
-        // Re-inject after device switch (iframe recreated)
         editor.on('change:device', function () {
             setTimeout(function () {
                 injectChartJs(renderCharts);
+                injectTailwind();
             }, 600);
+        });
+
+        editor.on('component:selected', function (component) {
+            if (!component) return;
+            var el = component.getEl();
+            if (!el) return;
+            var inlineBg = el.style.backgroundColor;
+            var computedBg = window.getComputedStyle(el).backgroundColor;
+            var bg = inlineBg || computedBg;
+            if (!bg || bg === 'transparent' || bg === 'rgba(0, 0, 0, 0)') bg = '';
+            if (bg) {
+                var sm = editor.StyleManager;
+                var prop = sm.getProperty('Background', 'background-color');
+                if (prop) prop.setValue(bg);
+            }
         });
 
         status('Ready');
@@ -6761,18 +7438,27 @@ cm.addType('erp-img', {
             var win = window.open('', '_blank');
             if (!win) { alert('Allow popups to preview.'); return; }
             win.document.open();
-            win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8">' +
+            win.document.write(
+                '<!DOCTYPE html><html><head>' +
+                '<meta charset="UTF-8">' +
+                '<meta name="viewport" content="width=device-width,initial-scale=1.0">' +
                 '<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">' +
+                '<script src="https://cdn.tailwindcss.com"><\/script>' +  // ← ADDED
                 '<script src="' + CHARTJS + '"><\/script>' +
-                '<style>' + editor.getCss() + '</style></head><body>' + editor.getHtml() +
+                '<style>' + editor.getCss() + '</style>' +
+                '</head><body>' +
+                editor.getHtml() +
                 '<script>' +
                 'document.querySelectorAll("[data-cfg]").forEach(function(el){' +
                 'try{var c=JSON.parse(decodeURIComponent(escape(atob(el.getAttribute("data-cfg")))));' +
                 'var cv=el.querySelector("canvas");if(cv)new Chart(cv,c);}catch(e){}});' +
-                '<\/script></body></html>');
+                '<\/script>' +
+                '</body></html>'
+            );
             win.document.close();
             status('Preview opened!');
         });
+ 
 
         document.getElementById('bExp').addEventListener('click', function () {
             exportZipFromEditor();
