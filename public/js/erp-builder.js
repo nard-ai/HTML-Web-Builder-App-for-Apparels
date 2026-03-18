@@ -2606,6 +2606,634 @@
             })()
         },
 
+        // ── PROFILE MODAL TEMPLATES ───────────────────────────────────────
+// Paste these inside your BLOCKS array in erp-builder.js
+// Suggested location: after the HR Screens section
+// ─────────────────────────────────────────────────────────────────
+
+         {
+            id: 'profile-modal-1',
+            label: 'Profile Modal: Clean Card',
+            category: 'Profile Modal',
+            content: '<div class="min-h-screen bg-black/50 flex items-center justify-center p-5">' +
+                '<div class="bg-white rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl">' +
+                '<div class="bg-gradient-to-br from-[#B90E0A] to-[#7a0806] px-7 pt-6 pb-14">' +
+                '<div class="flex justify-between items-start">' +
+                '<div><p class="text-[10px] font-bold tracking-[2px] text-white/60 uppercase">Employee Profile</p>' +
+                '<p class="text-[11px] text-white/50 mt-1">HR-00142 · Active</p></div>' +
+                '<button class="bg-white/20 text-white w-7 h-7 rounded-full text-sm">✕</button>' +
+                '</div></div>' +
+                '<div class="px-7 pb-6 -mt-11">' +
+                '<div class="flex items-end gap-4 mb-5">' +
+                '<div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#B90E0A] to-[#7a0806] border-4 border-white flex items-center justify-center text-white font-black text-2xl shadow-lg shrink-0">MS</div>' +
+                '<div class="pb-1"><p class="text-lg font-extrabold text-gray-900">Maria Santos</p>' +
+                '<p class="text-xs font-semibold text-[#B90E0A]">Sr. Sales Associate</p>' +
+                '<p class="text-[11px] text-gray-400 mt-0.5">SM Mall of Asia Branch</p></div>' +
+                '</div>' +
+                '<div class="grid grid-cols-2 gap-3 mb-5">' +
+                '<div class="bg-gray-50 rounded-xl p-3"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-wider mb-1">Employee ID</p><p class="text-sm font-semibold text-gray-900">HR-00142</p></div>' +
+                '<div class="bg-gray-50 rounded-xl p-3"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-wider mb-1">Department</p><p class="text-sm font-semibold text-gray-900">Retail Operations</p></div>' +
+                '<div class="bg-gray-50 rounded-xl p-3"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-wider mb-1">Date Hired</p><p class="text-sm font-semibold text-gray-900">March 15, 2021</p></div>' +
+                '<div class="bg-gray-50 rounded-xl p-3"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-wider mb-1">Employment Type</p><p class="text-sm font-semibold text-gray-900">Full-Time</p></div>' +
+                '<div class="bg-gray-50 rounded-xl p-3"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-wider mb-1">Email</p><p class="text-xs font-semibold text-gray-900">m.santos@bench.com.ph</p></div>' +
+                '<div class="bg-gray-50 rounded-xl p-3"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-wider mb-1">Phone</p><p class="text-sm font-semibold text-gray-900">+63 917 123 4567</p></div>' +
+                '</div>' +
+                '<div class="flex items-center justify-between pt-4 border-t border-gray-100">' +
+                '<span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold">● ACTIVE</span>' +
+                '<div class="flex gap-2">' +
+                '<button class="px-4 py-2 bg-gray-100 rounded-lg text-xs font-semibold text-gray-600">Edit</button>' +
+                '<button class="px-4 py-2 bg-[#B90E0A] rounded-lg text-xs font-semibold text-white">View Full Profile</button>' +
+                '</div></div>' +
+                '</div></div></div>'
+        },
+ 
+        {
+            id: 'profile-modal-2',
+            label: 'Profile Modal: Dark Sidebar',
+            category: 'Profile Modal',
+            content: '<div class="min-h-screen bg-black/60 flex items-center justify-center p-5">' +
+                '<div class="bg-white rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl flex">' +
+                '<div class="w-48 bg-[#1a1a1a] p-6 flex flex-col items-center shrink-0">' +
+                '<div class="w-[72px] h-[72px] rounded-full bg-gradient-to-br from-[#B90E0A] to-[#7a0806] flex items-center justify-center text-white font-black text-xl mb-3 border-2 border-[#333]">MS</div>' +
+                '<p class="text-sm font-bold text-white text-center leading-tight">Maria Santos</p>' +
+                '<p class="text-[10px] text-[#B90E0A] font-semibold mt-1 text-center">Sr. Sales Associate</p>' +
+                '<div class="w-full h-px bg-[#2a2a2a] my-4"></div>' +
+                '<span class="bg-green-600 text-white px-3 py-1 rounded-full text-[9px] font-bold tracking-wider">ACTIVE</span>' +
+                '<div class="mt-5 w-full">' +
+                '<p class="text-[9px] text-[#555] uppercase tracking-widest font-bold mb-2">Quick Links</p>' +
+                '<a href="#" class="block text-[#aaa] text-[11px] py-2 border-b border-[#222]">📄 201 File</a>' +
+                '<a href="#" class="block text-[#aaa] text-[11px] py-2 border-b border-[#222]">💰 Payslips</a>' +
+                '<a href="#" class="block text-[#aaa] text-[11px] py-2 border-b border-[#222]">📅 Attendance</a>' +
+                '<a href="#" class="block text-[#aaa] text-[11px] py-2">⭐ Performance</a>' +
+                '</div></div>' +
+                '<div class="flex-1 p-6">' +
+                '<div class="flex justify-between items-center mb-5">' +
+                '<div><p class="text-base font-extrabold text-gray-900">Employee Details</p>' +
+                '<p class="text-[11px] text-gray-400 mt-0.5">HR-00142 · SM Mall of Asia</p></div>' +
+                '<button class="text-gray-400 text-lg">✕</button></div>' +
+                '<p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-3 pb-2 border-b border-gray-100">Personal Information</p>' +
+                '<div class="grid grid-cols-2 gap-3 mb-5">' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">Full Name</p><p class="text-xs font-semibold text-gray-900">Maria Santos</p></div>' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">Date of Birth</p><p class="text-xs font-semibold text-gray-900">June 12, 1995</p></div>' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">Email</p><p class="text-xs font-semibold text-gray-900">m.santos@bench.com.ph</p></div>' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">Phone</p><p class="text-xs font-semibold text-gray-900">+63 917 123 4567</p></div>' +
+                '</div>' +
+                '<p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-3 pb-2 border-b border-gray-100">Employment Details</p>' +
+                '<div class="grid grid-cols-2 gap-3 mb-5">' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">Position</p><p class="text-xs font-semibold text-gray-900">Sr. Sales Associate</p></div>' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">Branch</p><p class="text-xs font-semibold text-gray-900">SM Mall of Asia</p></div>' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">Date Hired</p><p class="text-xs font-semibold text-gray-900">March 15, 2021</p></div>' +
+                '<div><p class="text-[10px] text-gray-400 mb-0.5">SSS No.</p><p class="text-xs font-semibold text-gray-900">34-5678901-2</p></div>' +
+                '</div>' +
+                '<div class="flex gap-2 pt-4 border-t border-gray-100">' +
+                '<button class="flex-1 py-2 bg-gray-100 rounded-lg text-xs font-semibold text-gray-600">Edit Profile</button>' +
+                '<button class="flex-1 py-2 bg-[#B90E0A] rounded-lg text-xs font-semibold text-white">Full Profile →</button>' +
+                '</div></div></div></div>'
+        },
+ 
+        {
+            id: 'profile-modal-3',
+            label: 'Profile Modal: Bottom Sheet',
+            category: 'Profile Modal',
+            content: '<div class="min-h-screen bg-black/40 flex items-end justify-center">' +
+                '<div class="bg-white w-full max-w-2xl rounded-t-3xl shadow-2xl overflow-hidden">' +
+                '<div class="flex justify-center pt-3 pb-1"><div class="w-10 h-1 bg-gray-200 rounded-full"></div></div>' +
+                '<div class="px-6 py-4 flex items-center gap-4 border-b border-gray-100">' +
+                '<div class="w-[52px] h-[52px] rounded-2xl bg-gradient-to-br from-[#B90E0A] to-[#7a0806] flex items-center justify-center text-white font-black text-lg shrink-0">MS</div>' +
+                '<div class="flex-1"><p class="text-base font-extrabold text-gray-900">Maria Santos</p>' +
+                '<p class="text-xs text-[#B90E0A] font-semibold">Sr. Sales Associate · SM Mall of Asia</p></div>' +
+                '<span class="bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full text-[10px] font-bold">ACTIVE</span>' +
+                '<button class="text-gray-400 text-lg ml-2">✕</button></div>' +
+                '<div class="flex border-b border-gray-100">' +
+                '<button class="flex-1 py-3 text-xs font-bold text-[#B90E0A] border-b-2 border-[#B90E0A] bg-transparent">Overview</button>' +
+                '<button class="flex-1 py-3 text-xs font-semibold text-gray-400 bg-transparent">Employment</button>' +
+                '<button class="flex-1 py-3 text-xs font-semibold text-gray-400 bg-transparent">Documents</button>' +
+                '<button class="flex-1 py-3 text-xs font-semibold text-gray-400 bg-transparent">History</button>' +
+                '</div>' +
+                '<div class="grid grid-cols-3 gap-4 p-6 border-b border-gray-50">' +
+                '<div class="text-center p-4 bg-red-50 rounded-2xl"><p class="text-xl font-black text-[#B90E0A]">3.5</p><p class="text-[10px] text-gray-500 mt-1">Yrs Tenure</p></div>' +
+                '<div class="text-center p-4 bg-green-50 rounded-2xl"><p class="text-xl font-black text-green-600">98%</p><p class="text-[10px] text-gray-500 mt-1">Attendance</p></div>' +
+                '<div class="text-center p-4 bg-blue-50 rounded-2xl"><p class="text-xl font-black text-blue-600">4.8</p><p class="text-[10px] text-gray-500 mt-1">Performance</p></div>' +
+                '</div>' +
+                '<div class="grid grid-cols-2 gap-3 p-6 pb-4">' +
+                '<div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl"><div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-sm shadow-sm">📧</div><div><p class="text-[9px] text-gray-400">Email</p><p class="text-xs font-semibold text-gray-900">m.santos@bench.com.ph</p></div></div>' +
+                '<div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl"><div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-sm shadow-sm">📱</div><div><p class="text-[9px] text-gray-400">Phone</p><p class="text-xs font-semibold text-gray-900">+63 917 123 4567</p></div></div>' +
+                '<div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl"><div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-sm shadow-sm">🏢</div><div><p class="text-[9px] text-gray-400">Department</p><p class="text-xs font-semibold text-gray-900">Retail Operations</p></div></div>' +
+                '<div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl"><div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-sm shadow-sm">📅</div><div><p class="text-[9px] text-gray-400">Date Hired</p><p class="text-xs font-semibold text-gray-900">March 15, 2021</p></div></div>' +
+                '</div>' +
+                '<div class="flex gap-3 px-6 pb-6">' +
+                '<button class="flex-1 py-3 bg-gray-100 rounded-xl text-xs font-bold text-gray-600">Message</button>' +
+                '<button class="flex-1 py-3 bg-gray-100 rounded-xl text-xs font-bold text-gray-600">Edit</button>' +
+                '<button class="flex-1 py-3 bg-[#B90E0A] rounded-xl text-xs font-bold text-white">View Full Profile</button>' +
+                '</div></div></div>'
+        },
+ 
+        {
+            id: 'profile-modal-4',
+            label: 'Profile Modal: Corporate Full',
+            category: 'Profile Modal',
+            content: '<div class="min-h-screen bg-black/50 flex items-center justify-center p-5">' +
+                '<div class="bg-white rounded-2xl w-full max-w-3xl shadow-2xl overflow-hidden">' +
+                '<div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">' +
+                '<div class="flex items-center gap-2">' +
+                '<div class="w-7 h-7 bg-[#B90E0A] rounded-lg flex items-center justify-center text-white font-black text-xs">B</div>' +
+                '<span class="text-sm font-bold text-gray-800">Bench Apparel ERP</span>' +
+                '<span class="text-gray-300 mx-2">|</span>' +
+                '<span class="text-xs text-gray-500">Employee Profile</span></div>' +
+                '<div class="flex items-center gap-2">' +
+                '<button class="px-3 py-1.5 bg-gray-100 rounded-lg text-xs font-semibold text-gray-600">Edit</button>' +
+                '<button class="px-3 py-1.5 bg-[#B90E0A] rounded-lg text-xs font-semibold text-white">Print 201</button>' +
+                '<button class="text-gray-400 text-lg ml-2">✕</button></div></div>' +
+                '<div class="bg-gradient-to-r from-gray-50 to-white px-6 py-5 flex items-center gap-5 border-b border-gray-100">' +
+                '<div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#B90E0A] to-[#7a0806] flex items-center justify-center text-white font-black text-2xl shadow-md shrink-0">MS</div>' +
+                '<div class="flex-1">' +
+                '<div class="flex items-center gap-3 mb-1">' +
+                '<p class="text-xl font-extrabold text-gray-900">Maria Santos</p>' +
+                '<span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-[10px] font-bold">ACTIVE</span>' +
+                '<span class="bg-gray-100 text-gray-600 px-2.5 py-0.5 rounded-full text-[10px] font-semibold">FULL-TIME</span></div>' +
+                '<p class="text-sm text-[#B90E0A] font-semibold">Sr. Sales Associate · Retail Operations</p>' +
+                '<p class="text-xs text-gray-400 mt-0.5">SM Mall of Asia · HR-00142</p></div>' +
+                '<div class="text-right shrink-0"><p class="text-[10px] text-gray-400">Date Hired</p><p class="text-sm font-bold text-gray-900">March 15, 2021</p><p class="text-[10px] text-gray-400 mt-1">3 yrs 10 mos</p></div></div>' +
+                '<div class="grid grid-cols-3 divide-x divide-gray-100">' +
+                '<div class="p-5"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-3">Personal</p>' +
+                '<div class="space-y-3">' +
+                '<div><p class="text-[10px] text-gray-400">Email</p><p class="text-xs font-semibold text-gray-800">m.santos@bench.com.ph</p></div>' +
+                '<div><p class="text-[10px] text-gray-400">Mobile</p><p class="text-xs font-semibold text-gray-800">+63 917 123 4567</p></div>' +
+                '<div><p class="text-[10px] text-gray-400">Birthday</p><p class="text-xs font-semibold text-gray-800">June 12, 1995</p></div>' +
+                '<div><p class="text-[10px] text-gray-400">Civil Status</p><p class="text-xs font-semibold text-gray-800">Single</p></div>' +
+                '</div></div>' +
+                '<div class="p-5"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-3">Government IDs</p>' +
+                '<div class="space-y-3">' +
+                '<div><p class="text-[10px] text-gray-400">SSS</p><p class="text-xs font-semibold text-gray-800">34-5678901-2</p></div>' +
+                '<div><p class="text-[10px] text-gray-400">PhilHealth</p><p class="text-xs font-semibold text-gray-800">12-345678901-3</p></div>' +
+                '<div><p class="text-[10px] text-gray-400">Pag-IBIG</p><p class="text-xs font-semibold text-gray-800">1234-5678-9012</p></div>' +
+                '<div><p class="text-[10px] text-gray-400">TIN</p><p class="text-xs font-semibold text-gray-800">123-456-789-000</p></div>' +
+                '</div></div>' +
+                '<div class="p-5"><p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-3">Performance</p>' +
+                '<div class="space-y-2.5">' +
+                '<div><div class="flex justify-between mb-1"><span class="text-[10px] text-gray-500">Attendance</span><span class="text-[10px] font-bold text-gray-800">98%</span></div><div class="w-full bg-gray-100 rounded-full h-1.5"><div class="bg-green-500 h-1.5 rounded-full w-[98%]"></div></div></div>' +
+                '<div><div class="flex justify-between mb-1"><span class="text-[10px] text-gray-500">Sales Target</span><span class="text-[10px] font-bold text-gray-800">112%</span></div><div class="w-full bg-gray-100 rounded-full h-1.5"><div class="bg-[#B90E0A] h-1.5 rounded-full w-full"></div></div></div>' +
+                '<div><div class="flex justify-between mb-1"><span class="text-[10px] text-gray-500">Performance</span><span class="text-[10px] font-bold text-gray-800">4.8/5</span></div><div class="w-full bg-gray-100 rounded-full h-1.5"><div class="bg-blue-500 h-1.5 rounded-full w-[96%]"></div></div></div>' +
+                '<div class="pt-3 border-t border-gray-100 mt-2"><p class="text-[10px] text-gray-400">Direct Manager</p><p class="text-xs font-semibold text-gray-800">Juan dela Cruz</p></div>' +
+                '</div></div></div>' +
+                '<div class="px-6 py-3 bg-gray-50 border-t border-gray-100 flex justify-between items-center">' +
+                '<p class="text-[10px] text-gray-400">Last updated: March 18, 2026</p>' +
+                '<a href="#" class="text-xs text-[#B90E0A] font-semibold">View Complete 201 File →</a>' +
+                '</div></div></div>'
+        },
+ 
+        {
+            id: 'profile-modal-5',
+            label: 'Profile Modal: Dark Overlay',
+            category: 'Profile Modal',
+            content: '<div class="min-h-screen bg-[#0d0d0d] flex items-center justify-center p-5">' +
+                '<div class="bg-[#111] rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl border border-white/5">' +
+                '<div class="flex items-center justify-between px-5 py-4 border-b border-white/5">' +
+                '<div class="flex items-center gap-2">' +
+                '<div class="w-6 h-6 bg-[#B90E0A] rounded flex items-center justify-center text-white font-black text-xs">B</div>' +
+                '<span class="text-[10px] font-bold text-white/30 uppercase tracking-widest">Employee Profile</span></div>' +
+                '<button class="text-white/30 text-lg">✕</button></div>' +
+                '<div class="p-5 flex items-center gap-4 border-b border-white/5">' +
+                '<div class="relative shrink-0">' +
+                '<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#B90E0A] to-[#5a0604] flex items-center justify-center text-white font-black text-xl">MS</div>' +
+                '<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-[#111]"></div></div>' +
+                '<div class="flex-1">' +
+                '<p class="text-base font-extrabold text-white">Maria Santos</p>' +
+                '<p class="text-xs text-[#B90E0A] font-semibold mt-0.5">Sr. Sales Associate</p>' +
+                '<p class="text-[11px] text-white/30 mt-0.5">SM Mall of Asia · HR-00142</p></div>' +
+                '<div class="text-right shrink-0">' +
+                '<span class="bg-green-500/10 text-green-400 border border-green-500/20 px-2.5 py-1 rounded-full text-[10px] font-bold">ACTIVE</span>' +
+                '<p class="text-[10px] text-white/20 mt-1.5">Full-Time</p></div></div>' +
+                '<div class="grid grid-cols-3 divide-x divide-white/5 border-b border-white/5">' +
+                '<div class="p-4 text-center"><p class="text-lg font-black text-white">3.5</p><p class="text-[9px] text-white/30 uppercase tracking-wider mt-0.5">Yrs Tenure</p></div>' +
+                '<div class="p-4 text-center"><p class="text-lg font-black text-green-400">98%</p><p class="text-[9px] text-white/30 uppercase tracking-wider mt-0.5">Attendance</p></div>' +
+                '<div class="p-4 text-center"><p class="text-lg font-black text-[#B90E0A]">4.8</p><p class="text-[9px] text-white/30 uppercase tracking-wider mt-0.5">Rating</p></div>' +
+                '</div>' +
+                '<div class="p-5 grid grid-cols-2 gap-4 border-b border-white/5">' +
+                '<div><p class="text-[9px] text-white/25 uppercase tracking-wider mb-1">Email</p><p class="text-xs font-medium text-white/60">m.santos@bench.com.ph</p></div>' +
+                '<div><p class="text-[9px] text-white/25 uppercase tracking-wider mb-1">Phone</p><p class="text-xs font-medium text-white/60">+63 917 123 4567</p></div>' +
+                '<div><p class="text-[9px] text-white/25 uppercase tracking-wider mb-1">Department</p><p class="text-xs font-medium text-white/60">Retail Operations</p></div>' +
+                '<div><p class="text-[9px] text-white/25 uppercase tracking-wider mb-1">Date Hired</p><p class="text-xs font-medium text-white/60">March 15, 2021</p></div>' +
+                '<div><p class="text-[9px] text-white/25 uppercase tracking-wider mb-1">SSS No.</p><p class="text-xs font-medium text-white/60">34-5678901-2</p></div>' +
+                '<div><p class="text-[9px] text-white/25 uppercase tracking-wider mb-1">Manager</p><p class="text-xs font-medium text-white/60">Juan dela Cruz</p></div>' +
+                '</div>' +
+                '<div class="flex gap-2 p-4">' +
+                '<button class="flex-1 py-2.5 bg-white/5 border border-white/10 rounded-xl text-xs font-semibold text-white/40">Message</button>' +
+                '<button class="flex-1 py-2.5 bg-white/5 border border-white/10 rounded-xl text-xs font-semibold text-white/40">Edit</button>' +
+                '<button class="flex-1 py-2.5 bg-[#B90E0A] rounded-xl text-xs font-semibold text-white">View Profile →</button>' +
+                '</div></div></div>'
+        },
+    
+
+// ─────────────────────────────────────────────────────────────────
+// END OF PROFILE MODAL BLOCKS
+// ─────────────────────────────────────────────────────────────────
+
+
+
+    {
+            id: 'motion-landing-1',
+            label: 'Motion: Bold Product Launch',
+            category: 'Motion Pages',
+            content: (function(){
+                return '<div style="min-height:100vh;background:#0a0a0a;overflow:hidden;font-family:\'Helvetica Neue\',Arial,sans-serif;position:relative;">' +
+ 
+                // ── Animated gradient background
+                '<style>' +
+                '@keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}' +
+                '@keyframes floatA{0%,100%{transform:translateY(0px) rotate(-12deg)}50%{transform:translateY(-28px) rotate(-8deg)}}' +
+                '@keyframes floatB{0%,100%{transform:translateY(0px) rotate(8deg)}50%{transform:translateY(-20px) rotate(12deg)}}' +
+                '@keyframes slideUp{0%{opacity:0;transform:translateY(60px)}100%{opacity:1;transform:translateY(0)}}' +
+                '@keyframes slideLeft{0%{opacity:0;transform:translateX(-60px)}100%{opacity:1;transform:translateX(0)}}' +
+                '@keyframes slideRight{0%{opacity:0;transform:translateX(60px)}100%{opacity:1;transform:translateX(0)}}' +
+                '@keyframes particle{0%{transform:translateY(100vh) scale(0);opacity:0}20%{opacity:.6}80%{opacity:.3}100%{transform:translateY(-100px) scale(1.2);opacity:0}}' +
+                '@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}' +
+                '.ml1-hero{background:linear-gradient(135deg,#0a0a0a 0%,#1a0505 40%,#B90E0A 100%);background-size:300% 300%;animation:gradShift 8s ease infinite;}' +
+                '.ml1-float-a{animation:floatA 4s ease-in-out infinite;}' +
+                '.ml1-float-b{animation:floatB 5s ease-in-out infinite;}' +
+                '.ml1-slide-up{opacity:0;animation:slideUp .8s ease forwards;}' +
+                '.ml1-slide-left{opacity:0;animation:slideLeft .8s ease forwards;}' +
+                '.ml1-slide-right{opacity:0;animation:slideRight .8s ease forwards;}' +
+                '.ml1-d1{animation-delay:.1s}.ml1-d2{animation-delay:.3s}.ml1-d3{animation-delay:.5s}.ml1-d4{animation-delay:.7s}.ml1-d5{animation-delay:.9s}' +
+                '.ml1-btn{background:#B90E0A;color:#fff;border:none;padding:16px 40px;font-size:14px;font-weight:800;letter-spacing:2px;text-transform:uppercase;border-radius:4px;cursor:pointer;animation:pulse 2s ease infinite;}' +
+                '.ml1-btn:hover{background:#e01410;}' +
+                '.ml1-particle{position:absolute;border-radius:50%;pointer-events:none;}' +
+                '.ml1-reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease;}' +
+                '.ml1-reveal.visible{opacity:1;transform:translateY(0);}' +
+                '</style>' +
+ 
+                // Particle layer
+                '<div id="ml1-particles" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;"></div>' +
+ 
+                // Hero section
+                '<section class="ml1-hero" style="min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;padding:40px 24px;">' +
+                '<div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;width:100%;">' +
+ 
+                // Left text
+                '<div>' +
+                '<div class="ml1-slide-left ml1-d1" style="font-size:11px;font-weight:700;letter-spacing:4px;color:#B90E0A;text-transform:uppercase;margin-bottom:16px;">New Collection 2026</div>' +
+                '<h1 id="ml1-typewriter" class="ml1-slide-left ml1-d2" style="font-size:72px;font-weight:900;color:#fff;line-height:1;margin:0 0 24px;text-transform:uppercase;letter-spacing:-2px;"></h1>' +
+                '<p class="ml1-slide-left ml1-d3" style="font-size:16px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:36px;max-width:420px;">Bold. Uncompromising. Made for those who refuse to blend in. Experience fashion that speaks before you do.</p>' +
+                '<div class="ml1-slide-left ml1-d4" style="display:flex;gap:14px;flex-wrap:wrap;">' +
+                '<button class="ml1-btn">Shop Now</button>' +
+                '<button style="background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.2);padding:16px 40px;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:4px;cursor:pointer;">View Lookbook</button>' +
+                '</div>' +
+                '<div class="ml1-slide-up ml1-d5" style="display:flex;gap:32px;margin-top:48px;">' +
+                '<div><div style="font-size:28px;font-weight:900;color:#fff;">1,240+</div><div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;">Employees</div></div>' +
+                '<div style="width:1px;background:rgba(255,255,255,0.1);"></div>' +
+                '<div><div style="font-size:28px;font-weight:900;color:#fff;">48</div><div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;">Branches</div></div>' +
+                '<div style="width:1px;background:rgba(255,255,255,0.1);"></div>' +
+                '<div><div style="font-size:28px;font-weight:900;color:#fff;">30+</div><div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;">Years</div></div>' +
+                '</div></div>' +
+ 
+                // Right floating product image
+                '<div style="display:flex;align-items:center;justify-content:center;position:relative;">' +
+                '<div class="ml1-float-a" style="width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(185,14,10,0.3),transparent 70%);display:flex;align-items:center;justify-content:center;">' +
+                '<div style="width:240px;height:240px;background:linear-gradient(135deg,#B90E0A,#7a0806);border-radius:24px;display:flex;align-items:center;justify-content:center;box-shadow:0 40px 80px rgba(185,14,10,0.4);font-size:80px;">👕</div>' +
+                '</div>' +
+                '<div class="ml1-float-b" style="position:absolute;bottom:20px;right:20px;width:80px;height:80px;background:linear-gradient(135deg,#fff,#f0f0f0);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 12px 32px rgba(0,0,0,0.3);">🧥</div>' +
+                '<div class="ml1-float-a" style="position:absolute;top:30px;left:10px;width:60px;height:60px;background:rgba(185,14,10,0.2);border:1px solid rgba(185,14,10,0.4);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;">✨</div>' +
+                '</div>' +
+                '</div></section>' +
+ 
+                // Features section with scroll reveal
+                '<section style="background:#0f0f0f;padding:80px 24px;">' +
+                '<div style="max-width:1100px;margin:0 auto;">' +
+                '<h2 class="ml1-reveal" style="font-size:42px;font-weight:900;color:#fff;text-align:center;margin-bottom:60px;text-transform:uppercase;letter-spacing:-1px;">Why <span style="color:#B90E0A;">Bench</span></h2>' +
+                '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">' +
+                '<div class="ml1-reveal" style="background:#1a1a1a;border:1px solid #222;border-radius:16px;padding:32px;text-align:center;">' +
+                '<div style="font-size:40px;margin-bottom:16px;">🎯</div>' +
+                '<h3 style="font-size:18px;font-weight:800;color:#fff;margin:0 0 10px;">Premium Quality</h3>' +
+                '<p style="font-size:13px;color:rgba(255,255,255,0.4);line-height:1.6;margin:0;">Every piece crafted with precision and care for lasting excellence.</p>' +
+                '</div>' +
+                '<div class="ml1-reveal" style="background:#1a1a1a;border:1px solid #222;border-radius:16px;padding:32px;text-align:center;">' +
+                '<div style="font-size:40px;margin-bottom:16px;">🚀</div>' +
+                '<h3 style="font-size:18px;font-weight:800;color:#fff;margin:0 0 10px;">Fast Delivery</h3>' +
+                '<p style="font-size:13px;color:rgba(255,255,255,0.4);line-height:1.6;margin:0;">Nationwide shipping to all 48 branches and direct to your door.</p>' +
+                '</div>' +
+                '<div class="ml1-reveal" style="background:#1a1a1a;border:1px solid #222;border-radius:16px;padding:32px;text-align:center;">' +
+                '<div style="font-size:40px;margin-bottom:16px;">💎</div>' +
+                '<h3 style="font-size:18px;font-weight:800;color:#fff;margin:0 0 10px;">Exclusive Designs</h3>' +
+                '<p style="font-size:13px;color:rgba(255,255,255,0.4);line-height:1.6;margin:0;">Limited collections you won\'t find anywhere else in the market.</p>' +
+                '</div>' +
+                '</div></div></section>' +
+ 
+                // JS: particles + typewriter + scroll reveal
+                '<script>' +
+                '(function(){' +
+                // Particles
+                'var pc=document.getElementById("ml1-particles");' +
+                'var colors=["rgba(185,14,10,0.4)","rgba(255,255,255,0.1)","rgba(185,14,10,0.2)"];' +
+                'for(var i=0;i<25;i++){' +
+                '(function(i){' +
+                'var p=document.createElement("div");' +
+                'p.className="ml1-particle";' +
+                'var sz=Math.random()*12+4;' +
+                'p.style.cssText="width:"+sz+"px;height:"+sz+"px;left:"+Math.random()*100+"%;background:"+colors[Math.floor(Math.random()*colors.length)]+";animation:particle "+(Math.random()*8+6)+"s linear "+(Math.random()*6)+"s infinite;";' +
+                'pc.appendChild(p);' +
+                '})(i);}' +
+                // Typewriter
+                'var words=["DEFINE\\nBOLD.","WEAR\\nPOWER.","BE\\nBENCH."];' +
+                'var wi=0,ci=0,del=false;' +
+                'var el=document.getElementById("ml1-typewriter");' +
+                'function type(){' +
+                'var w=words[wi];' +
+                'if(!del){el.innerHTML=w.substring(0,ci+1).replace("\\n","<br>");ci++;' +
+                'if(ci===w.length){del=true;setTimeout(type,2000);return;}}' +
+                'else{el.innerHTML=w.substring(0,ci-1).replace("\\n","<br>");ci--;' +
+                'if(ci===0){del=false;wi=(wi+1)%words.length;}}' +
+                'setTimeout(type,del?60:120);}' +
+                'type();' +
+                // Scroll reveal
+                'var reveals=document.querySelectorAll(".ml1-reveal");' +
+                'function checkReveal(){reveals.forEach(function(r){var rect=r.getBoundingClientRect();if(rect.top<window.innerHeight-80)r.classList.add("visible");});}' +
+                'window.addEventListener("scroll",checkReveal);checkReveal();' +
+                '})();' +
+                '<\/script>' +
+                '</div>';
+            })()
+        },
+ 
+        {
+            id: 'motion-landing-2',
+            label: 'Motion: Neon Tech Hero',
+            category: 'Motion Pages',
+            content: (function(){
+                return '<div style="min-height:100vh;background:#050510;overflow:hidden;font-family:\'Helvetica Neue\',Arial,sans-serif;position:relative;">' +
+ 
+                '<style>' +
+                '@keyframes gradNeon{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}' +
+                '@keyframes floatNeon{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-20px) scale(1.02)}}' +
+                '@keyframes glowPulse{0%,100%{box-shadow:0 0 20px rgba(185,14,10,0.3),0 0 60px rgba(185,14,10,0.1)}50%{box-shadow:0 0 40px rgba(185,14,10,0.6),0 0 100px rgba(185,14,10,0.2)}}' +
+                '@keyframes scanline{0%{transform:translateY(-100%)}100%{transform:translateY(100vh)}}' +
+                '@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}' +
+                '@keyframes neonSlideUp{0%{opacity:0;transform:translateY(80px)}100%{opacity:1;transform:translateY(0)}}' +
+                '@keyframes neonParticle{0%{transform:translate(0,0);opacity:.8}100%{transform:translate(var(--tx),var(--ty));opacity:0}}' +
+                '@keyframes borderAnim{0%{background-position:0% 50%}100%{background-position:200% 50%}}' +
+                '.neon-hero{background:linear-gradient(135deg,#050510,#0d0520,#100510);background-size:400% 400%;animation:gradNeon 12s ease infinite;}' +
+                '.neon-float{animation:floatNeon 6s ease-in-out infinite;}' +
+                '.neon-glow{animation:glowPulse 3s ease-in-out infinite;}' +
+                '.neon-su{opacity:0;animation:neonSlideUp .9s cubic-bezier(.16,1,.3,1) forwards;}' +
+                '.neon-d1{animation-delay:.1s}.neon-d2{animation-delay:.25s}.neon-d3{animation-delay:.4s}.neon-d4{animation-delay:.55s}.neon-d5{animation-delay:.7s}' +
+                '.neon-reveal{opacity:0;transform:translateY(50px);transition:all .8s cubic-bezier(.16,1,.3,1);}' +
+                '.neon-reveal.vis{opacity:1;transform:translateY(0);}' +
+                '.neon-card{background:rgba(255,255,255,0.02);border:1px solid rgba(185,14,10,0.2);border-radius:16px;padding:28px;transition:all .3s;cursor:default;}' +
+                '.neon-card:hover{border-color:rgba(185,14,10,0.6);background:rgba(185,14,10,0.05);transform:translateY(-4px);}' +
+                '.cursor-blink{animation:blink 1s step-end infinite;}' +
+                '.neon-btn{position:relative;background:transparent;border:none;padding:0;cursor:pointer;}' +
+                '.neon-btn-inner{background:linear-gradient(90deg,#B90E0A,#ff2020,#B90E0A);background-size:200%;animation:borderAnim 3s linear infinite;color:#fff;padding:15px 38px;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;border-radius:4px;display:block;}' +
+                '</style>' +
+ 
+                // Scanline effect
+                '<div style="position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:100;overflow:hidden;">' +
+                '<div style="position:absolute;width:100%;height:2px;background:rgba(185,14,10,0.03);animation:scanline 4s linear infinite;"></div>' +
+                '</div>' +
+ 
+                // Grid background
+                '<div style="position:absolute;inset:0;background-image:linear-gradient(rgba(185,14,10,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(185,14,10,0.05) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;"></div>' +
+ 
+                // Particle canvas
+                '<canvas id="neon-canvas" style="position:absolute;inset:0;pointer-events:none;z-index:0;"></canvas>' +
+ 
+                // Hero
+                '<section class="neon-hero" style="min-height:100vh;display:flex;align-items:center;padding:60px 24px;position:relative;z-index:1;">' +
+                '<div style="max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">' +
+ 
+                '<div>' +
+                '<div class="neon-su neon-d1" style="display:inline-flex;align-items:center;gap:8px;background:rgba(185,14,10,0.1);border:1px solid rgba(185,14,10,0.3);padding:6px 14px;border-radius:20px;margin-bottom:24px;">' +
+                '<div style="width:6px;height:6px;background:#B90E0A;border-radius:50%;animation:glowPulse 1.5s infinite;"></div>' +
+                '<span style="font-size:10px;font-weight:700;color:#B90E0A;letter-spacing:2px;text-transform:uppercase;">System Online</span>' +
+                '</div>' +
+                '<h1 class="neon-su neon-d2" style="font-size:64px;font-weight:900;color:#fff;line-height:1.05;margin:0 0 8px;text-transform:uppercase;letter-spacing:-2px;">' +
+                'BENCH<br><span style="color:#B90E0A;">ERP</span> <span id="neon-tw" style="color:#fff;"></span><span class="cursor-blink" style="color:#B90E0A;">|</span>' +
+                '</h1>' +
+                '<p class="neon-su neon-d3" style="font-size:15px;color:rgba(255,255,255,0.45);line-height:1.8;margin:20px 0 36px;max-width:440px;">Next-generation enterprise resource planning. Real-time data. Intelligent automation. Built for the modern retail operation.</p>' +
+                '<div class="neon-su neon-d4" style="display:flex;gap:12px;flex-wrap:wrap;">' +
+                '<button class="neon-btn"><span class="neon-btn-inner">Get Started</span></button>' +
+                '<button style="background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.1);padding:15px 38px;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:4px;cursor:pointer;">Watch Demo</button>' +
+                '</div>' +
+                '<div class="neon-su neon-d5" style="display:flex;gap:0;margin-top:48px;border:1px solid rgba(255,255,255,0.06);border-radius:12px;overflow:hidden;">' +
+                '<div style="flex:1;padding:16px;text-align:center;border-right:1px solid rgba(255,255,255,0.06);"><div style="font-size:22px;font-weight:900;color:#B90E0A;">99.9%</div><div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1px;text-transform:uppercase;margin-top:2px;">Uptime</div></div>' +
+                '<div style="flex:1;padding:16px;text-align:center;border-right:1px solid rgba(255,255,255,0.06);"><div style="font-size:22px;font-weight:900;color:#B90E0A;">48</div><div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1px;text-transform:uppercase;margin-top:2px;">Branches</div></div>' +
+                '<div style="flex:1;padding:16px;text-align:center;"><div style="font-size:22px;font-weight:900;color:#B90E0A;">1,240+</div><div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1px;text-transform:uppercase;margin-top:2px;">Users</div></div>' +
+                '</div></div>' +
+ 
+                // Right dashboard mockup
+                '<div class="neon-float neon-glow" style="background:rgba(255,255,255,0.02);border:1px solid rgba(185,14,10,0.2);border-radius:20px;padding:20px;overflow:hidden;">' +
+                '<div style="display:flex;gap:6px;margin-bottom:16px;"><div style="width:10px;height:10px;border-radius:50%;background:#B90E0A;"></div><div style="width:10px;height:10px;border-radius:50%;background:#333;"></div><div style="width:10px;height:10px;border-radius:50%;background:#333;"></div></div>' +
+                '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">' +
+                '<div style="background:rgba(185,14,10,0.1);border:1px solid rgba(185,14,10,0.2);border-radius:10px;padding:14px;"><div style="font-size:9px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:1px;">Revenue</div><div style="font-size:20px;font-weight:900;color:#fff;margin-top:4px;">₱2.4M</div><div style="font-size:9px;color:#22c55e;margin-top:2px;">↑ 12.4%</div></div>' +
+                '<div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:14px;"><div style="font-size:9px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:1px;">Orders</div><div style="font-size:20px;font-weight:900;color:#fff;margin-top:4px;">1,847</div><div style="font-size:9px;color:#22c55e;margin-top:2px;">↑ 8.1%</div></div>' +
+                '</div>' +
+                '<div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:10px;padding:14px;margin-bottom:10px;">' +
+                '<div style="font-size:9px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Sales Trend</div>' +
+                '<div style="display:flex;align-items:flex-end;gap:4px;height:50px;">' +
+                '<div style="flex:1;background:rgba(185,14,10,0.3);border-radius:2px 2px 0 0;height:40%;"></div>' +
+                '<div style="flex:1;background:rgba(185,14,10,0.4);border-radius:2px 2px 0 0;height:60%;"></div>' +
+                '<div style="flex:1;background:rgba(185,14,10,0.5);border-radius:2px 2px 0 0;height:45%;"></div>' +
+                '<div style="flex:1;background:rgba(185,14,10,0.6);border-radius:2px 2px 0 0;height:80%;"></div>' +
+                '<div style="flex:1;background:rgba(185,14,10,0.7);border-radius:2px 2px 0 0;height:65%;"></div>' +
+                '<div style="flex:1;background:#B90E0A;border-radius:2px 2px 0 0;height:100%;"></div>' +
+                '</div></div>' +
+                '<div style="display:flex;flex-direction:column;gap:6px;">' +
+                '<div style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.02);border-radius:8px;padding:8px 12px;"><span style="font-size:10px;color:rgba(255,255,255,0.5);">SM Mall of Asia</span><span style="font-size:10px;color:#22c55e;font-weight:700;">Active</span></div>' +
+                '<div style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.02);border-radius:8px;padding:8px 12px;"><span style="font-size:10px;color:rgba(255,255,255,0.5);">BGC Branch</span><span style="font-size:10px;color:#22c55e;font-weight:700;">Active</span></div>' +
+                '<div style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.02);border-radius:8px;padding:8px 12px;"><span style="font-size:10px;color:rgba(255,255,255,0.5);">Cebu Branch</span><span style="font-size:10px;color:#f59e0b;font-weight:700;">Syncing</span></div>' +
+                '</div></div>' +
+                '</div></section>' +
+ 
+                // Features
+                '<section style="background:#070712;padding:80px 24px;position:relative;z-index:1;">' +
+                '<div style="max-width:1100px;margin:0 auto;">' +
+                '<h2 class="neon-reveal" style="font-size:40px;font-weight:900;color:#fff;text-align:center;margin-bottom:12px;text-transform:uppercase;">Powerful <span style="color:#B90E0A;">Features</span></h2>' +
+                '<p class="neon-reveal" style="text-align:center;color:rgba(255,255,255,0.3);font-size:14px;margin-bottom:48px;">Everything you need to run your retail operation.</p>' +
+                '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">' +
+                '<div class="neon-card neon-reveal"><div style="font-size:28px;margin-bottom:12px;">📊</div><h3 style="font-size:15px;font-weight:800;color:#fff;margin:0 0 8px;">Real-time Analytics</h3><p style="font-size:12px;color:rgba(255,255,255,0.35);line-height:1.6;margin:0;">Live dashboards across all branches with instant KPI tracking.</p></div>' +
+                '<div class="neon-card neon-reveal"><div style="font-size:28px;margin-bottom:12px;">👥</div><h3 style="font-size:15px;font-weight:800;color:#fff;margin:0 0 8px;">HR Management</h3><p style="font-size:12px;color:rgba(255,255,255,0.35);line-height:1.6;margin:0;">Complete employee lifecycle from onboarding to payroll.</p></div>' +
+                '<div class="neon-card neon-reveal"><div style="font-size:28px;margin-bottom:12px;">📦</div><h3 style="font-size:15px;font-weight:800;color:#fff;margin:0 0 8px;">Inventory Control</h3><p style="font-size:12px;color:rgba(255,255,255,0.35);line-height:1.6;margin:0;">Stock tracking, transfers, and automated reorder alerts.</p></div>' +
+                '</div></div></section>' +
+ 
+                '<script>' +
+                '(function(){' +
+                // Typewriter
+                'var words=["SYSTEM","PLATFORM","SOLUTION","SUITE"];var wi=0,ci=0,del=false;' +
+                'var el=document.getElementById("neon-tw");' +
+                'function type(){if(!el)return;var w=words[wi];' +
+                'if(!del){el.textContent=w.substring(0,ci+1);ci++;if(ci===w.length){del=true;setTimeout(type,1800);return;}}' +
+                'else{el.textContent=w.substring(0,ci-1);ci--;if(ci===0){del=false;wi=(wi+1)%words.length;}}' +
+                'setTimeout(type,del?50:100);}type();' +
+                // Canvas particles
+                'var canvas=document.getElementById("neon-canvas");' +
+                'if(canvas){var ctx=canvas.getContext("2d");canvas.width=window.innerWidth;canvas.height=window.innerHeight;' +
+                'var pts=[];for(var i=0;i<60;i++)pts.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*2+.5});' +
+                'function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle="rgba(185,14,10,0.5)";ctx.fill();});' +
+                'pts.forEach(function(a,i){pts.slice(i+1).forEach(function(b){var d=Math.hypot(a.x-b.x,a.y-b.y);if(d<120){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle="rgba(185,14,10,"+(1-d/120)*.15+")";ctx.lineWidth=.5;ctx.stroke();}});});' +
+                'requestAnimationFrame(draw);}draw();}' +
+                // Scroll reveal
+                'var revs=document.querySelectorAll(".neon-reveal");' +
+                'function chk(){revs.forEach(function(r){if(r.getBoundingClientRect().top<window.innerHeight-60)r.classList.add("vis");});}' +
+                'window.addEventListener("scroll",chk);chk();' +
+                '})();' +
+                '<\/script>' +
+                '</div>';
+            })()
+        },
+ 
+        {
+            id: 'motion-landing-3',
+            label: 'Motion: Minimal Fashion Hero',
+            category: 'Motion Pages',
+            content: (function(){
+                return '<div style="min-height:100vh;background:#fafaf8;overflow:hidden;font-family:\'Helvetica Neue\',Arial,sans-serif;position:relative;">' +
+ 
+                '<style>' +
+                '@keyframes gradLight{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}' +
+                '@keyframes floatImg{0%,100%{transform:translateY(0) rotate(1deg)}50%{transform:translateY(-16px) rotate(-1deg)}}' +
+                '@keyframes fadeSlideUp{0%{opacity:0;transform:translateY(40px)}100%{opacity:1;transform:translateY(0)}}' +
+                '@keyframes fadeSlideRight{0%{opacity:0;transform:translateX(-40px)}100%{opacity:1;transform:translateX(0)}}' +
+                '@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}' +
+                '@keyframes bubbleRise{0%{transform:translateY(0) scale(1);opacity:.4}100%{transform:translateY(-100vh) scale(1.5);opacity:0}}' +
+                '@keyframes lineDraw{0%{width:0}100%{width:100%}}' +
+                '.mf-grad{background:linear-gradient(135deg,#fafaf8,#fff5f5,#fafaf8);background-size:300%;animation:gradLight 10s ease infinite;}' +
+                '.mf-float{animation:floatImg 5s ease-in-out infinite;}' +
+                '.mf-su{opacity:0;animation:fadeSlideUp .9s cubic-bezier(.16,1,.3,1) forwards;}' +
+                '.mf-sr{opacity:0;animation:fadeSlideRight .9s cubic-bezier(.16,1,.3,1) forwards;}' +
+                '.mf-d1{animation-delay:.1s}.mf-d2{animation-delay:.3s}.mf-d3{animation-delay:.5s}.mf-d4{animation-delay:.7s}.mf-d5{animation-delay:.9s}.mf-d6{animation-delay:1.1s}' +
+                '.mf-reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.16,1,.3,1);}' +
+                '.mf-reveal.vis{opacity:1;transform:translateY(0);}' +
+                '.mf-line{display:block;height:2px;background:#1a1a1a;animation:lineDraw 1s cubic-bezier(.16,1,.3,1) .8s forwards;width:0;}' +
+                '.mf-tag{display:inline-block;background:#1a1a1a;color:#fff;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:2px;}' +
+                '.mf-btn-primary{background:#1a1a1a;color:#fff;border:none;padding:16px 44px;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .2s;}' +
+                '.mf-btn-primary:hover{background:#B90E0A;}' +
+                '.mf-btn-outline{background:transparent;color:#1a1a1a;border:1.5px solid #1a1a1a;padding:15px 44px;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .2s;}' +
+                '.mf-btn-outline:hover{background:#1a1a1a;color:#fff;}' +
+                '.mf-bubble{position:absolute;border-radius:50%;pointer-events:none;}' +
+                '.mf-product-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 20px rgba(0,0,0,0.06);transition:all .3s;cursor:pointer;}' +
+                '.mf-product-card:hover{transform:translateY(-8px);box-shadow:0 12px 40px rgba(0,0,0,0.12);}' +
+                '</style>' +
+ 
+                // Bubble layer
+                '<div id="mf-bubbles" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;"></div>' +
+ 
+                // Nav
+                '<nav class="mf-grad" style="position:sticky;top:0;z-index:100;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(0,0,0,0.06);backdrop-filter:blur(8px);">' +
+                '<div style="font-size:22px;font-weight:900;color:#1a1a1a;letter-spacing:-1px;">BENCH</div>' +
+                '<div style="display:flex;gap:32px;">' +
+                '<a href="#" style="font-size:12px;font-weight:600;color:#555;text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Collection</a>' +
+                '<a href="#" style="font-size:12px;font-weight:600;color:#555;text-decoration:none;letter-spacing:1px;text-transform:uppercase;">About</a>' +
+                '<a href="#" style="font-size:12px;font-weight:600;color:#555;text-decoration:none;letter-spacing:1px;text-transform:uppercase;">Stores</a>' +
+                '</div>' +
+                '<button style="background:#B90E0A;color:#fff;border:none;padding:9px 20px;font-size:11px;font-weight:700;letter-spacing:1px;cursor:pointer;border-radius:4px;">Shop Now</button>' +
+                '</nav>' +
+ 
+                // Hero
+                '<section class="mf-grad" style="min-height:calc(100vh - 64px);display:grid;grid-template-columns:1fr 1fr;gap:0;position:relative;z-index:1;">' +
+ 
+                // Left text half
+                '<div style="display:flex;flex-direction:column;justify-content:center;padding:80px 60px;">' +
+                '<span class="mf-tag mf-su mf-d1" style="align-self:flex-start;margin-bottom:24px;">SS 2026 Collection</span>' +
+                '<h1 class="mf-su mf-d2" style="font-size:80px;font-weight:900;color:#1a1a1a;line-height:.95;margin:0 0 8px;text-transform:uppercase;letter-spacing:-3px;">' +
+                '<span id="mf-tw"></span>' +
+                '</h1>' +
+                '<span class="mf-line mf-d3"></span>' +
+                '<p class="mf-su mf-d4" style="font-size:15px;color:#888;line-height:1.8;margin:24px 0 40px;max-width:400px;">Timeless silhouettes. Contemporary edge. Crafted for the confident Filipino who wears their story.</p>' +
+                '<div class="mf-su mf-d5" style="display:flex;gap:12px;">' +
+                '<button class="mf-btn-primary">Explore Now</button>' +
+                '<button class="mf-btn-outline">Our Story</button>' +
+                '</div>' +
+                '<div class="mf-su mf-d6" style="display:flex;gap:24px;margin-top:56px;padding-top:32px;border-top:1px solid #e5e5e5;">' +
+                '<div><div style="font-size:24px;font-weight:900;color:#1a1a1a;">48</div><div style="font-size:10px;color:#aaa;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;">Branches</div></div>' +
+                '<div><div style="font-size:24px;font-weight:900;color:#1a1a1a;">30+</div><div style="font-size:10px;color:#aaa;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;">Years</div></div>' +
+                '<div><div style="font-size:24px;font-weight:900;color:#B90E0A;">PH</div><div style="font-size:10px;color:#aaa;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;">Nationwide</div></div>' +
+                '</div></div>' +
+ 
+                // Right image half
+                '<div style="background:linear-gradient(135deg,#fff5f5,#ffe8e8);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">' +
+                '<div class="mf-float mf-su mf-d2" style="width:300px;height:380px;background:linear-gradient(145deg,#B90E0A,#7a0806);border-radius:32px;display:flex;align-items:center;justify-content:center;box-shadow:0 40px 80px rgba(185,14,10,0.25);font-size:120px;">👗</div>' +
+                '<div class="mf-su mf-d3" style="position:absolute;bottom:60px;right:50px;background:#fff;border-radius:16px;padding:16px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.1);">' +
+                '<div style="font-size:10px;color:#aaa;text-transform:uppercase;letter-spacing:1px;">New Arrival</div>' +
+                '<div style="font-size:14px;font-weight:800;color:#1a1a1a;margin-top:2px;">Summer Dress</div>' +
+                '<div style="font-size:16px;font-weight:900;color:#B90E0A;margin-top:4px;">₱1,299</div>' +
+                '</div>' +
+                '<div class="mf-su mf-d4" style="position:absolute;top:60px;left:40px;background:#1a1a1a;color:#fff;border-radius:12px;padding:12px 16px;">' +
+                '<div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;opacity:.6;">Trending</div>' +
+                '<div style="font-size:13px;font-weight:800;margin-top:2px;">#1 This Week</div>' +
+                '</div></div>' +
+                '</section>' +
+ 
+                // Marquee strip
+                '<div style="background:#1a1a1a;overflow:hidden;padding:14px 0;position:relative;z-index:1;">' +
+                '<div id="mf-marquee" style="display:flex;gap:0;white-space:nowrap;animation:marquee 20s linear infinite;">' +
+                '<span style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;padding:0 32px;">New Collection</span>' +
+                '<span style="color:#B90E0A;padding:0 8px;">✦</span>' +
+                '<span style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;padding:0 32px;">SS 2026</span>' +
+                '<span style="color:#B90E0A;padding:0 8px;">✦</span>' +
+                '<span style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;padding:0 32px;">Bench Apparel</span>' +
+                '<span style="color:#B90E0A;padding:0 8px;">✦</span>' +
+                '<span style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;padding:0 32px;">Shop Now</span>' +
+                '<span style="color:#B90E0A;padding:0 8px;">✦</span>' +
+                '<span style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;padding:0 32px;">New Collection</span>' +
+                '<span style="color:#B90E0A;padding:0 8px;">✦</span>' +
+                '<span style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;padding:0 32px;">SS 2026</span>' +
+                '<span style="color:#B90E0A;padding:0 8px;">✦</span>' +
+                '<span style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;padding:0 32px;">Bench Apparel</span>' +
+                '<span style="color:#B90E0A;padding:0 8px;">✦</span>' +
+                '<span style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:3px;text-transform:uppercase;padding:0 32px;">Shop Now</span>' +
+                '<span style="color:#B90E0A;padding:0 8px;">✦</span>' +
+                '</div></div>' +
+ 
+                // Products scroll reveal
+                '<section style="padding:80px 40px;background:#fafaf8;position:relative;z-index:1;">' +
+                '<div style="max-width:1100px;margin:0 auto;">' +
+                '<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;">' +
+                '<h2 class="mf-reveal" style="font-size:40px;font-weight:900;color:#1a1a1a;margin:0;text-transform:uppercase;letter-spacing:-1.5px;">Featured<br><span style="color:#B90E0A;">Pieces</span></h2>' +
+                '<a class="mf-reveal" href="#" style="font-size:12px;font-weight:700;color:#1a1a1a;text-decoration:none;letter-spacing:2px;text-transform:uppercase;border-bottom:1.5px solid #1a1a1a;">View All →</a>' +
+                '</div>' +
+                '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">' +
+                '<div class="mf-product-card mf-reveal"><div style="height:200px;background:linear-gradient(135deg,#B90E0A,#7a0806);display:flex;align-items:center;justify-content:center;font-size:60px;">👕</div><div style="padding:16px;"><div style="font-size:10px;color:#aaa;text-transform:uppercase;letter-spacing:1px;">Essentials</div><div style="font-size:14px;font-weight:800;color:#1a1a1a;margin-top:3px;">Classic Polo</div><div style="font-size:15px;font-weight:900;color:#B90E0A;margin-top:6px;">₱899</div></div></div>' +
+                '<div class="mf-product-card mf-reveal"><div style="height:200px;background:linear-gradient(135deg,#1a1a1a,#333);display:flex;align-items:center;justify-content:center;font-size:60px;">🧥</div><div style="padding:16px;"><div style="font-size:10px;color:#aaa;text-transform:uppercase;letter-spacing:1px;">Outerwear</div><div style="font-size:14px;font-weight:800;color:#1a1a1a;margin-top:3px;">Urban Jacket</div><div style="font-size:15px;font-weight:900;color:#B90E0A;margin-top:6px;">₱2,499</div></div></div>' +
+                '<div class="mf-product-card mf-reveal"><div style="height:200px;background:linear-gradient(135deg,#f5f5f0,#e8e8e0);display:flex;align-items:center;justify-content:center;font-size:60px;">👗</div><div style="padding:16px;"><div style="font-size:10px;color:#aaa;text-transform:uppercase;letter-spacing:1px;">Women\'s</div><div style="font-size:14px;font-weight:800;color:#1a1a1a;margin-top:3px;">Summer Dress</div><div style="font-size:15px;font-weight:900;color:#B90E0A;margin-top:6px;">₱1,299</div></div></div>' +
+                '<div class="mf-product-card mf-reveal"><div style="height:200px;background:linear-gradient(135deg,#7a0806,#B90E0A);display:flex;align-items:center;justify-content:center;font-size:60px;">👖</div><div style="padding:16px;"><div style="font-size:10px;color:#aaa;text-transform:uppercase;letter-spacing:1px;">Bottoms</div><div style="font-size:14px;font-weight:800;color:#1a1a1a;margin-top:3px;">Slim Chinos</div><div style="font-size:15px;font-weight:900;color:#B90E0A;margin-top:6px;">₱1,199</div></div></div>' +
+                '</div></div></section>' +
+ 
+                '<script>' +
+                '(function(){' +
+                // Typewriter
+                'var lines=[["WEAR","THE","FUTURE."],["DEFINE","YOUR","EDGE."],["BENCH","SS","2026."]];' +
+                'var li=0,wi=0,ci=0,del=false,lineBuilt=[];' +
+                'var el=document.getElementById("mf-tw");' +
+                'function type(){if(!el)return;' +
+                'if(!del){' +
+                'var w=lines[li][wi];' +
+                'var cur=w.substring(0,ci+1);ci++;' +
+                'var built=[...lineBuilt,cur].join("<br>");' +
+                'el.innerHTML=built;' +
+                'if(ci===w.length){' +
+                'if(wi<lines[li].length-1){lineBuilt.push(w);wi++;ci=0;setTimeout(type,200);return;}' +
+                'else{del=true;setTimeout(type,2500);return;}}}' +
+                'else{' +
+                'if(lineBuilt.length>0){lineBuilt.pop();el.innerHTML=lineBuilt.join("<br>");' +
+                'if(lineBuilt.length===0){del=false;li=(li+1)%lines.length;wi=0;ci=0;lineBuilt=[];}}' +
+                'else{del=false;}}' +
+                'setTimeout(type,del?80:110);}type();' +
+                // Bubbles
+                'var bc=document.getElementById("mf-bubbles");' +
+                'for(var i=0;i<15;i++){' +
+                '(function(i){var b=document.createElement("div");b.className="mf-bubble";' +
+                'var sz=Math.random()*30+10;' +
+                'b.style.cssText="width:"+sz+"px;height:"+sz+"px;left:"+Math.random()*100+"%;bottom:-50px;background:rgba(185,14,10,"+(Math.random()*.06+.02)+");animation:bubbleRise "+(Math.random()*10+8)+"s ease-in "+(Math.random()*8)+"s infinite;";' +
+                'bc.appendChild(b);})(i);}' +
+                // Scroll reveal
+                'var revs=document.querySelectorAll(".mf-reveal");' +
+                'function chk(){revs.forEach(function(r,i){if(r.getBoundingClientRect().top<window.innerHeight-60){r.style.transitionDelay=(i%4*.1)+"s";r.classList.add("vis");}});}' +
+                'window.addEventListener("scroll",chk);chk();' +
+                '})();' +
+                '<\/script>' +
+                '</div>';
+            })()
+        },
+ 
+
 
         // ── STOCK TRANSFER / DELIVERY TRACKER ────────────────────────────
 
@@ -2798,6 +3426,643 @@
 
                 '</div>';
             })()
+        },
+
+        
+        {
+            id: 'hr-org-positions-directory',
+            label: 'Org: Positions Directory',
+            category: 'HR Screens',
+            content: '<div class="min-h-screen bg-gray-50 font-sans">' +
+ 
+                // Header
+                '<div class="bg-white border-b border-gray-200 px-7 h-14 flex items-center justify-between shadow-sm">' +
+                '<div class="flex items-center gap-3">' +
+                '<div class="w-8 h-8 bg-[#B90E0A] rounded-lg flex items-center justify-center text-white font-black text-sm">B</div>' +
+                '<span class="text-sm font-bold text-gray-900">Positions Directory</span>' +
+                '</div>' +
+                '<button class="px-4 py-2 bg-[#B90E0A] text-white text-xs font-bold rounded-lg">+ Add Position</button>' +
+                '</div>' +
+ 
+                '<div class="p-7">' +
+ 
+                // Stats
+                '<div class="grid grid-cols-4 gap-3 mb-5">' +
+                '<div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3"><span class="text-2xl font-black text-gray-900">8</span><span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Total Positions</span></div>' +
+                '<div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3"><span class="text-2xl font-black text-green-600">7</span><span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Active</span></div>' +
+                '<div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3"><span class="text-2xl font-black text-red-600">1</span><span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Inactive</span></div>' +
+                '<div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3"><span class="text-2xl font-black text-blue-600">5</span><span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Departments</span></div>' +
+                '</div>' +
+ 
+                // Filters
+                '<div class="flex gap-3 flex-wrap mb-5">' +
+                '<div class="flex-1 min-w-[200px] bg-white border border-gray-200 rounded-xl px-4 py-2.5 flex items-center gap-2">' +
+                '<span class="text-gray-400 text-sm">🔍</span>' +
+                '<input placeholder="Search position or department..." class="border-none outline-none text-sm flex-1 bg-transparent text-gray-900" />' +
+                '</div>' +
+                '<select class="px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none bg-white text-gray-600"><option>All Departments</option><option>Retail Operations</option><option>Human Resources</option><option>Finance</option></select>' +
+                '<select class="px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none bg-white text-gray-600"><option>All Levels</option><option>Entry</option><option>Junior</option><option>Senior</option><option>Supervisor</option><option>Manager</option></select>' +
+                '<select class="px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none bg-white text-gray-600"><option>All Status</option><option>Active</option><option>Inactive</option></select>' +
+                '</div>' +
+ 
+                // Table
+                '<div class="bg-white rounded-xl shadow-sm overflow-hidden">' +
+                '<table class="w-full text-sm border-collapse">' +
+                '<thead><tr class="bg-gray-50 border-b border-gray-100">' +
+                '<th class="px-4 py-3 text-left text-[10px] font-bold text-gray-400 uppercase tracking-wider">ID</th>' +
+                '<th class="px-4 py-3 text-left text-[10px] font-bold text-gray-400 uppercase tracking-wider">Title</th>' +
+                '<th class="px-4 py-3 text-left text-[10px] font-bold text-gray-400 uppercase tracking-wider">Department</th>' +
+                '<th class="px-4 py-3 text-left text-[10px] font-bold text-gray-400 uppercase tracking-wider">Level</th>' +
+                '<th class="px-4 py-3 text-left text-[10px] font-bold text-gray-400 uppercase tracking-wider">Salary Range</th>' +
+                '<th class="px-4 py-3 text-left text-[10px] font-bold text-gray-400 uppercase tracking-wider">Status</th>' +
+                '<th class="px-4 py-3"></th>' +
+                '</tr></thead>' +
+                '<tbody>' +
+ 
+                '<tr class="border-b border-gray-50 hover:bg-gray-50">' +
+                '<td class="px-4 py-3 font-mono text-xs font-bold text-[#B90E0A]">HR-P001</td>' +
+                '<td class="px-4 py-3 font-semibold text-gray-900">Sales Associate</td>' +
+                '<td class="px-4 py-3 text-gray-500">Retail Operations</td>' +
+                '<td class="px-4 py-3"><span class="bg-gray-100 text-gray-600 px-2.5 py-0.5 rounded-full text-[10px] font-bold">Entry</span></td>' +
+                '<td class="px-4 py-3 text-xs"><span class="text-gray-400">PHP 18,000</span><span class="text-gray-300"> — </span><span class="font-bold text-gray-800">PHP 22,000</span></td>' +
+                '<td class="px-4 py-3"><span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-[10px] font-bold">Active</span></td>' +
+                '<td class="px-4 py-3"><div class="flex gap-2"><button class="px-3 py-1.5 bg-gray-100 rounded-lg text-xs font-semibold text-gray-600">Edit</button><button class="px-3 py-1.5 bg-[#B90E0A] rounded-lg text-xs font-semibold text-white">View</button></div></td>' +
+                '</tr>' +
+ 
+                '<tr class="border-b border-gray-50 bg-gray-50/50 hover:bg-gray-50">' +
+                '<td class="px-4 py-3 font-mono text-xs font-bold text-[#B90E0A]">HR-P002</td>' +
+                '<td class="px-4 py-3 font-semibold text-gray-900">Sr. Sales Associate</td>' +
+                '<td class="px-4 py-3 text-gray-500">Retail Operations</td>' +
+                '<td class="px-4 py-3"><span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-[10px] font-bold">Senior</span></td>' +
+                '<td class="px-4 py-3 text-xs"><span class="text-gray-400">PHP 24,000</span><span class="text-gray-300"> — </span><span class="font-bold text-gray-800">PHP 30,000</span></td>' +
+                '<td class="px-4 py-3"><span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-[10px] font-bold">Active</span></td>' +
+                '<td class="px-4 py-3"><div class="flex gap-2"><button class="px-3 py-1.5 bg-gray-100 rounded-lg text-xs font-semibold text-gray-600">Edit</button><button class="px-3 py-1.5 bg-[#B90E0A] rounded-lg text-xs font-semibold text-white">View</button></div></td>' +
+                '</tr>' +
+ 
+                '<tr class="border-b border-gray-50 hover:bg-gray-50">' +
+                '<td class="px-4 py-3 font-mono text-xs font-bold text-[#B90E0A]">HR-P003</td>' +
+                '<td class="px-4 py-3 font-semibold text-gray-900">Branch Manager</td>' +
+                '<td class="px-4 py-3 text-gray-500">Operations</td>' +
+                '<td class="px-4 py-3"><span class="bg-red-100 text-red-700 px-2.5 py-0.5 rounded-full text-[10px] font-bold">Manager</span></td>' +
+                '<td class="px-4 py-3 text-xs"><span class="text-gray-400">PHP 55,000</span><span class="text-gray-300"> — </span><span class="font-bold text-gray-800">PHP 80,000</span></td>' +
+                '<td class="px-4 py-3"><span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-[10px] font-bold">Active</span></td>' +
+                '<td class="px-4 py-3"><div class="flex gap-2"><button class="px-3 py-1.5 bg-gray-100 rounded-lg text-xs font-semibold text-gray-600">Edit</button><button class="px-3 py-1.5 bg-[#B90E0A] rounded-lg text-xs font-semibold text-white">View</button></div></td>' +
+                '</tr>' +
+ 
+                '<tr class="border-b border-gray-50 bg-gray-50/50 hover:bg-gray-50">' +
+                '<td class="px-4 py-3 font-mono text-xs font-bold text-[#B90E0A]">HR-P004</td>' +
+                '<td class="px-4 py-3 font-semibold text-gray-900">HR Coordinator</td>' +
+                '<td class="px-4 py-3 text-gray-500">Human Resources</td>' +
+                '<td class="px-4 py-3"><span class="bg-yellow-100 text-yellow-700 px-2.5 py-0.5 rounded-full text-[10px] font-bold">Supervisor</span></td>' +
+                '<td class="px-4 py-3 text-xs"><span class="text-gray-400">PHP 35,000</span><span class="text-gray-300"> — </span><span class="font-bold text-gray-800">PHP 45,000</span></td>' +
+                '<td class="px-4 py-3"><span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-[10px] font-bold">Active</span></td>' +
+                '<td class="px-4 py-3"><div class="flex gap-2"><button class="px-3 py-1.5 bg-gray-100 rounded-lg text-xs font-semibold text-gray-600">Edit</button><button class="px-3 py-1.5 bg-[#B90E0A] rounded-lg text-xs font-semibold text-white">View</button></div></td>' +
+                '</tr>' +
+ 
+                '<tr class="border-b border-gray-50 hover:bg-gray-50">' +
+                '<td class="px-4 py-3 font-mono text-xs font-bold text-[#B90E0A]">HR-P005</td>' +
+                '<td class="px-4 py-3 font-semibold text-gray-900">Payroll Officer</td>' +
+                '<td class="px-4 py-3 text-gray-500">Finance</td>' +
+                '<td class="px-4 py-3"><span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-[10px] font-bold">Senior</span></td>' +
+                '<td class="px-4 py-3 text-xs"><span class="text-gray-400">PHP 32,000</span><span class="text-gray-300"> — </span><span class="font-bold text-gray-800">PHP 42,000</span></td>' +
+                '<td class="px-4 py-3"><span class="bg-gray-100 text-gray-500 px-2.5 py-0.5 rounded-full text-[10px] font-bold">Inactive</span></td>' +
+                '<td class="px-4 py-3"><div class="flex gap-2"><button class="px-3 py-1.5 bg-gray-100 rounded-lg text-xs font-semibold text-gray-600">Edit</button><button class="px-3 py-1.5 bg-[#B90E0A] rounded-lg text-xs font-semibold text-white">View</button></div></td>' +
+                '</tr>' +
+ 
+                '</tbody></table>' +
+                '<div class="px-4 py-3 flex justify-between items-center border-t border-gray-100">' +
+                '<span class="text-xs text-gray-400">Showing 5 of 8 positions</span>' +
+                '<div class="flex gap-2">' +
+                '<button class="px-3 py-1.5 bg-gray-100 rounded-md text-xs font-semibold text-gray-500">← Prev</button>' +
+                '<button class="px-3 py-1.5 bg-[#B90E0A] text-white rounded-md text-xs font-bold">1</button>' +
+                '<button class="px-3 py-1.5 bg-gray-100 rounded-md text-xs font-semibold text-gray-500">Next →</button>' +
+                '</div></div>' +
+                '</div></div></div>'
+        },
+ 
+        {
+            id: 'hr-org-chart-viewer',
+            label: 'Org: Org Chart Viewer',
+            category: 'HR Screens',
+            content: '<div class="min-h-screen bg-gray-50 font-sans">' +
+ 
+                '<div class="bg-white border-b border-gray-200 px-7 h-14 flex items-center justify-between shadow-sm">' +
+                '<div class="flex items-center gap-3">' +
+                '<div class="w-8 h-8 bg-[#B90E0A] rounded-lg flex items-center justify-center text-white font-black text-sm">B</div>' +
+                '<span class="text-sm font-bold text-gray-900">Org Chart</span>' +
+                '</div>' +
+                '<div class="flex gap-2">' +
+                '<select class="px-3 py-1.5 border border-gray-200 rounded-lg text-xs outline-none bg-white text-gray-600"><option>All Departments</option><option>Operations</option><option>HR</option></select>' +
+                '<button class="px-3 py-1.5 bg-gray-100 rounded-lg text-xs font-bold text-gray-600">⬇ Export</button>' +
+                '<button class="px-4 py-1.5 bg-[#B90E0A] rounded-lg text-xs font-bold text-white">+ Add Node</button>' +
+                '</div></div>' +
+ 
+                // Legend
+                '<div class="px-7 pt-4 flex gap-4 flex-wrap">' +
+                '<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-red-100 border border-red-300 inline-block"></span><span class="text-xs text-gray-500">Manager</span></div>' +
+                '<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-yellow-100 border border-yellow-300 inline-block"></span><span class="text-xs text-gray-500">Supervisor</span></div>' +
+                '<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-green-100 border border-green-300 inline-block"></span><span class="text-xs text-gray-500">Senior</span></div>' +
+                '<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-blue-100 border border-blue-300 inline-block"></span><span class="text-xs text-gray-500">Junior</span></div>' +
+                '<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-gray-100 border border-gray-300 inline-block"></span><span class="text-xs text-gray-500">Entry</span></div>' +
+                '</div>' +
+ 
+                // Chart canvas
+                '<div class="p-7 overflow-x-auto">' +
+                '<div class="min-w-[900px] flex flex-col items-center gap-0">' +
+ 
+                // Top node — Regional Director
+                '<div class="bg-white border-2 border-gray-200 border-t-4 border-t-[#B90E0A] rounded-2xl p-4 w-44 text-center shadow-md">' +
+                '<div class="w-11 h-11 rounded-full bg-gradient-to-br from-[#B90E0A] to-[#7a0806] flex items-center justify-center text-white font-black text-sm mx-auto mb-2">RD</div>' +
+                '<div class="text-xs font-bold text-gray-900">Roberto D.</div>' +
+                '<div class="text-[10px] text-[#B90E0A] font-semibold mt-0.5">Regional Director</div>' +
+                '<span class="mt-1.5 inline-block bg-red-100 text-red-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Manager</span>' +
+                '</div>' +
+ 
+                // Connector down
+                '<div class="w-0.5 h-6 bg-gray-200"></div>' +
+ 
+                // Level 2 row
+                '<div class="flex gap-0 items-start relative">' +
+                '<div class="absolute top-0 left-[15%] right-[15%] h-0.5 bg-gray-200"></div>' +
+ 
+                // Branch 1
+                '<div class="flex flex-col items-center px-6">' +
+                '<div class="w-0.5 h-6 bg-gray-200"></div>' +
+                '<div class="bg-white border-2 border-gray-200 border-t-4 border-t-[#B90E0A] rounded-2xl p-4 w-44 text-center shadow-md">' +
+                '<div class="w-11 h-11 rounded-full bg-gradient-to-br from-[#B90E0A] to-[#7a0806] flex items-center justify-center text-white font-black text-sm mx-auto mb-2">RM</div>' +
+                '<div class="text-xs font-bold text-gray-900">Rico M.</div>' +
+                '<div class="text-[10px] text-[#B90E0A] font-semibold mt-0.5">Branch Manager</div>' +
+                '<span class="mt-1.5 inline-block bg-red-100 text-red-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Manager</span>' +
+                '</div>' +
+                '<div class="w-0.5 h-6 bg-gray-200"></div>' +
+                '<div class="flex gap-0 items-start relative">' +
+                '<div class="absolute top-0 left-[10%] right-[10%] h-0.5 bg-gray-200"></div>' +
+                '<div class="flex flex-col items-center px-4">' +
+                '<div class="w-0.5 h-6 bg-gray-200"></div>' +
+                '<div class="bg-white border border-gray-200 border-t-2 border-t-[#B90E0A] rounded-xl p-3 w-36 text-center shadow-sm">' +
+                '<div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#B90E0A] to-[#7a0806] flex items-center justify-center text-white font-black text-xs mx-auto mb-1.5">MS</div>' +
+                '<div class="text-[11px] font-bold text-gray-900">Maria S.</div>' +
+                '<div class="text-[9px] text-[#B90E0A] font-semibold mt-0.5">Sr. Sales Assoc.</div>' +
+                '<span class="mt-1 inline-block bg-green-100 text-green-700 px-1.5 py-0.5 rounded-full text-[8px] font-bold">Senior</span>' +
+                '</div></div>' +
+                '<div class="flex flex-col items-center px-4">' +
+                '<div class="w-0.5 h-6 bg-gray-200"></div>' +
+                '<div class="bg-white border border-gray-200 border-t-2 border-t-[#B90E0A] rounded-xl p-3 w-36 text-center shadow-sm">' +
+                '<div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#1e3a5f] to-[#0f2040] flex items-center justify-center text-white font-black text-xs mx-auto mb-1.5">JC</div>' +
+                '<div class="text-[11px] font-bold text-gray-900">Juan C.</div>' +
+                '<div class="text-[9px] text-[#B90E0A] font-semibold mt-0.5">Sales Associate</div>' +
+                '<span class="mt-1 inline-block bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded-full text-[8px] font-bold">Entry</span>' +
+                '</div></div>' +
+                '</div></div>' +
+ 
+                // Branch 2
+                '<div class="flex flex-col items-center px-6">' +
+                '<div class="w-0.5 h-6 bg-gray-200"></div>' +
+                '<div class="bg-white border-2 border-gray-200 border-t-4 border-t-[#B90E0A] rounded-2xl p-4 w-44 text-center shadow-md">' +
+                '<div class="w-11 h-11 rounded-full bg-gradient-to-br from-[#1e3a5f] to-[#0f2040] flex items-center justify-center text-white font-black text-sm mx-auto mb-2">SC</div>' +
+                '<div class="text-xs font-bold text-gray-900">Sara C.</div>' +
+                '<div class="text-[10px] text-[#B90E0A] font-semibold mt-0.5">Operations Mgr.</div>' +
+                '<span class="mt-1.5 inline-block bg-red-100 text-red-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Manager</span>' +
+                '</div>' +
+                '<div class="w-0.5 h-6 bg-gray-200"></div>' +
+                '<div class="bg-white border border-gray-200 border-t-2 border-t-[#B90E0A] rounded-xl p-3 w-36 text-center shadow-sm">' +
+                '<div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#4c1d95] to-[#2e1065] flex items-center justify-center text-white font-black text-xs mx-auto mb-1.5">PG</div>' +
+                '<div class="text-[11px] font-bold text-gray-900">Pedro G.</div>' +
+                '<div class="text-[9px] text-[#B90E0A] font-semibold mt-0.5">Stock Clerk</div>' +
+                '<span class="mt-1 inline-block bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded-full text-[8px] font-bold">Entry</span>' +
+                '</div></div>' +
+ 
+                // Branch 3
+                '<div class="flex flex-col items-center px-6">' +
+                '<div class="w-0.5 h-6 bg-gray-200"></div>' +
+                '<div class="bg-white border-2 border-gray-200 border-t-4 border-t-[#B90E0A] rounded-2xl p-4 w-44 text-center shadow-md">' +
+                '<div class="w-11 h-11 rounded-full bg-gradient-to-br from-[#064e3b] to-[#022c22] flex items-center justify-center text-white font-black text-sm mx-auto mb-2">DL</div>' +
+                '<div class="text-xs font-bold text-gray-900">Dana L.</div>' +
+                '<div class="text-[10px] text-[#B90E0A] font-semibold mt-0.5">HR Manager</div>' +
+                '<span class="mt-1.5 inline-block bg-red-100 text-red-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Manager</span>' +
+                '</div>' +
+                '<div class="w-0.5 h-6 bg-gray-200"></div>' +
+                '<div class="bg-white border border-gray-200 border-t-2 border-t-[#B90E0A] rounded-xl p-3 w-36 text-center shadow-sm">' +
+                '<div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#92400e] to-[#451a03] flex items-center justify-center text-white font-black text-xs mx-auto mb-1.5">LT</div>' +
+                '<div class="text-[11px] font-bold text-gray-900">Lisa T.</div>' +
+                '<div class="text-[9px] text-[#B90E0A] font-semibold mt-0.5">HR Coordinator</div>' +
+                '<span class="mt-1 inline-block bg-yellow-100 text-yellow-700 px-1.5 py-0.5 rounded-full text-[8px] font-bold">Supervisor</span>' +
+                '</div></div>' +
+ 
+                '</div></div></div></div>'
+        },
+ 
+        {
+            id: 'hr-org-position-history',
+            label: 'Org: Position History Timeline',
+            category: 'HR Screens',
+            content: '<div class="min-h-screen bg-gray-50 font-sans">' +
+ 
+                '<div class="bg-white border-b border-gray-200 px-7 h-14 flex items-center justify-between shadow-sm">' +
+                '<div class="flex items-center gap-3">' +
+                '<div class="w-8 h-8 bg-[#B90E0A] rounded-lg flex items-center justify-center text-white font-black text-sm">B</div>' +
+                '<span class="text-sm font-bold text-gray-900">Position History</span>' +
+                '</div>' +
+                '<button class="px-4 py-2 bg-gray-100 text-gray-600 text-xs font-bold rounded-lg">⬇ Export PDF</button>' +
+                '</div>' +
+ 
+                '<div class="p-7">' +
+ 
+                // Employee card
+                '<div class="bg-white rounded-xl shadow-sm p-5 mb-6 flex items-center gap-4">' +
+                '<div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#B90E0A] to-[#7a0806] flex items-center justify-center text-white font-black text-lg shrink-0">MS</div>' +
+                '<div class="flex-1">' +
+                '<p class="text-base font-extrabold text-gray-900">Maria Santos</p>' +
+                '<p class="text-xs text-[#B90E0A] font-semibold mt-0.5">Sr. Sales Associate · Retail Operations</p>' +
+                '<p class="text-xs text-gray-400 mt-0.5">HR-00142 · SM Mall of Asia</p>' +
+                '</div>' +
+                '<div class="text-right">' +
+                '<p class="text-[10px] text-gray-400 uppercase tracking-wider">Total Tenure</p>' +
+                '<p class="text-lg font-black text-gray-900">3 yrs 2 mos</p>' +
+                '<p class="text-[10px] text-gray-400 mt-0.5">Since March 2023</p>' +
+                '</div>' +
+                '</div>' +
+ 
+                // Filters
+                '<div class="flex gap-3 mb-6">' +
+                '<select class="px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none bg-white text-gray-600"><option>All Change Types</option><option>Hired</option><option>Promoted</option><option>Transferred</option><option>Demoted</option></select>' +
+                '<select class="px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none bg-white text-gray-600"><option>All Years</option><option>2026</option><option>2025</option><option>2024</option><option>2023</option></select>' +
+                '</div>' +
+ 
+                // Timeline
+                '<div class="relative">' +
+                '<div class="absolute left-[19px] top-0 bottom-0 w-0.5 bg-gray-200"></div>' +
+ 
+                // Entry 1 — Promoted
+                '<div class="flex gap-5 mb-6 relative">' +
+                '<div class="w-10 h-10 rounded-full bg-blue-100 border-2 border-blue-300 flex items-center justify-center shrink-0 z-10 text-sm">⬆</div>' +
+                '<div class="flex-1 bg-white rounded-xl shadow-sm p-5">' +
+                '<div class="flex items-start justify-between mb-3">' +
+                '<div><span class="bg-blue-100 text-blue-700 px-2.5 py-0.5 rounded-full text-[10px] font-bold">Promoted</span>' +
+                '<p class="text-sm font-extrabold text-gray-900 mt-2">Sr. Sales Associate</p>' +
+                '<p class="text-xs text-gray-500">Retail Operations · SM Mall of Asia</p></div>' +
+                '<div class="text-right shrink-0"><p class="text-xs font-bold text-gray-900">Jan 15, 2026</p><p class="text-[10px] text-gray-400">Current Position</p></div>' +
+                '</div>' +
+                '<div class="bg-gray-50 rounded-lg p-3 border-l-4 border-blue-400">' +
+                '<p class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider mb-1">Remarks</p>' +
+                '<p class="text-xs text-gray-600">Exceeded Q4 targets consistently for 2 years. Recommended by Branch Manager.</p>' +
+                '</div>' +
+                '<p class="text-[10px] text-gray-400 mt-2">Changed by: Admin</p>' +
+                '</div></div>' +
+ 
+                // Entry 2 — Transferred
+                '<div class="flex gap-5 mb-6 relative">' +
+                '<div class="w-10 h-10 rounded-full bg-yellow-100 border-2 border-yellow-300 flex items-center justify-center shrink-0 z-10 text-sm">↔</div>' +
+                '<div class="flex-1 bg-white rounded-xl shadow-sm p-5">' +
+                '<div class="flex items-start justify-between mb-3">' +
+                '<div><span class="bg-yellow-100 text-yellow-700 px-2.5 py-0.5 rounded-full text-[10px] font-bold">Transferred</span>' +
+                '<p class="text-sm font-extrabold text-gray-900 mt-2">Sales Associate</p>' +
+                '<p class="text-xs text-gray-500">Retail Operations · SM Mall of Asia</p></div>' +
+                '<div class="text-right shrink-0"><p class="text-xs font-bold text-gray-900">Jun 1, 2024</p><p class="text-[10px] text-gray-400">1 yr 7 mos</p></div>' +
+                '</div>' +
+                '<div class="bg-gray-50 rounded-lg p-3 border-l-4 border-yellow-400">' +
+                '<p class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider mb-1">Remarks</p>' +
+                '<p class="text-xs text-gray-600">Requested branch transfer to SM Mall of Asia due to personal reasons.</p>' +
+                '</div>' +
+                '<p class="text-[10px] text-gray-400 mt-2">Changed by: Admin</p>' +
+                '</div></div>' +
+ 
+                // Entry 3 — Hired
+                '<div class="flex gap-5 mb-6 relative">' +
+                '<div class="w-10 h-10 rounded-full bg-green-100 border-2 border-green-300 flex items-center justify-center shrink-0 z-10 text-sm">✓</div>' +
+                '<div class="flex-1 bg-white rounded-xl shadow-sm p-5">' +
+                '<div class="flex items-start justify-between mb-3">' +
+                '<div><span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-[10px] font-bold">Hired</span>' +
+                '<p class="text-sm font-extrabold text-gray-900 mt-2">Sales Associate</p>' +
+                '<p class="text-xs text-gray-500">Retail Operations · Cebu Branch</p></div>' +
+                '<div class="text-right shrink-0"><p class="text-xs font-bold text-gray-900">Mar 10, 2023</p><p class="text-[10px] text-gray-400">Start of employment</p></div>' +
+                '</div>' +
+                '<div class="bg-gray-50 rounded-lg p-3 border-l-4 border-green-400">' +
+                '<p class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider mb-1">Remarks</p>' +
+                '<p class="text-xs text-gray-600">Initial employment. Passed all pre-employment requirements.</p>' +
+                '</div>' +
+                '<p class="text-[10px] text-gray-400 mt-2">Changed by: HR System</p>' +
+                '</div></div>' +
+ 
+                '</div></div></div>'
+        },
+ 
+        {
+            id: 'hr-org-management-dashboard',
+            label: 'Org: Management Dashboard',
+            category: 'HR Dashboards',
+            content: '<div class="min-h-screen bg-gray-50 font-sans">' +
+ 
+                '<div class="bg-white border-b border-gray-200 px-7 h-14 flex items-center justify-between shadow-sm">' +
+                '<div class="flex items-center gap-3">' +
+                '<div class="w-8 h-8 bg-[#B90E0A] rounded-lg flex items-center justify-center text-white font-black text-sm">B</div>' +
+                '<span class="text-sm font-bold text-gray-900">Org Management Dashboard</span>' +
+                '</div>' +
+                '<div class="flex gap-2">' +
+                '<select class="px-3 py-1.5 border border-gray-200 rounded-lg text-xs outline-none bg-white text-gray-600"><option>Q1 2026</option><option>Q4 2025</option><option>Q3 2025</option></select>' +
+                '<button class="px-4 py-1.5 bg-[#B90E0A] rounded-lg text-xs font-bold text-white">⬇ Export Report</button>' +
+                '</div></div>' +
+ 
+                '<div class="p-7">' +
+ 
+                // KPI row
+                '<div class="grid grid-cols-4 gap-4 mb-6">' +
+                '<div class="bg-white rounded-2xl p-5 shadow-sm border-t-4 border-t-[#B90E0A]">' +
+                '<p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Total Positions</p>' +
+                '<p class="text-3xl font-black text-gray-900">24</p>' +
+                '<p class="text-xs text-green-600 font-semibold mt-1">↑ 3 new this quarter</p>' +
+                '</div>' +
+                '<div class="bg-white rounded-2xl p-5 shadow-sm border-t-4 border-t-green-500">' +
+                '<p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Filled Positions</p>' +
+                '<p class="text-3xl font-black text-green-600">21</p>' +
+                '<p class="text-xs text-gray-400 font-semibold mt-1">87.5% fill rate</p>' +
+                '</div>' +
+                '<div class="bg-white rounded-2xl p-5 shadow-sm border-t-4 border-t-yellow-400">' +
+                '<p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Vacant Positions</p>' +
+                '<p class="text-3xl font-black text-yellow-600">3</p>' +
+                '<p class="text-xs text-gray-400 font-semibold mt-1">Actively recruiting</p>' +
+                '</div>' +
+                '<div class="bg-white rounded-2xl p-5 shadow-sm border-t-4 border-t-blue-500">' +
+                '<p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Movements Q1</p>' +
+                '<p class="text-3xl font-black text-blue-600">12</p>' +
+                '<p class="text-xs text-gray-400 font-semibold mt-1">Promo, transfer, hire</p>' +
+                '</div>' +
+                '</div>' +
+ 
+                // Two columns
+                '<div class="grid grid-cols-2 gap-6 mb-6">' +
+ 
+                // Dept breakdown
+                '<div class="bg-white rounded-2xl shadow-sm p-5">' +
+                '<p class="text-xs font-bold text-gray-900 mb-4">Positions by Department</p>' +
+                '<div class="space-y-3">' +
+                '<div><div class="flex justify-between mb-1"><span class="text-xs text-gray-600">Retail Operations</span><span class="text-xs font-bold text-gray-900">9</span></div><div class="w-full bg-gray-100 rounded-full h-2"><div class="bg-[#B90E0A] h-2 rounded-full" style="width:75%"></div></div></div>' +
+                '<div><div class="flex justify-between mb-1"><span class="text-xs text-gray-600">Human Resources</span><span class="text-xs font-bold text-gray-900">4</span></div><div class="w-full bg-gray-100 rounded-full h-2"><div class="bg-blue-500 h-2 rounded-full" style="width:33%"></div></div></div>' +
+                '<div><div class="flex justify-between mb-1"><span class="text-xs text-gray-600">Finance</span><span class="text-xs font-bold text-gray-900">4</span></div><div class="w-full bg-gray-100 rounded-full h-2"><div class="bg-green-500 h-2 rounded-full" style="width:33%"></div></div></div>' +
+                '<div><div class="flex justify-between mb-1"><span class="text-xs text-gray-600">Marketing</span><span class="text-xs font-bold text-gray-900">3</span></div><div class="w-full bg-gray-100 rounded-full h-2"><div class="bg-yellow-400 h-2 rounded-full" style="width:25%"></div></div></div>' +
+                '<div><div class="flex justify-between mb-1"><span class="text-xs text-gray-600">Operations</span><span class="text-xs font-bold text-gray-900">4</span></div><div class="w-full bg-gray-100 rounded-full h-2"><div class="bg-purple-500 h-2 rounded-full" style="width:33%"></div></div></div>' +
+                '</div></div>' +
+ 
+                // Level breakdown
+                '<div class="bg-white rounded-2xl shadow-sm p-5">' +
+                '<p class="text-xs font-bold text-gray-900 mb-4">Positions by Level</p>' +
+                '<div class="grid grid-cols-2 gap-3">' +
+                '<div class="bg-red-50 border border-red-100 rounded-xl p-3 text-center"><p class="text-xl font-black text-red-700">4</p><p class="text-[10px] text-red-500 font-bold mt-0.5">Manager</p></div>' +
+                '<div class="bg-yellow-50 border border-yellow-100 rounded-xl p-3 text-center"><p class="text-xl font-black text-yellow-700">3</p><p class="text-[10px] text-yellow-500 font-bold mt-0.5">Supervisor</p></div>' +
+                '<div class="bg-green-50 border border-green-100 rounded-xl p-3 text-center"><p class="text-xl font-black text-green-700">7</p><p class="text-[10px] text-green-500 font-bold mt-0.5">Senior</p></div>' +
+                '<div class="bg-blue-50 border border-blue-100 rounded-xl p-3 text-center"><p class="text-xl font-black text-blue-700">4</p><p class="text-[10px] text-blue-500 font-bold mt-0.5">Junior</p></div>' +
+                '<div class="col-span-2 bg-gray-50 border border-gray-100 rounded-xl p-3 text-center"><p class="text-xl font-black text-gray-700">6</p><p class="text-[10px] text-gray-500 font-bold mt-0.5">Entry</p></div>' +
+                '</div></div>' +
+                '</div>' +
+ 
+                // Recent movements
+                '<div class="bg-white rounded-2xl shadow-sm p-5">' +
+                '<div class="flex justify-between items-center mb-4">' +
+                '<p class="text-xs font-bold text-gray-900">Recent Position Movements</p>' +
+                '<a href="#" class="text-xs text-[#B90E0A] font-semibold">View All →</a>' +
+                '</div>' +
+                '<div class="space-y-3">' +
+ 
+                '<div class="flex items-center gap-4 p-3 bg-gray-50 rounded-xl">' +
+                '<div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#B90E0A] to-[#7a0806] flex items-center justify-center text-white font-black text-xs shrink-0">MS</div>' +
+                '<div class="flex-1"><p class="text-xs font-bold text-gray-900">Maria Santos</p><p class="text-[10px] text-gray-500">Sales Associate → Sr. Sales Associate</p></div>' +
+                '<div class="text-right"><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Promoted</span><p class="text-[10px] text-gray-400 mt-0.5">Jan 15, 2026</p></div>' +
+                '</div>' +
+ 
+                '<div class="flex items-center gap-4 p-3 bg-gray-50 rounded-xl">' +
+                '<div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#1e3a5f] to-[#0f2040] flex items-center justify-center text-white font-black text-xs shrink-0">JC</div>' +
+                '<div class="flex-1"><p class="text-xs font-bold text-gray-900">Juan dela Cruz</p><p class="text-[10px] text-gray-500">BGC Branch → SM MOA Branch</p></div>' +
+                '<div class="text-right"><span class="bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Transferred</span><p class="text-[10px] text-gray-400 mt-0.5">Jan 10, 2026</p></div>' +
+                '</div>' +
+ 
+                '<div class="flex items-center gap-4 p-3 bg-gray-50 rounded-xl">' +
+                '<div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#064e3b] to-[#022c22] flex items-center justify-center text-white font-black text-xs shrink-0">AR</div>' +
+                '<div class="flex-1"><p class="text-xs font-bold text-gray-900">Ana Reyes</p><p class="text-[10px] text-gray-500">Visual Merchandiser · Hired</p></div>' +
+                '<div class="text-right"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Hired</span><p class="text-[10px] text-gray-400 mt-0.5">Jan 5, 2026</p></div>' +
+                '</div>' +
+ 
+                '<div class="flex items-center gap-4 p-3 bg-gray-50 rounded-xl">' +
+                '<div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#4c1d95] to-[#2e1065] flex items-center justify-center text-white font-black text-xs shrink-0">PG</div>' +
+                '<div class="flex-1"><p class="text-xs font-bold text-gray-900">Pedro Gomez</p><p class="text-[10px] text-gray-500">Supervisor → Stock Clerk</p></div>' +
+                '<div class="text-right"><span class="bg-red-100 text-red-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Demoted</span><p class="text-[10px] text-gray-400 mt-0.5">Dec 20, 2025</p></div>' +
+                '</div>' +
+ 
+                '</div></div></div></div>'
+        },
+ 
+        {
+            id: 'hr-org-position-detail',
+            label: 'Org: Position Detail Page',
+            category: 'HR Screens',
+            content: '<div class="min-h-screen bg-gray-50 font-sans">' +
+ 
+                '<div class="bg-white border-b border-gray-200 px-7 h-14 flex items-center justify-between shadow-sm">' +
+                '<div class="flex items-center gap-3">' +
+                '<div class="w-8 h-8 bg-[#B90E0A] rounded-lg flex items-center justify-center text-white font-black text-sm">B</div>' +
+                '<div class="flex items-center gap-2 text-sm text-gray-400">' +
+                '<span class="cursor-pointer hover:text-[#B90E0A]">Positions</span>' +
+                '<span>/</span>' +
+                '<span class="font-bold text-gray-900">Sr. Sales Associate</span>' +
+                '</div>' +
+                '</div>' +
+                '<div class="flex gap-2">' +
+                '<button class="px-4 py-2 bg-gray-100 text-gray-600 text-xs font-bold rounded-lg">Edit Position</button>' +
+                '<button class="px-4 py-2 bg-[#B90E0A] text-white text-xs font-bold rounded-lg">+ Assign Employee</button>' +
+                '</div></div>' +
+ 
+                '<div class="p-7">' +
+                '<div class="grid grid-cols-3 gap-6">' +
+ 
+                // Left column — position info
+                '<div class="col-span-2 space-y-5">' +
+ 
+                // Header card
+                '<div class="bg-white rounded-2xl shadow-sm overflow-hidden">' +
+                '<div class="bg-gradient-to-r from-[#B90E0A] to-[#7a0806] px-6 py-5">' +
+                '<div class="flex items-center justify-between">' +
+                '<div>' +
+                '<p class="text-[10px] font-bold text-white/60 uppercase tracking-wider">Position</p>' +
+                '<p class="text-2xl font-black text-white mt-1">Sr. Sales Associate</p>' +
+                '<p class="text-sm text-white/70 mt-0.5">Retail Operations · HR-P002</p>' +
+                '</div>' +
+                '<span class="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-bold">Active</span>' +
+                '</div></div>' +
+                '<div class="px-6 py-5 grid grid-cols-3 gap-4 border-b border-gray-100">' +
+                '<div><p class="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Level</p><span class="bg-green-100 text-green-700 px-2.5 py-0.5 rounded-full text-xs font-bold">Senior</span></div>' +
+                '<div><p class="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Min Salary</p><p class="text-sm font-bold text-gray-900">PHP 24,000</p></div>' +
+                '<div><p class="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Max Salary</p><p class="text-sm font-bold text-gray-900">PHP 30,000</p></div>' +
+                '</div>' +
+                '<div class="px-6 py-5">' +
+                '<p class="text-[10px] text-gray-400 uppercase tracking-wider mb-2">Description</p>' +
+                '<p class="text-sm text-gray-600 leading-relaxed">Responsible for driving sales performance, mentoring junior associates, and ensuring outstanding customer service across all product categories. Acts as team lead in the absence of the Branch Manager.</p>' +
+                '</div></div>' +
+ 
+                // Current occupants
+                '<div class="bg-white rounded-2xl shadow-sm p-5">' +
+                '<p class="text-xs font-bold text-gray-900 mb-4">Current Occupants <span class="text-gray-400 font-normal">(3 employees)</span></p>' +
+                '<div class="space-y-3">' +
+                '<div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">' +
+                '<div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#B90E0A] to-[#7a0806] flex items-center justify-center text-white font-black text-xs">MS</div>' +
+                '<div class="flex-1"><p class="text-xs font-bold text-gray-900">Maria Santos</p><p class="text-[10px] text-gray-500">SM Mall of Asia · Since Jan 2026</p></div>' +
+                '<span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Active</span>' +
+                '</div>' +
+                '<div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">' +
+                '<div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#1e3a5f] to-[#0f2040] flex items-center justify-center text-white font-black text-xs">KR</div>' +
+                '<div class="flex-1"><p class="text-xs font-bold text-gray-900">Karen Reyes</p><p class="text-[10px] text-gray-500">BGC Branch · Since Mar 2025</p></div>' +
+                '<span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Active</span>' +
+                '</div>' +
+                '<div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">' +
+                '<div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#064e3b] to-[#022c22] flex items-center justify-center text-white font-black text-xs">TC</div>' +
+                '<div class="flex-1"><p class="text-xs font-bold text-gray-900">Toni Cruz</p><p class="text-[10px] text-gray-500">Cebu Branch · Since Aug 2024</p></div>' +
+                '<span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Active</span>' +
+                '</div>' +
+                '</div></div>' +
+                '</div>' +
+ 
+                // Right column — sidebar
+                '<div class="space-y-5">' +
+                '<div class="bg-white rounded-2xl shadow-sm p-5">' +
+                '<p class="text-xs font-bold text-gray-900 mb-4">Quick Stats</p>' +
+                '<div class="space-y-3">' +
+                '<div class="flex justify-between items-center"><span class="text-xs text-gray-500">Total Employees</span><span class="text-sm font-black text-gray-900">3</span></div>' +
+                '<div class="flex justify-between items-center"><span class="text-xs text-gray-500">Avg. Tenure</span><span class="text-sm font-black text-gray-900">14 mos</span></div>' +
+                '<div class="flex justify-between items-center"><span class="text-xs text-gray-500">Promotions Out</span><span class="text-sm font-black text-blue-600">5</span></div>' +
+                '<div class="flex justify-between items-center"><span class="text-xs text-gray-500">Turnovers</span><span class="text-sm font-black text-red-600">2</span></div>' +
+                '</div></div>' +
+ 
+                '<div class="bg-white rounded-2xl shadow-sm p-5">' +
+                '<p class="text-xs font-bold text-gray-900 mb-4">Reports To</p>' +
+                '<div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">' +
+                '<div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#B90E0A] to-[#7a0806] flex items-center justify-center text-white font-black text-xs">RM</div>' +
+                '<div><p class="text-xs font-bold text-gray-900">Rico M.</p><p class="text-[10px] text-[#B90E0A] font-semibold">Branch Manager</p></div>' +
+                '</div></div>' +
+ 
+                '<div class="bg-white rounded-2xl shadow-sm p-5">' +
+                '<p class="text-xs font-bold text-gray-900 mb-4">Next Level</p>' +
+                '<div class="flex items-center gap-3 p-3 bg-red-50 border border-red-100 rounded-xl">' +
+                '<div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#B90E0A] to-[#7a0806] flex items-center justify-center text-white font-black text-xs">→</div>' +
+                '<div><p class="text-xs font-bold text-gray-900">Supervisor</p><p class="text-[10px] text-gray-500">PHP 35k – PHP 45k</p></div>' +
+                '</div></div>' +
+ 
+                '</div></div></div></div>'
+        },
+ 
+        {
+            id: 'hr-org-movement-report',
+            label: 'Org: Movement Report',
+            category: 'HR Printable',
+            content: '<div style="width:794px;min-height:1123px;background:#fff;padding:0;box-sizing:border-box;font-family:\'Helvetica Neue\',Arial,sans-serif;margin:0 auto;">' +
+ 
+                // Print header
+                '<div class="bg-[#B90E0A] px-10 py-6 flex items-center justify-between">' +
+                '<div class="flex items-center gap-4">' +
+                '<div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center font-black text-[#B90E0A] text-sm">B</div>' +
+                '<div><p class="text-white font-black text-base">BENCH APPAREL</p><p class="text-white/60 text-xs">Position Movement Report</p></div>' +
+                '</div>' +
+                '<div class="text-right">' +
+                '<p class="text-white/60 text-[10px] uppercase tracking-wider">Report Period</p>' +
+                '<p class="text-white font-bold text-sm">Q1 2026 · Jan–Mar</p>' +
+                '<p class="text-white/50 text-[10px] mt-0.5">Generated: March 18, 2026</p>' +
+                '</div></div>' +
+ 
+                // Summary strip
+                '<div class="grid grid-cols-4 border-b border-gray-100">' +
+                '<div class="px-8 py-4 text-center border-r border-gray-100"><p class="text-2xl font-black text-gray-900">12</p><p class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Total Movements</p></div>' +
+                '<div class="px-8 py-4 text-center border-r border-gray-100"><p class="text-2xl font-black text-green-600">4</p><p class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Hired</p></div>' +
+                '<div class="px-8 py-4 text-center border-r border-gray-100"><p class="text-2xl font-black text-blue-600">5</p><p class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Promoted</p></div>' +
+                '<div class="px-8 py-4 text-center"><p class="text-2xl font-black text-yellow-600">3</p><p class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Transferred</p></div>' +
+                '</div>' +
+ 
+                '<div class="px-10 py-6">' +
+ 
+                // Table
+                '<table class="w-full text-sm border-collapse">' +
+                '<thead><tr class="border-b-2 border-gray-200">' +
+                '<th class="py-2 text-left text-[10px] font-bold text-gray-400 uppercase tracking-wider pr-4">Date</th>' +
+                '<th class="py-2 text-left text-[10px] font-bold text-gray-400 uppercase tracking-wider pr-4">Employee</th>' +
+                '<th class="py-2 text-left text-[10px] font-bold text-gray-400 uppercase tracking-wider pr-4">Type</th>' +
+                '<th class="py-2 text-left text-[10px] font-bold text-gray-400 uppercase tracking-wider pr-4">From</th>' +
+                '<th class="py-2 text-left text-[10px] font-bold text-gray-400 uppercase tracking-wider pr-4">To</th>' +
+                '<th class="py-2 text-left text-[10px] font-bold text-gray-400 uppercase tracking-wider">Dept</th>' +
+                '</tr></thead>' +
+                '<tbody>' +
+ 
+                '<tr class="border-b border-gray-50">' +
+                '<td class="py-3 pr-4 text-xs text-gray-500 whitespace-nowrap">Jan 5, 2026</td>' +
+                '<td class="py-3 pr-4"><p class="text-xs font-bold text-gray-900">Ana Reyes</p><p class="text-[10px] text-gray-400">HR-00198</p></td>' +
+                '<td class="py-3 pr-4"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Hired</span></td>' +
+                '<td class="py-3 pr-4 text-xs text-gray-400">—</td>' +
+                '<td class="py-3 pr-4 text-xs font-semibold text-gray-900">Visual Merchandiser</td>' +
+                '<td class="py-3 text-xs text-gray-500">Marketing</td>' +
+                '</tr>' +
+ 
+                '<tr class="border-b border-gray-50 bg-gray-50/50">' +
+                '<td class="py-3 pr-4 text-xs text-gray-500 whitespace-nowrap">Jan 10, 2026</td>' +
+                '<td class="py-3 pr-4"><p class="text-xs font-bold text-gray-900">Juan dela Cruz</p><p class="text-[10px] text-gray-400">HR-00089</p></td>' +
+                '<td class="py-3 pr-4"><span class="bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Transferred</span></td>' +
+                '<td class="py-3 pr-4 text-xs text-gray-600">BGC Branch</td>' +
+                '<td class="py-3 pr-4 text-xs font-semibold text-gray-900">SM MOA Branch</td>' +
+                '<td class="py-3 text-xs text-gray-500">Operations</td>' +
+                '</tr>' +
+ 
+                '<tr class="border-b border-gray-50">' +
+                '<td class="py-3 pr-4 text-xs text-gray-500 whitespace-nowrap">Jan 15, 2026</td>' +
+                '<td class="py-3 pr-4"><p class="text-xs font-bold text-gray-900">Maria Santos</p><p class="text-[10px] text-gray-400">HR-00142</p></td>' +
+                '<td class="py-3 pr-4"><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Promoted</span></td>' +
+                '<td class="py-3 pr-4 text-xs text-gray-600">Sales Associate</td>' +
+                '<td class="py-3 pr-4 text-xs font-semibold text-gray-900">Sr. Sales Associate</td>' +
+                '<td class="py-3 text-xs text-gray-500">Retail Ops</td>' +
+                '</tr>' +
+ 
+                '<tr class="border-b border-gray-50 bg-gray-50/50">' +
+                '<td class="py-3 pr-4 text-xs text-gray-500 whitespace-nowrap">Feb 1, 2026</td>' +
+                '<td class="py-3 pr-4"><p class="text-xs font-bold text-gray-900">Rico Mendoza</p><p class="text-[10px] text-gray-400">HR-00077</p></td>' +
+                '<td class="py-3 pr-4"><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Promoted</span></td>' +
+                '<td class="py-3 pr-4 text-xs text-gray-600">Supervisor</td>' +
+                '<td class="py-3 pr-4 text-xs font-semibold text-gray-900">Branch Manager</td>' +
+                '<td class="py-3 text-xs text-gray-500">Operations</td>' +
+                '</tr>' +
+ 
+                '<tr class="border-b border-gray-50">' +
+                '<td class="py-3 pr-4 text-xs text-gray-500 whitespace-nowrap">Feb 14, 2026</td>' +
+                '<td class="py-3 pr-4"><p class="text-xs font-bold text-gray-900">Dana Lim</p><p class="text-[10px] text-gray-400">HR-00201</p></td>' +
+                '<td class="py-3 pr-4"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Hired</span></td>' +
+                '<td class="py-3 pr-4 text-xs text-gray-400">—</td>' +
+                '<td class="py-3 pr-4 text-xs font-semibold text-gray-900">HR Manager</td>' +
+                '<td class="py-3 text-xs text-gray-500">Human Resources</td>' +
+                '</tr>' +
+ 
+                '<tr class="border-b border-gray-50 bg-gray-50/50">' +
+                '<td class="py-3 pr-4 text-xs text-gray-500 whitespace-nowrap">Feb 20, 2026</td>' +
+                '<td class="py-3 pr-4"><p class="text-xs font-bold text-gray-900">Sara Cruz</p><p class="text-[10px] text-gray-400">HR-00155</p></td>' +
+                '<td class="py-3 pr-4"><span class="bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Transferred</span></td>' +
+                '<td class="py-3 pr-4 text-xs text-gray-600">Cebu Branch</td>' +
+                '<td class="py-3 pr-4 text-xs font-semibold text-gray-900">Davao Branch</td>' +
+                '<td class="py-3 text-xs text-gray-500">Operations</td>' +
+                '</tr>' +
+ 
+                '<tr class="border-b border-gray-50">' +
+                '<td class="py-3 pr-4 text-xs text-gray-500 whitespace-nowrap">Mar 5, 2026</td>' +
+                '<td class="py-3 pr-4"><p class="text-xs font-bold text-gray-900">Lena Torres</p><p class="text-[10px] text-gray-400">HR-00203</p></td>' +
+                '<td class="py-3 pr-4"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-[9px] font-bold">Hired</span></td>' +
+                '<td class="py-3 pr-4 text-xs text-gray-400">—</td>' +
+                '<td class="py-3 pr-4 text-xs font-semibold text-gray-900">Payroll Officer</td>' +
+                '<td class="py-3 text-xs text-gray-500">Finance</td>' +
+                '</tr>' +
+ 
+                '</tbody></table>' +
+ 
+                // Signature block
+                '<div class="mt-12 pt-6 border-t border-gray-200 grid grid-cols-3 gap-10">' +
+                '<div class="text-center"><div class="border-b border-gray-900 pb-1 mb-2"></div><p class="text-[10px] text-gray-500">Prepared by</p><p class="text-xs font-bold text-gray-900">HR Officer</p></div>' +
+                '<div class="text-center"><div class="border-b border-gray-900 pb-1 mb-2"></div><p class="text-[10px] text-gray-500">Reviewed by</p><p class="text-xs font-bold text-gray-900">HR Manager</p></div>' +
+                '<div class="text-center"><div class="border-b border-gray-900 pb-1 mb-2"></div><p class="text-[10px] text-gray-500">Approved by</p><p class="text-xs font-bold text-gray-900">Regional Director</p></div>' +
+                '</div>' +
+ 
+                '<div class="mt-8 text-center">' +
+                '<p class="text-[9px] text-gray-400">BENCH APPAREL · Position Movement Report · Q1 2026 · CONFIDENTIAL</p>' +
+                '</div>' +
+                '</div></div>'
         },
 
         // ── HR PRINTABLE DOCUMENTS ───────────────────────────────────────
@@ -6069,16 +7334,13 @@
         wrap.style.padding = '12px 0 0';
         wrap.style.color = '#ddd';
 
+        // ── TOOLBAR ───────────────────────────────────────────────
         var toolbar = document.createElement('div');
-        toolbar.style.display = 'flex';
-        toolbar.style.justifyContent = 'space-between';
-        toolbar.style.alignItems = 'center';
-        toolbar.style.marginBottom = '10px';
+        toolbar.style.cssText = 'display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;';
         toolbar.innerHTML = '<div style="font-size:12px;color:#999;">Edit source then apply to canvas</div>';
 
         var actions = document.createElement('div');
-        actions.style.display = 'flex';
-        actions.style.gap = '8px';
+        actions.style.cssText = 'display:flex;gap:8px;';
 
         var applyBtn = document.createElement('button');
         applyBtn.type = 'button';
@@ -6094,10 +7356,37 @@
         actions.appendChild(zipBtn);
         toolbar.appendChild(actions);
 
+        // ── TABS ──────────────────────────────────────────────────
+        var tabBar = document.createElement('div');
+        tabBar.style.cssText = 'display:flex;gap:0;margin-bottom:12px;border-bottom:1px solid #2a2a2a;';
+
+        function makeTab(label, color, active) {
+            var t = document.createElement('button');
+            t.type = 'button';
+            t.textContent = label;
+            t.dataset.tab = label;
+            t.style.cssText = 'background:transparent;border:none;padding:8px 18px;font-size:11px;font-weight:700;cursor:pointer;letter-spacing:1px;text-transform:uppercase;border-bottom:2px solid transparent;color:#555;transition:all .2s;';
+            if (active) {
+                t.style.color = color;
+                t.style.borderBottomColor = color;
+            }
+            t.addEventListener('mouseenter', function(){ if(t.style.borderBottomColor === 'transparent') t.style.color = '#888'; });
+            t.addEventListener('mouseleave', function(){ if(t.style.borderBottomColor === 'transparent') t.style.color = '#555'; });
+            return t;
+        }
+
+        var tabHtml = makeTab('HTML', '#f97316', true);
+        var tabCss  = makeTab('CSS',  '#9be22d', false);
+        var tabTw   = makeTab('Tailwind CSS', '#38bdf8', false);
+        tabBar.appendChild(tabHtml);
+        tabBar.appendChild(tabCss);
+        tabBar.appendChild(tabTw);
+
+        // ── HTML + CSS PANEL ──────────────────────────────────────
+        var codePanel = document.createElement('div');
+
         var grid = document.createElement('div');
-        grid.style.display = 'grid';
-        grid.style.gridTemplateColumns = '1fr 1fr';
-        grid.style.gap = '10px';
+        grid.style.cssText = 'display:grid;grid-template-columns:1fr 1fr;gap:10px;';
 
         var htmlWrap = document.createElement('div');
         htmlWrap.innerHTML = '<div style="font-size:11px;color:#d4a16a;margin-bottom:6px;font-weight:700;">HTML</div>';
@@ -6107,24 +7396,469 @@
 
         var htmlArea = document.createElement('textarea');
         htmlArea.value = formatHtmlSource(editor.getHtml());
-        htmlArea.style.cssText = 'width:100%;min-height:380px;background:#1b1b1b;border:1px solid #2f2f2f;color:#f97316;padding:10px;font-family:Consolas,Monaco,monospace;font-size:12px;resize:vertical;';
+        htmlArea.style.cssText = 'width:100%;min-height:380px;background:#1b1b1b;border:1px solid #2f2f2f;color:#f97316;padding:10px;font-family:Consolas,Monaco,monospace;font-size:12px;resize:vertical;box-sizing:border-box;';
 
         var cssArea = document.createElement('textarea');
         cssArea.value = formatCssSource(editor.getCss());
-        cssArea.style.cssText = 'width:100%;min-height:380px;background:#1b1b1b;border:1px solid #2f2f2f;color:#9be22d;padding:10px;font-family:Consolas,Monaco,monospace;font-size:12px;resize:vertical;';
+        cssArea.style.cssText = 'width:100%;min-height:380px;background:#1b1b1b;border:1px solid #2f2f2f;color:#9be22d;padding:10px;font-family:Consolas,Monaco,monospace;font-size:12px;resize:vertical;box-sizing:border-box;';
 
         htmlWrap.appendChild(htmlArea);
         cssWrap.appendChild(cssArea);
         grid.appendChild(htmlWrap);
         grid.appendChild(cssWrap);
+        codePanel.appendChild(grid);
 
-        wrap.appendChild(toolbar);
-        wrap.appendChild(grid);
+        // ── TAILWIND CHEATSHEET PANEL ─────────────────────────────
+        var twPanel = document.createElement('div');
+        twPanel.style.display = 'none';
 
+        var twSections = [
+            {
+                title: '📐 Layout & Display',
+                color: '#38bdf8',
+                items: [
+                    ['flex',              'display: flex'],
+                    ['inline-flex',       'display: inline-flex'],
+                    ['grid',              'display: grid'],
+                    ['hidden',            'display: none'],
+                    ['block',             'display: block'],
+                    ['inline-block',      'display: inline-block'],
+                    ['items-center',      'align-items: center'],
+                    ['items-start',       'align-items: flex-start'],
+                    ['items-end',         'align-items: flex-end'],
+                    ['justify-center',    'justify-content: center'],
+                    ['justify-between',   'justify-content: space-between'],
+                    ['justify-end',       'justify-content: flex-end'],
+                    ['flex-col',          'flex-direction: column'],
+                    ['flex-row',          'flex-direction: row'],
+                    ['flex-wrap',         'flex-wrap: wrap'],
+                    ['flex-1',            'flex: 1 1 0%'],
+                    ['flex-none',         'flex: none'],
+                    ['shrink-0',          'flex-shrink: 0'],
+                    ['grid-cols-2',       'grid-template-columns: repeat(2, 1fr)'],
+                    ['grid-cols-3',       'grid-template-columns: repeat(3, 1fr)'],
+                    ['grid-cols-4',       'grid-template-columns: repeat(4, 1fr)'],
+                    ['col-span-2',        'grid-column: span 2'],
+                    ['gap-2',             'gap: 0.5rem'],
+                    ['gap-4',             'gap: 1rem'],
+                    ['gap-6',             'gap: 1.5rem'],
+                    ['gap-8',             'gap: 2rem'],
+                    ['overflow-hidden',   'overflow: hidden'],
+                    ['overflow-auto',     'overflow: auto'],
+                    ['relative',          'position: relative'],
+                    ['absolute',          'position: absolute'],
+                    ['fixed',             'position: fixed'],
+                    ['inset-0',           'top/right/bottom/left: 0'],
+                    ['z-10',              'z-index: 10'],
+                    ['z-50',              'z-index: 50'],
+                ]
+            },
+            {
+                title: '📏 Spacing (Padding & Margin)',
+                color: '#a78bfa',
+                items: [
+                    ['p-2',    'padding: 0.5rem'],
+                    ['p-4',    'padding: 1rem'],
+                    ['p-6',    'padding: 1.5rem'],
+                    ['p-8',    'padding: 2rem'],
+                    ['px-4',   'padding-left/right: 1rem'],
+                    ['py-2',   'padding-top/bottom: 0.5rem'],
+                    ['pt-4',   'padding-top: 1rem'],
+                    ['pb-4',   'padding-bottom: 1rem'],
+                    ['pl-4',   'padding-left: 1rem'],
+                    ['pr-4',   'padding-right: 1rem'],
+                    ['m-2',    'margin: 0.5rem'],
+                    ['m-4',    'margin: 1rem'],
+                    ['mx-auto','margin-left/right: auto'],
+                    ['my-4',   'margin-top/bottom: 1rem'],
+                    ['mt-2',   'margin-top: 0.5rem'],
+                    ['mb-4',   'margin-bottom: 1rem'],
+                    ['ml-2',   'margin-left: 0.5rem'],
+                    ['mr-2',   'margin-right: 0.5rem'],
+                    ['-mt-8',  'margin-top: -2rem'],
+                    ['-mt-11', 'margin-top: -2.75rem'],
+                    ['space-x-2', '> * + * margin-left: 0.5rem'],
+                    ['space-y-3', '> * + * margin-top: 0.75rem'],
+                ]
+            },
+            {
+                title: '📦 Sizing',
+                color: '#34d399',
+                items: [
+                    ['w-full',    'width: 100%'],
+                    ['w-screen',  'width: 100vw'],
+                    ['w-auto',    'width: auto'],
+                    ['w-4',       'width: 1rem'],
+                    ['w-8',       'width: 2rem'],
+                    ['w-16',      'width: 4rem'],
+                    ['w-20',      'width: 5rem'],
+                    ['w-48',      'width: 12rem'],
+                    ['w-64',      'width: 16rem'],
+                    ['w-1/2',     'width: 50%'],
+                    ['w-1/3',     'width: 33.33%'],
+                    ['max-w-sm',  'max-width: 24rem'],
+                    ['max-w-md',  'max-width: 28rem'],
+                    ['max-w-lg',  'max-width: 32rem'],
+                    ['max-w-xl',  'max-width: 36rem'],
+                    ['max-w-2xl', 'max-width: 42rem'],
+                    ['max-w-3xl', 'max-width: 48rem'],
+                    ['h-full',    'height: 100%'],
+                    ['h-screen',  'height: 100vh'],
+                    ['h-4',       'height: 1rem'],
+                    ['h-8',       'height: 2rem'],
+                    ['h-16',      'height: 4rem'],
+                    ['h-20',      'height: 5rem'],
+                    ['min-h-screen', 'min-height: 100vh'],
+                ]
+            },
+            {
+                title: '🎨 Typography',
+                color: '#fbbf24',
+                items: [
+                    ['text-xs',        'font-size: 0.75rem'],
+                    ['text-sm',        'font-size: 0.875rem'],
+                    ['text-base',      'font-size: 1rem'],
+                    ['text-lg',        'font-size: 1.125rem'],
+                    ['text-xl',        'font-size: 1.25rem'],
+                    ['text-2xl',       'font-size: 1.5rem'],
+                    ['text-3xl',       'font-size: 1.875rem'],
+                    ['text-4xl',       'font-size: 2.25rem'],
+                    ['font-normal',    'font-weight: 400'],
+                    ['font-medium',    'font-weight: 500'],
+                    ['font-semibold',  'font-weight: 600'],
+                    ['font-bold',      'font-weight: 700'],
+                    ['font-extrabold', 'font-weight: 800'],
+                    ['font-black',     'font-weight: 900'],
+                    ['text-center',    'text-align: center'],
+                    ['text-left',      'text-align: left'],
+                    ['text-right',     'text-align: right'],
+                    ['uppercase',      'text-transform: uppercase'],
+                    ['lowercase',      'text-transform: lowercase'],
+                    ['capitalize',     'text-transform: capitalize'],
+                    ['tracking-wide',  'letter-spacing: 0.025em'],
+                    ['tracking-wider', 'letter-spacing: 0.05em'],
+                    ['tracking-widest','letter-spacing: 0.1em'],
+                    ['leading-tight',  'line-height: 1.25'],
+                    ['leading-normal', 'line-height: 1.5'],
+                    ['leading-relaxed','line-height: 1.625'],
+                    ['truncate',       'overflow: hidden; text-overflow: ellipsis'],
+                    ['underline',      'text-decoration: underline'],
+                    ['no-underline',   'text-decoration: none'],
+                    ['italic',         'font-style: italic'],
+                ]
+            },
+            {
+                title: '🌈 Colors (Text)',
+                color: '#f472b6',
+                items: [
+                    ['text-white',      'color: #ffffff'],
+                    ['text-black',      'color: #000000'],
+                    ['text-gray-400',   'color: #9ca3af'],
+                    ['text-gray-500',   'color: #6b7280'],
+                    ['text-gray-600',   'color: #4b5563'],
+                    ['text-gray-700',   'color: #374151'],
+                    ['text-gray-800',   'color: #1f2937'],
+                    ['text-gray-900',   'color: #111827'],
+                    ['text-red-500',    'color: #ef4444'],
+                    ['text-red-600',    'color: #dc2626'],
+                    ['text-green-500',  'color: #22c55e'],
+                    ['text-green-600',  'color: #16a34a'],
+                    ['text-green-700',  'color: #15803d'],
+                    ['text-blue-500',   'color: #3b82f6'],
+                    ['text-blue-600',   'color: #2563eb'],
+                    ['text-yellow-500', 'color: #eab308'],
+                    ['text-amber-600',  'color: #d97706'],
+                    ['text-white/50',   'color: rgba(255,255,255,0.5)'],
+                    ['text-white/30',   'color: rgba(255,255,255,0.3)'],
+                    ['text-[#B90E0A]',  'color: #B90E0A (Bench Red)'],
+                ]
+            },
+            {
+                title: '🖌 Colors (Background)',
+                color: '#fb923c',
+                items: [
+                    ['bg-white',         'background: #ffffff'],
+                    ['bg-black',         'background: #000000'],
+                    ['bg-transparent',   'background: transparent'],
+                    ['bg-gray-50',       'background: #f9fafb'],
+                    ['bg-gray-100',      'background: #f3f4f6'],
+                    ['bg-gray-200',      'background: #e5e7eb'],
+                    ['bg-gray-800',      'background: #1f2937'],
+                    ['bg-gray-900',      'background: #111827'],
+                    ['bg-red-50',        'background: #fef2f2'],
+                    ['bg-red-100',       'background: #fee2e2'],
+                    ['bg-green-50',      'background: #f0fdf4'],
+                    ['bg-green-100',     'background: #dcfce7'],
+                    ['bg-blue-50',       'background: #eff6ff'],
+                    ['bg-yellow-50',     'background: #fefce8'],
+                    ['bg-black/50',      'background: rgba(0,0,0,0.5)'],
+                    ['bg-black/60',      'background: rgba(0,0,0,0.6)'],
+                    ['bg-white/10',      'background: rgba(255,255,255,0.1)'],
+                    ['bg-white/20',      'background: rgba(255,255,255,0.2)'],
+                    ['bg-[#B90E0A]',     'background: #B90E0A (Bench Red)'],
+                    ['bg-[#1a1a1a]',     'background: #1a1a1a (Dark)'],
+                    ['bg-gradient-to-br','background gradient → bottom-right'],
+                    ['from-[#B90E0A]',   'gradient start color'],
+                    ['to-[#7a0806]',     'gradient end color'],
+                ]
+            },
+            {
+                title: '🔲 Borders & Radius',
+                color: '#67e8f9',
+                items: [
+                    ['border',           'border-width: 1px'],
+                    ['border-2',         'border-width: 2px'],
+                    ['border-4',         'border-width: 4px'],
+                    ['border-t',         'border-top-width: 1px'],
+                    ['border-b',         'border-bottom-width: 1px'],
+                    ['border-l',         'border-left-width: 1px'],
+                    ['border-r',         'border-right-width: 1px'],
+                    ['border-gray-100',  'border-color: #f3f4f6'],
+                    ['border-gray-200',  'border-color: #e5e7eb'],
+                    ['border-white/10',  'border-color: rgba(255,255,255,0.1)'],
+                    ['border-[#333]',    'border-color: #333'],
+                    ['divide-x',         'border between cols (x)'],
+                    ['divide-y',         'border between rows (y)'],
+                    ['rounded',          'border-radius: 0.25rem'],
+                    ['rounded-md',       'border-radius: 0.375rem'],
+                    ['rounded-lg',       'border-radius: 0.5rem'],
+                    ['rounded-xl',       'border-radius: 0.75rem'],
+                    ['rounded-2xl',      'border-radius: 1rem'],
+                    ['rounded-3xl',      'border-radius: 1.5rem'],
+                    ['rounded-full',     'border-radius: 9999px'],
+                ]
+            },
+            {
+                title: '✨ Effects & Shadows',
+                color: '#c084fc',
+                items: [
+                    ['shadow',       'box-shadow: sm'],
+                    ['shadow-md',    'box-shadow: medium'],
+                    ['shadow-lg',    'box-shadow: large'],
+                    ['shadow-xl',    'box-shadow: xl'],
+                    ['shadow-2xl',   'box-shadow: 2xl'],
+                    ['shadow-none',  'box-shadow: none'],
+                    ['opacity-0',    'opacity: 0'],
+                    ['opacity-50',   'opacity: 0.5'],
+                    ['opacity-75',   'opacity: 0.75'],
+                    ['opacity-100',  'opacity: 1'],
+                    ['blur',         'filter: blur(8px)'],
+                    ['blur-sm',      'filter: blur(4px)'],
+                    ['backdrop-blur-sm',  'backdrop-filter: blur(4px)'],
+                    ['backdrop-blur-md',  'backdrop-filter: blur(12px)'],
+                    ['transition',        'transition: all 150ms'],
+                    ['transition-all',    'transition: all'],
+                    ['duration-200',      'transition-duration: 200ms'],
+                    ['duration-300',      'transition-duration: 300ms'],
+                    ['ease-in-out',       'transition-timing: ease-in-out'],
+                    ['cursor-pointer',    'cursor: pointer'],
+                    ['select-none',       'user-select: none'],
+                    ['pointer-events-none','pointer-events: none'],
+                ]
+            },
+            {
+                title: '📱 Responsive Breakpoints',
+                color: '#86efac',
+                items: [
+                    ['sm:',    'min-width: 640px'],
+                    ['md:',    'min-width: 768px'],
+                    ['lg:',    'min-width: 1024px'],
+                    ['xl:',    'min-width: 1280px'],
+                    ['2xl:',   'min-width: 1536px'],
+                    ['sm:hidden',       'hide on sm+'],
+                    ['md:flex',         'flex on md+'],
+                    ['lg:grid-cols-3',  '3 cols on lg+'],
+                    ['sm:text-lg',      'larger text on sm+'],
+                    ['md:px-8',         'more padding on md+'],
+                    ['hover:bg-gray-100','on hover'],
+                    ['hover:text-white', 'text on hover'],
+                    ['focus:outline-none','on focus'],
+                    ['active:scale-95',  'on active/click'],
+                    ['group',            'parent for group-hover'],
+                    ['group-hover:block','show on parent hover'],
+                ]
+            },
+        ];
+
+        // Search bar
+        var searchWrap = document.createElement('div');
+        searchWrap.style.cssText = 'margin-bottom:12px;position:relative;';
+        var searchInput = document.createElement('input');
+        searchInput.type = 'text';
+        searchInput.placeholder = '🔍  Search classes... e.g. "flex", "text", "bg"';
+        searchInput.style.cssText = 'width:100%;background:#1b1b1b;border:1px solid #2f2f2f;color:#ddd;padding:9px 14px;font-size:12px;border-radius:6px;outline:none;box-sizing:border-box;font-family:Consolas,monospace;';
+        searchWrap.appendChild(searchInput);
+        twPanel.appendChild(searchWrap);
+
+        // Sections container
+        var sectionsWrap = document.createElement('div');
+        sectionsWrap.style.cssText = 'max-height:400px;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-right:4px;';
+        sectionsWrap.style.scrollbarWidth = 'thin';
+
+        twSections.forEach(function(sec) {
+            var secEl = document.createElement('div');
+            secEl.style.cssText = 'background:#1b1b1b;border:1px solid #2a2a2a;border-radius:8px;overflow:hidden;';
+            secEl.dataset.section = sec.title;
+
+            var secHeader = document.createElement('div');
+            secHeader.style.cssText = 'padding:8px 12px;font-size:11px;font-weight:700;background:#222;border-bottom:1px solid #2a2a2a;color:' + sec.color + ';letter-spacing:0.5px;';
+            secHeader.textContent = sec.title;
+
+            var secBody = document.createElement('div');
+            secBody.style.cssText = 'padding:6px 0;';
+
+            sec.items.forEach(function(item) {
+                var row = document.createElement('div');
+                row.style.cssText = 'display:flex;justify-content:space-between;align-items:center;padding:4px 12px;cursor:pointer;transition:background .15s;';
+                row.dataset.class = item[0];
+                row.dataset.desc  = item[1];
+
+                var cls = document.createElement('span');
+                cls.style.cssText = 'font-family:Consolas,monospace;font-size:11px;color:' + sec.color + ';font-weight:600;';
+                cls.textContent = item[0];
+
+                var desc = document.createElement('span');
+                desc.style.cssText = 'font-size:10px;color:#555;text-align:right;max-width:55%;line-height:1.3;';
+                desc.textContent = item[1];
+
+                var copyBadge = document.createElement('span');
+                copyBadge.textContent = 'copy';
+                copyBadge.style.cssText = 'display:none;font-size:9px;background:#B90E0A;color:#fff;padding:1px 5px;border-radius:3px;margin-left:6px;';
+
+                row.appendChild(cls);
+                row.appendChild(desc);
+                row.appendChild(copyBadge);
+
+                row.addEventListener('mouseenter', function(){
+                    row.style.background = '#252525';
+                    copyBadge.style.display = 'inline';
+                });
+                row.addEventListener('mouseleave', function(){
+                    row.style.background = 'transparent';
+                    copyBadge.style.display = 'none';
+                });
+                row.addEventListener('click', function(){
+                    navigator.clipboard.writeText(item[0]).then(function(){
+                        copyBadge.textContent = '✓ copied!';
+                        copyBadge.style.background = '#16a34a';
+                        copyBadge.style.display = 'inline';
+                        setTimeout(function(){
+                            copyBadge.textContent = 'copy';
+                            copyBadge.style.background = '#B90E0A';
+                        }, 1200);
+                    });
+                });
+
+                secBody.appendChild(row);
+            });
+
+            secEl.appendChild(secHeader);
+            secEl.appendChild(secBody);
+            sectionsWrap.appendChild(secEl);
+        });
+
+        twPanel.appendChild(sectionsWrap);
+
+        // Search filter logic
+        searchInput.addEventListener('input', function(){
+            var q = searchInput.value.toLowerCase().trim();
+            sectionsWrap.innerHTML = '';
+
+            if (!q) {
+                // Show all sections
+                twSections.forEach(function(sec) {
+                    // rebuild — reuse secEl by re-running (just re-append)
+                });
+                // Easier: just reload the panel
+                searchInput.dispatchEvent(new Event('_reload'));
+                return;
+            }
+
+            // Filter matching rows across all sections
+            var results = document.createElement('div');
+            results.style.cssText = 'background:#1b1b1b;border:1px solid #2a2a2a;border-radius:8px;overflow:hidden;grid-column:span 2;';
+            var rHeader = document.createElement('div');
+            rHeader.style.cssText = 'padding:8px 12px;font-size:11px;font-weight:700;background:#222;border-bottom:1px solid #2a2a2a;color:#38bdf8;';
+            rHeader.textContent = '🔍 Search Results';
+            results.appendChild(rHeader);
+
+            var found = 0;
+            twSections.forEach(function(sec) {
+                sec.items.forEach(function(item) {
+                    if (item[0].toLowerCase().includes(q) || item[1].toLowerCase().includes(q)) {
+                        found++;
+                        var row = document.createElement('div');
+                        row.style.cssText = 'display:flex;justify-content:space-between;align-items:center;padding:5px 12px;cursor:pointer;border-bottom:1px solid #222;';
+
+                        var cls = document.createElement('span');
+                        cls.style.cssText = 'font-family:Consolas,monospace;font-size:11px;color:#38bdf8;font-weight:600;';
+                        cls.textContent = item[0];
+
+                        var desc = document.createElement('span');
+                        desc.style.cssText = 'font-size:10px;color:#555;';
+                        desc.textContent = item[1];
+
+                        row.appendChild(cls);
+                        row.appendChild(desc);
+
+                        row.addEventListener('mouseenter', function(){ row.style.background = '#252525'; });
+                        row.addEventListener('mouseleave', function(){ row.style.background = 'transparent'; });
+                        row.addEventListener('click', function(){
+                            navigator.clipboard.writeText(item[0]);
+                            cls.textContent = '✓ ' + item[0];
+                            setTimeout(function(){ cls.textContent = item[0]; }, 1200);
+                        });
+
+                        results.appendChild(row);
+                    }
+                });
+            });
+
+            if (found === 0) {
+                var none = document.createElement('div');
+                none.style.cssText = 'padding:16px 12px;color:#555;font-size:12px;text-align:center;';
+                none.textContent = 'No classes found for "' + q + '"';
+                results.appendChild(none);
+            }
+
+            sectionsWrap.appendChild(results);
+        });
+
+        // ── TAB SWITCHING LOGIC ───────────────────────────────────
+        function activateTab(tab) {
+            [tabHtml, tabCss, tabTw].forEach(function(t) {
+                t.style.color = '#555';
+                t.style.borderBottomColor = 'transparent';
+            });
+
+            codePanel.style.display = 'none';
+            twPanel.style.display   = 'none';
+            toolbar.style.display   = 'none';
+
+            if (tab === 'HTML' || tab === 'CSS') {
+                tab === 'HTML' ? tabHtml.style.color = '#f97316' : tabCss.style.color = '#9be22d';
+                tab === 'HTML' ? tabHtml.style.borderBottomColor = '#f97316' : tabCss.style.borderBottomColor = '#9be22d';
+                codePanel.style.display = 'block';
+                toolbar.style.display   = 'flex';
+            } else {
+                tabTw.style.color = '#38bdf8';
+                tabTw.style.borderBottomColor = '#38bdf8';
+                twPanel.style.display = 'block';
+            }
+        }
+
+        tabHtml.addEventListener('click', function(){ activateTab('HTML'); });
+        tabCss.addEventListener('click',  function(){ activateTab('CSS'); });
+        tabTw.addEventListener('click',   function(){ activateTab('Tailwind CSS'); });
+
+        // ── BUTTON EVENTS ─────────────────────────────────────────
         applyBtn.addEventListener('click', function () {
             editor.setComponents(htmlArea.value || '');
             editor.setStyle(cssArea.value || '');
-            setTimeout(function () { injectChartJs(renderCharts); }, 350);
+            setTimeout(function () {
+                injectChartJs(renderCharts);
+                injectTailwind();
+            }, 350);
             status('Code applied.');
         });
 
@@ -6132,9 +7866,19 @@
             exportZipFromEditor();
         });
 
+        // ── ASSEMBLE & OPEN ───────────────────────────────────────
+        wrap.appendChild(toolbar);
+        wrap.appendChild(tabBar);
+        wrap.appendChild(codePanel);
+        wrap.appendChild(twPanel);
+
         editor.Modal.setTitle('Code');
         editor.Modal.setContent(wrap);
         editor.Modal.open();
+
+        // Set modal width wider to fit cheatsheet grid
+        var modalEl = document.querySelector('.gjs-mdl-dialog');
+        if (modalEl) modalEl.style.maxWidth = '900px';
     }
 
     /* --------------------------------------------------
@@ -6181,6 +7925,22 @@
         } catch (e) {}
     }
 
+        function injectTailwind() {
+        var iframe = document.querySelector('.gjs-frame');
+        if (!iframe) { setTimeout(injectTailwind, 400); return; }
+
+        var doc = iframe.contentDocument || iframe.contentWindow.document;
+        if (!doc || !doc.head) { setTimeout(injectTailwind, 400); return; }
+
+        // Already injected — skip
+        if (doc.getElementById('tw-cdn')) return;
+
+        var s = doc.createElement('script');
+        s.id  = 'tw-cdn';
+        s.src = 'https://cdn.tailwindcss.com';
+        doc.head.appendChild(s);
+    }
+
     /* --------------------------------------------------
        SAVE TO SERVER
     -------------------------------------------------- */
@@ -6224,6 +7984,7 @@
                 // After content loads, inject Chart.js and render charts
                 setTimeout(function () {
                     injectChartJs(renderCharts);
+                    injectTailwind();  
                 }, 500);
                 status('Page loaded.');
             }
@@ -6294,413 +8055,372 @@
             }
         });
 
-        // On editor load: inject Chart.js then render all charts on canvas
-        editor.on('load', function () {
-
-            // ── CUSTOM COMPONENT TYPES WITH TRAITS ─────────────────────────
-
-var cm = editor.Components;
-
-// ── KPI Card ────────────────────────────────────────────────────
-cm.addType('erp-kpi', {
-    isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'kpi'; },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'kpi' },
-            traits: [
-                { type: 'text', name: 'kpi-label',  label: 'Metric Label',  placeholder: 'e.g. Total Sales' },
-                { type: 'text', name: 'kpi-value',  label: 'Value',          placeholder: 'e.g. PHP 128,400' },
-                { type: 'text', name: 'kpi-sub',    label: 'Sub Text',       placeholder: 'e.g. +12% vs last period' },
-                { type: 'select', name: 'kpi-sub-color', label: 'Sub Color',
-                  options: [{ id:'#22c55e', name:'Green (Positive)' },{ id:'#ef4444', name:'Red (Negative)' },{ id:'#888', name:'Gray (Neutral)' }] },
-                { type: 'select', name: 'kpi-accent', label: 'Accent Color',
-                  options: [{ id:'#B90E0A', name:'Red' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' },{ id:'#f59e0b', name:'Amber' },{ id:'#8b5cf6', name:'Purple' }] }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var cells = el.querySelectorAll('div');
-            var label = this.getAttributes()['kpi-label']; if (label && cells[0]) cells[0].textContent = label;
-            var val   = this.getAttributes()['kpi-value']; if (val   && cells[1]) cells[1].textContent = val;
-            var sub   = this.getAttributes()['kpi-sub'];   if (sub   && cells[2]) cells[2].textContent = sub;
-            var sc    = this.getAttributes()['kpi-sub-color']; if (sc && cells[2]) cells[2].style.color = sc;
-            var ac    = this.getAttributes()['kpi-accent']; if (ac) el.style.borderTopColor = ac;
-        }
-    }
-});
-
-// ── Section Header ───────────────────────────────────────────────
-cm.addType('erp-sec-hdr', {
-    isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'sec-hdr'; },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'sec-hdr' },
-            traits: [
-                { type: 'text', name: 'hdr-title',    label: 'Title',    placeholder: 'Section Title' },
-                { type: 'text', name: 'hdr-subtitle', label: 'Subtitle', placeholder: 'Subtitle here' }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var h2 = el.querySelector('h2'); var p = el.querySelector('p');
-            var t  = this.getAttributes()['hdr-title'];    if (t && h2) h2.textContent = t;
-            var s  = this.getAttributes()['hdr-subtitle']; if (s && p)  p.textContent  = s;
-        }
-    }
-});
-
-// ── Form Input ────────────────────────────────────────────────────
-cm.addType('erp-form-in', {
-    isComponent: function(el) { 
-        return el.getAttribute && el.getAttribute('data-erp') === 'form-in'; 
-    },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'form-in' },
-            traits: [
-                { type: 'text',   name: 'fi-label',       label: 'Field Label',   placeholder: 'Field Label' },
-                { type: 'text',   name: 'fi-placeholder', label: 'Placeholder',   placeholder: 'Enter value...' },
-                { type: 'select', name: 'fi-type',        label: 'Input Type',
-                  options: [
-                    { id:'text', name:'Text' },{ id:'email', name:'Email' },
-                    { id:'password', name:'Password' },{ id:'number', name:'Number' },
-                    { id:'date', name:'Date' },{ id:'tel', name:'Phone' }
-                  ]
-                },
-                { type: 'checkbox', name: 'fi-required', label: 'Required?' }
-            ]
-        },
-        init: function() { 
-            this.on('change:attributes:fi-label',       this._syncLabel,       this);
-            this.on('change:attributes:fi-placeholder', this._syncPlaceholder, this);
-            this.on('change:attributes:fi-type',        this._syncType,        this);
-            this.on('change:attributes:fi-required',    this._syncRequired,    this);
-        },
-        _syncLabel: function() {
-            var el  = this.getEl(); if (!el) return;
-            var lbl = el.querySelector('label');
-            var val = this.getAttributes()['fi-label'];
-            if (lbl && val) lbl.textContent = val;
-        },
-        _syncPlaceholder: function() {
-            var el  = this.getEl(); if (!el) return;
-            var inp = el.querySelector('input');
-            var val = this.getAttributes()['fi-placeholder'];
-            if (inp && val) inp.setAttribute('placeholder', val);
-        },
-        _syncType: function() {
-            var el  = this.getEl(); if (!el) return;
-            var inp = el.querySelector('input');
-            var val = this.getAttributes()['fi-type'];
-            if (inp && val) inp.setAttribute('type', val);
-        },
-        _syncRequired: function() {
-            var el  = this.getEl(); if (!el) return;
-            var inp = el.querySelector('input');
-            var val = this.getAttributes()['fi-required'];
-            if (inp) {
-                if (val) inp.setAttribute('required', 'required');
-                else     inp.removeAttribute('required');
-            }
-        }
-    }
-});
-// ── Form Select ───────────────────────────────────────────────────
-cm.addType('erp-form-sel', {
-    isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'form-sel'; },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'form-sel' },
-            traits: [
-                { type: 'text', name: 'fs-label',   label: 'Field Label', placeholder: 'Select Label' },
-                { type: 'text', name: 'fs-options', label: 'Options (comma-separated)', placeholder: 'Option 1,Option 2,Option 3' }
-            ]
-        },
-        init: function() { this.on('change:attributes:kpi-label',  this._syncLabel, this);
-this.on('change:attributes:kpi-value',  this._syncValue, this);
-this.on('change:attributes:kpi-sub',    this._syncSub,   this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var lbl = el.querySelector('label'); var sel = el.querySelector('select');
-            var l   = this.getAttributes()['fs-label'];   if (l && lbl) lbl.textContent = l;
-            var ops = this.getAttributes()['fs-options'];
-            if (ops && sel) {
-                sel.innerHTML = ops.split(',').map(function(o) {
-                    return '<option>' + o.trim() + '</option>';
-                }).join('');
-            }
-        }
-    }
-});
-
-// ── Red Button ────────────────────────────────────────────────────
-cm.addType('erp-btn-red', {
-    isComponent: function(el) { return el.tagName === 'BUTTON' && el.getAttribute('data-erp') === 'btn-red'; },
-    model: {
-        defaults: {
-            tagName: 'button',
-            attributes: { 'data-erp': 'btn-red' },
-            traits: [
-                { type: 'text',   name: 'btn-label', label: 'Button Text', placeholder: 'Save Changes' },
-                { type: 'select', name: 'btn-color', label: 'Color',
-                  options: [{ id:'#B90E0A', name:'Red' },{ id:'#1a1a1a', name:'Black' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' }] }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var lbl = this.getAttributes()['btn-label']; if (lbl) el.textContent = lbl;
-            var col = this.getAttributes()['btn-color']; if (col) el.style.background = col;
-        }
-    }
-});
-
-// ── Outline Button ────────────────────────────────────────────────
-cm.addType('erp-btn-out', {
-    isComponent: function(el) { return el.tagName === 'BUTTON' && el.getAttribute('data-erp') === 'btn-out'; },
-    model: {
-        defaults: {
-            tagName: 'button',
-            attributes: { 'data-erp': 'btn-out' },
-            traits: [
-                { type: 'text', name: 'btn-label', label: 'Button Text', placeholder: 'Cancel' },
-                { type: 'select', name: 'btn-color', label: 'Color',
-                  options: [{ id:'#B90E0A', name:'Red' },{ id:'#1a1a1a', name:'Black' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' }] }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var lbl = this.getAttributes()['btn-label']; if (lbl) el.textContent = lbl;
-            var col = this.getAttributes()['btn-color'];
-            if (col) { el.style.color = col; el.style.borderColor = col; }
-        }
-    }
-});
-
-// ── Warning Alert ─────────────────────────────────────────────────
-cm.addType('erp-alert-w', {
-    isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'alert-w'; },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'alert-w' },
-            traits: [
-                { type: 'text', name: 'aw-title',   label: 'Alert Title',   placeholder: 'Warning' },
-                { type: 'text', name: 'aw-message', label: 'Alert Message', placeholder: 'Alert message goes here.' }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var divs = el.querySelectorAll('div');
-            var t = this.getAttributes()['aw-title'];   if (t && divs[0]) divs[0].textContent = t;
-            var m = this.getAttributes()['aw-message']; if (m && divs[1]) divs[1].textContent = m;
-        }
-    }
-});
-
-// ── Error Alert ───────────────────────────────────────────────────
-cm.addType('erp-alert-e', {
-    isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'alert-e'; },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'alert-e' },
-            traits: [
-                { type: 'text', name: 'ae-title',   label: 'Alert Title',   placeholder: 'Error' },
-                { type: 'text', name: 'ae-message', label: 'Alert Message', placeholder: 'Error message goes here.' }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var divs = el.querySelectorAll('div');
-            var t = this.getAttributes()['ae-title'];   if (t && divs[0]) divs[0].textContent = t;
-            var m = this.getAttributes()['ae-message']; if (m && divs[1]) divs[1].textContent = m;
-        }
-    }
-});
-
-// ── Progress Bar ─────────────────────────────────────────────────
-cm.addType('erp-prog', {
-    isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'prog'; },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'prog' },
-            traits: [
-                { type: 'text',   name: 'pb-label', label: 'Label',         placeholder: 'Label' },
-                { type: 'number', name: 'pb-value', label: 'Value (0-100)', placeholder: '75' },
-                { type: 'select', name: 'pb-color', label: 'Bar Color',
-                  options: [{ id:'#B90E0A', name:'Red' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' },{ id:'#f59e0b', name:'Amber' },{ id:'#8b5cf6', name:'Purple' }] }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var spans = el.querySelectorAll('span');
-            var bar   = el.querySelector('div > div');
-            var lbl   = this.getAttributes()['pb-label']; if (lbl && spans[0]) spans[0].textContent = lbl;
-            var val   = this.getAttributes()['pb-value'];
-            if (val !== undefined && val !== '') {
-                var pct = Math.min(100, Math.max(0, parseInt(val)));
-                if (spans[1]) spans[1].textContent = pct + '%';
-                if (bar) bar.style.width = pct + '%';
-            }
-            var col = this.getAttributes()['pb-color']; if (col && bar) bar.style.background = col;
-        }
-    }
-});
-
-// ── Card ─────────────────────────────────────────────────────────
-cm.addType('erp-card', {
-    isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'card'; },
-    model: {
-        defaults: {
-            tagName: 'div',
-            attributes: { 'data-erp': 'card' },
-            traits: [
-                { type: 'text', name: 'card-title', label: 'Title',       placeholder: 'Card Title' },
-                { type: 'text', name: 'card-body',  label: 'Description', placeholder: 'Card description here.' }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var h3 = el.querySelector('h3'); var p = el.querySelector('p');
-            var t  = this.getAttributes()['card-title']; if (t && h3) h3.textContent = t;
-            var b  = this.getAttributes()['card-body'];  if (b && p)  p.textContent  = b;
-        }
-    }
-});
-
-// ── Heading ───────────────────────────────────────────────────────
-cm.addType('erp-heading', {
-    isComponent: function(el) { return el.tagName === 'H2' && el.getAttribute('data-erp') === 'h2'; },
-    model: {
-        defaults: {
-            tagName: 'h2',
-            attributes: { 'data-erp': 'h2' },
-            traits: [
-                { type: 'text',   name: 'h2-text',  label: 'Text',      placeholder: 'Your Heading' },
-                { type: 'select', name: 'h2-size',  label: 'Size',
-                  options: [{ id:'16px', name:'Small' },{ id:'20px', name:'Medium' },{ id:'24px', name:'Large' },{ id:'32px', name:'XL' },{ id:'40px', name:'XXL' }] },
-                { type: 'select', name: 'h2-align', label: 'Alignment',
-                  options: [{ id:'left', name:'Left' },{ id:'center', name:'Center' },{ id:'right', name:'Right' }] },
-                { name: 'h2-color', type: 'color', label: 'Color' }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var t  = this.getAttributes()['h2-text'];  if (t) el.textContent     = t;
-            var s  = this.getAttributes()['h2-size'];  if (s) el.style.fontSize  = s;
-            var a  = this.getAttributes()['h2-align']; if (a) el.style.textAlign = a;
-            var c  = this.getAttributes()['h2-color']; if (c) el.style.color     = c;
-        }
-    }
-});
-
-// ── Text Paragraph ────────────────────────────────────────────────
-cm.addType('erp-text', {
-    isComponent: function(el) { return el.tagName === 'P' && el.getAttribute('data-erp') === 'txt'; },
-    model: {
-        defaults: {
-            tagName: 'p',
-            attributes: { 'data-erp': 'txt' },
-            traits: [
-                { type: 'text',   name: 'p-text',  label: 'Text',      placeholder: 'Click to edit this text.' },
-                { type: 'select', name: 'p-size',  label: 'Font Size',
-                  options: [{ id:'11px', name:'XS' },{ id:'13px', name:'Small' },{ id:'14px', name:'Medium' },{ id:'16px', name:'Large' },{ id:'18px', name:'XL' }] },
-                { type: 'select', name: 'p-align', label: 'Alignment',
-                  options: [{ id:'left', name:'Left' },{ id:'center', name:'Center' },{ id:'right', name:'Right' }] }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var t  = this.getAttributes()['p-text'];  if (t) el.textContent    = t;
-            var s  = this.getAttributes()['p-size'];  if (s) el.style.fontSize = s;
-            var a  = this.getAttributes()['p-align']; if (a) el.style.textAlign = a;
-        }
-    }
-});
-
-// ── Image Block ───────────────────────────────────────────────────
-cm.addType('erp-img', {
-    isComponent: function(el) { return el.tagName === 'IMG' && el.getAttribute('data-erp') === 'img'; },
-    model: {
-        defaults: {
-            tagName: 'img',
-            attributes: { 'data-erp': 'img' },
-            traits: [
-                { type: 'text',   name: 'img-src',    label: 'Image URL',  placeholder: 'https://...' },
-                { type: 'text',   name: 'img-alt',    label: 'Alt Text',   placeholder: 'Image description' },
-                { type: 'select', name: 'img-radius', label: 'Corners',
-                  options: [{ id:'0', name:'Sharp' },{ id:'4px', name:'Slight' },{ id:'8px', name:'Rounded' },{ id:'16px', name:'Very Rounded' },{ id:'50%', name:'Circle' }] }
-            ]
-        },
-        init: function() { this.on('change:attributes', this._syncTraits, this); },
-        _syncTraits: function() {
-            var el = this.getEl(); if (!el) return;
-            var src = this.getAttributes()['img-src'];    if (src) el.setAttribute('src', src);
-            var alt = this.getAttributes()['img-alt'];    if (alt) el.setAttribute('alt', alt);
-            var r   = this.getAttributes()['img-radius']; if (r)   el.style.borderRadius = r;
-        }
-    }
-});
-
 // ─────────────────────────────────────────────────────────────────
-            // Sync background-color picker with selected element's actual bg
-        editor.on('component:selected', function (component) {
-            if (!component) return;
+// REPLACE everything from:
+//     // On editor load: inject Chart.js...
+// all the way down to:
+//     status('Ready');
+//
+// with this entire block below
+// ─────────────────────────────────────────────────────────────────
 
-            var el = component.getEl();
-            if (!el) return;
+        // ── CUSTOM COMPONENT TYPES WITH TRAITS ────────────────────────────
+        // Must be registered RIGHT HERE — after grapesjs.init(), NOT inside editor.on('load')
 
-            var computedBg = window.getComputedStyle(el).backgroundColor;
-            var inlineBg   = el.style.backgroundColor;
-            var bg = inlineBg || computedBg;
+        var cm = editor.Components;
 
-            // Normalize to empty if transparent/none
-            if (!bg || bg === 'transparent' || bg === 'rgba(0, 0, 0, 0)') bg = '';
+        cm.addType('erp-kpi', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'kpi'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'kpi' },
+                    traits: [
+                        { type: 'text',   name: 'kpi-label',     label: 'Metric Label', placeholder: 'e.g. Total Sales' },
+                        { type: 'text',   name: 'kpi-value',     label: 'Value',        placeholder: 'e.g. PHP 128,400' },
+                        { type: 'text',   name: 'kpi-sub',       label: 'Sub Text',     placeholder: 'e.g. +12% vs last period' },
+                        { type: 'select', name: 'kpi-sub-color', label: 'Sub Color',
+                          options: [{ id:'#22c55e', name:'Green' },{ id:'#ef4444', name:'Red' },{ id:'#888', name:'Gray' }] },
+                        { type: 'select', name: 'kpi-accent',    label: 'Accent Color',
+                          options: [{ id:'#B90E0A', name:'Red' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' },{ id:'#f59e0b', name:'Amber' }] }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:kpi-label',     this._syncLabel,    this);
+                    this.on('change:attributes:kpi-value',     this._syncValue,    this);
+                    this.on('change:attributes:kpi-sub',       this._syncSub,      this);
+                    this.on('change:attributes:kpi-sub-color', this._syncSubColor, this);
+                    this.on('change:attributes:kpi-accent',    this._syncAccent,   this);
+                },
+                _syncLabel:    function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['kpi-label'];     if(v&&d[0]) d[0].textContent=v; },
+                _syncValue:    function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['kpi-value'];     if(v&&d[1]) d[1].textContent=v; },
+                _syncSub:      function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['kpi-sub'];       if(v&&d[2]) d[2].textContent=v; },
+                _syncSubColor: function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['kpi-sub-color']; if(v&&d[2]) d[2].style.color=v; },
+                _syncAccent:   function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['kpi-accent']; if(v) el.style.borderTopColor=v; }
+            }
+        });
 
-            // Push the value into GrapeJS style manager
-            if (bg) {
-                var sm = editor.StyleManager;
-                var prop = sm.getProperty('Background', 'background-color');
-                if (prop) {
-                    prop.setValue(bg);
+        cm.addType('erp-sec-hdr', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'sec-hdr'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'sec-hdr' },
+                    traits: [
+                        { type: 'text', name: 'hdr-title',    label: 'Title',    placeholder: 'Section Title' },
+                        { type: 'text', name: 'hdr-subtitle', label: 'Subtitle', placeholder: 'Subtitle here' }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:hdr-title',    this._syncTitle,    this);
+                    this.on('change:attributes:hdr-subtitle', this._syncSubtitle, this);
+                },
+                _syncTitle:    function() { var el=this.getEl(); if(!el) return; var h=el.querySelector('h2'); var v=this.getAttributes()['hdr-title'];    if(v&&h) h.textContent=v; },
+                _syncSubtitle: function() { var el=this.getEl(); if(!el) return; var p=el.querySelector('p');  var v=this.getAttributes()['hdr-subtitle']; if(v&&p) p.textContent=v; }
+            }
+        });
+
+        cm.addType('erp-form-in', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'form-in'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'form-in' },
+                    traits: [
+                        { type: 'text',     name: 'fi-label',       label: 'Field Label',  placeholder: 'Field Label' },
+                        { type: 'text',     name: 'fi-placeholder', label: 'Placeholder',  placeholder: 'Enter value...' },
+                        { type: 'select',   name: 'fi-type',        label: 'Input Type',
+                          options: [{ id:'text', name:'Text' },{ id:'email', name:'Email' },{ id:'password', name:'Password' },{ id:'number', name:'Number' },{ id:'date', name:'Date' },{ id:'tel', name:'Phone' }] },
+                        { type: 'checkbox', name: 'fi-required',    label: 'Required?' }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:fi-label',       this._syncLabel,       this);
+                    this.on('change:attributes:fi-placeholder', this._syncPlaceholder, this);
+                    this.on('change:attributes:fi-type',        this._syncType,        this);
+                    this.on('change:attributes:fi-required',    this._syncRequired,    this);
+                },
+                _syncLabel:       function() { var el=this.getEl(); if(!el) return; var l=el.querySelector('label'); var v=this.getAttributes()['fi-label'];       if(v&&l) l.textContent=v; },
+                _syncPlaceholder: function() { var el=this.getEl(); if(!el) return; var i=el.querySelector('input'); var v=this.getAttributes()['fi-placeholder']; if(v&&i) i.setAttribute('placeholder',v); },
+                _syncType:        function() { var el=this.getEl(); if(!el) return; var i=el.querySelector('input'); var v=this.getAttributes()['fi-type'];        if(v&&i) i.setAttribute('type',v); },
+                _syncRequired:    function() { var el=this.getEl(); if(!el) return; var i=el.querySelector('input'); var v=this.getAttributes()['fi-required'];    if(i){ if(v) i.setAttribute('required','required'); else i.removeAttribute('required'); } }
+            }
+        });
+
+        cm.addType('erp-form-sel', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'form-sel'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'form-sel' },
+                    traits: [
+                        { type: 'text', name: 'fs-label',   label: 'Field Label',              placeholder: 'Select Label' },
+                        { type: 'text', name: 'fs-options', label: 'Options (comma-separated)', placeholder: 'Option 1,Option 2,Option 3' }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:fs-label',   this._syncLabel,   this);
+                    this.on('change:attributes:fs-options', this._syncOptions, this);
+                },
+                _syncLabel:   function() { var el=this.getEl(); if(!el) return; var l=el.querySelector('label'); var v=this.getAttributes()['fs-label']; if(v&&l) l.textContent=v; },
+                _syncOptions: function() {
+                    var el=this.getEl(); if(!el) return;
+                    var sel=el.querySelector('select'); var v=this.getAttributes()['fs-options'];
+                    if(v&&sel){ sel.innerHTML=v.split(',').map(function(o){ return '<option>'+o.trim()+'</option>'; }).join(''); }
                 }
             }
         });
-            if (HAS_CONTENT === 'yes') {
-                loadPageContent();
-            } else {
-                // Default dashboard — no charts, just inject Chart.js ready
-                injectChartJs(renderCharts);
+
+        cm.addType('erp-btn-red', {
+            isComponent: function(el) { return el.tagName === 'BUTTON' && el.getAttribute('data-erp') === 'btn-red'; },
+            model: {
+                defaults: {
+                    tagName: 'button',
+                    attributes: { 'data-erp': 'btn-red' },
+                    traits: [
+                        { type: 'text',   name: 'btn-label', label: 'Button Text', placeholder: 'Save Changes' },
+                        { type: 'select', name: 'btn-color', label: 'Color',
+                          options: [{ id:'#B90E0A', name:'Red' },{ id:'#1a1a1a', name:'Black' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' }] }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:btn-label', this._syncLabel, this);
+                    this.on('change:attributes:btn-color', this._syncColor, this);
+                },
+                _syncLabel: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['btn-label']; if(v) el.textContent=v; },
+                _syncColor: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['btn-color']; if(v) el.style.background=v; }
             }
         });
 
-        // When a block is dropped, render any new charts
+        cm.addType('erp-btn-out', {
+            isComponent: function(el) { return el.tagName === 'BUTTON' && el.getAttribute('data-erp') === 'btn-out'; },
+            model: {
+                defaults: {
+                    tagName: 'button',
+                    attributes: { 'data-erp': 'btn-out' },
+                    traits: [
+                        { type: 'text',   name: 'btn-label', label: 'Button Text', placeholder: 'Cancel' },
+                        { type: 'select', name: 'btn-color', label: 'Color',
+                          options: [{ id:'#B90E0A', name:'Red' },{ id:'#1a1a1a', name:'Black' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' }] }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:btn-label', this._syncLabel, this);
+                    this.on('change:attributes:btn-color', this._syncColor, this);
+                },
+                _syncLabel: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['btn-label']; if(v) el.textContent=v; },
+                _syncColor: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['btn-color']; if(v){ el.style.color=v; el.style.borderColor=v; } }
+            }
+        });
+
+        cm.addType('erp-alert-w', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'alert-w'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'alert-w' },
+                    traits: [
+                        { type: 'text', name: 'aw-title',   label: 'Alert Title',   placeholder: 'Warning' },
+                        { type: 'text', name: 'aw-message', label: 'Alert Message', placeholder: 'Alert message goes here.' }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:aw-title',   this._syncTitle,   this);
+                    this.on('change:attributes:aw-message', this._syncMessage, this);
+                },
+                _syncTitle:   function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['aw-title'];   if(v&&d[0]) d[0].textContent=v; },
+                _syncMessage: function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['aw-message']; if(v&&d[1]) d[1].textContent=v; }
+            }
+        });
+
+        cm.addType('erp-alert-e', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'alert-e'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'alert-e' },
+                    traits: [
+                        { type: 'text', name: 'ae-title',   label: 'Alert Title',   placeholder: 'Error' },
+                        { type: 'text', name: 'ae-message', label: 'Alert Message', placeholder: 'Error message goes here.' }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:ae-title',   this._syncTitle,   this);
+                    this.on('change:attributes:ae-message', this._syncMessage, this);
+                },
+                _syncTitle:   function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['ae-title'];   if(v&&d[0]) d[0].textContent=v; },
+                _syncMessage: function() { var el=this.getEl(); if(!el) return; var d=el.querySelectorAll('div'); var v=this.getAttributes()['ae-message']; if(v&&d[1]) d[1].textContent=v; }
+            }
+        });
+
+        cm.addType('erp-prog', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'prog'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'prog' },
+                    traits: [
+                        { type: 'text',   name: 'pb-label', label: 'Label',         placeholder: 'Label' },
+                        { type: 'number', name: 'pb-value', label: 'Value (0-100)', placeholder: '75' },
+                        { type: 'select', name: 'pb-color', label: 'Bar Color',
+                          options: [{ id:'#B90E0A', name:'Red' },{ id:'#22c55e', name:'Green' },{ id:'#3b82f6', name:'Blue' },{ id:'#f59e0b', name:'Amber' }] }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:pb-label', this._syncLabel, this);
+                    this.on('change:attributes:pb-value', this._syncValue, this);
+                    this.on('change:attributes:pb-color', this._syncColor, this);
+                },
+                _syncLabel: function() { var el=this.getEl(); if(!el) return; var s=el.querySelectorAll('span'); var v=this.getAttributes()['pb-label']; if(v&&s[0]) s[0].textContent=v; },
+                _syncValue: function() {
+                    var el=this.getEl(); if(!el) return;
+                    var s=el.querySelectorAll('span'); var bar=el.querySelector('div > div');
+                    var v=this.getAttributes()['pb-value'];
+                    if(v!==undefined&&v!==''){
+                        var pct=Math.min(100,Math.max(0,parseInt(v)));
+                        if(s[1]) s[1].textContent=pct+'%';
+                        if(bar)  bar.style.width=pct+'%';
+                    }
+                },
+                _syncColor: function() { var el=this.getEl(); if(!el) return; var bar=el.querySelector('div > div'); var v=this.getAttributes()['pb-color']; if(v&&bar) bar.style.background=v; }
+            }
+        });
+
+        cm.addType('erp-card', {
+            isComponent: function(el) { return el.getAttribute && el.getAttribute('data-erp') === 'card'; },
+            model: {
+                defaults: {
+                    tagName: 'div',
+                    attributes: { 'data-erp': 'card' },
+                    traits: [
+                        { type: 'text', name: 'card-title', label: 'Title',       placeholder: 'Card Title' },
+                        { type: 'text', name: 'card-body',  label: 'Description', placeholder: 'Card description here.' }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:card-title', this._syncTitle, this);
+                    this.on('change:attributes:card-body',  this._syncBody,  this);
+                },
+                _syncTitle: function() { var el=this.getEl(); if(!el) return; var h=el.querySelector('h3'); var v=this.getAttributes()['card-title']; if(v&&h) h.textContent=v; },
+                _syncBody:  function() { var el=this.getEl(); if(!el) return; var p=el.querySelector('p');  var v=this.getAttributes()['card-body'];  if(v&&p) p.textContent=v; }
+            }
+        });
+
+        cm.addType('erp-heading', {
+            isComponent: function(el) { return el.tagName === 'H2' && el.getAttribute('data-erp') === 'h2'; },
+            model: {
+                defaults: {
+                    tagName: 'h2',
+                    attributes: { 'data-erp': 'h2' },
+                    traits: [
+                        { type: 'text',   name: 'h2-text',  label: 'Text',      placeholder: 'Your Heading' },
+                        { type: 'select', name: 'h2-size',  label: 'Size',
+                          options: [{ id:'16px', name:'Small' },{ id:'20px', name:'Medium' },{ id:'24px', name:'Large' },{ id:'32px', name:'XL' },{ id:'40px', name:'XXL' }] },
+                        { type: 'select', name: 'h2-align', label: 'Alignment',
+                          options: [{ id:'left', name:'Left' },{ id:'center', name:'Center' },{ id:'right', name:'Right' }] },
+                        { type: 'color',  name: 'h2-color', label: 'Color' }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:h2-text',  this._syncText,  this);
+                    this.on('change:attributes:h2-size',  this._syncSize,  this);
+                    this.on('change:attributes:h2-align', this._syncAlign, this);
+                    this.on('change:attributes:h2-color', this._syncColor, this);
+                },
+                _syncText:  function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['h2-text'];  if(v) el.textContent=v; },
+                _syncSize:  function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['h2-size'];  if(v) el.style.fontSize=v; },
+                _syncAlign: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['h2-align']; if(v) el.style.textAlign=v; },
+                _syncColor: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['h2-color']; if(v) el.style.color=v; }
+            }
+        });
+
+        cm.addType('erp-text', {
+            isComponent: function(el) { return el.tagName === 'P' && el.getAttribute('data-erp') === 'txt'; },
+            model: {
+                defaults: {
+                    tagName: 'p',
+                    attributes: { 'data-erp': 'txt' },
+                    traits: [
+                        { type: 'text',   name: 'p-text',  label: 'Text',      placeholder: 'Click to edit this text.' },
+                        { type: 'select', name: 'p-size',  label: 'Font Size',
+                          options: [{ id:'11px', name:'XS' },{ id:'13px', name:'Small' },{ id:'14px', name:'Medium' },{ id:'16px', name:'Large' },{ id:'18px', name:'XL' }] },
+                        { type: 'select', name: 'p-align', label: 'Alignment',
+                          options: [{ id:'left', name:'Left' },{ id:'center', name:'Center' },{ id:'right', name:'Right' }] }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:p-text',  this._syncText,  this);
+                    this.on('change:attributes:p-size',  this._syncSize,  this);
+                    this.on('change:attributes:p-align', this._syncAlign, this);
+                },
+                _syncText:  function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['p-text'];  if(v) el.textContent=v; },
+                _syncSize:  function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['p-size'];  if(v) el.style.fontSize=v; },
+                _syncAlign: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['p-align']; if(v) el.style.textAlign=v; }
+            }
+        });
+
+        cm.addType('erp-img', {
+            isComponent: function(el) { return el.tagName === 'IMG' && el.getAttribute('data-erp') === 'img'; },
+            model: {
+                defaults: {
+                    tagName: 'img',
+                    attributes: { 'data-erp': 'img' },
+                    traits: [
+                        { type: 'text',   name: 'img-src',    label: 'Image URL',  placeholder: 'https://...' },
+                        { type: 'text',   name: 'img-alt',    label: 'Alt Text',   placeholder: 'Image description' },
+                        { type: 'select', name: 'img-radius', label: 'Corners',
+                          options: [{ id:'0', name:'Sharp' },{ id:'4px', name:'Slight' },{ id:'8px', name:'Rounded' },{ id:'16px', name:'Very Rounded' },{ id:'50%', name:'Circle' }] }
+                    ]
+                },
+                init: function() {
+                    this.on('change:attributes:img-src',    this._syncSrc,    this);
+                    this.on('change:attributes:img-alt',    this._syncAlt,    this);
+                    this.on('change:attributes:img-radius', this._syncRadius, this);
+                },
+                _syncSrc:    function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['img-src'];    if(v) el.setAttribute('src',v); },
+                _syncAlt:    function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['img-alt'];    if(v) el.setAttribute('alt',v); },
+                _syncRadius: function() { var el=this.getEl(); if(!el) return; var v=this.getAttributes()['img-radius']; if(v) el.style.borderRadius=v; }
+            }
+        });
+
+        // ── EDITOR EVENTS ─────────────────────────────────────────────────
+
+        editor.on('load', function () {
+            if (HAS_CONTENT === 'yes') {
+                loadPageContent();
+            } else {
+                injectChartJs(renderCharts);
+                injectTailwind();
+            }
+        });
+
         editor.on('block:drag:stop', function () {
             setTimeout(function () {
                 injectChartJs(renderCharts);
+                injectTailwind();
             }, 400);
         });
 
-        // Re-inject after device switch (iframe recreated)
         editor.on('change:device', function () {
             setTimeout(function () {
                 injectChartJs(renderCharts);
+                injectTailwind();
             }, 600);
+        });
+
+        editor.on('component:selected', function (component) {
+            if (!component) return;
+            var el = component.getEl();
+            if (!el) return;
+            var inlineBg = el.style.backgroundColor;
+            var computedBg = window.getComputedStyle(el).backgroundColor;
+            var bg = inlineBg || computedBg;
+            if (!bg || bg === 'transparent' || bg === 'rgba(0, 0, 0, 0)') bg = '';
+            if (bg) {
+                var sm = editor.StyleManager;
+                var prop = sm.getProperty('Background', 'background-color');
+                if (prop) prop.setValue(bg);
+            }
         });
 
         status('Ready');
@@ -6761,18 +8481,27 @@ cm.addType('erp-img', {
             var win = window.open('', '_blank');
             if (!win) { alert('Allow popups to preview.'); return; }
             win.document.open();
-            win.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8">' +
+            win.document.write(
+                '<!DOCTYPE html><html><head>' +
+                '<meta charset="UTF-8">' +
+                '<meta name="viewport" content="width=device-width,initial-scale=1.0">' +
                 '<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">' +
+                '<script src="https://cdn.tailwindcss.com"><\/script>' +  // ← ADDED
                 '<script src="' + CHARTJS + '"><\/script>' +
-                '<style>' + editor.getCss() + '</style></head><body>' + editor.getHtml() +
+                '<style>' + editor.getCss() + '</style>' +
+                '</head><body>' +
+                editor.getHtml() +
                 '<script>' +
                 'document.querySelectorAll("[data-cfg]").forEach(function(el){' +
                 'try{var c=JSON.parse(decodeURIComponent(escape(atob(el.getAttribute("data-cfg")))));' +
                 'var cv=el.querySelector("canvas");if(cv)new Chart(cv,c);}catch(e){}});' +
-                '<\/script></body></html>');
+                '<\/script>' +
+                '</body></html>'
+            );
             win.document.close();
             status('Preview opened!');
         });
+ 
 
         document.getElementById('bExp').addEventListener('click', function () {
             exportZipFromEditor();

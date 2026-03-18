@@ -570,4 +570,4 @@ window.ERP_HAS_CONTENT = "{{ isset($page) && $page && $page->html ? 'yes' : 'no'
 })();
 </script>
 </body>
-</html>
+</html>cd /var/www/miserp-menu-board
