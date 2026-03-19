@@ -1,3 +1,7 @@
+
+
+
+
 (function () {
     'use strict';
 
@@ -209,7 +213,212 @@
         { id: 'img', label: 'Image', category: 'Basic', content: '<img data-erp="img" src="https://placehold.co/600x300/B90E0A/ffffff?text=Bench+Apparel" alt="img" style="max-width:100%;border-radius:8px;display:block;"/>' },
         { id: 'txt', label: 'Text', category: 'Basic', content: '<p data-erp="txt" style="font-family:Barlow,sans-serif;font-size:14px;color:#333;line-height:1.6;">Click to edit this text.</p>' },
         { id: 'h2', label: 'Heading', category: 'Basic', content: '<h2 data-erp="h2" style="font-family:Barlow,sans-serif;font-size:24px;font-weight:700;color:#1a1a1a;">Your Heading</h2>' },
+        
         { id: 'hr', label: 'Divider', category: 'Basic', content: '<hr style="border:none;border-top:1px solid #e5e5e5;margin:16px 0;"/>' },
+        // ─────────────────────────────────────────────────────────────────
+//  Paste this object into your BLOCKS array
+//  Matches your existing simple inline content format (like kpi, card, etc.)
+//  Place it right after your last block, before the closing ];
+// ─────────────────────────────────────────────────────────────────
+
+{
+    id: 'carousel',
+    label: 'Product Carousel',
+    category: 'Components',
+    content: (function () {
+
+        // ── SVG icons (inline, no external deps) ──────────────────
+        var svgPrev = '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="display:block;pointer-events:none;"><path d="M19 12H5M10 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/><\/svg>';
+        var svgNext = '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="display:block;pointer-events:none;"><path d="M5 12h14M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/><\/svg>';
+        var svgHeart = '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="display:block;pointer-events:none;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-linecap="round" stroke-linejoin="round"/><\/svg>';
+
+        // ── Product data ───────────────────────────────────────────
+        var CARDS = [
+            { no: '01', col: 'STREETWEAR', name: 'Premium Hoodie',  price: '₱1,299', bg: '#D8D3CC' },
+            { no: '02', col: 'ESSENTIALS', name: 'Classic Tee',     price: '₱599',   bg: '#C8C3BC' },
+            { no: '03', col: 'OUTERWEAR',  name: 'Denim Jacket',    price: '₱2,499', bg: '#B8B3AC' },
+            { no: '04', col: 'BOTTOMS',    name: 'Cargo Pants',     price: '₱1,799', bg: '#A8A39C' },
+            { no: '05', col: 'ESSENTIALS', name: 'Polo Shirt',      price: '₱699',   bg: '#C0BBB4' },
+            { no: '06', col: 'OUTERWEAR',  name: 'Bomber Jacket',   price: '₱2,999', bg: '#B0ABA4' },
+            { no: '07', col: 'BOTTOMS',    name: 'Chino Shorts',    price: '₱849',   bg: '#CCCAB8' },
+            { no: '08', col: 'STREETWEAR', name: 'Graphic Tee',     price: '₱699',   bg: '#BDB9A8' },
+        ];
+
+        var TOTAL = CARDS.length;
+
+        // ── Build one card ─────────────────────────────────────────
+        function mkCard(c) {
+            return (
+                '<div class="lc-card" style="flex-shrink:0;width:calc(100% / 4);padding:0 8px;cursor:pointer;transition:transform .55s cubic-bezier(.25,.46,.45,.94),opacity .35s ease;">' +
+                    '<div style="position:relative;aspect-ratio:3/4;background:' + c.bg + ';overflow:hidden;margin-bottom:14px;">' +
+                        '<span style="position:absolute;top:12px;left:12px;font-size:10px;font-weight:500;letter-spacing:.18em;color:#1A1614;opacity:.35;z-index:1;">' + c.no + '</span>' +
+                        '<div class="lc-ov" style="position:absolute;inset:0;background:rgba(26,22,20,.42);display:flex;align-items:flex-end;justify-content:space-between;padding:16px;z-index:2;opacity:0;transition:opacity .3s ease;">' +
+                            '<button style="font-size:10px;font-weight:600;letter-spacing:.14em;padding:9px 16px;background:#F5F0E8;color:#1A1614;border:none;cursor:pointer;">ADD TO BAG</button>' +
+                            '<button style="width:36px;height:36px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;flex-shrink:0;">' + svgHeart + '</button>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;padding:0 2px;">' +
+                        '<div>' +
+                            '<p style="font-size:9px;letter-spacing:.18em;color:#7A7068;margin:0 0 3px;font-family:Barlow,sans-serif;">' + c.col + '</p>' +
+                            '<h4 style="font-size:13px;font-weight:500;color:#1A1614;margin:0;font-family:Barlow,sans-serif;">' + c.name + '</h4>' +
+                        '</div>' +
+                        '<p style="font-size:15px;font-style:italic;color:#B90E0A;margin:0;margin-top:2px;flex-shrink:0;font-family:Georgia,serif;">' + c.price + '</p>' +
+                    '</div>' +
+                '</div>'
+            );
+        }
+
+        // Triple cards for seamless infinite loop
+        var trackHtml = '';
+        for (var p = 0; p < 3; p++) {
+            for (var i = 0; i < CARDS.length; i++) {
+                trackHtml += mkCard(CARDS[i]);
+            }
+        }
+
+        // ── HTML ───────────────────────────────────────────────────
+        var html =
+            '<div id="lc-root" style="background:#F5F0E8;padding:40px 0 28px;overflow:hidden;position:relative;font-family:Barlow,sans-serif;">' +
+
+                // Header row
+                '<div style="padding:0 32px;margin-bottom:24px;display:flex;align-items:flex-end;justify-content:space-between;">' +
+                    '<div>' +
+                        '<p style="font-size:10px;letter-spacing:.24em;color:#7A7068;margin:0 0 8px;">— LATEST DROPS</p>' +
+                        '<div style="display:flex;align-items:center;gap:18px;">' +
+                            '<h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;letter-spacing:.04em;color:#1A1614;margin:0;line-height:1;font-family:Barlow,sans-serif;">NEW ARRIVALS</h2>' +
+                            // Arrows beside title
+                            '<div style="display:flex;gap:6px;">' +
+                                '<button id="lc-prev" style="width:38px;height:38px;border:1px solid rgba(26,22,20,.2);background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#1A1614;transition:background .22s,border-color .22s,color .22s;">'+svgPrev+'</button>' +
+                                '<button id="lc-next" style="width:38px;height:38px;border:1px solid rgba(26,22,20,.2);background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#1A1614;transition:background .22s,border-color .22s,color .22s;">'+svgNext+'</button>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                    // Counter + paused label
+                    '<div style="display:flex;align-items:center;gap:12px;padding-bottom:3px;">' +
+                        '<span id="lc-paused" style="font-size:10px;letter-spacing:.16em;color:#7A7068;display:none;">PAUSED</span>' +
+                        '<span id="lc-counter" style="font-size:11px;letter-spacing:.18em;color:#7A7068;">01 / 08</span>' +
+                    '</div>' +
+                '</div>' +
+
+                // Viewport
+                '<div style="overflow:hidden;padding:0 32px;">' +
+                    '<div id="lc-track" style="display:flex;will-change:transform;">' +
+                        trackHtml +
+                    '</div>' +
+                '</div>' +
+
+                // Progress bar + dots
+                '<div style="display:flex;align-items:center;gap:16px;padding:20px 32px 0;">' +
+                    '<div style="flex:1;max-width:320px;height:1px;background:rgba(26,22,20,.1);overflow:hidden;">' +
+                        '<div id="lc-bar" style="height:100%;background:#1A1614;width:0%;transition:width .85s cubic-bezier(.87,0,.13,1);"></div>' +
+                    '</div>' +
+                    '<div id="lc-dots" style="display:flex;gap:5px;align-items:center;"></div>' +
+                '</div>' +
+
+                // Timer line
+                '<div style="margin:12px 32px 0;height:1px;background:rgba(26,22,20,.07);overflow:hidden;">' +
+                    '<div id="lc-timer" style="height:100%;width:100%;background:#B90E0A;opacity:.65;transform:scaleX(0);transform-origin:left center;"></div>' +
+                '</div>' +
+
+            '</div>';
+
+        // ── Script ─────────────────────────────────────────────────
+        var js =
+            '<script>' +
+            '(function(){' +
+            'var DELAY=4000,VISIBLE=4,TOTAL='+TOTAL+',cur='+TOTAL+',paused=false,tmr=null,raf=null;' +
+            'var track=document.getElementById("lc-track");' +
+            'var bar=document.getElementById("lc-bar");' +
+            'var dots=document.getElementById("lc-dots");' +
+            'var ctr=document.getElementById("lc-counter");' +
+            'var psd=document.getElementById("lc-paused");' +
+            'var tim=document.getElementById("lc-timer");' +
+            'var prev=document.getElementById("lc-prev");' +
+            'var next=document.getElementById("lc-next");' +
+
+            // Arrow hover fill
+            '[prev,next].forEach(function(b){if(!b)return;' +
+            'b.onmouseenter=function(){b.style.background="#1A1614";b.style.borderColor="#1A1614";b.style.color="#F5F0E8";};' +
+            'b.onmouseleave=function(){b.style.background="transparent";b.style.borderColor="rgba(26,22,20,.2)";b.style.color="#1A1614";};});' +
+
+            'function cw(){return track.parentElement.offsetWidth/VISIBLE;}' +
+            'function getX(){var m=(track.style.transform||"").match(/translateX\\(([^)]+)px\\)/);return m?parseFloat(m[1]):0;}' +
+            'function ease(t){return t<.5?4*t*t*t:(t-1)*(2*t-2)*(2*t-2)+1;}' +
+
+            // slideTo
+            'function go(idx,snap){' +
+            'var tgt=-(idx*cw());' +
+            'if(raf){cancelAnimationFrame(raf);raf=null;}' +
+            'if(snap){track.style.transform="translateX("+tgt+"px)";fix(idx);return;}' +
+            'var sx=getX(),d=tgt-sx,st=null;' +
+            'function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/850,1);' +
+            'track.style.transform="translateX("+(sx+d*ease(p))+"px)";' +
+            'if(p<1)raf=requestAnimationFrame(step);else fix(idx);}' +
+            'raf=requestAnimationFrame(step);}' +
+
+            // seamless loop fix
+            'function fix(idx){var n=idx;' +
+            'if(idx>=TOTAL*2)n=idx-TOTAL;' +
+            'if(idx<TOTAL)n=idx+TOTAL;' +
+            'if(n!==idx){track.style.transform="translateX("+(-(n*cw()))+"px)";cur=n;}' +
+            'ui();}' +
+
+            // update UI
+            'function ui(){var d=((cur%TOTAL)+TOTAL)%TOTAL;' +
+            'if(bar)bar.style.width=((d+1)/TOTAL*100)+"%";' +
+            'if(ctr)ctr.textContent=(d+1<10?"0"+(d+1):d+1)+" / "+(TOTAL<10?"0"+TOTAL:TOTAL);' +
+            'if(psd)psd.style.display=paused?"inline":"none";' +
+            'mkDots(d);}' +
+
+            // dots
+            'function mkDots(a){if(!dots)return;dots.innerHTML="";' +
+            'for(var i=0;i<TOTAL;i++){var b=document.createElement("button");' +
+            'b.style.cssText="height:6px;border-radius:3px;border:none;cursor:pointer;padding:0;background:"+(i===a?"#1A1614":"rgba(26,22,20,.2)")+";width:"+(i===a?"22px":"6px")+";transition:all .4s cubic-bezier(.87,0,.13,1);";' +
+            '(function(x){b.onclick=function(){jump(x);};})(i);' +
+            'dots.appendChild(b);}}' +
+
+            // timer bar
+            'function runTim(){if(!tim)return;' +
+            'tim.style.transition="none";tim.style.transform="scaleX(0)";' +
+            'if(paused)return;void tim.offsetWidth;' +
+            'tim.style.transition="transform "+DELAY+"ms linear";tim.style.transform="scaleX(1)";}' +
+
+            // auto advance
+            'function sched(){clearTimeout(tmr);tmr=setTimeout(function(){if(!paused){cur++;go(cur);sched();runTim();}},DELAY);}' +
+            'function jump(i){cur=TOTAL+i;go(cur);clearTimeout(tmr);sched();runTim();}' +
+
+            // arrows
+            'prev&&prev.addEventListener("click",function(){cur--;go(cur);clearTimeout(tmr);sched();runTim();});' +
+            'next&&next.addEventListener("click",function(){cur++;go(cur);clearTimeout(tmr);sched();runTim();});' +
+
+            // card hover
+            'var cards=track.querySelectorAll(".lc-card");' +
+            'cards.forEach(function(card){' +
+            'card.addEventListener("mouseenter",function(){' +
+            'paused=true;clearTimeout(tmr);runTim();' +
+            'card.style.transform="scale(1.055) translateY(-12px)";card.style.zIndex="10";card.style.position="relative";' +
+            'var ov=card.querySelector(".lc-ov");if(ov)ov.style.opacity="1";' +
+            'cards.forEach(function(c){if(c!==card)c.style.opacity=".48";});' +
+            'ui();});' +
+            'card.addEventListener("mouseleave",function(){' +
+            'paused=false;' +
+            'card.style.transform="";card.style.zIndex="";card.style.position="";' +
+            'var ov=card.querySelector(".lc-ov");if(ov)ov.style.opacity="0";' +
+            'cards.forEach(function(c){c.style.opacity="1";});' +
+            'ui();sched();runTim();});});' +
+
+            // resize
+            'window.addEventListener("resize",function(){go(cur,true);});' +
+
+            // init
+            'go(cur,true);sched();runTim();ui();' +
+            '})();' +
+            '<\/script>';
+
+        return html + js;
+
+    })()
+},
 
         // ── LOGIN TEMPLATES ──────────────────────────────────────────────
 
@@ -2605,6 +2814,8 @@
                 '</div>';
             })()
         },
+
+        
 
         // ── PROFILE MODAL TEMPLATES ───────────────────────────────────────
 // Paste these inside your BLOCKS array in erp-builder.js
@@ -5252,6 +5463,347 @@
             })()
         },
  
+        {
+    id: 'luxury-carousel',
+    label: 'Carousel: New Arrivals',
+    category: 'Components',
+    content: (function () {
+ 
+        var head =
+            '<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>' +
+            '<script src="https://cdn.tailwindcss.com"><\/script>' +
+            '<style>' +
+            '*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }' +
+            'body { font-family: "Montserrat", sans-serif; background: #F5F0E8; }' +
+            ':root {' +
+            '  --cream: #F5F0E8;' +
+            '  --cream-dk: #E8E0D0;' +
+            '  --ink: #1A1614;' +
+            '  --ink-m: #7A7068;' +
+            '  --red: #B90E0A;' +
+            '  --gold: #C4A55A;' +
+            '}' +
+            '.lc-btn { transition: background 0.25s, border-color 0.25s, color 0.25s; }' +
+            '.lc-btn:hover { background: var(--ink) !important; border-color: var(--ink) !important; color: var(--cream) !important; }' +
+            '.lc-btn:hover svg { stroke: var(--cream) !important; }' +
+            '.lc-card { transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.35s ease; cursor: pointer; }' +
+            '.lc-card.hovered { transform: scale(1.055) translateY(-12px) !important; z-index: 10; position: relative; }' +
+            '.lc-card.dimmed  { opacity: 0.5 !important; }' +
+            '.lc-overlay { opacity: 0; transition: opacity 0.3s ease; }' +
+            '.lc-card:hover .lc-overlay { opacity: 1 !important; }' +
+            '.lc-dot { transition: all 0.4s cubic-bezier(0.87,0,0.13,1); cursor: pointer; border: none; padding: 0; }' +
+            '.lc-add-btn:hover { opacity: 0.7; }' +
+            '.lc-wish-btn:hover { border-color: rgba(255,255,255,0.9) !important; }' +
+            '@keyframes timerFill { from { transform: scaleX(0); } to { transform: scaleX(1); } }' +
+            '</style>';
+ 
+        // ── Card data ──────────────────────────────────────────
+        var CARDS = [
+            { no: '01', col: 'STREETWEAR',  name: 'Premium Hoodie',  price: '₱1,299', shade: '#D8D3CC' },
+            { no: '02', col: 'ESSENTIALS',  name: 'Classic Tee',     price: '₱599',   shade: '#C8C3BC' },
+            { no: '03', col: 'OUTERWEAR',   name: 'Denim Jacket',    price: '₱2,499', shade: '#B8B3AC' },
+            { no: '04', col: 'BOTTOMS',     name: 'Cargo Pants',     price: '₱1,799', shade: '#A8A39C' },
+            { no: '05', col: 'ESSENTIALS',  name: 'Polo Shirt',      price: '₱699',   shade: '#C0BBB4' },
+            { no: '06', col: 'OUTERWEAR',   name: 'Bomber Jacket',   price: '₱2,999', shade: '#B0ABA4' },
+            { no: '07', col: 'BOTTOMS',     name: 'Chino Shorts',    price: '₱849',   shade: '#CCCAB8' },
+            { no: '08', col: 'STREETWEAR',  name: 'Graphic Tee',     price: '₱699',   shade: '#BDB9A8' },
+        ];
+ 
+        // Wishlist SVG reused
+        var wishSvg =
+            '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="display:block;">' +
+            '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-linecap="round" stroke-linejoin="round"/>' +
+            '</svg>';
+ 
+        // Prev arrow SVG
+        var prevSvg =
+            '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="display:block;">' +
+            '<path d="M19 12H5M10 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/>' +
+            '</svg>';
+ 
+        // Next arrow SVG
+        var nextSvg =
+            '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="display:block;">' +
+            '<path d="M5 12h14M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>' +
+            '</svg>';
+ 
+        // ── Build card HTML ─────────────────────────────────────
+        function buildCard(c, i) {
+            return '<div class="lc-card" data-ci="' + i + '" style="flex-shrink:0;width:calc(100%/4);padding:0 8px;">' +
+ 
+                // Image area
+                '<div style="position:relative;aspect-ratio:3/4;background:' + c.shade + ';overflow:hidden;margin-bottom:16px;">' +
+ 
+                // Number tag
+                '<span style="position:absolute;top:14px;left:14px;font-size:11px;font-weight:500;letter-spacing:0.18em;color:var(--ink);opacity:0.38;z-index:1;">' + c.no + '</span>' +
+ 
+                // Hover overlay
+                '<div class="lc-overlay" style="position:absolute;inset:0;background:rgba(26,22,20,0.42);display:flex;align-items:flex-end;justify-content:space-between;padding:20px;z-index:2;">' +
+                '<button class="lc-add-btn" style="font-size:10px;font-weight:600;letter-spacing:0.16em;padding:10px 18px;background:var(--cream);color:var(--ink);border:none;cursor:pointer;">ADD TO BAG</button>' +
+                '<button class="lc-wish-btn" style="width:38px;height:38px;border:1px solid rgba(255,255,255,0.4);background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;flex-shrink:0;">' + wishSvg + '</button>' +
+                '</div>' +
+ 
+                '</div>' +
+ 
+                // Info row
+                '<div style="display:flex;align-items:flex-start;justify-content:space-between;padding:0 4px;gap:8px;">' +
+                '<div>' +
+                '<p style="font-size:9px;letter-spacing:0.2em;color:var(--ink-m);margin:0 0 4px;">' + c.col + '</p>' +
+                '<h4 style="font-size:13px;font-weight:500;color:var(--ink);margin:0;">' + c.name + '</h4>' +
+                '</div>' +
+                '<p style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:16px;color:var(--red);margin:0;flex-shrink:0;margin-top:2px;">' + c.price + '</p>' +
+                '</div>' +
+ 
+                '</div>';
+        }
+ 
+        // ── Build all cards × 3 for infinite loop ──────────────
+        var allCardsHtml = '';
+        // Copy 1 (left buffer)
+        for (var i = 0; i < CARDS.length; i++) allCardsHtml += buildCard(CARDS[i], i);
+        // Copy 2 (main visible set)
+        for (var i = 0; i < CARDS.length; i++) allCardsHtml += buildCard(CARDS[i], i);
+        // Copy 3 (right buffer)
+        for (var i = 0; i < CARDS.length; i++) allCardsHtml += buildCard(CARDS[i], i);
+ 
+        var total = CARDS.length;  // 8
+ 
+        // ── Wrapper HTML ───────────────────────────────────────
+        var carousel =
+            '<div id="lc-root" style="background:var(--cream);padding:48px 0 32px;overflow:hidden;position:relative;">' +
+ 
+            // ── Header ──
+            '<div style="padding:0 40px;margin-bottom:28px;display:flex;align-items:flex-end;justify-content:space-between;">' +
+ 
+            // Left: label + title + arrows
+            '<div>' +
+            '<p style="font-size:10px;letter-spacing:0.25em;color:var(--ink-m);margin:0 0 8px;">— LATEST DROPS</p>' +
+            '<div style="display:flex;align-items:center;gap:20px;">' +
+            '<h2 style="font-family:\'Bebas Neue\',sans-serif;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:0.05em;color:var(--ink);margin:0;line-height:1;">NEW ARRIVALS</h2>' +
+ 
+            // Arrows — beside the title
+            '<div style="display:flex;align-items:center;gap:8px;">' +
+            '<button id="lc-prev" class="lc-btn" style="width:40px;height:40px;border:1px solid rgba(26,22,20,0.22);background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink);">' + prevSvg + '</button>' +
+            '<button id="lc-next" class="lc-btn" style="width:40px;height:40px;border:1px solid rgba(26,22,20,0.22);background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink);">' + nextSvg + '</button>' +
+            '</div>' +
+ 
+            '</div>' +
+            '</div>' +
+ 
+            // Right: paused + counter
+            '<div style="display:flex;align-items:center;gap:16px;padding-bottom:4px;">' +
+            '<span id="lc-paused" style="font-size:10px;letter-spacing:0.18em;color:var(--ink-m);display:none;">PAUSED</span>' +
+            '<span id="lc-counter" style="font-size:11px;letter-spacing:0.2em;color:var(--ink-m);font-variant-numeric:tabular-nums;">01 / 08</span>' +
+            '</div>' +
+ 
+            '</div>' +
+ 
+            // ── Carousel viewport ──
+            '<div style="overflow:hidden;padding:0 40px;position:relative;">' +
+            '<div id="lc-track" style="display:flex;will-change:transform;">' +
+            allCardsHtml +
+            '</div>' +
+            '</div>' +
+ 
+            // ── Footer: progress + dots ──
+            '<div style="display:flex;align-items:center;gap:20px;padding:24px 40px 0;">' +
+            '<div style="flex:1;max-width:360px;height:1px;background:rgba(26,22,20,0.1);overflow:hidden;">' +
+            '<div id="lc-progress" style="height:100%;background:var(--ink);width:0%;transition:width 0.85s cubic-bezier(0.87,0,0.13,1);"></div>' +
+            '</div>' +
+            '<div id="lc-dots" style="display:flex;align-items:center;gap:6px;"></div>' +
+            '</div>' +
+ 
+            // ── Timer bar ──
+            '<div style="margin:16px 40px 0;height:1px;background:rgba(26,22,20,0.07);overflow:hidden;">' +
+            '<div id="lc-timer" style="height:100%;width:100%;background:var(--red);opacity:0.7;transform:scaleX(0);transform-origin:left center;"></div>' +
+            '</div>' +
+ 
+            '</div>'; // /#lc-root
+ 
+        // ── Carousel script ────────────────────────────────────
+        var script =
+            '<script>' +
+            '(function(){' +
+ 
+            'var DELAY   = 4000;' +
+            'var VISIBLE = 4;' +
+            'var TOTAL   = 8;' +
+            'var current = TOTAL;' +   // start at middle copy
+            'var paused  = false;' +
+            'var timer   = null;' +
+            'var raf     = null;' +
+            'var timerAnim = null;' +
+ 
+            'var track    = document.getElementById("lc-track");' +
+            'var progress = document.getElementById("lc-progress");' +
+            'var dotsEl   = document.getElementById("lc-dots");' +
+            'var counter  = document.getElementById("lc-counter");' +
+            'var pausedEl = document.getElementById("lc-paused");' +
+            'var timerEl  = document.getElementById("lc-timer");' +
+            'var prevBtn  = document.getElementById("lc-prev");' +
+            'var nextBtn  = document.getElementById("lc-next");' +
+ 
+            'function cardW(){ return track.parentElement.offsetWidth / VISIBLE; }' +
+ 
+            // ── easeInOutCubic ──
+            'function ease(t){ return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1; }' +
+ 
+            // ── slideTo ──
+            'function slideTo(idx, instant){' +
+            '  var cw = cardW();' +
+            '  var target = -(idx * cw);' +
+            '  if(raf){ cancelAnimationFrame(raf); raf=null; }' +
+            '  if(instant){' +
+            '    track.style.transform = "translateX("+target+"px)";' +
+            '    afterSlide(idx); return;' +
+            '  }' +
+            '  var startX = getCurrentX();' +
+            '  var dist   = target - startX;' +
+            '  var dur    = 850;' +
+            '  var startT = null;' +
+            '  function step(ts){' +
+            '    if(!startT) startT = ts;' +
+            '    var p = Math.min((ts-startT)/dur, 1);' +
+            '    track.style.transform = "translateX("+(startX + dist*ease(p))+"px)";' +
+            '    if(p < 1){ raf = requestAnimationFrame(step); }' +
+            '    else { afterSlide(idx); }' +
+            '  }' +
+            '  raf = requestAnimationFrame(step);' +
+            '}' +
+ 
+            'function getCurrentX(){' +
+            '  var t = track.style.transform;' +
+            '  var m = t.match(/translateX\\(([^)]+)px\\)/);' +
+            '  return m ? parseFloat(m[1]) : 0;' +
+            '}' +
+ 
+            // ── afterSlide: seamless jump ──
+            'function afterSlide(idx){' +
+            '  var next = idx;' +
+            '  if(idx >= TOTAL*2) next = idx - TOTAL;' +
+            '  if(idx < TOTAL)    next = idx + TOTAL;' +
+            '  if(next !== idx){' +
+            '    track.style.transform = "translateX("+-(next*cardW())+"px)";' +
+            '    current = next;' +
+            '  }' +
+            '  updateUI();' +
+            '}' +
+ 
+            // ── updateUI ──
+            'function updateUI(){' +
+            '  var dot = ((current % TOTAL) + TOTAL) % TOTAL;' +
+            '  var pct = ((dot+1)/TOTAL)*100;' +
+            '  if(progress) progress.style.width = pct + "%";' +
+            '  if(counter)  counter.textContent  = pad(dot+1)+" / "+pad(TOTAL);' +
+            '  if(pausedEl) pausedEl.style.display = paused ? "inline" : "none";' +
+            '  buildDots(dot);' +
+            '}' +
+ 
+            'function pad(n){ return n < 10 ? "0"+n : ""+n; }' +
+ 
+            // ── dots ──
+            'function buildDots(active){' +
+            '  if(!dotsEl) return;' +
+            '  dotsEl.innerHTML = "";' +
+            '  for(var i=0;i<TOTAL;i++){' +
+            '    var d = document.createElement("button");' +
+            '    d.className = "lc-dot";' +
+            '    d.style.height = "6px";' +
+            '    d.style.borderRadius = "3px";' +
+            '    d.style.background = i===active ? "var(--ink)" : "rgba(26,22,20,0.2)";' +
+            '    d.style.width = i===active ? "22px" : "6px";' +
+            '    (function(idx){ d.addEventListener("click", function(){ jumpTo(idx); }); })(i);' +
+            '    dotsEl.appendChild(d);' +
+            '  }' +
+            '}' +
+ 
+            // ── timer bar ──
+            'function startTimer(){' +
+            '  if(!timerEl) return;' +
+            '  timerEl.style.transition = "none";' +
+            '  timerEl.style.transform  = "scaleX(0)";' +
+            '  if(timerAnim){ clearTimeout(timerAnim); }' +
+            '  if(paused) return;' +
+            '  void timerEl.offsetWidth;' +
+            '  timerEl.style.transition = "transform "+DELAY+"ms linear";' +
+            '  timerEl.style.transform  = "scaleX(1)";' +
+            '}' +
+ 
+            // ── auto-advance ──
+            'function schedule(){' +
+            '  clearTimeout(timer);' +
+            '  timer = setTimeout(function(){' +
+            '    if(!paused){' +
+            '      current++;' +
+            '      slideTo(current);' +
+            '      schedule();' +
+            '      startTimer();' +
+            '    }' +
+            '  }, DELAY);' +
+            '}' +
+ 
+            'function jumpTo(i){' +
+            '  current = TOTAL + i;' +
+            '  slideTo(current);' +
+            '  clearTimeout(timer);' +
+            '  schedule();' +
+            '  startTimer();' +
+            '}' +
+ 
+            // ── arrows ──
+            'prevBtn.addEventListener("click", function(){' +
+            '  current--;' +
+            '  slideTo(current);' +
+            '  clearTimeout(timer); schedule(); startTimer();' +
+            '});' +
+            'nextBtn.addEventListener("click", function(){' +
+            '  current++;' +
+            '  slideTo(current);' +
+            '  clearTimeout(timer); schedule(); startTimer();' +
+            '});' +
+ 
+            // ── hover ──
+            'var cards = track.querySelectorAll(".lc-card");' +
+            'cards.forEach(function(card){' +
+            '  card.addEventListener("mouseenter", function(){' +
+            '    paused = true;' +
+            '    clearTimeout(timer);' +
+            '    startTimer();' +
+            '    card.classList.add("hovered");' +
+            '    cards.forEach(function(c){ if(c !== card) c.classList.add("dimmed"); });' +
+            '    updateUI();' +
+            '  });' +
+            '  card.addEventListener("mouseleave", function(){' +
+            '    paused = false;' +
+            '    card.classList.remove("hovered");' +
+            '    cards.forEach(function(c){ c.classList.remove("dimmed"); });' +
+            '    updateUI();' +
+            '    schedule();' +
+            '    startTimer();' +
+            '  });' +
+            '});' +
+ 
+            // ── resize ──
+            'window.addEventListener("resize", function(){ slideTo(current, true); });' +
+ 
+            // ── init ──
+            'slideTo(current, true);' +
+            'schedule();' +
+            'startTimer();' +
+            'updateUI();' +
+ 
+            '})();' +
+            '<\/script>';
+ 
+        return '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>' +
+            head +
+            '</head><body style="margin:0;padding:0;">' +
+            carousel +
+            script +
+            '</body></html>';
+ 
+    })()
+},
         {
             id: 'hr-dash-branch',
             label: 'HR: Branch & Rotation Management',
