@@ -7312,6 +7312,690 @@
             })()
         },
 
+        // ── POSITION HISTORY TEMPLATES ───────────────────────────────────
+// 3 designs for hr_employee_position_history + hr_positions tables
+// Paste inside BLOCKS = [...] in erp-builder.js
+// Category: 'HR Screens'
+// ─────────────────────────────────────────────────────────────────
+
+        {
+            id: 'hr-position-history-timeline',
+            label: 'Position History: Timeline View',
+            category: 'HR Screens',
+            content: (function(){
+                var head = '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>' +
+                    '<script src="https://cdn.tailwindcss.com"><\/script>' +
+                    '<style>*{font-family:\'Plus Jakarta Sans\',sans-serif;}</style>';
+
+                var changeTypeConfig = {
+                    hired:       { bg:'#dcfce7', color:'#15803d', dot:'#22c55e', icon:'✓', label:'Hired'       },
+                    promoted:    { bg:'#dbeafe', color:'#1d4ed8', dot:'#3b82f6', icon:'↑', label:'Promoted'    },
+                    transferred: { bg:'#fef9c3', color:'#854d0e', dot:'#eab308', icon:'↔', label:'Transferred' },
+                    demoted:     { bg:'#fee2e2', color:'#991b1b', dot:'#ef4444', icon:'↓', label:'Demoted'     },
+                };
+
+                var history = [
+                    { date:'Jan 15, 2026', position:'Sr. Sales Associate', dept:'Retail Operations', branch:'SM Mall of Asia', type:'promoted',    end:null,          remarks:'Exceeded Q4 targets for 2 consecutive years. Recommended by Branch Manager Rico Mendoza.' },
+                    { date:'Jun 1, 2024',  position:'Sales Associate',     dept:'Retail Operations', branch:'SM Mall of Asia', type:'transferred', end:'Jan 14, 2026', remarks:'Requested branch transfer to SM MOA due to personal proximity reasons.' },
+                    { date:'Mar 10, 2023', position:'Sales Associate',     dept:'Retail Operations', branch:'Cebu Branch',     type:'hired',       end:'May 31, 2024', remarks:'Initial employment. Passed all pre-employment requirements and background check.' },
+                ];
+
+                var timelineItems = history.map(function(h, i){
+                    var cfg = changeTypeConfig[h.type];
+                    var isCurrent = !h.end;
+                    return '<div class="flex gap-5 relative">' +
+                        // dot + line
+                        '<div class="flex flex-col items-center">' +
+                        '<div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-black shrink-0 z-10 border-2" style="background:'+cfg.bg+';border-color:'+cfg.dot+';color:'+cfg.color+';">'+cfg.icon+'</div>' +
+                        (i < history.length-1 ? '<div class="w-0.5 flex-1 mt-1" style="background:#e5e7eb;min-height:40px;"></div>' : '') +
+                        '</div>' +
+                        // card
+                        '<div class="flex-1 bg-white border rounded-2xl p-5 mb-6 shadow-sm" style="border-color:'+(isCurrent ? '#bfdbfe' : '#e5e7eb')+';'+(isCurrent ? 'border-left:3px solid #3b82f6;' : '')+'">' +
+                        '<div class="flex items-start justify-between mb-3">' +
+                        '<div>' +
+                        '<div class="flex items-center gap-2 mb-1">' +
+                        '<span class="text-xs font-bold px-2.5 py-0.5 rounded-full" style="background:'+cfg.bg+';color:'+cfg.color+';">'+cfg.label+'</span>' +
+                        (isCurrent ? '<span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-700">Current</span>' : '') +
+                        '</div>' +
+                        '<p class="text-base font-extrabold text-gray-900">'+h.position+'</p>' +
+                        '<p class="text-xs text-gray-500 mt-0.5">'+h.dept+' · '+h.branch+'</p>' +
+                        '</div>' +
+                        '<div class="text-right shrink-0">' +
+                        '<p class="text-xs font-bold text-gray-900">'+h.date+'</p>' +
+                        '<p class="text-[10px] text-gray-400 mt-0.5">'+(h.end ? 'Until '+h.end : 'Present')+'</p>' +
+                        '</div>' +
+                        '</div>' +
+                        '<div class="bg-gray-50 rounded-xl p-3 border-l-4" style="border-color:'+cfg.dot+';">' +
+                        '<p class="text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-1">Remarks</p>' +
+                        '<p class="text-xs text-gray-600 leading-relaxed">'+h.remarks+'</p>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+                }).join('');
+
+                return '<!DOCTYPE html><html><head><meta charset="UTF-8"/>'+head+'</head>' +
+                    '<body style="margin:0;background:#f8fafc;">' +
+
+                    // Header
+                    '<div style="background:#fff;border-bottom:1px solid #e5e7eb;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;">' +
+                    '<div class="flex items-center gap-3">' +
+                    '<button style="display:flex;align-items:center;gap:6px;color:#6b7280;font-size:12px;background:none;border:none;cursor:pointer;">← Back</button>' +
+                    '<span style="color:#d1d5db;">/</span>' +
+                    '<span style="font-size:12px;font-weight:700;color:#111827;">Position History</span>' +
+                    '</div>' +
+                    '<button style="display:flex;align-items:center;gap:6px;background:#f3f4f6;border:none;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:700;color:#374151;cursor:pointer;">⬇ Export PDF</button>' +
+                    '</div>' +
+
+                    '<div style="max-width:860px;margin:0 auto;padding:28px;">' +
+
+                    // Employee card
+                    '<div style="background:#fff;border:1px solid #e5e7eb;border-radius:20px;padding:20px 24px;margin-bottom:28px;display:flex;align-items:center;gap:16px;box-shadow:0 1px 4px rgba(0,0,0,.04);">' +
+                    '<div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#B90E0A,#7a0806);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:18px;flex-shrink:0;">MS</div>' +
+                    '<div style="flex:1;">' +
+                    '<p style="font-size:16px;font-weight:900;color:#111827;margin:0;">Maria Santos</p>' +
+                    '<p style="font-size:12px;color:#B90E0A;font-weight:600;margin:2px 0 0;">Sr. Sales Associate · Retail Operations</p>' +
+                    '<p style="font-size:11px;color:#9ca3af;margin:2px 0 0;">HR-00142 · SM Mall of Asia</p>' +
+                    '</div>' +
+                    '<div style="display:flex;gap:16px;">' +
+                    '<div style="text-align:center;padding:12px 16px;background:#f8fafc;border-radius:12px;">' +
+                    '<p style="font-size:20px;font-weight:900;color:#111827;margin:0;">3</p>' +
+                    '<p style="font-size:10px;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin:2px 0 0;">Movements</p>' +
+                    '</div>' +
+                    '<div style="text-align:center;padding:12px 16px;background:#f8fafc;border-radius:12px;">' +
+                    '<p style="font-size:20px;font-weight:900;color:#111827;margin:0;">3.2</p>' +
+                    '<p style="font-size:10px;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin:2px 0 0;">Yrs Tenure</p>' +
+                    '</div>' +
+                    '<div style="text-align:center;padding:12px 16px;background:#dbeafe;border-radius:12px;">' +
+                    '<p style="font-size:20px;font-weight:900;color:#1d4ed8;margin:0;">1</p>' +
+                    '<p style="font-size:10px;color:#3b82f6;text-transform:uppercase;letter-spacing:1px;margin:2px 0 0;">Promotion</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Filter row
+                    '<div style="display:flex;gap:8px;margin-bottom:20px;">' +
+                    '<select style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:10px;font-size:12px;background:#fff;color:#374151;outline:none;"><option>All Change Types</option><option>Hired</option><option>Promoted</option><option>Transferred</option><option>Demoted</option></select>' +
+                    '<select style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:10px;font-size:12px;background:#fff;color:#374151;outline:none;"><option>All Years</option><option>2026</option><option>2025</option><option>2024</option><option>2023</option></select>' +
+                    '</div>' +
+
+                    // Timeline
+                    '<div class="relative">' +
+                    timelineItems +
+                    '</div>' +
+                    '</div>' +
+
+                    '</body></html>';
+            })()
+        },
+
+        {
+            id: 'hr-position-history-table',
+            label: 'Position History: Table View',
+            category: 'HR Screens',
+            content: (function(){
+                var head = '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>' +
+                    '<script src="https://cdn.tailwindcss.com"><\/script>' +
+                    '<style>*{font-family:\'Plus Jakarta Sans\',sans-serif;}::-webkit-scrollbar{height:4px;width:4px}::-webkit-scrollbar-thumb{background:#B90E0A;border-radius:99px}th{background:#111827;color:#f9fafb;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:12px 16px;white-space:nowrap;}td{padding:13px 16px;font-size:12px;color:#374151;border-bottom:1px solid #f3f4f6;white-space:nowrap;}tr:hover td{background:#f8fafc;}</style>';
+
+                var rows = [
+                    { emp:'HR-00142', name:'Maria Santos',   from:'Sales Associate',  to:'Sr. Sales Associate', dept:'Retail Ops', type:'promoted',    date:'Jan 15, 2026', by:'Admin' },
+                    { emp:'HR-00089', name:'Juan dela Cruz', from:'BGC Branch',        to:'SM MOA Branch',       dept:'Operations', type:'transferred', date:'Jan 10, 2026', by:'Admin' },
+                    { emp:'HR-00198', name:'Ana Reyes',      from:'—',                 to:'Visual Merchandiser', dept:'Marketing',  type:'hired',       date:'Jan 5, 2026',  by:'HR System' },
+                    { emp:'HR-00077', name:'Rico Mendoza',   from:'Supervisor',        to:'Branch Manager',      dept:'Operations', type:'promoted',    date:'Feb 1, 2026',  by:'Admin' },
+                    { emp:'HR-00155', name:'Sara Cruz',      from:'Cebu Branch',       to:'Davao Branch',        dept:'Operations', type:'transferred', date:'Feb 20, 2026', by:'Admin' },
+                    { emp:'HR-00201', name:'Dana Lim',       from:'—',                 to:'HR Manager',          dept:'HR',         type:'hired',       date:'Feb 14, 2026', by:'HR System' },
+                    { emp:'HR-00033', name:'Pedro Gomez',    from:'Supervisor',        to:'Stock Clerk',         dept:'Warehouse',  type:'demoted',     date:'Dec 20, 2025', by:'Admin' },
+                    { emp:'HR-00112', name:'Lisa Tan',       from:'Sr. Associate',     to:'Supervisor',          dept:'HR',         type:'promoted',    date:'Nov 15, 2025', by:'Admin' },
+                ];
+
+                var typeCfg = {
+                    hired:       { bg:'#dcfce7', color:'#15803d' },
+                    promoted:    { bg:'#dbeafe', color:'#1d4ed8' },
+                    transferred: { bg:'#fef9c3', color:'#854d0e' },
+                    demoted:     { bg:'#fee2e2', color:'#991b1b' },
+                };
+
+                var tableRows = rows.map(function(r){
+                    var cfg = typeCfg[r.type] || { bg:'#f3f4f6', color:'#374151' };
+                    return '<tr>' +
+                        '<td><span style="background:#f3f4f6;color:#374151;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;font-family:monospace;">'+r.emp+'</span></td>' +
+                        '<td style="font-weight:700;color:#111827;">'+r.name+'</td>' +
+                        '<td style="color:#9ca3af;">'+r.from+'</td>' +
+                        '<td><span style="color:#111827;font-weight:600;">→</span> '+r.to+'</td>' +
+                        '<td style="color:#6b7280;">'+r.dept+'</td>' +
+                        '<td><span style="background:'+cfg.bg+';color:'+cfg.color+';padding:3px 10px;border-radius:99px;font-size:10px;font-weight:700;">'+r.type.charAt(0).toUpperCase()+r.type.slice(1)+'</span></td>' +
+                        '<td style="color:#374151;">'+r.date+'</td>' +
+                        '<td style="color:#9ca3af;font-size:11px;">'+r.by+'</td>' +
+                        '<td><button style="background:#B90E0A;color:#fff;border:none;border-radius:8px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer;">View</button></td>' +
+                        '</tr>';
+                }).join('');
+
+                return '<!DOCTYPE html><html><head><meta charset="UTF-8"/>'+head+'</head>' +
+                    '<body style="margin:0;background:#f8fafc;">' +
+
+                    // Page header
+                    '<div style="background:#fff;border-bottom:1px solid #e5e7eb;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;">' +
+                    '<div>' +
+                    '<div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">' +
+                    '<span style="font-size:11px;color:#9ca3af;">HR</span>' +
+                    '<span style="color:#d1d5db;font-size:11px;">/</span>' +
+                    '<span style="font-size:11px;font-weight:700;color:#111827;">Position Movement History</span>' +
+                    '</div>' +
+                    '<h1 style="font-size:20px;font-weight:900;color:#111827;margin:0;">All Position Movements</h1>' +
+                    '<p style="font-size:11px;color:#9ca3af;margin:2px 0 0;">All employees · FY 2025–2026</p>' +
+                    '</div>' +
+                    '<div style="display:flex;gap:8px;">' +
+                    '<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;padding:8px 14px;display:flex;align-items:center;gap:8px;">' +
+                    '<span style="font-size:13px;color:#9ca3af;">🔍</span>' +
+                    '<input placeholder="Search employee..." style="border:none;outline:none;font-size:12px;background:transparent;color:#111827;width:160px;" />' +
+                    '</div>' +
+                    '<select style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:10px;font-size:12px;background:#fff;color:#374151;outline:none;"><option>All Types</option><option>Hired</option><option>Promoted</option><option>Transferred</option><option>Demoted</option></select>' +
+                    '<select style="padding:8px 14px;border:1px solid #e5e7eb;border-radius:10px;font-size:12px;background:#fff;color:#374151;outline:none;"><option>All Departments</option><option>Retail Operations</option><option>HR</option><option>Finance</option></select>' +
+                    '<button style="background:#B90E0A;color:#fff;border:none;border-radius:10px;padding:8px 16px;font-size:12px;font-weight:700;cursor:pointer;">⬇ Export</button>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Summary bar
+                    '<div style="background:#111827;padding:14px 28px;display:flex;gap:32px;align-items:center;">' +
+                    '<div><p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin:0 0 2px;">Total Movements</p><p style="font-size:16px;font-weight:900;color:#fff;margin:0;">48</p></div>' +
+                    '<div style="width:1px;height:32px;background:#374151;"></div>' +
+                    '<div><p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin:0 0 2px;">Promotions</p><p style="font-size:16px;font-weight:900;color:#60a5fa;margin:0;">18</p></div>' +
+                    '<div style="width:1px;height:32px;background:#374151;"></div>' +
+                    '<div><p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin:0 0 2px;">Transfers</p><p style="font-size:16px;font-weight:900;color:#fbbf24;margin:0;">14</p></div>' +
+                    '<div style="width:1px;height:32px;background:#374151;"></div>' +
+                    '<div><p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin:0 0 2px;">New Hires</p><p style="font-size:16px;font-weight:900;color:#34d399;margin:0;">12</p></div>' +
+                    '<div style="width:1px;height:32px;background:#374151;"></div>' +
+                    '<div><p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin:0 0 2px;">Demotions</p><p style="font-size:16px;font-weight:900;color:#f87171;margin:0;">4</p></div>' +
+                    '</div>' +
+
+                    // Table
+                    '<div style="padding:24px 28px;overflow-x:auto;">' +
+                    '<div style="background:#fff;border-radius:16px;border:1px solid #e5e7eb;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.04);">' +
+                    '<table style="width:100%;min-width:900px;border-collapse:collapse;">' +
+                    '<thead><tr>' +
+                    '<th>Employee ID</th><th>Full Name</th><th>From</th><th>To Position/Branch</th><th>Department</th><th>Type</th><th>Effective Date</th><th>Changed By</th><th></th>' +
+                    '</tr></thead>' +
+                    '<tbody>'+tableRows+'</tbody>' +
+                    '</table>' +
+                    '</div>' +
+
+                    // Pagination
+                    '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px;">' +
+                    '<span style="font-size:11px;color:#9ca3af;">Showing 8 of 48 records</span>' +
+                    '<div style="display:flex;gap:4px;">' +
+                    '<button style="width:32px;height:32px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;font-size:12px;color:#9ca3af;cursor:pointer;">←</button>' +
+                    '<button style="width:32px;height:32px;border-radius:8px;background:#B90E0A;border:none;color:#fff;font-size:12px;font-weight:700;cursor:pointer;">1</button>' +
+                    '<button style="width:32px;height:32px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;font-size:12px;color:#6b7280;cursor:pointer;">2</button>' +
+                    '<button style="width:32px;height:32px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;font-size:12px;color:#6b7280;cursor:pointer;">3</button>' +
+                    '<span style="padding:0 4px;font-size:12px;color:#9ca3af;line-height:32px;">...</span>' +
+                    '<button style="width:32px;height:32px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;font-size:12px;color:#6b7280;cursor:pointer;">6</button>' +
+                    '<button style="width:32px;height:32px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;font-size:12px;color:#9ca3af;cursor:pointer;">→</button>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+
+                    '</body></html>';
+            })()
+        },
+
+        // ── ORGANIZATIONAL MANAGEMENT DASHBOARD ──────────────────────────
+// Uses: hr_positions + hr_org_chart_nodes + hr_employee_position_history
+// Paste inside BLOCKS = [...] in erp-builder.js
+// Category: 'HR Dashboards'
+// Style: Plus Jakarta Sans — matches payroll module aesthetic
+// ─────────────────────────────────────────────────────────────────
+
+        {
+            id: 'hr-org-management-dashboard-v2',
+            label: 'Org: Management Dashboard',
+            category: 'HR Dashboards',
+            content: (function(){
+
+                var head = '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>' +
+                    '<script src="https://cdn.tailwindcss.com"><\/script>' +
+                    '<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"><\/script>' +
+                    '<style>' +
+                    '*{font-family:\'Plus Jakarta Sans\',sans-serif;}' +
+                    '::-webkit-scrollbar{width:4px;height:4px}' +
+                    '::-webkit-scrollbar-thumb{background:#B90E0A;border-radius:99px}' +
+                    '</style>';
+
+                // ── Sidebar ───────────────────────────────────────────
+                var sidebar =
+                    '<aside style="width:220px;min-height:100vh;background:#0f172a;display:flex;flex-direction:column;flex-shrink:0;">' +
+
+                    // Brand
+                    '<div style="padding:20px 18px 16px;border-bottom:1px solid #1e293b;">' +
+                    '<div style="display:flex;align-items:center;gap:10px;">' +
+                    '<div style="width:34px;height:34px;background:#B90E0A;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' +
+                    '<span style="color:#fff;font-weight:900;font-size:14px;">B</span></div>' +
+                    '<div><div style="font-size:13px;font-weight:800;color:#fff;line-height:1;">Bench Apparel</div>' +
+                    '<div style="font-size:10px;color:#64748b;margin-top:1px;">Org Management</div></div>' +
+                    '</div></div>' +
+
+                    // Nav
+                    '<nav style="padding:14px 10px;flex:1;">' +
+                    '<div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#334155;padding:0 10px;margin-bottom:6px;margin-top:4px;">Overview</div>' +
+
+                    '<div style="padding:9px 12px;border-radius:10px;background:#B90E0A;cursor:pointer;display:flex;align-items:center;gap:10px;margin-bottom:2px;">' +
+                    '<i data-lucide="layout-dashboard" style="width:15px;height:15px;color:#fff;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;font-weight:700;color:#fff;">Dashboard</span></div>' +
+
+                    '<div style="padding:9px 12px;border-radius:10px;cursor:pointer;display:flex;align-items:center;gap:10px;margin-bottom:2px;">' +
+                    '<i data-lucide="briefcase" style="width:15px;height:15px;color:#475569;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;color:#475569;">Positions</span></div>' +
+
+                    '<div style="padding:9px 12px;border-radius:10px;cursor:pointer;display:flex;align-items:center;gap:10px;margin-bottom:2px;">' +
+                    '<i data-lucide="network" style="width:15px;height:15px;color:#475569;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;color:#475569;">Org Chart</span></div>' +
+
+                    '<div style="padding:9px 12px;border-radius:10px;cursor:pointer;display:flex;align-items:center;gap:10px;margin-bottom:14px;">' +
+                    '<i data-lucide="history" style="width:15px;height:15px;color:#475569;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;color:#475569;">Movement History</span></div>' +
+
+                    '<div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#334155;padding:0 10px;margin-bottom:6px;">Reports</div>' +
+
+                    '<div style="padding:9px 12px;border-radius:10px;cursor:pointer;display:flex;align-items:center;gap:10px;margin-bottom:2px;">' +
+                    '<i data-lucide="bar-chart-2" style="width:15px;height:15px;color:#475569;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;color:#475569;">Analytics</span></div>' +
+
+                    '<div style="padding:9px 12px;border-radius:10px;cursor:pointer;display:flex;align-items:center;gap:10px;">' +
+                    '<i data-lucide="file-text" style="width:15px;height:15px;color:#475569;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;color:#475569;">Reports</span></div>' +
+                    '</nav>' +
+
+                    // User
+                    '<div style="padding:14px 18px;border-top:1px solid #1e293b;display:flex;align-items:center;gap:10px;">' +
+                    '<div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#B90E0A,#7a0806);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:800;flex-shrink:0;">HR</div>' +
+                    '<div><div style="font-size:11px;font-weight:700;color:#e2e8f0;">HR Manager</div><div style="font-size:10px;color:#475569;">hr@bench.ph</div></div>' +
+                    '</div>' +
+                    '</aside>';
+
+                // ── KPI Cards ─────────────────────────────────────────
+                var kpiCards =
+                    '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px;">' +
+
+                    // Total Positions
+                    '<div style="background:#fff;border-radius:16px;padding:20px;border:1px solid #e5e7eb;box-shadow:0 1px 4px rgba(0,0,0,.04);">' +
+                    '<div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;">' +
+                    '<div style="width:40px;height:40px;background:#f1f5f9;border-radius:12px;display:flex;align-items:center;justify-content:center;">' +
+                    '<i data-lucide="briefcase" style="width:18px;height:18px;color:#0f172a;"></i></div>' +
+                    '<span style="font-size:10px;font-weight:700;color:#64748b;background:#f1f5f9;padding:3px 8px;border-radius:99px;">All Depts</span>' +
+                    '</div>' +
+                    '<div style="font-size:32px;font-weight:900;color:#0f172a;letter-spacing:-1.5px;line-height:1;margin-bottom:4px;">24</div>' +
+                    '<div style="font-size:11px;color:#64748b;font-weight:600;">Total Positions</div>' +
+                    '<div style="font-size:10px;color:#22c55e;font-weight:600;margin-top:4px;">↑ 3 added this quarter</div>' +
+                    '</div>' +
+
+                    // Active Positions
+                    '<div style="background:#fff;border-radius:16px;padding:20px;border:1px solid #e5e7eb;box-shadow:0 1px 4px rgba(0,0,0,.04);">' +
+                    '<div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;">' +
+                    '<div style="width:40px;height:40px;background:#dcfce7;border-radius:12px;display:flex;align-items:center;justify-content:center;">' +
+                    '<i data-lucide="check-circle" style="width:18px;height:18px;color:#16a34a;"></i></div>' +
+                    '<span style="font-size:10px;font-weight:700;color:#16a34a;background:#dcfce7;padding:3px 8px;border-radius:99px;">87.5% fill rate</span>' +
+                    '</div>' +
+                    '<div style="font-size:32px;font-weight:900;color:#0f172a;letter-spacing:-1.5px;line-height:1;margin-bottom:4px;">21</div>' +
+                    '<div style="font-size:11px;color:#64748b;font-weight:600;">Active Positions</div>' +
+                    '<div style="font-size:10px;color:#64748b;font-weight:600;margin-top:4px;">3 inactive</div>' +
+                    '</div>' +
+
+                    // Vacant
+                    '<div style="background:#fff;border-radius:16px;padding:20px;border:1px solid #e5e7eb;box-shadow:0 1px 4px rgba(0,0,0,.04);">' +
+                    '<div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;">' +
+                    '<div style="width:40px;height:40px;background:#fef9c3;border-radius:12px;display:flex;align-items:center;justify-content:center;">' +
+                    '<i data-lucide="alert-circle" style="width:18px;height:18px;color:#ca8a04;"></i></div>' +
+                    '<span style="font-size:10px;font-weight:700;color:#ca8a04;background:#fef9c3;padding:3px 8px;border-radius:99px;">Recruiting</span>' +
+                    '</div>' +
+                    '<div style="font-size:32px;font-weight:900;color:#0f172a;letter-spacing:-1.5px;line-height:1;margin-bottom:4px;">3</div>' +
+                    '<div style="font-size:11px;color:#64748b;font-weight:600;">Vacant Positions</div>' +
+                    '<div style="font-size:10px;color:#ca8a04;font-weight:600;margin-top:4px;">Open for applications</div>' +
+                    '</div>' +
+
+                    // Movements
+                    '<div style="background:#fff;border-radius:16px;padding:20px;border:1px solid #e5e7eb;box-shadow:0 1px 4px rgba(0,0,0,.04);">' +
+                    '<div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;">' +
+                    '<div style="width:40px;height:40px;background:#dbeafe;border-radius:12px;display:flex;align-items:center;justify-content:center;">' +
+                    '<i data-lucide="shuffle" style="width:18px;height:18px;color:#1d4ed8;"></i></div>' +
+                    '<span style="font-size:10px;font-weight:700;color:#1d4ed8;background:#dbeafe;padding:3px 8px;border-radius:99px;">Q1 2026</span>' +
+                    '</div>' +
+                    '<div style="font-size:32px;font-weight:900;color:#0f172a;letter-spacing:-1.5px;line-height:1;margin-bottom:4px;">12</div>' +
+                    '<div style="font-size:11px;color:#64748b;font-weight:600;">Total Movements</div>' +
+                    '<div style="font-size:10px;color:#3b82f6;font-weight:600;margin-top:4px;">Hire · Promo · Transfer</div>' +
+                    '</div>' +
+
+                    '</div>';
+
+                // ── Row 2: Dept breakdown + Level breakdown ────────────
+                var row2 =
+                    '<div style="display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-bottom:20px;">' +
+
+                    // Dept breakdown
+                    '<div style="background:#fff;border-radius:16px;border:1px solid #e5e7eb;padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.04);">' +
+                    '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;">' +
+                    '<div><p style="font-size:14px;font-weight:800;color:#0f172a;margin:0;">Positions by Department</p>' +
+                    '<p style="font-size:11px;color:#94a3b8;margin:3px 0 0;">Active positions per department</p></div>' +
+                    '<span style="font-size:10px;font-weight:700;color:#64748b;background:#f1f5f9;padding:4px 10px;border-radius:99px;">24 total</span>' +
+                    '</div>' +
+
+                    // Bars
+                    [
+                        { name:'Retail Operations', count:9,  pct:75, color:'#B90E0A' },
+                        { name:'Human Resources',   count:4,  pct:33, color:'#3b82f6' },
+                        { name:'Finance',           count:4,  pct:33, color:'#22c55e' },
+                        { name:'Operations',        count:4,  pct:33, color:'#8b5cf6' },
+                        { name:'Marketing',         count:3,  pct:25, color:'#f59e0b' },
+                    ].map(function(d){
+                        return '<div style="margin-bottom:14px;">' +
+                            '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">' +
+                            '<span style="font-size:12px;font-weight:600;color:#374151;">'+d.name+'</span>' +
+                            '<span style="font-size:12px;font-weight:800;color:#0f172a;">'+d.count+' positions</span>' +
+                            '</div>' +
+                            '<div style="height:8px;background:#f1f5f9;border-radius:99px;overflow:hidden;">' +
+                            '<div style="height:100%;border-radius:99px;background:'+d.color+';width:'+d.pct+'%;"></div>' +
+                            '</div>' +
+                            '</div>';
+                    }).join('') +
+                    '</div>' +
+
+                    // Level breakdown
+                    '<div style="background:#fff;border-radius:16px;border:1px solid #e5e7eb;padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.04);">' +
+                    '<div style="margin-bottom:18px;">' +
+                    '<p style="font-size:14px;font-weight:800;color:#0f172a;margin:0;">Positions by Level</p>' +
+                    '<p style="font-size:11px;color:#94a3b8;margin:3px 0 0;">Distribution across all levels</p>' +
+                    '</div>' +
+                    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">' +
+                    '<div style="background:#fee2e2;border-radius:14px;padding:14px;text-align:center;">' +
+                    '<p style="font-size:24px;font-weight:900;color:#991b1b;margin:0;line-height:1;">4</p>' +
+                    '<p style="font-size:10px;font-weight:700;color:#ef4444;text-transform:uppercase;letter-spacing:1px;margin:4px 0 0;">Manager</p>' +
+                    '</div>' +
+                    '<div style="background:#fef9c3;border-radius:14px;padding:14px;text-align:center;">' +
+                    '<p style="font-size:24px;font-weight:900;color:#854d0e;margin:0;line-height:1;">3</p>' +
+                    '<p style="font-size:10px;font-weight:700;color:#ca8a04;text-transform:uppercase;letter-spacing:1px;margin:4px 0 0;">Supervisor</p>' +
+                    '</div>' +
+                    '<div style="background:#dcfce7;border-radius:14px;padding:14px;text-align:center;">' +
+                    '<p style="font-size:24px;font-weight:900;color:#15803d;margin:0;line-height:1;">7</p>' +
+                    '<p style="font-size:10px;font-weight:700;color:#22c55e;text-transform:uppercase;letter-spacing:1px;margin:4px 0 0;">Senior</p>' +
+                    '</div>' +
+                    '<div style="background:#dbeafe;border-radius:14px;padding:14px;text-align:center;">' +
+                    '<p style="font-size:24px;font-weight:900;color:#1d4ed8;margin:0;line-height:1;">4</p>' +
+                    '<p style="font-size:10px;font-weight:700;color:#3b82f6;text-transform:uppercase;letter-spacing:1px;margin:4px 0 0;">Junior</p>' +
+                    '</div>' +
+                    '<div style="background:#f1f5f9;border-radius:14px;padding:14px;text-align:center;grid-column:span 2;">' +
+                    '<p style="font-size:24px;font-weight:900;color:#334155;margin:0;line-height:1;">6</p>' +
+                    '<p style="font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:4px 0 0;">Entry</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+
+                    '</div>';
+
+                // ── Row 3: Movement types + Recent movements + Org tree mini ──
+                var row3 =
+                    '<div style="display:grid;grid-template-columns:1fr 1.6fr;gap:16px;">' +
+
+                    // Movement breakdown
+                    '<div style="background:#0f172a;border-radius:16px;padding:22px;">' +
+                    '<p style="font-size:14px;font-weight:800;color:#f8fafc;margin:0 0 4px;">Movement Breakdown</p>' +
+                    '<p style="font-size:11px;color:#475569;margin:0 0 20px;">Q1 2026 · All departments</p>' +
+
+                    // Donut-style stat blocks
+                    '<div style="display:flex;flex-direction:column;gap:12px;">' +
+
+                    [
+                        { label:'New Hires',  count:4,  pct:33, color:'#22c55e',  bg:'#14532d' },
+                        { label:'Promotions', count:5,  pct:42, color:'#3b82f6',  bg:'#1e3a5f' },
+                        { label:'Transfers',  count:3,  pct:25, color:'#f59e0b',  bg:'#78350f' },
+                        { label:'Demotions',  count:0,  pct:0,  color:'#ef4444',  bg:'#450a0a' },
+                    ].map(function(m){
+                        return '<div>' +
+                            '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">' +
+                            '<div style="display:flex;align-items:center;gap:8px;">' +
+                            '<div style="width:8px;height:8px;border-radius:50%;background:'+m.color+';flex-shrink:0;"></div>' +
+                            '<span style="font-size:12px;font-weight:600;color:#94a3b8;">'+m.label+'</span>' +
+                            '</div>' +
+                            '<span style="font-size:14px;font-weight:900;color:#f8fafc;">'+m.count+'</span>' +
+                            '</div>' +
+                            '<div style="height:6px;background:#1e293b;border-radius:99px;">' +
+                            '<div style="height:100%;border-radius:99px;background:'+m.color+';width:'+m.pct+'%;"></div>' +
+                            '</div>' +
+                            '</div>';
+                    }).join('') +
+
+                    '</div>' +
+
+                    // Total highlight
+                    '<div style="margin-top:18px;padding-top:14px;border-top:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center;">' +
+                    '<span style="font-size:12px;color:#64748b;">Total Movements</span>' +
+                    '<span style="font-size:20px;font-weight:900;color:#f8fafc;">12</span>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Recent movements feed
+                    '<div style="background:#fff;border-radius:16px;border:1px solid #e5e7eb;padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.04);">' +
+                    '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">' +
+                    '<div><p style="font-size:14px;font-weight:800;color:#0f172a;margin:0;">Recent Movements</p>' +
+                    '<p style="font-size:11px;color:#94a3b8;margin:3px 0 0;">Latest position changes</p></div>' +
+                    '<a href="#" style="font-size:11px;font-weight:700;color:#B90E0A;text-decoration:none;">View All →</a>' +
+                    '</div>' +
+
+                    '<div style="display:flex;flex-direction:column;gap:10px;">' +
+
+                    [
+                        { initials:'MS', name:'Maria Santos',   from:'Sales Associate',  to:'Sr. Sales Associate', type:'promoted',    date:'Jan 15',  bg:'linear-gradient(135deg,#B90E0A,#7a0806)', typeBg:'#dbeafe', typeColor:'#1d4ed8' },
+                        { initials:'JC', name:'Juan dela Cruz', from:'BGC Branch',        to:'SM MOA Branch',       type:'transferred', date:'Jan 10',  bg:'linear-gradient(135deg,#1e3a5f,#0f2040)', typeBg:'#fef9c3', typeColor:'#854d0e' },
+                        { initials:'AR', name:'Ana Reyes',      from:'—',                 to:'Visual Merchandiser', type:'hired',       date:'Jan 5',   bg:'linear-gradient(135deg,#064e3b,#022c22)', typeBg:'#dcfce7', typeColor:'#15803d' },
+                        { initials:'RM', name:'Rico Mendoza',   from:'Supervisor',        to:'Branch Manager',      type:'promoted',    date:'Feb 1',   bg:'linear-gradient(135deg,#B90E0A,#500808)', typeBg:'#dbeafe', typeColor:'#1d4ed8' },
+                        { initials:'DL', name:'Dana Lim',       from:'—',                 to:'HR Manager',          type:'hired',       date:'Feb 14',  bg:'linear-gradient(135deg,#1e3a5f,#0f2040)', typeBg:'#dcfce7', typeColor:'#15803d' },
+                    ].map(function(m){
+                        return '<div style="display:flex;align-items:center;gap:12px;padding:12px;background:#f8fafc;border-radius:12px;">' +
+                            '<div style="width:36px;height:36px;border-radius:50%;background:'+m.bg+';display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:11px;flex-shrink:0;">'+m.initials+'</div>' +
+                            '<div style="flex:1;min-width:0;">' +
+                            '<p style="font-size:12px;font-weight:700;color:#0f172a;margin:0;">'+m.name+'</p>' +
+                            '<p style="font-size:10px;color:#94a3b8;margin:2px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+m.from+' → '+m.to+'</p>' +
+                            '</div>' +
+                            '<div style="text-align:right;flex-shrink:0;">' +
+                            '<span style="background:'+m.typeBg+';color:'+m.typeColor+';padding:3px 8px;border-radius:99px;font-size:9px;font-weight:700;display:block;margin-bottom:3px;">'+m.type.charAt(0).toUpperCase()+m.type.slice(1)+'</span>' +
+                            '<span style="font-size:10px;color:#94a3b8;">'+m.date+'</span>' +
+                            '</div>' +
+                            '</div>';
+                    }).join('') +
+
+                    '</div></div>' +
+                    '</div>';
+
+                // ── Assemble full page ─────────────────────────────────
+                return '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>' + head + '</head>' +
+                    '<body style="margin:0;padding:0;background:#f8fafc;">' +
+                    '<div style="display:flex;min-height:100vh;">' +
+
+                    sidebar +
+
+                    '<div style="flex:1;display:flex;flex-direction:column;min-width:0;overflow:hidden;">' +
+
+                    // Topbar
+                    '<div style="background:#fff;border-bottom:1px solid #e5e7eb;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;">' +
+                    '<div>' +
+                    '<h1 style="font-size:20px;font-weight:900;color:#0f172a;margin:0;letter-spacing:-0.5px;">Org Management Dashboard</h1>' +
+                    '<p style="font-size:11px;color:#94a3b8;margin:2px 0 0;">Q1 2026 · All Departments</p>' +
+                    '</div>' +
+                    '<div style="display:flex;gap:10px;align-items:center;">' +
+
+                    // Period selector
+                    '<div style="background:#f1f5f9;border-radius:10px;padding:8px 14px;display:flex;align-items:center;gap:7px;cursor:pointer;">' +
+                    '<i data-lucide="calendar" style="width:14px;height:14px;color:#64748b;"></i>' +
+                    '<span style="font-size:12px;font-weight:600;color:#334155;">Q1 2026 ▾</span>' +
+                    '</div>' +
+
+                    // Add position
+                    '<button style="display:flex;align-items:center;gap:7px;background:#0f172a;border:none;border-radius:10px;padding:9px 16px;cursor:pointer;">' +
+                    '<i data-lucide="plus" style="width:14px;height:14px;color:#fff;"></i>' +
+                    '<span style="font-size:12px;font-weight:700;color:#fff;">Add Position</span>' +
+                    '</button>' +
+
+                    // Export
+                    '<button style="display:flex;align-items:center;gap:7px;background:#B90E0A;border:none;border-radius:10px;padding:9px 16px;cursor:pointer;">' +
+                    '<i data-lucide="download" style="width:14px;height:14px;color:#fff;"></i>' +
+                    '<span style="font-size:12px;font-weight:700;color:#fff;">Export</span>' +
+                    '</button>' +
+
+                    '</div>' +
+                    '</div>' +
+
+                    // Main content
+                    '<div style="flex:1;overflow-y:auto;padding:24px 28px 40px;">' +
+                    kpiCards +
+                    row2 +
+                    row3 +
+                    '</div>' +
+
+                    '</div>' +
+                    '</div>' +
+                    '<script>if(window.lucide)lucide.createIcons();<\/script>' +
+                    '</body></html>';
+
+            })()
+        },
+
+// ── END ORG MANAGEMENT DASHBOARD ─────────────────────────────────
+
+        {
+            id: 'hr-position-history-detail',
+            label: 'Position History: Movement Detail',
+            category: 'HR Screens',
+            content: (function(){
+                var head = '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>' +
+                    '<script src="https://cdn.tailwindcss.com"><\/script>' +
+                    '<style>*{font-family:\'Plus Jakarta Sans\',sans-serif;}</style>';
+
+                return '<!DOCTYPE html><html><head><meta charset="UTF-8"/>'+head+'</head>' +
+                    '<body style="margin:0;background:#f8fafc;">' +
+
+                    // Back bar
+                    '<div style="background:#fff;border-bottom:1px solid #e5e7eb;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;">' +
+                    '<div style="display:flex;align-items:center;gap:8px;">' +
+                    '<button style="display:flex;align-items:center;gap:6px;background:none;border:none;color:#6b7280;font-size:12px;cursor:pointer;">← Back to History</button>' +
+                    '</div>' +
+                    '<div style="display:flex;gap:8px;">' +
+                    '<button style="background:#f3f4f6;color:#374151;border:none;border-radius:9px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;">Edit</button>' +
+                    '<button style="background:#B90E0A;color:#fff;border:none;border-radius:9px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;">⬇ Export</button>' +
+                    '</div>' +
+                    '</div>' +
+
+                    '<div style="max-width:800px;margin:0 auto;padding:28px;">' +
+
+                    // Movement header card
+                    '<div style="background:#fff;border:1px solid #e5e7eb;border-radius:20px;overflow:hidden;box-shadow:0 1px 8px rgba(0,0,0,.06);margin-bottom:20px;">' +
+                    '<div style="background:linear-gradient(135deg,#111827,#1f2937);padding:24px 28px;">' +
+                    '<div style="display:flex;align-items:center;justify-content:space-between;">' +
+                    '<div>' +
+                    '<p style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin:0 0 4px;">Movement Record</p>' +
+                    '<p style="font-size:22px;font-weight:900;color:#fff;margin:0;">Promotion Record #PRO-2026-001</p>' +
+                    '<p style="font-size:12px;color:#9ca3af;margin:4px 0 0;">Effective: January 15, 2026</p>' +
+                    '</div>' +
+                    '<span style="background:#dbeafe;color:#1d4ed8;padding:6px 16px;border-radius:99px;font-size:12px;font-weight:700;">Promoted</span>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Employee strip
+                    '<div style="background:#f8fafc;padding:18px 28px;display:flex;align-items:center;gap:14px;border-bottom:1px solid #e5e7eb;">' +
+                    '<div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#B90E0A,#7a0806);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:16px;flex-shrink:0;">MS</div>' +
+                    '<div style="flex:1;">' +
+                    '<p style="font-size:15px;font-weight:800;color:#111827;margin:0;">Maria Santos</p>' +
+                    '<p style="font-size:11px;color:#B90E0A;font-weight:600;margin:2px 0 0;">Retail Operations · SM Mall of Asia</p>' +
+                    '</div>' +
+                    '<div style="text-align:right;">' +
+                    '<p style="font-size:10px;color:#9ca3af;margin:0;">Employee ID</p>' +
+                    '<p style="font-size:14px;font-weight:900;color:#111827;margin:2px 0 0;">HR-00142</p>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // From → To
+                    '<div style="padding:24px 28px;">' +
+                    '<div style="display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;margin-bottom:24px;">' +
+
+                    // From position
+                    '<div style="background:#f8fafc;border:1px solid #e5e7eb;border-radius:14px;padding:18px;">' +
+                    '<p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#9ca3af;margin:0 0 8px;">Previous Position</p>' +
+                    '<p style="font-size:16px;font-weight:800;color:#111827;margin:0;">Sales Associate</p>' +
+                    '<p style="font-size:11px;color:#6b7280;margin:4px 0;"></p>' +
+                    '<div style="margin-top:8px;display:flex;gap:6px;">' +
+                    '<span style="background:#f3f4f6;color:#374151;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:600;">Entry Level</span>' +
+                    '<span style="background:#f3f4f6;color:#374151;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:600;">₱18k–₱22k</span>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Arrow
+                    '<div style="text-align:center;">' +
+                    '<div style="width:40px;height:40px;background:#dbeafe;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:#1d4ed8;font-weight:900;margin:0 auto;">→</div>' +
+                    '</div>' +
+
+                    // To position
+                    '<div style="background:#dbeafe;border:2px solid #93c5fd;border-radius:14px;padding:18px;">' +
+                    '<p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3b82f6;margin:0 0 8px;">New Position</p>' +
+                    '<p style="font-size:16px;font-weight:800;color:#1e3a5f;margin:0;">Sr. Sales Associate</p>' +
+                    '<p style="font-size:11px;color:#3b82f6;margin:4px 0;"></p>' +
+                    '<div style="margin-top:8px;display:flex;gap:6px;">' +
+                    '<span style="background:#bfdbfe;color:#1d4ed8;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:600;">Senior Level</span>' +
+                    '<span style="background:#bfdbfe;color:#1d4ed8;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:600;">₱24k–₱30k</span>' +
+                    '</div>' +
+                    '</div>' +
+
+                    '</div>' +
+
+                    // Remarks
+                    '<div style="background:#f8fafc;border-left:4px solid #3b82f6;border-radius:0 12px 12px 0;padding:16px;margin-bottom:20px;">' +
+                    '<p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;margin:0 0 6px;">Remarks</p>' +
+                    '<p style="font-size:13px;color:#374151;line-height:1.6;margin:0;">Exceeded Q4 targets consistently for 2 consecutive years. Received highest performance score of 4.9 out of 5.0. Demonstrated exceptional leadership qualities and customer relationship management. Strongly recommended by Branch Manager Rico Mendoza.</p>' +
+                    '</div>' +
+
+                    // Meta info
+                    '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">' +
+                    '<div style="background:#f8fafc;border-radius:12px;padding:14px;">' +
+                    '<p style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;font-weight:600;margin:0 0 4px;">Department</p>' +
+                    '<p style="font-size:13px;font-weight:700;color:#111827;margin:0;">Retail Operations</p>' +
+                    '</div>' +
+                    '<div style="background:#f8fafc;border-radius:12px;padding:14px;">' +
+                    '<p style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;font-weight:600;margin:0 0 4px;">Changed By</p>' +
+                    '<p style="font-size:13px;font-weight:700;color:#111827;margin:0;">Admin — Dana L.</p>' +
+                    '</div>' +
+                    '<div style="background:#f8fafc;border-radius:12px;padding:14px;">' +
+                    '<p style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;font-weight:600;margin:0 0 4px;">Created At</p>' +
+                    '<p style="font-size:13px;font-weight:700;color:#111827;margin:0;">Jan 15, 2026 09:22 AM</p>' +
+                    '</div>' +
+                    '</div>' +
+
+                    '</div></div>' +
+
+                    // Salary change card
+                    '<div style="background:#fff;border:1px solid #e5e7eb;border-radius:20px;padding:20px 24px;margin-bottom:20px;box-shadow:0 1px 6px rgba(0,0,0,.04);">' +
+                    '<p style="font-size:13px;font-weight:800;color:#111827;margin:0 0 14px;">Salary Change</p>' +
+                    '<div style="display:flex;align-items:center;gap:20px;">' +
+                    '<div style="text-align:center;padding:14px 20px;background:#f8fafc;border-radius:12px;">' +
+                    '<p style="font-size:10px;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Previous</p>' +
+                    '<p style="font-size:20px;font-weight:900;color:#374151;margin:0;">₱22,000</p>' +
+                    '<p style="font-size:10px;color:#9ca3af;margin:2px 0 0;">Monthly Basic</p>' +
+                    '</div>' +
+                    '<div style="font-size:24px;color:#9ca3af;font-weight:300;">→</div>' +
+                    '<div style="text-align:center;padding:14px 20px;background:#dcfce7;border:1px solid #86efac;border-radius:12px;">' +
+                    '<p style="font-size:10px;color:#15803d;text-transform:uppercase;letter-spacing:1px;font-weight:600;margin:0 0 4px;">New</p>' +
+                    '<p style="font-size:20px;font-weight:900;color:#15803d;margin:0;">₱26,000</p>' +
+                    '<p style="font-size:10px;color:#15803d;margin:2px 0 0;">Monthly Basic</p>' +
+                    '</div>' +
+                    '<div style="text-align:center;padding:14px 20px;background:#dbeafe;border-radius:12px;">' +
+                    '<p style="font-size:10px;color:#1d4ed8;text-transform:uppercase;letter-spacing:1px;font-weight:600;margin:0 0 4px;">Increase</p>' +
+                    '<p style="font-size:20px;font-weight:900;color:#1d4ed8;margin:0;">+ ₱4,000</p>' +
+                    '<p style="font-size:10px;color:#1d4ed8;margin:2px 0 0;">↑ 18.2%</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+
+                    '</div>' +
+                    '</body></html>';
+            })()
+        },
+
+// ── END POSITION HISTORY TEMPLATES ───────────────────────────────
+
         {
             id: 'saas-revenue-dashboard',
             label: 'SaaS: Revenue Dashboard',
