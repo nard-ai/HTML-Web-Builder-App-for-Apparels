@@ -1391,6 +1391,1065 @@
             })()
         },
 
+        // ── UPGRADED PRINTABLE TEMPLATES — EMPLOYMENT DOCUMENTS ──────────
+// Tech stack: Tailwind CDN + Lucide Icons + Plus Jakarta Sans
+// Category: 'Printable'
+// A4 size: width 794px, min-height 1123px
+// Paste inside BLOCKS = [...] in erp-builder.js
+// ─────────────────────────────────────────────────────────────────
+
+        {
+            id: 'print-resume-cv',
+            label: 'Print: Resume / CV',
+            category: 'Printable',
+            content: (function(){
+                var head =
+                    '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>' +
+                    '<script src="https://cdn.tailwindcss.com"><\/script>' +
+                    '<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"><\/script>' +
+                    '<style>*{font-family:\'Plus Jakarta Sans\',sans-serif;}@media print{body{margin:0;}}</style>';
+
+                return '<!DOCTYPE html><html><head><meta charset="UTF-8"/>'+head+'</head>' +
+                    '<body style="margin:0;background:#e5e7eb;">' +
+                    '<div style="width:794px;min-height:1123px;background:#fff;margin:0 auto;display:grid;grid-template-columns:260px 1fr;overflow:hidden;">' +
+
+                    // LEFT SIDEBAR
+                    '<div style="background:#0f172a;padding:36px 24px;display:flex;flex-direction:column;gap:0;">' +
+
+                    // Photo placeholder
+                    '<div style="width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#B90E0A,#7a0806);border:4px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:32px;font-weight:900;color:#fff;">MS</div>' +
+                    '<div style="text-align:center;margin-bottom:28px;">' +
+                    '<p style="font-size:16px;font-weight:900;color:#fff;margin:0;">Maria Santos</p>' +
+                    '<p style="font-size:10px;color:#B90E0A;font-weight:700;margin:4px 0 0;text-transform:uppercase;letter-spacing:2px;">Senior Sales Associate</p>' +
+                    '</div>' +
+
+                    // Contact
+                    '<div style="margin-bottom:24px;">' +
+                    '<p style="font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#475569;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid #1e293b;">Contact</p>' +
+                    '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><i data-lucide="phone" style="width:12px;height:12px;color:#B90E0A;flex-shrink:0;"></i><span style="font-size:11px;color:#94a3b8;">+63 917 123 4567</span></div>' +
+                    '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><i data-lucide="mail" style="width:12px;height:12px;color:#B90E0A;flex-shrink:0;"></i><span style="font-size:11px;color:#94a3b8;">m.santos@email.com</span></div>' +
+                    '<div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;"><i data-lucide="map-pin" style="width:12px;height:12px;color:#B90E0A;flex-shrink:0;margin-top:1px;"></i><span style="font-size:11px;color:#94a3b8;line-height:1.5;">45 Rizal St., Quezon City, Metro Manila 1100</span></div>' +
+                    '</div>' +
+
+                    // Education
+                    '<div style="margin-bottom:24px;">' +
+                    '<p style="font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#475569;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid #1e293b;">Education</p>' +
+                    '<div style="margin-bottom:12px;"><p style="font-size:11px;font-weight:700;color:#e2e8f0;margin:0;">BS Business Administration</p><p style="font-size:10px;color:#94a3b8;margin:2px 0 0;">University of Santo Tomas</p><p style="font-size:10px;color:#64748b;margin:2px 0 0;">2017 – 2021</p></div>' +
+                    '</div>' +
+
+                    // Skills
+                    '<div style="margin-bottom:24px;">' +
+                    '<p style="font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#475569;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid #1e293b;">Skills</p>' +
+                    ['Customer Service','Sales Management','Inventory Control','Team Leadership','Visual Merchandising','POS Systems'].map(function(s){
+                        return '<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;"><div style="width:4px;height:4px;border-radius:50%;background:#B90E0A;flex-shrink:0;"></div><span style="font-size:11px;color:#94a3b8;">'+s+'</span></div>';
+                    }).join('') +
+                    '</div>' +
+
+                    // Languages
+                    '<div>' +
+                    '<p style="font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#475569;margin:0 0 10px;padding-bottom:6px;border-bottom:1px solid #1e293b;">Languages</p>' +
+                    '<div style="margin-bottom:6px;"><p style="font-size:11px;color:#e2e8f0;margin:0;">Filipino — Native</p></div>' +
+                    '<div><p style="font-size:11px;color:#e2e8f0;margin:0;">English — Fluent</p></div>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // RIGHT MAIN CONTENT
+                    '<div style="padding:36px 32px;">' +
+
+                    // Header
+                    '<div style="border-left:4px solid #B90E0A;padding-left:14px;margin-bottom:28px;">' +
+                    '<p style="font-size:22px;font-weight:900;color:#0f172a;margin:0;letter-spacing:-0.5px;">Maria Santos</p>' +
+                    '<p style="font-size:11px;color:#64748b;margin:3px 0 0;font-weight:600;">Senior Sales Associate · Bench Apparel Corporation</p>' +
+                    '</div>' +
+
+                    // Summary
+                    '<div style="margin-bottom:24px;">' +
+                    '<p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B90E0A;margin:0 0 8px;">Professional Summary</p>' +
+                    '<p style="font-size:12px;color:#374151;line-height:1.7;margin:0;">Results-driven retail professional with 3+ years of experience in fashion retail. Consistently exceeds monthly sales targets and delivers exceptional customer experiences. Proven track record in team mentoring, visual merchandising, and inventory management.</p>' +
+                    '</div>' +
+
+                    // Work Experience
+                    '<div style="margin-bottom:24px;">' +
+                    '<p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B90E0A;margin:0 0 12px;">Work Experience</p>' +
+
+                    '<div style="margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #f1f5f9;">' +
+                    '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;">' +
+                    '<p style="font-size:13px;font-weight:800;color:#0f172a;margin:0;">Senior Sales Associate</p>' +
+                    '<span style="font-size:10px;color:#64748b;background:#f1f5f9;padding:2px 8px;border-radius:99px;white-space:nowrap;">Jan 2026 – Present</span>' +
+                    '</div>' +
+                    '<p style="font-size:11px;font-weight:600;color:#B90E0A;margin:0 0 6px;">Bench Apparel Corp. · SM Mall of Asia</p>' +
+                    '<ul style="margin:0;padding-left:16px;font-size:11px;color:#374151;line-height:1.8;">' +
+                    '<li>Achieved 142% of Q1 2026 sales target — ranked #3 company-wide</li>' +
+                    '<li>Mentored 4 junior associates, improving team close rate by 18%</li>' +
+                    '<li>Managed daily inventory reconciliation and stock replenishment</li>' +
+                    '</ul></div>' +
+
+                    '<div style="margin-bottom:16px;">' +
+                    '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;">' +
+                    '<p style="font-size:13px;font-weight:800;color:#0f172a;margin:0;">Sales Associate</p>' +
+                    '<span style="font-size:10px;color:#64748b;background:#f1f5f9;padding:2px 8px;border-radius:99px;white-space:nowrap;">Mar 2023 – Dec 2025</span>' +
+                    '</div>' +
+                    '<p style="font-size:11px;font-weight:600;color:#B90E0A;margin:0 0 6px;">Bench Apparel Corp. · Cebu & SM MOA Branches</p>' +
+                    '<ul style="margin:0;padding-left:16px;font-size:11px;color:#374151;line-height:1.8;">' +
+                    '<li>Consistently met 100–120% of monthly individual sales targets</li>' +
+                    '<li>Recognized as Branch MVP for Q3 2024 and Q4 2024</li>' +
+                    '</ul></div>' +
+                    '</div>' +
+
+                    // Achievements
+                    '<div style="margin-bottom:24px;">' +
+                    '<p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B90E0A;margin:0 0 10px;">Key Achievements</p>' +
+                    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">' +
+                    ['Q1 2026 Top Performer Award','Branch MVP — Q3 & Q4 2024','142% Sales Target Achievement','18% Team Close Rate Improvement'].map(function(a){
+                        return '<div style="display:flex;align-items:center;gap:6px;background:#fff5f5;border:1px solid #fecaca;border-radius:8px;padding:8px 10px;"><i data-lucide="award" style="width:12px;height:12px;color:#B90E0A;flex-shrink:0;"></i><span style="font-size:10px;font-weight:600;color:#374151;">'+a+'</span></div>';
+                    }).join('') +
+                    '</div></div>' +
+
+                    // References
+                    '<div>' +
+                    '<p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B90E0A;margin:0 0 10px;">Character References</p>' +
+                    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">' +
+                    '<div style="background:#f8fafc;border-radius:8px;padding:10px;"><p style="font-size:11px;font-weight:700;color:#0f172a;margin:0;">Rico Mendoza</p><p style="font-size:10px;color:#B90E0A;margin:2px 0 0;">Branch Manager, Bench</p><p style="font-size:10px;color:#64748b;margin:2px 0 0;">+63 917 000 0001</p></div>' +
+                    '<div style="background:#f8fafc;border-radius:8px;padding:10px;"><p style="font-size:11px;font-weight:700;color:#0f172a;margin:0;">Dana Lim</p><p style="font-size:10px;color:#B90E0A;margin:2px 0 0;">HR Manager, Bench</p><p style="font-size:10px;color:#64748b;margin:2px 0 0;">+63 917 000 0002</p></div>' +
+                    '</div></div>' +
+
+                    '</div>' +
+                    '</div>' +
+
+                    '<script>if(window.lucide)lucide.createIcons();<\/script>' +
+                    '</body></html>';
+            })()
+        },
+
+        {
+            id: 'print-tor-diploma',
+            label: 'Print: Transcript of Records (TOR)',
+            category: 'Printable',
+            content: (function(){
+                var head =
+                    '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>' +
+                    '<script src="https://cdn.tailwindcss.com"><\/script>' +
+                    '<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"><\/script>' +
+                    '<style>*{font-family:\'Plus Jakarta Sans\',sans-serif;}@media print{body{margin:0;}}</style>';
+
+                var subjects = [
+                    { code:'BA101',  name:'Principles of Management',        units:3, grade:'1.25', equiv:'95' },
+                    { code:'BA102',  name:'Business Communication',          units:3, grade:'1.50', equiv:'92' },
+                    { code:'MKT101', name:'Principles of Marketing',         units:3, grade:'1.25', equiv:'95' },
+                    { code:'ACC101', name:'Financial Accounting',            units:3, grade:'1.75', equiv:'88' },
+                    { code:'ECO101', name:'Microeconomics',                  units:3, grade:'2.00', equiv:'85' },
+                    { code:'BA201',  name:'Operations Management',           units:3, grade:'1.25', equiv:'95' },
+                    { code:'HRM201', name:'Human Resource Management',       units:3, grade:'1.50', equiv:'92' },
+                    { code:'MKT202', name:'Consumer Behavior',               units:3, grade:'1.25', equiv:'95' },
+                    { code:'BA301',  name:'Strategic Management',            units:3, grade:'1.50', equiv:'92' },
+                    { code:'MKT301', name:'Retail Management',               units:3, grade:'1.25', equiv:'95' },
+                    { code:'BA401',  name:'Business Ethics & CSR',           units:3, grade:'1.25', equiv:'95' },
+                    { code:'BA499',  name:'Thesis / Capstone Project',       units:6, grade:'1.25', equiv:'95' },
+                ];
+
+                return '<!DOCTYPE html><html><head><meta charset="UTF-8"/>'+head+'</head>' +
+                    '<body style="margin:0;background:#e5e7eb;">' +
+                    '<div style="width:794px;min-height:1123px;background:#fff;margin:0 auto;padding:48px;box-sizing:border-box;">' +
+
+                    // Header
+                    '<div style="text-align:center;margin-bottom:32px;padding-bottom:24px;border-bottom:3px double #0f172a;">' +
+                    '<div style="display:flex;justify-content:center;align-items:center;gap:16px;margin-bottom:12px;">' +
+                    '<div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#0f172a,#1e293b);display:flex;align-items:center;justify-content:center;"><i data-lucide="graduation-cap" style="width:26px;height:26px;color:#fff;"></i></div>' +
+                    '</div>' +
+                    '<p style="font-size:18px;font-weight:900;color:#0f172a;margin:0;text-transform:uppercase;letter-spacing:2px;">University of Santo Tomas</p>' +
+                    '<p style="font-size:11px;color:#64748b;margin:4px 0 0;letter-spacing:1px;">España Blvd., Sampaloc, Manila · Philippines</p>' +
+                    '<div style="display:inline-block;background:#B90E0A;color:#fff;font-size:10px;font-weight:700;padding:4px 16px;border-radius:2px;margin-top:12px;letter-spacing:2px;text-transform:uppercase;">Official Transcript of Records</div>' +
+                    '</div>' +
+
+                    // Student info
+                    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:20px;">' +
+                    '<div>' +
+                    '<div style="margin-bottom:10px;"><p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin:0 0 2px;">Student Name</p><p style="font-size:13px;font-weight:800;color:#0f172a;margin:0;">SANTOS, MARIA JOSE B.</p></div>' +
+                    '<div style="margin-bottom:10px;"><p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin:0 0 2px;">Student Number</p><p style="font-size:13px;font-weight:600;color:#0f172a;margin:0;font-family:monospace;">2017-80042</p></div>' +
+                    '<div><p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin:0 0 2px;">Program</p><p style="font-size:13px;font-weight:600;color:#0f172a;margin:0;">BS Business Administration</p></div>' +
+                    '</div>' +
+                    '<div>' +
+                    '<div style="margin-bottom:10px;"><p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin:0 0 2px;">College</p><p style="font-size:13px;font-weight:600;color:#0f172a;margin:0;">College of Commerce and Business Administration</p></div>' +
+                    '<div style="margin-bottom:10px;"><p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin:0 0 2px;">Date of Birth</p><p style="font-size:13px;font-weight:600;color:#0f172a;margin:0;">June 12, 1999</p></div>' +
+                    '<div><p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin:0 0 2px;">Year Graduated</p><p style="font-size:13px;font-weight:600;color:#0f172a;margin:0;">March 2021</p></div>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Table
+                    '<table style="width:100%;border-collapse:collapse;margin-bottom:24px;">' +
+                    '<thead>' +
+                    '<tr style="background:#0f172a;">' +
+                    '<th style="padding:10px 12px;text-align:left;font-size:9px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Course Code</th>' +
+                    '<th style="padding:10px 12px;text-align:left;font-size:9px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Subject Description</th>' +
+                    '<th style="padding:10px 12px;text-align:center;font-size:9px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Units</th>' +
+                    '<th style="padding:10px 12px;text-align:center;font-size:9px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Final Grade</th>' +
+                    '<th style="padding:10px 12px;text-align:center;font-size:9px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Equiv %</th>' +
+                    '</tr>' +
+                    '</thead><tbody>' +
+                    subjects.map(function(s, i){
+                        return '<tr style="border-bottom:1px solid #f1f5f9;background:'+(i%2===0?'#fff':'#f8fafc')+';">' +
+                            '<td style="padding:10px 12px;font-size:11px;font-weight:700;color:#0f172a;font-family:monospace;">'+s.code+'</td>' +
+                            '<td style="padding:10px 12px;font-size:12px;color:#374151;">'+s.name+'</td>' +
+                            '<td style="padding:10px 12px;text-align:center;font-size:12px;color:#374151;">'+s.units+'</td>' +
+                            '<td style="padding:10px 12px;text-align:center;"><span style="background:#dcfce7;color:#15803d;padding:2px 10px;border-radius:99px;font-size:11px;font-weight:700;">'+s.grade+'</span></td>' +
+                            '<td style="padding:10px 12px;text-align:center;font-size:12px;font-weight:600;color:#374151;">'+s.equiv+'%</td>' +
+                            '</tr>';
+                    }).join('') +
+                    '</tbody>' +
+                    '<tfoot>' +
+                    '<tr style="background:#0f172a;">' +
+                    '<td colspan="2" style="padding:12px;font-size:11px;font-weight:700;color:#e2e8f0;">TOTAL / GENERAL WEIGHTED AVERAGE</td>' +
+                    '<td style="padding:12px;text-align:center;font-size:11px;font-weight:700;color:#e2e8f0;">39</td>' +
+                    '<td style="padding:12px;text-align:center;"><span style="background:#B90E0A;color:#fff;padding:3px 12px;border-radius:99px;font-size:11px;font-weight:800;">1.38</span></td>' +
+                    '<td style="padding:12px;text-align:center;font-size:11px;font-weight:700;color:#e2e8f0;">93.4%</td>' +
+                    '</tr>' +
+                    '</tfoot>' +
+                    '</table>' +
+
+                    // Footer / Certification
+                    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:32px;">' +
+                    '<div style="background:#f8fafc;border-radius:12px;padding:16px;border:1px solid #e5e7eb;">' +
+                    '<p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin:0 0 6px;">Graduation Honours</p>' +
+                    '<p style="font-size:13px;font-weight:800;color:#B90E0A;margin:0;">Cum Laude</p>' +
+                    '<p style="font-size:10px;color:#64748b;margin:4px 0 0;">GWA: 1.38 · March 2021</p>' +
+                    '</div>' +
+                    '<div style="background:#f8fafc;border-radius:12px;padding:16px;border:1px solid #e5e7eb;">' +
+                    '<p style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin:0 0 6px;">Date Issued</p>' +
+                    '<p style="font-size:13px;font-weight:800;color:#0f172a;margin:0;">March 26, 2026</p>' +
+                    '<p style="font-size:10px;color:#64748b;margin:4px 0 0;">For employment purposes only</p>' +
+                    '</div>' +
+                    '</div>' +
+
+                    '<div style="margin-top:28px;padding-top:20px;border-top:2px solid #0f172a;display:flex;justify-content:space-between;align-items:flex-end;">' +
+                    '<div><p style="font-size:9px;color:#94a3b8;margin:0;">This document is NOT valid without the official dry seal of the University Registrar.</p><p style="font-size:9px;color:#94a3b8;margin:4px 0 0;">University of Santo Tomas · Office of the Registrar · registrar@ust.edu.ph</p></div>' +
+                    '<div style="text-align:right;"><div style="border-top:1px solid #0f172a;padding-top:8px;min-width:160px;"><p style="font-size:11px;font-weight:700;color:#0f172a;margin:0;">University Registrar</p><p style="font-size:10px;color:#64748b;margin:2px 0 0;">Official Signature &amp; Seal</p></div></div>' +
+                    '</div>' +
+
+                    '</div>' +
+                    '<script>if(window.lucide)lucide.createIcons();<\/script>' +
+                    '</body></html>';
+            })()
+        },
+
+        {
+            id: 'print-medical-certificate',
+            label: 'Print: Medical Certificate (Fit to Work)',
+            category: 'Printable',
+            content: (function(){
+                var head =
+                    '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>' +
+                    '<script src="https://cdn.tailwindcss.com"><\/script>' +
+                    '<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"><\/script>' +
+                    '<style>*{font-family:\'Plus Jakarta Sans\',sans-serif;}@media print{body{margin:0;}}</style>';
+
+                var exams = [
+                    { name:'Physical Examination',   result:'Normal',   status:'passed' },
+                    { name:'Drug Test (ELISA)',       result:'Negative', status:'passed' },
+                    { name:'CBC (Complete Blood Count)', result:'Normal', status:'passed' },
+                    { name:'Urinalysis',              result:'Normal',   status:'passed' },
+                    { name:'Chest X-Ray',             result:'Clear',    status:'passed' },
+                    { name:'Blood Pressure',          result:'120/80 mmHg', status:'passed' },
+                    { name:'Visual Acuity',           result:'20/20 OD · 20/20 OS', status:'passed' },
+                    { name:'Hearing Test',            result:'Normal bilateral', status:'passed' },
+                ];
+
+                return '<!DOCTYPE html><html><head><meta charset="UTF-8"/>'+head+'</head>' +
+                    '<body style="margin:0;background:#e5e7eb;">' +
+                    '<div style="width:794px;min-height:1123px;background:#fff;margin:0 auto;padding:48px;box-sizing:border-box;">' +
+
+                    // Header
+                    '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid #0f172a;">' +
+                    '<div style="display:flex;align-items:center;gap:14px;">' +
+                    '<div style="width:52px;height:52px;background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:12px;display:flex;align-items:center;justify-content:center;">' +
+                    '<i data-lucide="cross" style="width:26px;height:26px;color:#fff;"></i></div>' +
+                    '<div><p style="font-size:16px;font-weight:900;color:#0f172a;margin:0;letter-spacing:-0.5px;">Medicard Clinic</p>' +
+                    '<p style="font-size:10px;color:#64748b;margin:2px 0 0;">Ground Floor, Bench Tower, Makati City</p>' +
+                    '<p style="font-size:10px;color:#64748b;margin:0;">+63 2 8888 1234 · clinic@medicard.com.ph</p></div>' +
+                    '</div>' +
+                    '<div style="text-align:right;">' +
+                    '<p style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;margin:0 0 4px;">Certificate No.</p>' +
+                    '<p style="font-size:14px;font-weight:900;color:#0f172a;margin:0;font-family:monospace;">MC-2026-04231</p>' +
+                    '<p style="font-size:10px;color:#64748b;margin:4px 0 0;">Date Issued: March 26, 2026</p>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Title
+                    '<div style="text-align:center;margin-bottom:28px;">' +
+                    '<p style="font-size:20px;font-weight:900;color:#0f172a;margin:0;text-transform:uppercase;letter-spacing:2px;">Medical Certificate</p>' +
+                    '<div style="display:inline-flex;align-items:center;gap:8px;background:#dcfce7;border:1px solid #86efac;border-radius:99px;padding:6px 20px;margin-top:10px;">' +
+                    '<i data-lucide="check-circle" style="width:16px;height:16px;color:#16a34a;"></i>' +
+                    '<span style="font-size:13px;font-weight:800;color:#15803d;">FIT TO WORK</span>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Patient info
+                    '<div style="background:#f8fafc;border:1px solid #e5e7eb;border-radius:14px;padding:20px;margin-bottom:24px;">' +
+                    '<p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;margin:0 0 14px;">Patient Information</p>' +
+                    '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">' +
+                    '<div><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 2px;">Full Name</p><p style="font-size:13px;font-weight:700;color:#0f172a;margin:0;">Maria Santos</p></div>' +
+                    '<div><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 2px;">Date of Birth</p><p style="font-size:13px;font-weight:700;color:#0f172a;margin:0;">June 12, 1999</p></div>' +
+                    '<div><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 2px;">Age / Sex</p><p style="font-size:13px;font-weight:700;color:#0f172a;margin:0;">26 yrs old · Female</p></div>' +
+                    '<div><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 2px;">Height / Weight</p><p style="font-size:13px;font-weight:700;color:#0f172a;margin:0;">5\'4" · 54 kg</p></div>' +
+                    '<div><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 2px;">Blood Type</p><p style="font-size:13px;font-weight:700;color:#0f172a;margin:0;">O Positive</p></div>' +
+                    '<div><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 2px;">Employer</p><p style="font-size:13px;font-weight:700;color:#0f172a;margin:0;">Bench Apparel Corp.</p></div>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Exam results
+                    '<p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;margin:0 0 12px;">Pre-Employment Medical Examination Results</p>' +
+                    '<table style="width:100%;border-collapse:collapse;margin-bottom:24px;">' +
+                    '<thead><tr style="background:#0f172a;">' +
+                    '<th style="padding:10px 14px;text-align:left;font-size:9px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Examination</th>' +
+                    '<th style="padding:10px 14px;text-align:left;font-size:9px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Result / Findings</th>' +
+                    '<th style="padding:10px 14px;text-align:center;font-size:9px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Status</th>' +
+                    '</tr></thead>' +
+                    '<tbody>' +
+                    exams.map(function(e, i){
+                        return '<tr style="border-bottom:1px solid #f1f5f9;background:'+(i%2===0?'#fff':'#f8fafc')+';">' +
+                            '<td style="padding:12px 14px;font-size:12px;font-weight:600;color:#374151;">'+e.name+'</td>' +
+                            '<td style="padding:12px 14px;font-size:12px;color:#374151;">'+e.result+'</td>' +
+                            '<td style="padding:12px 14px;text-align:center;">' +
+                            '<div style="display:inline-flex;align-items:center;gap:5px;background:#dcfce7;padding:3px 12px;border-radius:99px;">' +
+                            '<div style="width:5px;height:5px;border-radius:50%;background:#22c55e;"></div>' +
+                            '<span style="font-size:10px;font-weight:700;color:#15803d;">PASSED</span>' +
+                            '</div></td>' +
+                            '</tr>';
+                    }).join('') +
+                    '</tbody></table>' +
+
+                    // Certification statement
+                    '<div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:18px;margin-bottom:28px;">' +
+                    '<p style="font-size:12px;color:#166534;line-height:1.8;margin:0;">This is to certify that <strong>Maria Santos</strong> has undergone a thorough pre-employment physical and laboratory examination on <strong>March 25, 2026</strong> and has been found <strong>FIT TO WORK</strong> without restriction. No contraindications to employment were found. This certificate is valid for <strong>six (6) months</strong> from date of issue.</p>' +
+                    '</div>' +
+
+                    // Signature
+                    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">' +
+                    '<div style="text-align:center;">' +
+                    '<div style="border-top:1px solid #0f172a;padding-top:10px;"><p style="font-size:12px;font-weight:800;color:#0f172a;margin:0;">Dr. Jose Reyes, MD</p><p style="font-size:10px;color:#64748b;margin:3px 0 0;">License No. 0123456</p><p style="font-size:10px;color:#64748b;margin:0;">Occupational Medicine Specialist</p></div>' +
+                    '</div>' +
+                    '<div style="text-align:center;">' +
+                    '<div style="border-top:1px solid #0f172a;padding-top:10px;"><p style="font-size:12px;font-weight:800;color:#0f172a;margin:0;">Medicard Clinic</p><p style="font-size:10px;color:#64748b;margin:3px 0 0;">Clinic Director / Authorized Representative</p><p style="font-size:10px;color:#64748b;margin:0;">Official Seal</p></div>' +
+                    '</div>' +
+                    '</div>' +
+
+                    '</div>' +
+                    '<script>if(window.lucide)lucide.createIcons();<\/script>' +
+                    '</body></html>';
+            })()
+        },
+
+        {
+            id: 'print-nbi-clearance',
+            label: 'Print: NBI Clearance',
+            category: 'Printable',
+            content: (function(){
+                var head =
+                    '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>' +
+                    '<script src="https://cdn.tailwindcss.com"><\/script>' +
+                    '<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"><\/script>' +
+                    '<style>*{font-family:\'Plus Jakarta Sans\',sans-serif;}@media print{body{margin:0;}}</style>';
+
+                return '<!DOCTYPE html><html><head><meta charset="UTF-8"/>'+head+'</head>' +
+                    '<body style="margin:0;background:#e5e7eb;">' +
+                    '<div style="width:794px;min-height:560px;background:#fff;margin:0 auto;padding:40px 56px;box-sizing:border-box;">' +
+
+                    // Gov header
+                    '<div style="text-align:center;margin-bottom:20px;padding-bottom:16px;border-bottom:3px solid #0f172a;">' +
+                    '<p style="font-size:10px;color:#64748b;letter-spacing:2px;text-transform:uppercase;margin:0 0 2px;">Republic of the Philippines</p>' +
+                    '<p style="font-size:11px;font-weight:700;color:#0f172a;margin:0 0 2px;">Department of Justice</p>' +
+                    '<p style="font-size:14px;font-weight:900;color:#0f172a;margin:0;letter-spacing:1px;">NATIONAL BUREAU OF INVESTIGATION</p>' +
+                    '<p style="font-size:10px;color:#64748b;margin:4px 0 0;">NBI Building, Taft Avenue, Ermita, Manila</p>' +
+                    '</div>' +
+
+                    // Title
+                    '<div style="text-align:center;margin-bottom:24px;">' +
+                    '<p style="font-size:18px;font-weight:900;color:#0f172a;margin:0;text-transform:uppercase;letter-spacing:3px;text-decoration:underline;">NBI Clearance</p>' +
+                    '<div style="display:inline-flex;align-items:center;gap:8px;background:#dcfce7;border:1px solid #86efac;border-radius:99px;padding:5px 18px;margin-top:10px;">' +
+                    '<i data-lucide="shield-check" style="width:14px;height:14px;color:#16a34a;"></i>' +
+                    '<span style="font-size:11px;font-weight:800;color:#15803d;">NO DEROGATORY RECORD FOUND</span>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Cert body
+                    '<div style="background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:24px;margin-bottom:24px;">' +
+                    '<p style="font-size:13px;color:#374151;line-height:2;margin:0 0 16px;">This is to certify that the records of this Bureau show that the person described below has <strong>NO PENDING CASE AND NO CRIMINAL RECORD</strong> as of the date of this clearance.</p>' +
+
+                    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">' +
+                    '<div><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 2px;">Full Name</p><p style="font-size:14px;font-weight:800;color:#0f172a;margin:0;">SANTOS, MARIA JOSE B.</p></div>' +
+                    '<div><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 2px;">Date of Birth</p><p style="font-size:13px;font-weight:700;color:#0f172a;margin:0;">June 12, 1999</p></div>' +
+                    '<div><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 2px;">Place of Birth</p><p style="font-size:13px;font-weight:700;color:#0f172a;margin:0;">Quezon City, Metro Manila</p></div>' +
+                    '<div><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 2px;">Address</p><p style="font-size:13px;font-weight:700;color:#0f172a;margin:0;">45 Rizal St., Quezon City</p></div>' +
+                    '<div><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 2px;">Nationality</p><p style="font-size:13px;font-weight:700;color:#0f172a;margin:0;">Filipino</p></div>' +
+                    '<div><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 2px;">Purpose</p><p style="font-size:13px;font-weight:700;color:#0f172a;margin:0;">Employment</p></div>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Clearance details + QR
+                    '<div style="display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;margin-bottom:28px;">' +
+                    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">' +
+                    '<div style="background:#0f172a;border-radius:10px;padding:14px;"><p style="font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Clearance No.</p><p style="font-size:13px;font-weight:900;color:#fff;margin:0;font-family:monospace;">NBI-2026-0423100</p></div>' +
+                    '<div style="background:#0f172a;border-radius:10px;padding:14px;"><p style="font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Date of Issue</p><p style="font-size:13px;font-weight:900;color:#fff;margin:0;">March 26, 2026</p></div>' +
+                    '<div style="background:#0f172a;border-radius:10px;padding:14px;"><p style="font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Valid Until</p><p style="font-size:13px;font-weight:900;color:#fff;margin:0;">March 26, 2027</p></div>' +
+                    '<div style="background:#0f172a;border-radius:10px;padding:14px;"><p style="font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Issued At</p><p style="font-size:13px;font-weight:900;color:#fff;margin:0;">NBI Main Office, Manila</p></div>' +
+                    '</div>' +
+                    '<div style="width:90px;height:90px;background:#f1f5f9;border:2px solid #e5e7eb;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;">' +
+                    '<i data-lucide="qr-code" style="width:48px;height:48px;color:#0f172a;"></i>' +
+                    '<p style="font-size:8px;color:#94a3b8;margin:0;text-align:center;">Scan to verify</p>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Signature
+                    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:16px;border-top:1px solid #e5e7eb;">' +
+                    '<div><div style="border-top:1px solid #0f172a;padding-top:8px;"><p style="font-size:11px;font-weight:800;color:#0f172a;margin:0;">Director, NBI</p><p style="font-size:10px;color:#64748b;margin:2px 0 0;">Authorized Signatory</p></div></div>' +
+                    '<div style="text-align:right;"><p style="font-size:10px;color:#94a3b8;margin:0;">This document is electronically generated and digitally signed.</p><p style="font-size:10px;color:#94a3b8;margin:4px 0 0;">Valid without wet signature when QR code is verified.</p></div>' +
+                    '</div>' +
+
+                    '</div>' +
+                    '<script>if(window.lucide)lucide.createIcons();<\/script>' +
+                    '</body></html>';
+            })()
+        },
+
+        {
+            id: 'print-employment-contract',
+            label: 'Print: Signed Job Contract',
+            category: 'Printable',
+            content: (function(){
+                var head =
+                    '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>' +
+                    '<script src="https://cdn.tailwindcss.com"><\/script>' +
+                    '<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"><\/script>' +
+                    '<style>*{font-family:\'Plus Jakarta Sans\',sans-serif;}@media print{body{margin:0;}}</style>';
+
+                return '<!DOCTYPE html><html><head><meta charset="UTF-8"/>'+head+'</head>' +
+                    '<body style="margin:0;background:#e5e7eb;">' +
+                    '<div style="width:794px;min-height:1123px;background:#fff;margin:0 auto;padding:52px 56px;box-sizing:border-box;">' +
+
+                    // Header
+                    '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:32px;padding-bottom:20px;border-bottom:2px solid #0f172a;">' +
+                    '<div style="display:flex;align-items:center;gap:12px;">' +
+                    '<div style="width:44px;height:44px;background:#B90E0A;border-radius:10px;display:flex;align-items:center;justify-content:center;"><span style="color:#fff;font-weight:900;font-size:18px;">B</span></div>' +
+                    '<div><p style="font-size:16px;font-weight:900;color:#0f172a;margin:0;letter-spacing:1px;">BENCH APPAREL</p><p style="font-size:9px;color:#64748b;margin:2px 0 0;letter-spacing:1px;text-transform:uppercase;">Corporation</p></div>' +
+                    '</div>' +
+                    '<div style="text-align:right;">' +
+                    '<p style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;margin:0 0 4px;">Contract No.</p>' +
+                    '<p style="font-size:13px;font-weight:900;color:#0f172a;margin:0;font-family:monospace;">EC-2026-00142</p>' +
+                    '<p style="font-size:10px;color:#64748b;margin:4px 0 0;">Date: March 26, 2026</p>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Title
+                    '<div style="text-align:center;margin-bottom:28px;">' +
+                    '<p style="font-size:18px;font-weight:900;color:#0f172a;margin:0;text-transform:uppercase;letter-spacing:2px;">Contract of Employment</p>' +
+                    '<p style="font-size:11px;color:#64748b;margin:6px 0 0;">Regular Employment · Full-Time</p>' +
+                    '</div>' +
+
+                    // Parties
+                    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">' +
+                    '<div style="background:#0f172a;border-radius:14px;padding:18px;">' +
+                    '<p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#64748b;margin:0 0 10px;">Employer</p>' +
+                    '<p style="font-size:13px;font-weight:800;color:#fff;margin:0;">Bench Apparel Corporation</p>' +
+                    '<p style="font-size:11px;color:#94a3b8;margin:4px 0 0;">123 Bench Avenue, Makati City</p>' +
+                    '<p style="font-size:11px;color:#94a3b8;margin:0;">TIN: 123-456-789-000</p>' +
+                    '</div>' +
+                    '<div style="background:#f8fafc;border:1px solid #e5e7eb;border-radius:14px;padding:18px;">' +
+                    '<p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;margin:0 0 10px;">Employee</p>' +
+                    '<p style="font-size:13px;font-weight:800;color:#0f172a;margin:0;">Maria Santos</p>' +
+                    '<p style="font-size:11px;color:#64748b;margin:4px 0 0;">45 Rizal St., Quezon City</p>' +
+                    '<p style="font-size:11px;color:#64748b;margin:0;">SSS: 34-5678901-2</p>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Terms
+                    '<div style="margin-bottom:20px;">' +
+                    '<p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;margin:0 0 12px;padding-bottom:6px;border-bottom:1px solid #f1f5f9;">Terms of Employment</p>' +
+                    '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px;">' +
+                    '<div style="background:#f8fafc;border-radius:10px;padding:14px;"><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Position</p><p style="font-size:12px;font-weight:700;color:#0f172a;margin:0;">Sr. Sales Associate</p></div>' +
+                    '<div style="background:#f8fafc;border-radius:10px;padding:14px;"><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Department</p><p style="font-size:12px;font-weight:700;color:#0f172a;margin:0;">Retail Operations</p></div>' +
+                    '<div style="background:#f8fafc;border-radius:10px;padding:14px;"><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Branch</p><p style="font-size:12px;font-weight:700;color:#0f172a;margin:0;">SM Mall of Asia</p></div>' +
+                    '<div style="background:#f8fafc;border-radius:10px;padding:14px;"><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Start Date</p><p style="font-size:12px;font-weight:700;color:#0f172a;margin:0;">April 1, 2026</p></div>' +
+                    '<div style="background:#f8fafc;border-radius:10px;padding:14px;"><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Basic Salary</p><p style="font-size:12px;font-weight:700;color:#B90E0A;margin:0;">PHP 26,000 / month</p></div>' +
+                    '<div style="background:#f8fafc;border-radius:10px;padding:14px;"><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Pay Schedule</p><p style="font-size:12px;font-weight:700;color:#0f172a;margin:0;">Semi-monthly</p></div>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Clauses
+                    '<div style="margin-bottom:24px;">' +
+                    '<p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;margin:0 0 12px;padding-bottom:6px;border-bottom:1px solid #f1f5f9;">Key Provisions</p>' +
+                    [
+                        { num:'1.', title:'Probationary Period', body:'The Employee shall undergo a six (6) month probationary period commencing on the start date. Regularization is subject to satisfactory performance evaluation.' },
+                        { num:'2.', title:'Work Schedule', body:'Regular working hours are 8 hours per day, 5 days a week. Schedules are subject to operational requirements of the branch.' },
+                        { num:'3.', title:'Benefits', body:'The Employee is entitled to SSS, PhilHealth, and Pag-IBIG contributions, 13th month pay, and other statutory benefits under Philippine labor law.' },
+                        { num:'4.', title:'Confidentiality', body:'The Employee agrees to maintain confidentiality of all company information, trade secrets, and customer data during and after employment.' },
+                    ].map(function(c){
+                        return '<div style="display:flex;gap:10px;margin-bottom:12px;">' +
+                            '<span style="font-size:12px;font-weight:900;color:#B90E0A;flex-shrink:0;width:20px;">'+c.num+'</span>' +
+                            '<div><p style="font-size:12px;font-weight:700;color:#0f172a;margin:0 0 2px;">'+c.title+'</p>' +
+                            '<p style="font-size:11px;color:#374151;line-height:1.7;margin:0;">'+c.body+'</p></div>' +
+                            '</div>';
+                    }).join('') +
+                    '</div>' +
+
+                    // Signatures
+                    '<div style="background:#f8fafc;border-radius:14px;padding:20px;margin-bottom:16px;">' +
+                    '<p style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#94a3b8;margin:0 0 16px;">Signatures</p>' +
+                    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">' +
+                    '<div><div style="border-top:1px solid #0f172a;padding-top:10px;"><p style="font-size:12px;font-weight:800;color:#0f172a;margin:0;">Maria Santos</p><p style="font-size:10px;color:#64748b;margin:2px 0 0;">Employee · Date: ___________</p></div></div>' +
+                    '<div><div style="border-top:1px solid #0f172a;padding-top:10px;"><p style="font-size:12px;font-weight:800;color:#0f172a;margin:0;">HR Director / Authorized Rep.</p><p style="font-size:10px;color:#64748b;margin:2px 0 0;">Bench Apparel Corp. · Date: ___________</p></div></div>' +
+                    '</div></div>' +
+
+                    '<p style="font-size:10px;color:#94a3b8;text-align:center;margin:0;">Contract No. EC-2026-00142 · Bench Apparel Corporation · CONFIDENTIAL</p>' +
+
+                    '</div>' +
+                    '<script>if(window.lucide)lucide.createIcons();<\/script>' +
+                    '</body></html>';
+            })()
+        },
+
+        {
+            id: 'print-preemployment-checklist',
+            label: 'Print: Pre-Employment Requirements Checklist',
+            category: 'Printable',
+            content: (function(){
+                var head =
+                    '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>' +
+                    '<script src="https://cdn.tailwindcss.com"><\/script>' +
+                    '<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"><\/script>' +
+                    '<style>*{font-family:\'Plus Jakarta Sans\',sans-serif;}@media print{body{margin:0;}}.check-row{display:flex;align-items:flex-start;gap:12px;padding:10px 14px;border-bottom:1px solid #f1f5f9;}.check-row:last-child{border-bottom:none;}</style>';
+
+                var sections = [
+                    {
+                        title: 'Basic Employment Documents',
+                        icon: 'file-text',
+                        color: '#1d4ed8',
+                        bg: '#dbeafe',
+                        items: [
+                            { label:'Resume / Curriculum Vitae (updated)', sub:'At least 2 copies', required:true },
+                            { label:'Transcript of Records (TOR)', sub:'Original + photocopy, certified true copy', required:true },
+                            { label:'Diploma / Certificate of Graduation', sub:'For fresh graduates without TOR yet', required:true },
+                        ]
+                    },
+                    {
+                        title: 'Medical Requirements',
+                        icon: 'heart-pulse',
+                        color: '#dc2626',
+                        bg: '#fee2e2',
+                        items: [
+                            { label:'Medical Certificate (Fit to Work)', sub:'From licensed physician, within 3 months', required:true },
+                            { label:'Drug Test Result', sub:'ELISA method, accredited clinic', required:true },
+                            { label:'CBC — Complete Blood Count', sub:'Blood test from accredited lab', required:true },
+                            { label:'Urinalysis Result', sub:'From accredited laboratory', required:true },
+                            { label:'Chest X-Ray Result', sub:'Within 6 months, with radiologist reading', required:true },
+                            { label:'Physical Examination Form', sub:'Company-provided form, signed by physician', required:true },
+                        ]
+                    },
+                    {
+                        title: 'Government-Issued Clearances',
+                        icon: 'shield-check',
+                        color: '#16a34a',
+                        bg: '#dcfce7',
+                        items: [
+                            { label:'NBI Clearance', sub:'Original, valid within 1 year', required:true },
+                            { label:'Barangay Clearance', sub:'From place of residence, within 6 months', required:true },
+                            { label:'Police Clearance', sub:'From local police station', required:false },
+                            { label:'Birth Certificate (PSA-authenticated)', sub:'Original or certified copy', required:true },
+                            { label:'Marriage Certificate (PSA)', sub:'Required if married, for dependent listing', required:false },
+                        ]
+                    },
+                    {
+                        title: 'Company-Specific Requirements',
+                        icon: 'building-2',
+                        color: '#9333ea',
+                        bg: '#f3e8ff',
+                        items: [
+                            { label:'Bank Account Details', sub:'BDO or BPI preferred for payroll crediting', required:true },
+                            { label:'Signed Job Contract', sub:'All pages initialed, signature on last page', required:true },
+                            { label:'2×2 / Passport-size Photos', sub:'At least 4 copies, white background', required:true },
+                            { label:'Training Certificates / Licenses', sub:'If required for the applied role', required:false },
+                            { label:'SSS Number / E1 Form', sub:'For new employees without SSS number yet', required:true },
+                            { label:'PhilHealth ID / MDR Form', sub:'Member Data Record from PhilHealth', required:true },
+                            { label:'Pag-IBIG MID Number', sub:'HDMF membership identification', required:true },
+                            { label:'TIN or BIR Form 1902', sub:'For first-time employees, fill up BIR 1902', required:true },
+                        ]
+                    },
+                ];
+
+                return '<!DOCTYPE html><html><head><meta charset="UTF-8"/>'+head+'</head>' +
+                    '<body style="margin:0;background:#e5e7eb;">' +
+                    '<div style="width:794px;min-height:1123px;background:#fff;margin:0 auto;padding:44px 48px;box-sizing:border-box;">' +
+
+                    // Header
+                    '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;padding-bottom:20px;border-bottom:2px solid #0f172a;">' +
+                    '<div style="display:flex;align-items:center;gap:12px;">' +
+                    '<div style="width:44px;height:44px;background:#B90E0A;border-radius:10px;display:flex;align-items:center;justify-content:center;"><span style="color:#fff;font-weight:900;font-size:18px;">B</span></div>' +
+                    '<div><p style="font-size:16px;font-weight:900;color:#0f172a;margin:0;">BENCH APPAREL</p><p style="font-size:9px;color:#64748b;margin:2px 0 0;letter-spacing:2px;text-transform:uppercase;">Human Resources Department</p></div>' +
+                    '</div>' +
+                    '<div style="text-align:right;">' +
+                    '<p style="font-size:20px;font-weight:900;color:#0f172a;margin:0;">Pre-Employment</p>' +
+                    '<p style="font-size:20px;font-weight:900;color:#B90E0A;margin:0;">Requirements Checklist</p>' +
+                    '<p style="font-size:10px;color:#64748b;margin:6px 0 0;">Form No. HR-PEC-2026 · Effective: January 2026</p>' +
+                    '</div>' +
+                    '</div>' +
+
+                    // Employee info box
+                    '<div style="background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:16px 20px;margin-bottom:24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">' +
+                    '<div><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Applicant Name</p><div style="border-bottom:1px solid #cbd5e1;min-height:24px;"></div></div>' +
+                    '<div><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Position Applied For</p><div style="border-bottom:1px solid #cbd5e1;min-height:24px;"></div></div>' +
+                    '<div><p style="font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin:0 0 4px;">Target Start Date</p><div style="border-bottom:1px solid #cbd5e1;min-height:24px;"></div></div>' +
+                    '</div>' +
+
+                    // Legend
+                    '<div style="display:flex;gap:20px;margin-bottom:20px;">' +
+                    '<div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#B90E0A;display:flex;align-items:center;justify-content:center;"><i data-lucide="asterisk" style="width:8px;height:8px;color:#fff;"></i></div><span style="font-size:11px;color:#374151;font-weight:600;">Required</span></div>' +
+                    '<div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:14px;border-radius:3px;background:#f1f5f9;border:1px solid #e5e7eb;display:flex;align-items:center;justify-content:center;"><i data-lucide="minus" style="width:8px;height:8px;color:#94a3b8;"></i></div><span style="font-size:11px;color:#374151;font-weight:600;">If Applicable</span></div>' +
+                    '<div style="display:flex;align-items:center;gap:6px;"><div style="width:16px;height:16px;border:1.5px solid #e5e7eb;border-radius:3px;"></div><span style="font-size:11px;color:#374151;font-weight:600;">Submitted checkbox</span></div>' +
+                    '</div>' +
+
+                    // Sections
+                    sections.map(function(sec){
+                        return '<div style="margin-bottom:18px;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;">' +
+                            '<div style="background:'+sec.bg+';padding:12px 16px;display:flex;align-items:center;gap:10px;">' +
+                            '<div style="width:28px;height:28px;background:'+sec.color+';border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' +
+                            '<i data-lucide="'+sec.icon+'" style="width:14px;height:14px;color:#fff;"></i></div>' +
+                            '<p style="font-size:12px;font-weight:800;color:'+sec.color+';margin:0;text-transform:uppercase;letter-spacing:1px;">'+sec.title+'</p>' +
+                            '</div>' +
+                            '<div>' +
+                            sec.items.map(function(item){
+                                return '<div class="check-row" style="background:#fff;">' +
+                                    // Checkbox
+                                    '<div style="width:16px;height:16px;border:1.5px solid #d1d5db;border-radius:3px;flex-shrink:0;margin-top:2px;"></div>' +
+                                    // Content
+                                    '<div style="flex:1;">' +
+                                    '<div style="display:flex;align-items:center;gap:8px;">' +
+                                    '<p style="font-size:12px;font-weight:700;color:#0f172a;margin:0;">'+item.label+'</p>' +
+                                    (item.required
+                                        ? '<span style="background:#B90E0A;color:#fff;font-size:8px;font-weight:700;padding:1px 6px;border-radius:99px;text-transform:uppercase;letter-spacing:1px;">Required</span>'
+                                        : '<span style="background:#f1f5f9;color:#64748b;font-size:8px;font-weight:700;padding:1px 6px;border-radius:99px;text-transform:uppercase;letter-spacing:1px;">If Applicable</span>') +
+                                    '</div>' +
+                                    '<p style="font-size:10px;color:#94a3b8;margin:2px 0 0;">'+item.sub+'</p>' +
+                                    '</div>' +
+                                    // Status dropdown area
+                                    '<div style="text-align:right;flex-shrink:0;min-width:80px;"><div style="border:1px solid #e5e7eb;border-radius:6px;padding:4px 8px;font-size:10px;color:#94a3b8;background:#f8fafc;">Date received</div></div>' +
+                                    '</div>';
+                            }).join('') +
+                            '</div>' +
+                            '</div>';
+                    }).join('') +
+
+                    // Footer
+                    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;padding-top:16px;border-top:1px solid #e5e7eb;">' +
+                    '<div><div style="border-top:1px solid #0f172a;padding-top:8px;margin-top:24px;"><p style="font-size:11px;font-weight:700;color:#0f172a;margin:0;">HR Officer / Recruiter</p><p style="font-size:10px;color:#64748b;margin:2px 0 0;">Signature over printed name · Date</p></div></div>' +
+                    '<div><div style="border-top:1px solid #0f172a;padding-top:8px;margin-top:24px;"><p style="font-size:11px;font-weight:700;color:#0f172a;margin:0;">Applicant Acknowledgement</p><p style="font-size:10px;color:#64748b;margin:2px 0 0;">Signature over printed name · Date</p></div></div>' +
+                    '</div>' +
+
+                    '</div>' +
+                    '<script>if(window.lucide)lucide.createIcons();<\/script>' +
+                    '</body></html>';
+            })()
+        },
+
+// ── END EMPLOYMENT DOCUMENT TEMPLATES ────────────────────────────
+
+
+
+        // ── ADMIN DASHBOARD TEMPLATE ─────────────────────────────────────
+// Tailwind CDN + Lucide Icons + Plus Jakarta Sans
+// Paste inside BLOCKS = [...] in erp-builder.js
+// Category: 'Dashboards'
+// ─────────────────────────────────────────────────────────────────
+
+        {
+            id: 'admin-dashboard-main',
+            label: 'Admin: Main Dashboard',
+            category: 'Dashboards',
+            content: (function(){
+
+                var head =
+                    '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>' +
+                    '<script src="https://cdn.tailwindcss.com"><\/script>' +
+                    '<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"><\/script>' +
+                    '<style>' +
+                    '*{font-family:\'Plus Jakarta Sans\',sans-serif;}' +
+                    '::-webkit-scrollbar{width:4px;height:4px}' +
+                    '::-webkit-scrollbar-thumb{background:#3b82f6;border-radius:99px}' +
+                    '.nav-item{padding:9px 12px;border-radius:10px;cursor:pointer;display:flex;align-items:center;gap:10px;margin-bottom:2px;transition:background .15s;}' +
+                    '.nav-item:hover{background:#1e293b;}' +
+                    '.nav-item.active{background:#1d4ed8;}' +
+                    '.nav-item.active span{color:#fff;}' +
+                    '.nav-item.active i{color:#93c5fd;}' +
+                    '.kpi-card{background:#fff;border-radius:20px;padding:22px;border:1px solid #e5e7eb;box-shadow:0 1px 4px rgba(0,0,0,.04);transition:all .2s;}' +
+                    '.kpi-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);transform:translateY(-2px);}' +
+                    '.alert-item{display:flex;align-items:flex-start;gap:12px;padding:14px;border-radius:12px;margin-bottom:8px;}' +
+                    '.quick-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px;border-radius:16px;cursor:pointer;border:1.5px solid #e5e7eb;background:#fff;transition:all .2s;text-align:center;}' +
+                    '.quick-btn:hover{border-color:#3b82f6;background:#eff6ff;transform:translateY(-2px);}' +
+                    '.activity-row{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #f1f5f9;}' +
+                    '.activity-row:last-child{border-bottom:none;}' +
+                    '</style>';
+
+                // ── SIDEBAR ───────────────────────────────────────────
+                var sidebar =
+                    '<aside style="width:230px;min-height:100vh;background:#0f172a;display:flex;flex-direction:column;flex-shrink:0;">' +
+
+                    // Brand
+                    '<div style="padding:22px 18px 18px;border-bottom:1px solid #1e293b;">' +
+                    '<div style="display:flex;align-items:center;gap:10px;">' +
+                    '<div style="width:36px;height:36px;background:#1d4ed8;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' +
+                    '<i data-lucide="shield" style="width:18px;height:18px;color:#fff;"></i></div>' +
+                    '<div>' +
+                    '<div style="font-size:14px;font-weight:900;color:#fff;line-height:1;">Bench ERP</div>' +
+                    '<div style="font-size:10px;color:#64748b;margin-top:2px;letter-spacing:1px;text-transform:uppercase;">Admin Panel</div>' +
+                    '</div></div></div>' +
+
+                    // User pill
+                    '<div style="margin:14px 12px;background:#1e293b;border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;">' +
+                    '<div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#1d4ed8,#3b82f6);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;flex-shrink:0;">SA</div>' +
+                    '<div style="flex:1;min-width:0;">' +
+                    '<div style="font-size:12px;font-weight:700;color:#e2e8f0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Super Admin</div>' +
+                    '<div style="font-size:10px;color:#64748b;">admin@bench.ph</div>' +
+                    '</div>' +
+                    '<i data-lucide="chevrons-up-down" style="width:14px;height:14px;color:#475569;flex-shrink:0;"></i>' +
+                    '</div>' +
+
+                    // Nav
+                    '<nav style="padding:8px 10px;flex:1;overflow-y:auto;">' +
+                    '<div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#334155;padding:0 10px;margin-bottom:6px;margin-top:6px;">Main</div>' +
+
+                    '<div class="nav-item active">' +
+                    '<i data-lucide="layout-dashboard" style="width:15px;height:15px;color:#93c5fd;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;font-weight:700;color:#fff;">Dashboard</span>' +
+                    '<span style="margin-left:auto;background:#3b82f6;color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;">3</span>' +
+                    '</div>' +
+
+                    '<div class="nav-item">' +
+                    '<i data-lucide="users" style="width:15px;height:15px;color:#475569;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;color:#475569;">User Management</span></div>' +
+
+                    '<div class="nav-item">' +
+                    '<i data-lucide="building-2" style="width:15px;height:15px;color:#475569;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;color:#475569;">Departments</span></div>' +
+
+                    '<div class="nav-item">' +
+                    '<i data-lucide="user-check" style="width:15px;height:15px;color:#475569;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;color:#475569;">Employees</span></div>' +
+
+                    '<div class="nav-item">' +
+                    '<i data-lucide="key-round" style="width:15px;height:15px;color:#475569;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;color:#475569;">Roles & Permissions</span></div>' +
+
+                    '<div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#334155;padding:0 10px;margin-bottom:6px;margin-top:14px;">System</div>' +
+
+                    '<div class="nav-item">' +
+                    '<i data-lucide="upload" style="width:15px;height:15px;color:#475569;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;color:#475569;">Import / Export</span></div>' +
+
+                    '<div class="nav-item">' +
+                    '<i data-lucide="activity" style="width:15px;height:15px;color:#475569;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;color:#475569;">Audit Logs</span></div>' +
+
+                    '<div class="nav-item">' +
+                    '<i data-lucide="bell" style="width:15px;height:15px;color:#475569;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;color:#475569;">Notifications</span>' +
+                    '<span style="margin-left:auto;background:#ef4444;color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;">5</span>' +
+                    '</div>' +
+
+                    '<div class="nav-item">' +
+                    '<i data-lucide="settings" style="width:15px;height:15px;color:#475569;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;color:#475569;">Settings</span></div>' +
+
+                    '</nav>' +
+
+                    // Logout
+                    '<div style="padding:14px 10px;border-top:1px solid #1e293b;">' +
+                    '<div class="nav-item" style="background:#450a0a;">' +
+                    '<i data-lucide="log-out" style="width:15px;height:15px;color:#f87171;flex-shrink:0;"></i>' +
+                    '<span style="font-size:12px;color:#f87171;font-weight:600;">Sign Out</span></div>' +
+                    '</div>' +
+                    '</aside>';
+
+                // ── KPI CARDS ─────────────────────────────────────────
+                var kpis = [
+                    { icon:'users',        label:'Total Users',      value:'1,240', sub:'↑ 12 this week',    subColor:'#22c55e', iconBg:'#dbeafe', iconColor:'#1d4ed8', accent:'#1d4ed8' },
+                    { icon:'user-check',   label:'Active Users',     value:'1,108', sub:'89.4% of total',    subColor:'#3b82f6', iconBg:'#dcfce7', iconColor:'#16a34a', accent:'#16a34a' },
+                    { icon:'user-x',       label:'Inactive Users',   value:'132',   sub:'↑ 8 flagged',       subColor:'#ef4444', iconBg:'#fee2e2', iconColor:'#dc2626', accent:'#dc2626' },
+                    { icon:'user-round',   label:'Total Employees',  value:'148',   sub:'Across 5 depts',    subColor:'#64748b', iconBg:'#fef9c3', iconColor:'#ca8a04', accent:'#ca8a04' },
+                    { icon:'building-2',   label:'Departments',      value:'5',     sub:'All operational',   subColor:'#22c55e', iconBg:'#f3e8ff', iconColor:'#9333ea', accent:'#9333ea' },
+                ];
+
+                var kpiRow =
+                    '<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:20px;">' +
+                    kpis.map(function(k){
+                        return '<div class="kpi-card" style="border-top:3px solid '+k.accent+';">' +
+                            '<div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;">' +
+                            '<div style="width:40px;height:40px;background:'+k.iconBg+';border-radius:12px;display:flex;align-items:center;justify-content:center;">' +
+                            '<i data-lucide="'+k.icon+'" style="width:18px;height:18px;color:'+k.iconColor+';"></i></div>' +
+                            '<i data-lucide="trending-up" style="width:14px;height:14px;color:#94a3b8;"></i>' +
+                            '</div>' +
+                            '<div style="font-size:28px;font-weight:900;color:#0f172a;letter-spacing:-1px;line-height:1;margin-bottom:4px;">'+k.value+'</div>' +
+                            '<div style="font-size:11px;color:#64748b;font-weight:600;">'+k.label+'</div>' +
+                            '<div style="font-size:10px;color:'+k.subColor+';font-weight:600;margin-top:5px;">'+k.sub+'</div>' +
+                            '</div>';
+                    }).join('') +
+                    '</div>';
+
+                // ── ALERTS ────────────────────────────────────────────
+                var alertsPanel =
+                    '<div style="background:#fff;border-radius:20px;border:1px solid #e5e7eb;padding:22px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.04);">' +
+                    '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">' +
+                    '<div style="display:flex;align-items:center;gap:8px;">' +
+                    '<div style="width:32px;height:32px;background:#fee2e2;border-radius:10px;display:flex;align-items:center;justify-content:center;">' +
+                    '<i data-lucide="triangle-alert" style="width:15px;height:15px;color:#dc2626;"></i></div>' +
+                    '<div><p style="font-size:14px;font-weight:800;color:#0f172a;margin:0;">System Alerts</p>' +
+                    '<p style="font-size:11px;color:#94a3b8;margin:0;">Requires your attention</p></div>' +
+                    '</div>' +
+                    '<span style="background:#fee2e2;color:#dc2626;font-size:10px;font-weight:700;padding:4px 10px;border-radius:99px;">3 alerts</span>' +
+                    '</div>' +
+
+                    '<div class="alert-item" style="background:#fef9c3;">' +
+                    '<div style="width:32px;height:32px;background:#fde047;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' +
+                    '<i data-lucide="user-x" style="width:14px;height:14px;color:#854d0e;"></i></div>' +
+                    '<div style="flex:1;">' +
+                    '<p style="font-size:12px;font-weight:700;color:#854d0e;margin:0;">132 Inactive Accounts Detected</p>' +
+                    '<p style="font-size:11px;color:#a16207;margin:2px 0 0;">Users who have not logged in for more than 90 days. Consider deactivating or sending re-engagement emails.</p>' +
+                    '</div>' +
+                    '<button style="background:#854d0e;color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;">Review</button>' +
+                    '</div>' +
+
+                    '<div class="alert-item" style="background:#fee2e2;">' +
+                    '<div style="width:32px;height:32px;background:#fca5a5;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' +
+                    '<i data-lucide="link-2-off" style="width:14px;height:14px;color:#991b1b;"></i></div>' +
+                    '<div style="flex:1;">' +
+                    '<p style="font-size:12px;font-weight:700;color:#991b1b;margin:0;">7 Orphan Users Found</p>' +
+                    '<p style="font-size:11px;color:#b91c1c;margin:2px 0 0;">Users without an assigned employee record or department. They may have incomplete onboarding.</p>' +
+                    '</div>' +
+                    '<button style="background:#991b1b;color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;">Fix Now</button>' +
+                    '</div>' +
+
+                    '<div class="alert-item" style="background:#eff6ff;">' +
+                    '<div style="width:32px;height:32px;background:#bfdbfe;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' +
+                    '<i data-lucide="file-x-2" style="width:14px;height:14px;color:#1d4ed8;"></i></div>' +
+                    '<div style="flex:1;">' +
+                    '<p style="font-size:12px;font-weight:700;color:#1d4ed8;margin:0;">2 Failed Import Jobs</p>' +
+                    '<p style="font-size:11px;color:#2563eb;margin:2px 0 0;">Employee import from CSV failed on March 18 and March 20. Check file format and duplicate entries.</p>' +
+                    '</div>' +
+                    '<button style="background:#1d4ed8;color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;">View Logs</button>' +
+                    '</div>' +
+
+                    '</div>';
+
+                // ── QUICK ACTIONS ─────────────────────────────────────
+                var quickActions =
+                    '<div style="background:#fff;border-radius:20px;border:1px solid #e5e7eb;padding:22px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.04);">' +
+                    '<div style="display:flex;align-items:center;gap:8px;margin-bottom:18px;">' +
+                    '<div style="width:32px;height:32px;background:#dbeafe;border-radius:10px;display:flex;align-items:center;justify-content:center;">' +
+                    '<i data-lucide="zap" style="width:15px;height:15px;color:#1d4ed8;"></i></div>' +
+                    '<div><p style="font-size:14px;font-weight:800;color:#0f172a;margin:0;">Quick Actions</p>' +
+                    '<p style="font-size:11px;color:#94a3b8;margin:0;">Common admin tasks</p></div>' +
+                    '</div>' +
+                    '<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;">' +
+
+                    [
+                        { icon:'user-plus',    label:'Add User',            bg:'#dbeafe', color:'#1d4ed8' },
+                        { icon:'upload',       label:'Import Employees',    bg:'#dcfce7', color:'#16a34a' },
+                        { icon:'building-2',   label:'Manage Departments',  bg:'#f3e8ff', color:'#9333ea' },
+                        { icon:'key-round',    label:'Manage Roles',        bg:'#fef9c3', color:'#ca8a04' },
+                        { icon:'mail',         label:'Send Notifications',  bg:'#ffe4e6', color:'#e11d48' },
+                        { icon:'settings-2',   label:'Open Settings',       bg:'#f1f5f9', color:'#475569' },
+                    ].map(function(a){
+                        return '<button class="quick-btn">' +
+                            '<div style="width:44px;height:44px;background:'+a.bg+';border-radius:14px;display:flex;align-items:center;justify-content:center;">' +
+                            '<i data-lucide="'+a.icon+'" style="width:20px;height:20px;color:'+a.color+';"></i></div>' +
+                            '<span style="font-size:11px;font-weight:600;color:#374151;line-height:1.3;">'+a.label+'</span>' +
+                            '</button>';
+                    }).join('') +
+
+                    '</div></div>';
+
+                // ── MAIN ROW: Activity + User table ───────────────────
+                var activityFeed = (function(){
+                    var items = [
+                        { icon:'user-plus',    iconBg:'#dbeafe',  iconColor:'#1d4ed8', user:'Admin',       action:'Created new user account for',     target:'Maria Santos',    time:'2 mins ago',   type:'create'  },
+                        { icon:'lock',         iconBg:'#fef9c3',  iconColor:'#ca8a04', user:'System',      action:'Password reset triggered for',      target:'Juan dela Cruz',  time:'15 mins ago',  type:'warning' },
+                        { icon:'upload',       iconBg:'#dcfce7',  iconColor:'#16a34a', user:'Admin',       action:'Bulk import completed:',            target:'12 employees added', time:'1 hr ago',  type:'success' },
+                        { icon:'user-x',       iconBg:'#fee2e2',  iconColor:'#dc2626', user:'System',      action:'Account auto-deactivated:',         target:'Carlo Bautista',  time:'2 hrs ago',  type:'danger'  },
+                        { icon:'building-2',   iconBg:'#f3e8ff',  iconColor:'#9333ea', user:'Admin',       action:'New department created:',           target:'Digital Marketing', time:'3 hrs ago', type:'create'  },
+                        { icon:'key-round',    iconBg:'#fef9c3',  iconColor:'#ca8a04', user:'Admin',       action:'Role updated for',                  target:'Ana Reyes → Supervisor', time:'4 hrs ago', type:'warning' },
+                        { icon:'file-x-2',     iconBg:'#fee2e2',  iconColor:'#dc2626', user:'System',      action:'Import failed — duplicate entries:', target:'employees_mar20.csv', time:'5 hrs ago', type:'danger' },
+                        { icon:'user-check',   iconBg:'#dcfce7',  iconColor:'#16a34a', user:'Admin',       action:'Employee record linked to user:',   target:'HR-00142',        time:'6 hrs ago',  type:'success' },
+                        { icon:'shield-check', iconBg:'#dbeafe',  iconColor:'#1d4ed8', user:'System',      action:'Security scan completed —',         target:'0 threats found', time:'8 hrs ago',  type:'create'  },
+                        { icon:'settings',     iconBg:'#f1f5f9',  iconColor:'#475569', user:'Super Admin', action:'System settings updated:',          target:'Session timeout changed to 30min', time:'1 day ago', type:'create' },
+                        { icon:'mail',         iconBg:'#ffe4e6',  iconColor:'#e11d48', user:'Admin',       action:'Bulk email sent to',                target:'132 inactive users', time:'1 day ago', type:'warning' },
+                        { icon:'trash-2',      iconBg:'#fee2e2',  iconColor:'#dc2626', user:'Admin',       action:'User account permanently deleted:',  target:'temp.user@bench.ph', time:'2 days ago', type:'danger' },
+                    ];
+
+                    return '<div style="background:#fff;border-radius:20px;border:1px solid #e5e7eb;padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.04);">' +
+                        '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">' +
+                        '<div style="display:flex;align-items:center;gap:8px;">' +
+                        '<div style="width:32px;height:32px;background:#f1f5f9;border-radius:10px;display:flex;align-items:center;justify-content:center;">' +
+                        '<i data-lucide="activity" style="width:15px;height:15px;color:#0f172a;"></i></div>' +
+                        '<div><p style="font-size:14px;font-weight:800;color:#0f172a;margin:0;">Recent Activity</p>' +
+                        '<p style="font-size:11px;color:#94a3b8;margin:0;">Latest 12 system actions</p></div>' +
+                        '</div>' +
+                        '<a href="#" style="font-size:11px;font-weight:700;color:#1d4ed8;text-decoration:none;">View Full Audit Log →</a>' +
+                        '</div>' +
+
+                        '<div style="max-height:480px;overflow-y:auto;padding-right:4px;">' +
+                        items.map(function(item){
+                            return '<div class="activity-row">' +
+                                '<div style="width:34px;height:34px;background:'+item.iconBg+';border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' +
+                                '<i data-lucide="'+item.icon+'" style="width:15px;height:15px;color:'+item.iconColor+';"></i></div>' +
+                                '<div style="flex:1;min-width:0;">' +
+                                '<p style="font-size:12px;color:#374151;margin:0;line-height:1.5;">' +
+                                '<span style="font-weight:700;color:#0f172a;">'+item.user+'</span> '+item.action+' ' +
+                                '<span style="font-weight:700;color:#1d4ed8;">'+item.target+'</span>' +
+                                '</p>' +
+                                '<p style="font-size:10px;color:#94a3b8;margin:3px 0 0;">'+item.time+'</p>' +
+                                '</div>' +
+                                '</div>';
+                        }).join('') +
+                        '</div>' +
+                        '</div>';
+                })();
+
+                var userTable = (function(){
+                    var users = [
+                        { name:'Maria Santos',   email:'m.santos@bench.ph', role:'Staff',   dept:'Retail Ops', status:'active',   last:'Today' },
+                        { name:'Juan dela Cruz', email:'j.cruz@bench.ph',   role:'Manager', dept:'Operations', status:'active',   last:'Today' },
+                        { name:'Ana Reyes',      email:'a.reyes@bench.ph',  role:'Staff',   dept:'Marketing',  status:'inactive', last:'32 days ago' },
+                        { name:'Carlo Bautista', email:'c.bautista@bench.ph',role:'Staff',  dept:'Finance',    status:'inactive', last:'91 days ago' },
+                        { name:'Dana Lim',       email:'d.lim@bench.ph',    role:'Manager', dept:'HR',         status:'active',   last:'Yesterday' },
+                        { name:'Rico Mendoza',   email:'r.mendoza@bench.ph',role:'Manager', dept:'Operations', status:'active',   last:'Today' },
+                        { name:'Lisa Tan',       email:'l.tan@bench.ph',    role:'Staff',   dept:'HR',         status:'active',   last:'2 days ago' },
+                        { name:'temp.user',      email:'temp@bench.ph',     role:'—',       dept:'—',          status:'orphan',   last:'Never' },
+                    ];
+
+                    var statusConfig = {
+                        active:   { bg:'#dcfce7', color:'#15803d', dot:'#22c55e', label:'Active'   },
+                        inactive: { bg:'#fee2e2', color:'#991b1b', dot:'#ef4444', label:'Inactive' },
+                        orphan:   { bg:'#fef9c3', color:'#854d0e', dot:'#eab308', label:'Orphan'   },
+                    };
+
+                    return '<div style="background:#fff;border-radius:20px;border:1px solid #e5e7eb;padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.04);">' +
+                        '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">' +
+                        '<div style="display:flex;align-items:center;gap:8px;">' +
+                        '<div style="width:32px;height:32px;background:#dbeafe;border-radius:10px;display:flex;align-items:center;justify-content:center;">' +
+                        '<i data-lucide="users" style="width:15px;height:15px;color:#1d4ed8;"></i></div>' +
+                        '<div><p style="font-size:14px;font-weight:800;color:#0f172a;margin:0;">User Overview</p>' +
+                        '<p style="font-size:11px;color:#94a3b8;margin:0;">Flagged & recent users</p></div>' +
+                        '</div>' +
+                        '<a href="#" style="font-size:11px;font-weight:700;color:#1d4ed8;text-decoration:none;">Manage All →</a>' +
+                        '</div>' +
+
+                        // Search
+                        '<div style="background:#f8fafc;border:1px solid #e5e7eb;border-radius:10px;padding:8px 14px;display:flex;align-items:center;gap:8px;margin-bottom:14px;">' +
+                        '<i data-lucide="search" style="width:14px;height:14px;color:#94a3b8;flex-shrink:0;"></i>' +
+                        '<input placeholder="Search users..." style="border:none;outline:none;font-size:12px;background:transparent;color:#0f172a;flex:1;font-family:\'Plus Jakarta Sans\',sans-serif;" />' +
+                        '</div>' +
+
+                        // Table
+                        '<div style="overflow-x:auto;">' +
+                        '<table style="width:100%;border-collapse:collapse;font-size:12px;">' +
+                        '<thead><tr style="border-bottom:2px solid #f1f5f9;">' +
+                        '<th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;">User</th>' +
+                        '<th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;">Role</th>' +
+                        '<th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;">Dept</th>' +
+                        '<th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;">Status</th>' +
+                        '<th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;">Last Login</th>' +
+                        '<th style="padding:8px 10px;"></th>' +
+                        '</tr></thead>' +
+                        '<tbody>' +
+                        users.map(function(u){
+                            var sc = statusConfig[u.status];
+                            var initials = u.name.split(' ').map(function(w){ return w[0]; }).join('').slice(0,2).toUpperCase();
+                            var avatarColors = ['linear-gradient(135deg,#1d4ed8,#3b82f6)','linear-gradient(135deg,#B90E0A,#7a0806)','linear-gradient(135deg,#16a34a,#064e3b)','linear-gradient(135deg,#9333ea,#4c1d95)'];
+                            var bg = avatarColors[u.name.charCodeAt(0) % avatarColors.length];
+                            return '<tr style="border-bottom:1px solid #f8fafc;">' +
+                                '<td style="padding:10px 10px;">' +
+                                '<div style="display:flex;align-items:center;gap:8px;">' +
+                                '<div style="width:30px;height:30px;border-radius:50%;background:'+bg+';display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:800;flex-shrink:0;">'+initials+'</div>' +
+                                '<div><p style="font-size:12px;font-weight:700;color:#0f172a;margin:0;">'+u.name+'</p>' +
+                                '<p style="font-size:10px;color:#94a3b8;margin:0;">'+u.email+'</p></div>' +
+                                '</div></td>' +
+                                '<td style="padding:10px;color:#374151;">'+u.role+'</td>' +
+                                '<td style="padding:10px;color:#64748b;font-size:11px;">'+u.dept+'</td>' +
+                                '<td style="padding:10px;">' +
+                                '<div style="display:inline-flex;align-items:center;gap:5px;background:'+sc.bg+';padding:3px 10px;border-radius:99px;">' +
+                                '<div style="width:5px;height:5px;border-radius:50%;background:'+sc.dot+';"></div>' +
+                                '<span style="font-size:10px;font-weight:700;color:'+sc.color+';">'+sc.label+'</span>' +
+                                '</div></td>' +
+                                '<td style="padding:10px;font-size:11px;color:#64748b;">'+u.last+'</td>' +
+                                '<td style="padding:10px;">' +
+                                '<div style="display:flex;gap:4px;">' +
+                                '<button style="width:28px;height:28px;border-radius:8px;background:#f1f5f9;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;">' +
+                                '<i data-lucide="eye" style="width:12px;height:12px;color:#475569;"></i></button>' +
+                                '<button style="width:28px;height:28px;border-radius:8px;background:#f1f5f9;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;">' +
+                                '<i data-lucide="pencil" style="width:12px;height:12px;color:#475569;"></i></button>' +
+                                '</div></td>' +
+                                '</tr>';
+                        }).join('') +
+                        '</tbody></table>' +
+                        '</div>' +
+                        '</div>';
+                })();
+
+                // ── FULL PAGE ASSEMBLY ────────────────────────────────
+                return '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>' + head + '</head>' +
+                    '<body style="margin:0;padding:0;background:#f8fafc;">' +
+                    '<div style="display:flex;min-height:100vh;">' +
+
+                    sidebar +
+
+                    '<div style="flex:1;display:flex;flex-direction:column;min-width:0;overflow:hidden;">' +
+
+                    // ── TOPBAR
+                    '<div style="background:#fff;border-bottom:1px solid #e5e7eb;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;box-shadow:0 1px 3px rgba(0,0,0,.04);">' +
+                    '<div>' +
+                    '<h1 style="font-size:20px;font-weight:900;color:#0f172a;margin:0;letter-spacing:-0.5px;">Admin Dashboard</h1>' +
+                    '<p style="font-size:11px;color:#94a3b8;margin:2px 0 0;">Welcome back, Super Admin · March 26, 2026</p>' +
+                    '</div>' +
+                    '<div style="display:flex;align-items:center;gap:10px;">' +
+
+                    // Search
+                    '<div style="background:#f1f5f9;border-radius:10px;padding:8px 14px;display:flex;align-items:center;gap:8px;width:220px;">' +
+                    '<i data-lucide="search" style="width:14px;height:14px;color:#94a3b8;"></i>' +
+                    '<input placeholder="Search users, logs..." style="border:none;outline:none;font-size:12px;background:transparent;color:#0f172a;flex:1;font-family:\'Plus Jakarta Sans\',sans-serif;" />' +
+                    '</div>' +
+
+                    // Notifications
+                    '<div style="position:relative;cursor:pointer;">' +
+                    '<div style="width:38px;height:38px;background:#f1f5f9;border-radius:10px;display:flex;align-items:center;justify-content:center;">' +
+                    '<i data-lucide="bell" style="width:16px;height:16px;color:#475569;"></i></div>' +
+                    '<div style="position:absolute;top:-3px;right:-3px;width:16px;height:16px;background:#ef4444;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #fff;">' +
+                    '<span style="font-size:8px;font-weight:900;color:#fff;">5</span></div>' +
+                    '</div>' +
+
+                    // Period badge
+                    '<div style="background:#0f172a;border-radius:10px;padding:8px 14px;display:flex;align-items:center;gap:7px;cursor:pointer;">' +
+                    '<i data-lucide="calendar" style="width:14px;height:14px;color:#94a3b8;"></i>' +
+                    '<span style="font-size:12px;font-weight:700;color:#e2e8f0;">March 2026 ▾</span>' +
+                    '</div>' +
+
+                    '</div></div>' +
+
+                    // ── MAIN CONTENT
+                    '<div style="flex:1;overflow-y:auto;padding:24px 28px 40px;">' +
+                    kpiRow +
+                    alertsPanel +
+                    quickActions +
+                    '<div style="display:grid;grid-template-columns:1fr 1.1fr;gap:16px;">' +
+                    activityFeed +
+                    userTable +
+                    '</div>' +
+                    '</div>' +
+
+                    '</div>' +
+                    '</div>' +
+                    '<script>if(window.lucide)lucide.createIcons();<\/script>' +
+                    '</body></html>';
+
+            })()
+        },
+
+// ── END ADMIN DASHBOARD ───────────────────────────────────────────
 
 
 
